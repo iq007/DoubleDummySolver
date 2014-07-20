@@ -1,0 +1,18 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+
+    </style>
+
+    <style name="ContractList" parent="android:Widget.DeviceDefault.ListView">
+
+        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:divider">@null</item>
+
+
+    </style>
+
+</resources>

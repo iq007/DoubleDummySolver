@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Double Dummy Solver</string>
+    <string name="main_tab1">Deal</string>
+    <string name="main_tab2">Contract</string>
+    <string name="main_tab3">Solver</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="str_contract_level">Level</string>
+    <string name="str_contract_suit">Suit</string>
+    <string name="str_contract_declarer">Declarer</string>
+
+
+</resources>
