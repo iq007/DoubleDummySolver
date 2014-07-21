@@ -7,8 +7,8 @@
     </style>
 
     <style name="ContractList" parent="android:Widget.DeviceDefault.ListView">
-
-        <item name="android:layout_width">125dp</item>
+        <item name="android:layout_weight">0.33</item>
+        <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">fill_parent</item>
         <item name="android:divider">@null</item>
 

@@ -9,10 +9,19 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.ClipData;
+import android.content.ClipDescription;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Point;
+import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.DragEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +31,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 
@@ -180,14 +190,16 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+    public static class PlaceholderFragment extends Fragment implements AdapterView.OnItemSelectedListener,
+            AdapterView.OnDragListener, AdapterView.OnLongClickListener, AdapterView.OnClickListener {
 
         private static final String TAG = "DoubleDummySolver_PlaceholderFragment";
 
         protected Contract contract;
         protected Deck deck;
         protected String[] mSuitLabels = {Suit.C.name(), Suit.D.name(),Suit.H.name(),Suit.S.name()};
-        protected ArrayList<Button> buttonBids = new ArrayList<Button>();
+        protected String[] mContractSuitLabels = {ContractSuit.C.name(), ContractSuit.D.name(),ContractSuit.H.name(),ContractSuit.S.name(), ContractSuit.NT.name()};
+        protected ArrayList<CardButton> buttonBids = new ArrayList<CardButton>();
 
         /**
          * The fragment argument representing the section number for this
@@ -225,6 +237,9 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             if(this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER)==1) {
                 rootView = inflater.inflate(R.layout.fragment_deal_grid, container, false);
 
+                LinearLayout deal_grid_north = (LinearLayout) rootView.findViewById(R.id.deal_north_layout);
+                deal_grid_north.setOnClickListener(this);
+
                 deck = new Deck();
                 GridLayout dealGridView = (GridLayout) rootView.findViewById(R.id.deal_grid);
 
@@ -238,31 +253,36 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 dealSuitSpinner.setAdapter(mDealSuitAdapter);
                 dealSuitSpinner.setOnItemSelectedListener(this);
 
-                int row = 1;
+                int gridRowCount = dealGridView.getRowCount();
+                int gridColCount = dealGridView.getColumnCount();
+
+                int row = 0;
                 int column = 0;
                 Suit currentSuit = Suit.C;
                 for (Card card : deck.getCards()) {
-                    Button buttonBid = new Button(getActivity());
+                    CardButton buttonBid = new CardButton(getActivity(),card);
                     buttonBid.setText(card.toString());
+                    buttonBid.setTextSize(25);
+                    buttonBid.setPadding(0, 0, 0, 0);
+                    buttonBid.setMaxHeight(5);
+                    buttonBid.setMaxWidth(5);
                     buttonBid.setVisibility(Button.INVISIBLE);
+                    buttonBid.setOnLongClickListener(this);
+                    buttonBid.setOnDragListener(this);
+                    buttonBid.setOnClickListener(this);
                     buttonBids.add(buttonBid);
                     if(card.getSuit() != currentSuit){
-                        column = 0;
+                        row = 0; column = 0;
                         currentSuit = card.getSuit();
                     }
-                    row = column / 3 + 1;
-                    GridLayout.LayoutParams lp = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(column++%3));
+                    if(column >= gridColCount){
+                        column=0;
+                        row++;
+                    }
+                    GridLayout.LayoutParams lp = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(column++));
                     dealGridView.addView(buttonBid, lp);
-
-
-
                 }
-
                 makeSuitVisible(Suit.C);
-
-
-
-
             }
 
 
@@ -280,7 +300,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
                 //populate suit list
                 mContractSuitAdapter = new ArrayAdapter(getActivity(),R.layout.contract_list_item,
-                        R.id.listItemContract,mSuitLabels);
+                        R.id.listItemContract,mContractSuitLabels);
                 ListView mContractSuitListView = (ListView) rootView.findViewById(R.id.listContractSuit);
                 mContractSuitListView.setAdapter(mContractSuitAdapter);
 
@@ -321,8 +341,8 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
 
         private void makeSuitVisible(Suit suit){
-            for (Button bid : buttonBids) {
-                if (bid.getText().toString().contains("!"+suit.name())){
+            for (CardButton bid : buttonBids) {
+                if (bid.getCard().getSuit() == suit){
                     bid.setVisibility(Button.VISIBLE);
                 }
                 else {
@@ -331,8 +351,107 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             }
 
         }
+
+        @Override
+        public boolean onDrag(View v, DragEvent event) {
+            //Log.v(TAG + " onDrag ", v.toString());
+            return false;
+        }
+
+        @Override
+        public boolean onLongClick(View v) {
+            Log.v(TAG + " onLongClick ", v.toString());
+
+            if(!(v instanceof CardButton)){
+                return false;
+            }
+
+            CardButton bidButton = (CardButton) v;
+            Log.v(TAG, bidButton.getText().toString());
+
+
+            Card card = new Card(bidButton.getCard());
+
+            ClipData clipData = ClipData.newPlainText(card.toString(), card.toString());
+
+            // Instantiates the drag shadow builder.
+            View.DragShadowBuilder myShadow = new MyDragShadowBuilder(bidButton);
+
+            // Starts the drag
+
+            v.startDrag(clipData,  // the data to be dragged
+                    myShadow,  // the drag shadow builder
+                    null,      // no need to use local data
+                    0          // flags (not currently used, set to 0)
+            );
+
+
+            return false;
+        }
+
+        @Override
+        public void onClick(View v) {
+            Log.v(TAG + " onClick ", v.toString());
+
+            if(v.getId() == R.id.deal_north_layout){
+                v.setBackground(getResources().getDrawable(R.drawable.hand_border));
+            }
+
+            if(!(v instanceof CardButton)){
+                return;
+            }
+        }
     }
 
+    private static class MyDragShadowBuilder extends View.DragShadowBuilder {
 
+        // The drag shadow image, defined as a drawable thing
+        private static Drawable shadow;
+
+        // Defines the constructor for myDragShadowBuilder
+        public MyDragShadowBuilder(View v) {
+
+            // Stores the View parameter passed to myDragShadowBuilder.
+            super(v);
+
+            // Creates a draggable image that will fill the Canvas provided by the system.
+            shadow = new ColorDrawable(Color.LTGRAY);
+        }
+
+        // Defines a callback that sends the drag shadow dimensions and touch point back to the
+        // system.
+        @Override
+        public void onProvideShadowMetrics (Point size, Point touch){
+            // Defines local variables
+            int width, height;
+
+            // Sets the width of the shadow to half the width of the original View
+            width = getView().getWidth();
+
+            // Sets the height of the shadow to half the height of the original View
+            height = getView().getHeight();
+
+            // The drag shadow is a ColorDrawable. This sets its dimensions to be the same as the
+            // Canvas that the system will provide. As a result, the drag shadow will fill the
+            // Canvas.
+            shadow.setBounds(0, 0, width, height);
+
+            // Sets the size parameter's width and height values. These get back to the system
+            // through the size parameter.
+            size.set(width, height);
+
+            // Sets the touch point's position to be in the middle of the drag shadow
+            touch.set(width, height);
+        }
+
+        // Defines a callback that draws the drag shadow in a Canvas that the system constructs
+        // from the dimensions passed in onProvideShadowMetrics().
+        @Override
+        public void onDrawShadow(Canvas canvas) {
+
+            // Draws the ColorDrawable in the Canvas passed in from the system.
+            shadow.draw(canvas);
+        }
+    }
 
 }

@@ -19,9 +19,10 @@ public class Deck {
     public Deck() {
         cards = new ArrayList<Card>(52);
         for(Suit s: Suit.values()){
-            for(int i=0; i<13; i++){
-                cards.add(i+(s.ordinal()*13), new Card(i+1, s));
+            for(int i=1; i<13; i++){
+                cards.add(i-1+(s.ordinal()*13), new Card(i+1, s));
             }
+            cards.add(12+s.ordinal()*13, new Card(14,s));
         }
     }
 

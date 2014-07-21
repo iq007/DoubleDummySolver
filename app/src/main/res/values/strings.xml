@@ -10,6 +10,9 @@
     <string name="str_contract_level">Level</string>
     <string name="str_contract_suit">Suit</string>
     <string name="str_contract_declarer">Declarer</string>
-
-
+    <string name="str_spade" translatable="false">♠</string>
+    <string name="str_heart" translatable="false">♥</string>
+    <string name="str_diamond" translatable="false">♦</string>
+    <string name="str_club" translatable="false">♣</string>
+    <string name="str_nt" translatable="false">NT</string>
 </resources>

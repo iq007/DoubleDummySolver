@@ -7,38 +7,41 @@
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:layout_margin="10dp">
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_contract_level"
             android:id="@+id/textContractLevel"
-            android:layout_gravity="left"
-            android:gravity="center" />
+            android:gravity="center"
+            android:layout_weight="0.33"
+            android:layout_gravity="center_horizontal" />
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_contract_suit"
             android:id="@+id/textContractSuit"
             android:gravity="center"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.33" />
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/str_contract_declarer"
             android:id="@+id/textContractDeclarer"
-            android:layout_gravity="right"
             android:gravity="center"
-            style="@android:style/TextAppearance.Holo.Large" />
+            style="@android:style/TextAppearance.Holo.Large"
+            android:layout_weight="0.33"
+            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
@@ -51,17 +54,21 @@
         <ListView
             android:id="@+id/listContractLevel"
             android:layout_gravity="center|left|top"
-            style="@style/ContractList" />
+            style="@style/ContractList"
+
+            />
 
         <ListView
             android:id="@+id/listContractSuit"
             android:layout_gravity="center|top"
-            style="@style/ContractList" />
+            style="@style/ContractList"
+             />
 
         <ListView
             android:id="@+id/listContractDeclarer"
             android:layout_gravity="right|top"
-            style="@style/ContractList" />
+            style="@style/ContractList"
+             />
     </LinearLayout>
 
 </LinearLayout>
