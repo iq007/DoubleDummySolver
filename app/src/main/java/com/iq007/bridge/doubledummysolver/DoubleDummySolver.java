@@ -40,6 +40,8 @@ import com.iq007.bridge.*;
 
 public class DoubleDummySolver extends Activity implements ActionBar.TabListener {
 
+
+
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
      * fragments for each of the sections. We use a
@@ -64,6 +66,8 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ccedit);
+
+
 
         // Set up the action bar.
         final ActionBar actionBar = getActionBar();
@@ -193,6 +197,12 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
     public static class PlaceholderFragment extends Fragment implements AdapterView.OnItemSelectedListener,
             AdapterView.OnDragListener, AdapterView.OnLongClickListener, AdapterView.OnClickListener {
 
+        static {
+            System.loadLibrary("ddsLib");
+        }
+
+        public native int SolveBoard(Deal d);
+
         private static final String TAG = "DoubleDummySolver_PlaceholderFragment";
 
         protected Contract contract;
@@ -236,6 +246,8 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             //Deal tab
             if(this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER)==1) {
                 rootView = inflater.inflate(R.layout.fragment_deal_grid, container, false);
+
+                Log.d(TAG, Integer.toString(SolveBoard(null)));
 
                 LinearLayout deal_grid_north = (LinearLayout) rootView.findViewById(R.id.deal_north_layout);
                 deal_grid_north.setOnClickListener(this);
@@ -402,6 +414,8 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             }
         }
     }
+
+
 
     private static class MyDragShadowBuilder extends View.DragShadowBuilder {
 

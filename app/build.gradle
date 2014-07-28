@@ -9,15 +9,23 @@ android {
         targetSdkVersion 20
         versionCode 1
         versionName '1.0'
+
+        ndk{
+            moduleName "ddsLib"
+        }
     }
     buildTypes {
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            jniDebugBuild true
+        }
     }
     productFlavors {
     }
+
 }
 
 dependencies {
