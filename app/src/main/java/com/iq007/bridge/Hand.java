@@ -1,26 +1,31 @@
 package com.iq007.bridge;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by stefan on 22/07/14.
  */
 public class Hand {
-    List<Card> cards;
     TablePosition position;
+    List<Card> remainingCards;
+
 
     public Hand(List<Card> cards, TablePosition position) {
-        cards.addAll(cards);
+        remainingCards = new ArrayList<Card>();
+        if(cards != null) {
+            remainingCards.addAll(cards);
+        }
         this.position = position;
     }
 
     public Card playCard(Card card){
-        cards.remove(card);
+        remainingCards.remove(card);
         return card;
     }
 
     public Card dealCard(Card card){
-        cards.add(card);
+        remainingCards.add(card);
         return card;
     }
 }

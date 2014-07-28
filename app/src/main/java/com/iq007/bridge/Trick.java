@@ -1,11 +1,11 @@
-package com.iq007.bridge;
+/*package com.iq007.bridge;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
+*//**
  * Created by stefan on 23/07/14.
- */
+ *//*
 public class Trick {
     int number;
     List<Card> cards;
@@ -46,4 +46,4 @@ public class Trick {
     }
 
 
-}
+}*/

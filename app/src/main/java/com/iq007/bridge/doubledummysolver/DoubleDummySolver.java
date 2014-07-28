@@ -2,6 +2,7 @@ package com.iq007.bridge.doubledummysolver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 
 import android.app.Activity;
@@ -183,7 +184,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 case 2:
                     return getString(R.string.main_tab3).toUpperCase(l);
                 case 3:
-                    return "Test";
+                    return "Par".toUpperCase();
             }
             return null;
         }
@@ -207,6 +208,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
         protected Contract contract;
         protected Deck deck;
+        protected Deal deal;
         protected String[] mSuitLabels = {Suit.C.name(), Suit.D.name(),Suit.H.name(),Suit.S.name()};
         protected String[] mContractSuitLabels = {ContractSuit.C.name(), ContractSuit.D.name(),ContractSuit.H.name(),ContractSuit.S.name(), ContractSuit.NT.name()};
         protected ArrayList<CardButton> buttonBids = new ArrayList<CardButton>();
@@ -253,6 +255,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 deal_grid_north.setOnClickListener(this);
 
                 deck = new Deck();
+
                 GridLayout dealGridView = (GridLayout) rootView.findViewById(R.id.deal_grid);
 
                 Spinner dealSuitSpinner = (Spinner) rootView.findViewById(R.id.suit_spinner);
@@ -325,6 +328,64 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
                 //initialize final contract with 1 C by N
                 //activity.mContract = new Contract(new Bid(bb.getBids().get(0)),TablePosition.N);
+            }
+
+            //Par tab
+            if(this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER)==4) {
+                deal = new Deal();
+
+                //init random deal
+                try {
+                    if(deck == null){
+                        deck = new Deck();
+                    }
+                    deck.shuffle();
+                }
+                catch(BridgeException e){
+                    Log.e(TAG, e.toString());
+                    return rootView;
+                }
+
+
+                deal.setCurrentTrick(null);
+                deal.setFirst(TablePosition.N);
+                deal.setTrump(ContractSuit.S);
+
+                Hand northHand = new Hand(null, TablePosition.N);
+                Hand eastHand = new Hand(null, TablePosition.E);
+                Hand southHand = new Hand(null, TablePosition.S);
+                Hand westHand = new Hand(null, TablePosition.W);
+
+                int i = 0;
+                for(Card card : deck.getCards()) {
+                    switch(i%4){
+                        case 0:
+                            northHand.dealCard(card);
+                            break;
+                        case 1:
+                            eastHand.dealCard(card);
+                            break;
+                        case 2:
+                            southHand.dealCard(card);
+                            break;
+                        case 3:
+                            westHand.dealCard(card);
+                            break;
+
+                    }
+                    //deck.removeCard(card);
+                    i++;
+
+                }
+                List<Hand> hands = new ArrayList<Hand>();
+                hands.add(northHand);
+                hands.add(eastHand);
+                hands.add(southHand);
+                hands.add(westHand);
+                deal.setRemainingCards(hands);
+
+                //call native function
+
             }
             return rootView;
         }

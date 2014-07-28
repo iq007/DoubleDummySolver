@@ -30,9 +30,9 @@ android {
     // call regular ndk-build(.cmd) script from app directory
     task ndkBuild(type: Exec) {
 
-            commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
+           // commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
 
-          //  commandLine 'ndk-build', '-C', file('src/main').absolutePath
+          commandLine '/Users/stefan/ndk/ndk-build', '-C', file('src/main').absolutePath
 
     }
 

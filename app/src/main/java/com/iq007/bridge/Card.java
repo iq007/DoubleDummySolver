@@ -60,6 +60,7 @@ public class Card {
         this.value = card.value;
         this.suit = card.suit;
         this.symbol = card.symbol;
+        this.suitSymbol = card.suitSymbol;
     }
 
     public int getvalue() {

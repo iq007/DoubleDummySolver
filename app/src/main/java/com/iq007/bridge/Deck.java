@@ -2,6 +2,7 @@ package com.iq007.bridge;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 /**
@@ -10,9 +11,9 @@ import java.util.Random;
 public class Deck {
 
 
-    ArrayList<Card> cards;
+    List<Card> cards;
 
-    public Deck(ArrayList<Card> cards) {
+    public Deck(List<Card> cards) {
         this.cards = cards;
     }
 
@@ -26,15 +27,15 @@ public class Deck {
         }
     }
 
-    public ArrayList<Card> getCards() {
+    public List<Card> getCards() {
         return cards;
     }
 
-    public void setCards(ArrayList<Card> cards) {
+    public void setCards(List<Card> cards) {
         this.cards = cards;
     }
 
-    public ArrayList<Card> orderDeck(){
+    public List<Card> orderDeck(){
         cards = new ArrayList<Card>(52);
         for(Suit s: Suit.values()){
             for(int i=0; i<13; i++){
@@ -58,7 +59,7 @@ public class Deck {
 
     }
 
-    public ArrayList<Card> shuffle() throws BridgeException{
+    public List<Card> shuffle() throws BridgeException{
         //Fisher-Yates modern O(n)
         if(cards == null){
             throw new BridgeException("Deck not initialized");
