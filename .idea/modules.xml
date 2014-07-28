@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CCEditor.iml" filepath="$PROJECT_DIR$/CCEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DoubleDummySolver.iml" filepath="$PROJECT_DIR$/DoubleDummySolver.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

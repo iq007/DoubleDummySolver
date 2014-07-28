@@ -1,0 +1,519 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/defs.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: defs.cpp | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../../2.5.html">2.5.2+ddd105-1</a> / <a href="../ddd.html">ddd</a> / defs.cpp</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: defs.cpp</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (244 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../ddd.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/ddd/defs.cpp">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=3debe7ae201db159771eee1bef28a0cb5fa5432d72a9de9936d7bed3ab4222a6&amp;page=1">
+	  duplicates (4)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="cpp">/* **************************************************************************
+   defs.cpp  bridge definitions for C/C++ programs
+             PM Cronje June 2006
+
+   Copyright 2006 P.M.Cronje
+
+   This file is part of the Double Dummer Driver (DDD).
+
+   DDD is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   DDD is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with DDD; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+   ************************************************************************** */
+
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;ctype.h&gt;
+
+#include &#34;defs.h&#34;
+
+const char *szPLAYER[4]   = {&#34;west&#34;, &#34;north&#34;, &#34;east&#34;, &#34;south&#34;};
+const char  chPLAYER[4]   = {&#39;W&#39;, &#39;N&#39;, &#39;E&#39;, &#39;S&#39;};
+const char *szSUIT[4]     = {&#34;spades&#34;, &#34;hearts&#34;, &#34;diamonds&#34;, &#34;clubs&#34;};
+const char  chSUIT[4]     = {&#39;S&#39;, &#39;H&#39;, &#39;D&#39;, &#39;C&#39;};
+const char *szCONTRACT[5] = {&#34;spades&#34;,&#34;hearts&#34;,&#34;diamonds&#34;,&#34;clubs&#34;,&#34;notrump&#34;};
+const char chCARD[13]     = {&#39;A&#39;,&#39;K&#39;,&#39;Q&#39;,&#39;J&#39;,&#39;T&#39;,&#39;9&#39;,&#39;8&#39;,&#39;7&#39;,&#39;6&#39;,&#39;5&#39;,&#39;4&#39;,&#39;3&#39;,&#39;2&#39;};
+
+const ushort usMASK[16]
+  = { 0x0001, 0x0002, 0x0004, 0x0008,
+      0x0010, 0x0020, 0x0040, 0x0080,
+      0x0100, 0x0200, 0x0400, 0x0800,
+      0x1000, 0x2000, 0x4000, 0x8000
+    };
+const ushort usNotMASK[16]
+  = { 0xfffe, 0xfffd, 0xfffb, 0xfff7,
+      0xffef, 0xffdf, 0xffbf, 0xff7f,
+      0xfeff, 0xfdff, 0xfbff, 0xf7ff,
+      0xefff, 0xdfff, 0xbfff, 0x7fff
+    };
+
+const unsigned int ulMASK[32]
+  = { 0x00000001, 0x00000002, 0x00000004, 0x00000008,
+      0x00000010, 0x00000020, 0x00000040, 0x00000080,
+      0x00000100, 0x00000200, 0x00000400, 0x00000800,
+      0x00001000, 0x00002000, 0x00004000, 0x00008000,
+      0x00010000, 0x00020000, 0x00040000, 0x00080000,
+      0x00100000, 0x00200000, 0x00400000, 0x00800000,
+      0x01000000, 0x02000000, 0x04000000, 0x08000000,
+      0x10000000, 0x20000000, 0x40000000, 0x80000000
+    };
+const unsigned int ulNotMASK[32]
+  = { 0xfffffffe, 0xfffffffd, 0xfffffffb, 0xfffffff7,
+      0xffffffef, 0xffffffdf, 0xffffffbf, 0xffffff7f,
+      0xfffffeff, 0xfffffdff, 0xfffffbff, 0xfffff7ff,
+      0xffffefff, 0xffffdfff, 0xffffbfff, 0xffff7fff,
+      0xfffeffff, 0xfffdffff, 0xfffbffff, 0xfff7ffff,
+      0xffefffff, 0xffdfffff, 0xffbfffff, 0xff7fffff,
+      0xfeffffff, 0xfdffffff, 0xfbffffff, 0xf7ffffff,
+      0xefffffff, 0xdfffffff, 0xbfffffff, 0x7fffffff
+    };
+
+// *****************************************************************************
+
+int fromHex(char ch)
+{
+  if(isdigit(ch))
+    return ((int)tolower(ch) - (int)&#39;0&#39;);
+  else
+    return ((int)tolower(ch) - (int)&#39;a&#39; + 10);
+
+} // fromHex
+// *****************************************************************************
+
+char toHex(int i)
+{
+  if(i &lt; 10)
+    return (char)(i + &#39;0&#39;);
+  else
+    return toupper((char)(i - 10 + (int)&#39;a&#39;));
+
+} // toHex
+// *****************************************************************************
+
+// initialization of static arrays
+//   - BitsInByte[256]
+//     count of 1-bits in byte
+//   - MSBitInByte[256]
+//     most significant bit in byte
+
+static bool initBitsInByte(int bits[256], int msb[256])
+{
+  int i, n, m;
+
+  bits[0] = msb[0] = 0;
+
+  // set bits in byte
+  for(i=1; i&lt;256; i++)
+  { n = 0;
+    m = i;
+    while(m)
+    { n++;
+      m = (m &amp; (m-1));  // strip right-most bit
+    };
+    bits[i] = n;
+  }
+
+  // most significant bit in byte
+  for(i=1; i&lt;256; i++)
+  { n = 0;
+    m = i;
+    while(m)
+    { n++;
+      m &gt;&gt;= 1;
+    };
+    msb[i] = n-1;
+  }
+
+  return true;
+
+} // initBitsInChar
+// *****************************************************************************
+
+static int BitsInByte[256];
+static int MSBitInByte[256];
+static bool bInitBitsInByte = initBitsInByte(BitsInByte,MSBitInByte);
+
+// *****************************************************************************
+
+int bitCount(ushort m)
+{
+  return (BitsInByte[m &amp; 0x00ff] + BitsInByte[(m &gt;&gt; 8) &amp; 0x00ff]);
+
+} // bitCount
+// *****************************************************************************
+
+int leastSignificant1Bit(ushort m)
+{
+  m = (ushort)((ushort)m ^ ((ushort)m - 1));
+
+  return bitCount(m) - 1;
+
+} // leastSignificant1Bit
+// *****************************************************************************
+
+int mostSignificant1Bit(ushort m)
+{
+/*
+  if(m &amp; 0xff00)
+    return (8 + MSBitInByte[(m &gt;&gt; 8) &amp; 0x00ff]);
+  else
+    return MSBitInByte[m];
+*/
+  register unsigned int x = (m | (m &gt;&gt; 1));
+  x |= (x &gt;&gt; 2);
+  x |= (x &gt;&gt; 4);
+  x |= (x &gt;&gt; 8);
+
+  //x = (x &amp; (~(x &gt;&gt; 1)));
+  return bitCount(x) - 1;
+
+} // mostSignificant1Bit
+// *****************************************************************************
+void clearBit(ushort &amp;m, int ibit) { m &amp;= usNotMASK[ibit];}
+bool    isBit(ushort m, int ibit)  { return (m &amp; usMASK[ibit]);}
+void   setBit(ushort &amp;m, int ibit) { m |= usMASK[ibit];}
+/* ************************************************************************** */
+
+char *format(char str[], char sz[]);
+
+char *format64(unsigned long long number, char sz[])
+{
+  char str[32];
+
+  snprintf(str,31,&#34;%llu&#34;,number);
+  format(str,sz);
+
+  return sz;
+
+} // format64
+/* ************************************************************************** */
+
+char *format(unsigned int number, char sz[])
+{
+  char str[32];
+
+  snprintf(str,31,&#34;%u&#34;,number);
+  format(str,sz);
+
+  return sz;
+
+} // format
+/* ************************************************************************** */
+
+char *format(char str[], char sz[])
+{
+  int len, n, istart, ndigit, i, pos;
+
+  len = strlen(str);
+  n = len / 3;
+  if(3*n != len)
+    n++;
+  istart = pos = 0;
+  for(i=0; i&lt;n; i++)
+  { if(i==0)
+      ndigit = len - 3*(n-1);
+    else
+      ndigit = 3;
+    strncpy(sz+pos,str+istart,ndigit);
+    istart += ndigit;
+    pos += ndigit;
+    if(i &lt; n-1)
+    { sz[pos] = &#39;,&#39;;
+      pos++;
+    }
+  }
+  sz[pos] = &#39;\0&#39;;
+
+  return sz;
+
+} // format
+// *****************************************************************************
+
+char *mPerSec(unsigned int count, double elapsed, char sz[])
+{
+  if(elapsed &gt;= 0.01)
+    sprintf(sz,&#34;%0.3lfm/s&#34;,1.0e-6*(double)count/elapsed);
+  else
+    strcpy(sz,&#34;-.---m/s&#34;);
+
+  return sz;
+
+} // mPerSec
+/* ************************************************************************** */
+
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/defs.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+</html>

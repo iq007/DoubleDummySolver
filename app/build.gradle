@@ -9,22 +9,49 @@ android {
         targetSdkVersion 20
         versionCode 1
         versionName '1.0'
-
-        ndk{
-            moduleName "ddsLib"
-        }
     }
+
+
+    sourceSets.main {
+        jniLibs.srcDirs = ['src/main/libs']
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
+
+
+     allprojects {
+         gradle.projectsEvaluated {
+             tasks.withType(JavaCompile) {
+                 options.compilerArgs << "-Xlint:unchecked" << "-Xlint:deprecation"
+             }
+         }
+     }
+
+
+    // call regular ndk-build(.cmd) script from app directory
+    task ndkBuild(type: Exec) {
+
+            commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
+
+          //  commandLine 'ndk-build', '-C', file('src/main').absolutePath
+
+    }
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn ndkBuild
+    }
+
     buildTypes {
         release {
             runProguard false
+            jniDebugBuild true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
+            runProguard false
             jniDebugBuild true
         }
     }
-    productFlavors {
-    }
+
 
 }
 

@@ -1,0 +1,433 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/debian/dds.6 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: dds.6 | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../../2.5.html">2.5.2+ddd105-1</a> / <a href="../debian.html">debian</a> / dds.6</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: dds.6</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (158 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../debian.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/debian/dds.6">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=3ada854c163b6e1a57ee17ee858c899747d5763450615f326d9e8ec4bf9fe034&amp;page=1">
+	  duplicates (4)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="no-highlight">.TH DDS 6
+.SH NAME
+dds \- double dummy solver frontend
+.SH SYNOPSIS
+.B dds
+.I file
+[
+.I options
+]
+.SH DESCRIPTION
+This program is a command line interface for
+Bo Haglund&#39;s Double Dummy Solver (DDS).
+.PP
+It has four useful stand-alone options:
+.IP 1.
+Option \fB\-playdd\fP, to play any deal double dummy.
+.IP 2.
+Option \fB\-giblib\fP. For any deal, to get maximum trick values
+for all possible contracts and leaders
+(these are the 20 trick values as for giblib).
+.IP 3.
+Option \fB\-tricks\fP. For specified deal, to get maximum trick values
+for all possible contracts and leaders
+(these are the 20 trick values as for giblib).
+.IP 4.
+Option \fB\-gen\fP. This is to generate deals,
+without or with up to 20 possible trick values.
+.SH OPTIONS
+.BR \fIfile\fP
+path for &#39;giblib&#39; input file
+.TP
+Optional arguments [\fIoptions\fP] are one or more of: 
+.TP
+.BR \-v
+verbose where applicable
+.TP
+.BR \-target=\fId\fP
+\-1-13 (default \-1).
+Number of tricks to be won by the side to play, \-1 means that the program 
+shall find the maximum number. For equivalent cards only the highest is returned. 
+.TP
+.BR \-sol=\fId\fP
+solution 1/2/3 (default 3).
+How many card solutions SolveBoard returns:
+
+target=1-13, solutions=1:  Returns only one of the cards. Its returned score is
+the same as target when target or higher tricks can be won. Otherwise, score
+\-1 is returned if target cannot be reached, or score 0 if no tricks can be
+won.
+
+target=\-1, solutions=1:  Returns only one of the optimum cards and its score.
+
+target=0, solutions=1:  Returns only one of the cards legal to play with score
+set to 0.
+
+target=1-13, solutions=2:  Return all cards meeting target. Their returned
+scores are the same as target when target or higher tricks can be won.
+Otherwise, only one card is returned with score \-1 if target cannot be
+reached, or score 0 for all cards legal to play if no tricks can be won.
+
+target=\-1, solutions=2:  Return all optimum cards with their scores.
+
+target=0, solutions=2:  Return all cards legal to play with scores set to 0.
+
+target irrelevant, solutions=3:  Return all cards that can be legally played
+with their scores in descending  order.
+.TP
+.BR \-mode=\fId\fP
+0/1 (default 1).
+DLL mode of operation. This mode does not affect the DLL if there are multiple
+choices for cards to play. If there is just one card to play, or multiple cards
+that are all equivalent, this mode determines  whether or not the DLL will
+search to find the score.
+
+mode=0:  Do not search to find the score if the hand to play has only one card,
+including its equivalents, to play. Score is set to \-2 for this card,
+indicating that there are no alternative cards. This mode is very fast.
+
+mode=1:  Always search to find the score. Even when the hand to play has only
+one card,  with possible equivalents, to play.
+.\&#34;
+.\&#34;mode=2:  As for mode=1, but the transposition table contents is reused from the
+.\&#34;preceding SolveBoard call. Requires that target is the same as for the
+.\&#34;preceding call and is not target=\-1. The parameter solutions must be set to 1,
+.\&#34;deal must be the same, except that deal.first for the second call is partner to
+.\&#34;deal.first in the first call.
+.\&#34;Example:
+.\&#34;1st call:  SolveBoard(deal, 10, 1, 1, &amp;fut1),  deal.first=1, i.e. East leads.
+.\&#34;2nd call:  SolveBoard(deal, 10, 1, 2, &amp;fut2),  deal.first=3, i.e. West leads.  
+.TP
+.BR \-trumps=\fIt\fP
+s/h/d/c/n, this overrides the file (default=n) 
+.TP
+.BR \-leader=\fIl\fP
+w/n/e/s, this overrides the file (default=w) 
+but used only when no cards have been played 
+.TP
+.BR \-deal=\fId\fP
+1/2/... deal number in giblib file.
+Only one of \fB\-deal\fP or \fB\-name\fP should be specified.
+.TP
+.BR \-name=\fIstr\fP
+deal with &#39;name=str&#39; in giblib file.
+Only one of \fB\-deal\fP or \fB\-name\fP should be specified.
+.TP
+.BR \-playdd
+play deal choosing between DDS alternatives 
+.TP
+.BR \-timeall
+time all deals in file for sol=1/2/3, print stats 
+.TP
+.BR \-timeg=\fIxcn\fP
+ \fIx\fP - hex digit, total tricks by n-s 
+ \fIc\fP - contract s/h/d/c/n 
+ \fIn\fP - number of deals 
+
+time the first n deals in the giblib file, 
+having total tricks x at contract c, 
+for target=\-1 sol=1 mode=1 
+and for the specified/default leader,
+each deal is validated.
+.TP
+.BR \-giblib=\fId1\fP\-\fId2\fP[\-all]
+validate all deals from d1 to d2 in giblib file 
+for target=\-1 sol=1 mode=1.
+1. if \fB\-all\fP is given, this is done for all of
+the 20 trick values even if some of them are &#39;\-&#39;.
+2. if \fB\-all\fP is not given, this is done only for 
+those trick values which are not &#39;\-&#39;.
+.TP
+.BR \-tricks
+like \fB\-giblib\fP, but for single deal specified 
+by \fB\-name\fP=str \fB\-deal\fP=d or option 
+.TP
+Generate deals: 
+.TP
+.BR \-gen=\fIn\fP
+(required) n=number of deals to generate.
+output is written to a file (see below) 
+.TP
+.BR \-genseed=\fIs\fP
+(default 0) seed for random generator 
+.TP
+.BR \-gencards=\fIc\fP
+(default=52) number of cards generated per deal,
+must be multiple of 4 
+.TP
+.BR \-gentricks=\fIt\fP
+0,1,...,20 (default 1), number of tricks values to set randomly
+.TP
+Generate output is written to a file:
+gen\-\fIgenseed\fP\-\fIndeal\fP\-\fIgencards\fP\-\fIgentricks\fP.txt 
+.SH NOTES
+The program was named ddd by its author. As there is already some other
+ddd package in Debian (the gdb frontend) it was renamed to dds, the name
+of the library used.
+.SH &#34;SEE ALSO&#34;
+dealer(6), deal(6).
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/debian/dds.6 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:03 GMT -->
+</html>

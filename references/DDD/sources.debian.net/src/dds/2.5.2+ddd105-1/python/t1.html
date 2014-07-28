@@ -1,0 +1,326 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/python/t1 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:03 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: t1 | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../../2.5.html">2.5.2+ddd105-1</a> / <a href="../python.html">python</a> / t1</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: t1</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (51 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../python.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/python/t1">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=2c66999a1d79b76f042ce84a5e05d03d92df5c752e836c3490c7136c05e0c4fb&amp;page=1">
+	  duplicates (4)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="no-highlight">AQ9 AQ9 8643 KQ8|T82 T6542 AKT A7|K653 K83 Q92 543|J74 J7 J75 JT962
+A86 Q54 A52 AQJ9|KJ5 KT87 93 K543|Q932 J62 KQ6 862|T74 A93 JT874 T7
+AK92 JT9 AJT Q86|J85 KQ74  AKJT43|Q74 A62 K875 972|T63 853 Q96432 5
+A95 K75 K93 AK53|KT4 Q982 J654 Q8|Q732 AJT Q82 764|J86 643 AT7 JT92
+K52 AJ9 AT5 K962|AQ93 T63 83 J853|T74 K742 KQ9 QT4|J86 Q85 J7642 A7
+AQJ AJ72 A76 963|KT53 QT93 Q54 J8|8642 K86 KJ3 QT5|97 54 T982 AK742
+QT92 KQ5 K62 AK4|8543 J3 AQ8 J982|AKJ7 T87 T94 653|6 A9642 J753 QT7
+AQ4 Q74 QJ63 KJ8|KT9 T96 K874 A72|8732 KJ5 AT9 Q93|J65 A832 52 T654
+QT3 KJ94 AQ7 A74|J75 72 JT865 Q62|K86 A65 K43 9853|A942 QT83 92 KJT
+AQ3 KQ8 JT75 QJ2|K7 T942 AK9 K986|JT5 AJ76 643 AT5|98642 53 Q82 743
+432 J87 AKJ9 KQJ|KT875 6532 2 974|AJ6 KT9 T843 865|Q9 AQ4 Q765 AT32
+Q83 AKQ4 K83 J74|A964 T953 J76 63|KT75 J76 AT5 T98|J2 82 Q942 AKQ52
+AJ8 K98 A874 A93|Q7543 A7 63 K872|K62 T43 KQJ5 JT6|T9 QJ652 T92 Q54
+K82 AQ9 AJ63 QJ6|J96 J65 KT9 K975|T743 K84 Q85 A83|AQ5 T732 742 T42
+T42 AKT8 AKQ J97|J965 52 T8654 K6|KQ3 J63 J93 QT83|A87 Q974 72 A542
+Q63 KT62 KQ5 KQT|KT72 J87 AJ 9875|AJ9 943 T874 AJ6|854 AQ5 9632 432
+AKQ JT5 KT54 QT9|J875 Q763 92 A75|962 A84 AJ76 J62|T43 K92 Q83 K843
+A75 A763 KQT A92|QT843 KT92 983 8|K96 QJ5 J742 K74|J2 84 A65 QJT653
+K83 AQ42 QT2 A83|A742 JT97 963 64|T96 863 AKJ4 Q95|QJ5 K5 875 KJT72
+A32 Q52 K74 AKT7|QT6 KT94 A9 Q632|J87 A876 Q63 J94|K954 J3 JT852 85
+AQJ AJT8 943 A62|K8 72 AT76 JT953|973 965 KQ2 KQ74|T6542 KQ43 J85 8
+AJ73 K86 AK2 J72|852 J J763 AT643|QT9 A753 Q95 Q95|K64 QT942 T84 K8
+AK6 K96 T97 KQT2|QJT Q3 AQJ84 984|832 T84 K32 AJ63|9754 AJ752 65 75
+9842 KJ7 AJ7 AQ9|KJ63 952 3 KT873|Q75 AQ6 T862 J65|AT T843 KQ954 42
+A87 AK9 J84 QJ63|J9652 754 A7 K42|KQ4 JT83 K65 T98|T3 Q62 QT932 A75
+AQJT A75 T74 AQ3|7543 Q86 A85 J65|K86 T93 QJ96 KT9|92 KJ42 K32 8742
+AJT KJ9 KQ3 Q873|87654 QT43 A96 K|KQ3 A75 JT54 T96|92 862 872 AJ542
+KJ2 943 A843 AK7|9873 AKJ52 Q65 9|AQ4 T76 J72 J843|T65 Q8 KT9 QT652
+Q86 AJ3 KJ9 KQ42|A754 764 T653 T7|T32 K982 AQ4 953|KJ9 QT5 872 AJ86
+AK8 AQ3 632 K954|64 K92 J987 8632|9732 T75 AKQ JT7|QJT5 J864 T54 AQ
+KQ7 A95 A82 A543|JT3 KJ76 JT743 Q|952 Q84 KQ6 K762|A864 T32 95 JT98
+T98 KQ96 AQT AJ6|AK54 J72 52 T853|Q32 AT4 J73 K974|J76 853 K9864 Q2
+K76 K84 AKT3 KT4|A2 AQJT32 64 Q98|9853 976 QJ7 AJ5|QJT4 5 9852 7632
+A97 865 KJT AQJ2|KQT86 AT AQ7 T63|J43 KJ9 982 K954|52 Q7432 6543 87
+AQ5 J862 Q54 AQ9|KJ43 K 762 KT763|982 AQ9 K83 J852|T76 T7543 AJT9 4
+AJ5 AK5 973 AJ97|Q9843 976 J QT53|T72 Q32 KQT5 K42|K6 JT84 A8642 86
+J865 AJT K93 AK2|T72 9543 Q64 863|Q93 KQ62 J72 J95|AK4 87 AT85 QT74
+KQ9 QJ7 K952 KJ5|5432 K943 73 T43|T76 865 QT84 AQ6|AJ8 AT2 AJ6 9872
+A93 AQ9 976 KQ84|K865 J3 T83 J532|JT4 KT5 Q54 AT76|Q72 87642 AKJ2 9
+AQJ K92 AT6 K654|982 AJ8 84 T9873|T53 QT73 J75 AQJ|K764 654 KQ932 2
+A76 T73 AK86 A82|J32 K962 J94 963|QT8 J85 Q752 KQ5|K954 AQ4 T3 JT74
+QT93 KQ8 KJT AJ8|J854 J7 A7532 97|AK72 T52 964 QT3|6 A9643 Q8 K6542
+J83 AJ4 AK87 QJ4|9752 T9 QJ5 7532|KQ4 762 T432 KT8|AT6 KQ853 96 A96
+AQ52 KT2 JT9 KQ8|K AJ976 AK63 J95|T976 Q54 Q75 A43|J843 83 842 T762
+KJ32 QJ5 K97 AK7|98 T2 J632 QJT64|Q764 A83 QT8 953|AT5 K9764 A54 82
+QJ6 AJ76 AK4 Q73|AT953 53 J965 94|872 KQ42 832 KT6|K4 T98 QT7 AJ852
+AJ9 Q98 KT5 AQT5|K53 T754 43 KJ32|762 A63 AJ87 984|QT84 KJ2 Q962 76
+KQ5 A62 J86 AK74|T843 984 Q42 T96|A972 KJT T73 J83|J6 Q753 AK95 Q52
+Q943 AQT K52 AQ4|K852 853 74 KJ86|AT7 K962 QJT T97|J6 J74 A9863 532
+K95 AK84 K83 A92|AT63 63 AJT2 J84|874 Q52 Q96 KQ75|QJ2 JT97 754 T63
+AT5 AK2 QT3 A962|74 J9875 J9 QT85|863 QT6 A652 KJ3|KQJ92 43 K874 74
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/python/t1 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:03 GMT -->
+</html>

@@ -1,0 +1,1010 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/DLL-dds_252_t.rtf by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: DLL-dds_252_t.rtf | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../2.5.html">2.5.2+ddd105-1</a> / DLL-dds_252_t.rtf</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: DLL-dds_252_t.rtf</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (739 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../2.5.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/DLL-dds_252_t.rtf">download</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /><a id="L245" href="#L245">245</a><br /><a id="L246" href="#L246">246</a><br /><a id="L247" href="#L247">247</a><br /><a id="L248" href="#L248">248</a><br /><a id="L249" href="#L249">249</a><br /><a id="L250" href="#L250">250</a><br /><a id="L251" href="#L251">251</a><br /><a id="L252" href="#L252">252</a><br /><a id="L253" href="#L253">253</a><br /><a id="L254" href="#L254">254</a><br /><a id="L255" href="#L255">255</a><br /><a id="L256" href="#L256">256</a><br /><a id="L257" href="#L257">257</a><br /><a id="L258" href="#L258">258</a><br /><a id="L259" href="#L259">259</a><br /><a id="L260" href="#L260">260</a><br /><a id="L261" href="#L261">261</a><br /><a id="L262" href="#L262">262</a><br /><a id="L263" href="#L263">263</a><br /><a id="L264" href="#L264">264</a><br /><a id="L265" href="#L265">265</a><br /><a id="L266" href="#L266">266</a><br /><a id="L267" href="#L267">267</a><br /><a id="L268" href="#L268">268</a><br /><a id="L269" href="#L269">269</a><br /><a id="L270" href="#L270">270</a><br /><a id="L271" href="#L271">271</a><br /><a id="L272" href="#L272">272</a><br /><a id="L273" href="#L273">273</a><br /><a id="L274" href="#L274">274</a><br /><a id="L275" href="#L275">275</a><br /><a id="L276" href="#L276">276</a><br /><a id="L277" href="#L277">277</a><br /><a id="L278" href="#L278">278</a><br /><a id="L279" href="#L279">279</a><br /><a id="L280" href="#L280">280</a><br /><a id="L281" href="#L281">281</a><br /><a id="L282" href="#L282">282</a><br /><a id="L283" href="#L283">283</a><br /><a id="L284" href="#L284">284</a><br /><a id="L285" href="#L285">285</a><br /><a id="L286" href="#L286">286</a><br /><a id="L287" href="#L287">287</a><br /><a id="L288" href="#L288">288</a><br /><a id="L289" href="#L289">289</a><br /><a id="L290" href="#L290">290</a><br /><a id="L291" href="#L291">291</a><br /><a id="L292" href="#L292">292</a><br /><a id="L293" href="#L293">293</a><br /><a id="L294" href="#L294">294</a><br /><a id="L295" href="#L295">295</a><br /><a id="L296" href="#L296">296</a><br /><a id="L297" href="#L297">297</a><br /><a id="L298" href="#L298">298</a><br /><a id="L299" href="#L299">299</a><br /><a id="L300" href="#L300">300</a><br /><a id="L301" href="#L301">301</a><br /><a id="L302" href="#L302">302</a><br /><a id="L303" href="#L303">303</a><br /><a id="L304" href="#L304">304</a><br /><a id="L305" href="#L305">305</a><br /><a id="L306" href="#L306">306</a><br /><a id="L307" href="#L307">307</a><br /><a id="L308" href="#L308">308</a><br /><a id="L309" href="#L309">309</a><br /><a id="L310" href="#L310">310</a><br /><a id="L311" href="#L311">311</a><br /><a id="L312" href="#L312">312</a><br /><a id="L313" href="#L313">313</a><br /><a id="L314" href="#L314">314</a><br /><a id="L315" href="#L315">315</a><br /><a id="L316" href="#L316">316</a><br /><a id="L317" href="#L317">317</a><br /><a id="L318" href="#L318">318</a><br /><a id="L319" href="#L319">319</a><br /><a id="L320" href="#L320">320</a><br /><a id="L321" href="#L321">321</a><br /><a id="L322" href="#L322">322</a><br /><a id="L323" href="#L323">323</a><br /><a id="L324" href="#L324">324</a><br /><a id="L325" href="#L325">325</a><br /><a id="L326" href="#L326">326</a><br /><a id="L327" href="#L327">327</a><br /><a id="L328" href="#L328">328</a><br /><a id="L329" href="#L329">329</a><br /><a id="L330" href="#L330">330</a><br /><a id="L331" href="#L331">331</a><br /><a id="L332" href="#L332">332</a><br /><a id="L333" href="#L333">333</a><br /><a id="L334" href="#L334">334</a><br /><a id="L335" href="#L335">335</a><br /><a id="L336" href="#L336">336</a><br /><a id="L337" href="#L337">337</a><br /><a id="L338" href="#L338">338</a><br /><a id="L339" href="#L339">339</a><br /><a id="L340" href="#L340">340</a><br /><a id="L341" href="#L341">341</a><br /><a id="L342" href="#L342">342</a><br /><a id="L343" href="#L343">343</a><br /><a id="L344" href="#L344">344</a><br /><a id="L345" href="#L345">345</a><br /><a id="L346" href="#L346">346</a><br /><a id="L347" href="#L347">347</a><br /><a id="L348" href="#L348">348</a><br /><a id="L349" href="#L349">349</a><br /><a id="L350" href="#L350">350</a><br /><a id="L351" href="#L351">351</a><br /><a id="L352" href="#L352">352</a><br /><a id="L353" href="#L353">353</a><br /><a id="L354" href="#L354">354</a><br /><a id="L355" href="#L355">355</a><br /><a id="L356" href="#L356">356</a><br /><a id="L357" href="#L357">357</a><br /><a id="L358" href="#L358">358</a><br /><a id="L359" href="#L359">359</a><br /><a id="L360" href="#L360">360</a><br /><a id="L361" href="#L361">361</a><br /><a id="L362" href="#L362">362</a><br /><a id="L363" href="#L363">363</a><br /><a id="L364" href="#L364">364</a><br /><a id="L365" href="#L365">365</a><br /><a id="L366" href="#L366">366</a><br /><a id="L367" href="#L367">367</a><br /><a id="L368" href="#L368">368</a><br /><a id="L369" href="#L369">369</a><br /><a id="L370" href="#L370">370</a><br /><a id="L371" href="#L371">371</a><br /><a id="L372" href="#L372">372</a><br /><a id="L373" href="#L373">373</a><br /><a id="L374" href="#L374">374</a><br /><a id="L375" href="#L375">375</a><br /><a id="L376" href="#L376">376</a><br /><a id="L377" href="#L377">377</a><br /><a id="L378" href="#L378">378</a><br /><a id="L379" href="#L379">379</a><br /><a id="L380" href="#L380">380</a><br /><a id="L381" href="#L381">381</a><br /><a id="L382" href="#L382">382</a><br /><a id="L383" href="#L383">383</a><br /><a id="L384" href="#L384">384</a><br /><a id="L385" href="#L385">385</a><br /><a id="L386" href="#L386">386</a><br /><a id="L387" href="#L387">387</a><br /><a id="L388" href="#L388">388</a><br /><a id="L389" href="#L389">389</a><br /><a id="L390" href="#L390">390</a><br /><a id="L391" href="#L391">391</a><br /><a id="L392" href="#L392">392</a><br /><a id="L393" href="#L393">393</a><br /><a id="L394" href="#L394">394</a><br /><a id="L395" href="#L395">395</a><br /><a id="L396" href="#L396">396</a><br /><a id="L397" href="#L397">397</a><br /><a id="L398" href="#L398">398</a><br /><a id="L399" href="#L399">399</a><br /><a id="L400" href="#L400">400</a><br /><a id="L401" href="#L401">401</a><br /><a id="L402" href="#L402">402</a><br /><a id="L403" href="#L403">403</a><br /><a id="L404" href="#L404">404</a><br /><a id="L405" href="#L405">405</a><br /><a id="L406" href="#L406">406</a><br /><a id="L407" href="#L407">407</a><br /><a id="L408" href="#L408">408</a><br /><a id="L409" href="#L409">409</a><br /><a id="L410" href="#L410">410</a><br /><a id="L411" href="#L411">411</a><br /><a id="L412" href="#L412">412</a><br /><a id="L413" href="#L413">413</a><br /><a id="L414" href="#L414">414</a><br /><a id="L415" href="#L415">415</a><br /><a id="L416" href="#L416">416</a><br /><a id="L417" href="#L417">417</a><br /><a id="L418" href="#L418">418</a><br /><a id="L419" href="#L419">419</a><br /><a id="L420" href="#L420">420</a><br /><a id="L421" href="#L421">421</a><br /><a id="L422" href="#L422">422</a><br /><a id="L423" href="#L423">423</a><br /><a id="L424" href="#L424">424</a><br /><a id="L425" href="#L425">425</a><br /><a id="L426" href="#L426">426</a><br /><a id="L427" href="#L427">427</a><br /><a id="L428" href="#L428">428</a><br /><a id="L429" href="#L429">429</a><br /><a id="L430" href="#L430">430</a><br /><a id="L431" href="#L431">431</a><br /><a id="L432" href="#L432">432</a><br /><a id="L433" href="#L433">433</a><br /><a id="L434" href="#L434">434</a><br /><a id="L435" href="#L435">435</a><br /><a id="L436" href="#L436">436</a><br /><a id="L437" href="#L437">437</a><br /><a id="L438" href="#L438">438</a><br /><a id="L439" href="#L439">439</a><br /><a id="L440" href="#L440">440</a><br /><a id="L441" href="#L441">441</a><br /><a id="L442" href="#L442">442</a><br /><a id="L443" href="#L443">443</a><br /><a id="L444" href="#L444">444</a><br /><a id="L445" href="#L445">445</a><br /><a id="L446" href="#L446">446</a><br /><a id="L447" href="#L447">447</a><br /><a id="L448" href="#L448">448</a><br /><a id="L449" href="#L449">449</a><br /><a id="L450" href="#L450">450</a><br /><a id="L451" href="#L451">451</a><br /><a id="L452" href="#L452">452</a><br /><a id="L453" href="#L453">453</a><br /><a id="L454" href="#L454">454</a><br /><a id="L455" href="#L455">455</a><br /><a id="L456" href="#L456">456</a><br /><a id="L457" href="#L457">457</a><br /><a id="L458" href="#L458">458</a><br /><a id="L459" href="#L459">459</a><br /><a id="L460" href="#L460">460</a><br /><a id="L461" href="#L461">461</a><br /><a id="L462" href="#L462">462</a><br /><a id="L463" href="#L463">463</a><br /><a id="L464" href="#L464">464</a><br /><a id="L465" href="#L465">465</a><br /><a id="L466" href="#L466">466</a><br /><a id="L467" href="#L467">467</a><br /><a id="L468" href="#L468">468</a><br /><a id="L469" href="#L469">469</a><br /><a id="L470" href="#L470">470</a><br /><a id="L471" href="#L471">471</a><br /><a id="L472" href="#L472">472</a><br /><a id="L473" href="#L473">473</a><br /><a id="L474" href="#L474">474</a><br /><a id="L475" href="#L475">475</a><br /><a id="L476" href="#L476">476</a><br /><a id="L477" href="#L477">477</a><br /><a id="L478" href="#L478">478</a><br /><a id="L479" href="#L479">479</a><br /><a id="L480" href="#L480">480</a><br /><a id="L481" href="#L481">481</a><br /><a id="L482" href="#L482">482</a><br /><a id="L483" href="#L483">483</a><br /><a id="L484" href="#L484">484</a><br /><a id="L485" href="#L485">485</a><br /><a id="L486" href="#L486">486</a><br /><a id="L487" href="#L487">487</a><br /><a id="L488" href="#L488">488</a><br /><a id="L489" href="#L489">489</a><br /><a id="L490" href="#L490">490</a><br /><a id="L491" href="#L491">491</a><br /><a id="L492" href="#L492">492</a><br /><a id="L493" href="#L493">493</a><br /><a id="L494" href="#L494">494</a><br /><a id="L495" href="#L495">495</a><br /><a id="L496" href="#L496">496</a><br /><a id="L497" href="#L497">497</a><br /><a id="L498" href="#L498">498</a><br /><a id="L499" href="#L499">499</a><br /><a id="L500" href="#L500">500</a><br /><a id="L501" href="#L501">501</a><br /><a id="L502" href="#L502">502</a><br /><a id="L503" href="#L503">503</a><br /><a id="L504" href="#L504">504</a><br /><a id="L505" href="#L505">505</a><br /><a id="L506" href="#L506">506</a><br /><a id="L507" href="#L507">507</a><br /><a id="L508" href="#L508">508</a><br /><a id="L509" href="#L509">509</a><br /><a id="L510" href="#L510">510</a><br /><a id="L511" href="#L511">511</a><br /><a id="L512" href="#L512">512</a><br /><a id="L513" href="#L513">513</a><br /><a id="L514" href="#L514">514</a><br /><a id="L515" href="#L515">515</a><br /><a id="L516" href="#L516">516</a><br /><a id="L517" href="#L517">517</a><br /><a id="L518" href="#L518">518</a><br /><a id="L519" href="#L519">519</a><br /><a id="L520" href="#L520">520</a><br /><a id="L521" href="#L521">521</a><br /><a id="L522" href="#L522">522</a><br /><a id="L523" href="#L523">523</a><br /><a id="L524" href="#L524">524</a><br /><a id="L525" href="#L525">525</a><br /><a id="L526" href="#L526">526</a><br /><a id="L527" href="#L527">527</a><br /><a id="L528" href="#L528">528</a><br /><a id="L529" href="#L529">529</a><br /><a id="L530" href="#L530">530</a><br /><a id="L531" href="#L531">531</a><br /><a id="L532" href="#L532">532</a><br /><a id="L533" href="#L533">533</a><br /><a id="L534" href="#L534">534</a><br /><a id="L535" href="#L535">535</a><br /><a id="L536" href="#L536">536</a><br /><a id="L537" href="#L537">537</a><br /><a id="L538" href="#L538">538</a><br /><a id="L539" href="#L539">539</a><br /><a id="L540" href="#L540">540</a><br /><a id="L541" href="#L541">541</a><br /><a id="L542" href="#L542">542</a><br /><a id="L543" href="#L543">543</a><br /><a id="L544" href="#L544">544</a><br /><a id="L545" href="#L545">545</a><br /><a id="L546" href="#L546">546</a><br /><a id="L547" href="#L547">547</a><br /><a id="L548" href="#L548">548</a><br /><a id="L549" href="#L549">549</a><br /><a id="L550" href="#L550">550</a><br /><a id="L551" href="#L551">551</a><br /><a id="L552" href="#L552">552</a><br /><a id="L553" href="#L553">553</a><br /><a id="L554" href="#L554">554</a><br /><a id="L555" href="#L555">555</a><br /><a id="L556" href="#L556">556</a><br /><a id="L557" href="#L557">557</a><br /><a id="L558" href="#L558">558</a><br /><a id="L559" href="#L559">559</a><br /><a id="L560" href="#L560">560</a><br /><a id="L561" href="#L561">561</a><br /><a id="L562" href="#L562">562</a><br /><a id="L563" href="#L563">563</a><br /><a id="L564" href="#L564">564</a><br /><a id="L565" href="#L565">565</a><br /><a id="L566" href="#L566">566</a><br /><a id="L567" href="#L567">567</a><br /><a id="L568" href="#L568">568</a><br /><a id="L569" href="#L569">569</a><br /><a id="L570" href="#L570">570</a><br /><a id="L571" href="#L571">571</a><br /><a id="L572" href="#L572">572</a><br /><a id="L573" href="#L573">573</a><br /><a id="L574" href="#L574">574</a><br /><a id="L575" href="#L575">575</a><br /><a id="L576" href="#L576">576</a><br /><a id="L577" href="#L577">577</a><br /><a id="L578" href="#L578">578</a><br /><a id="L579" href="#L579">579</a><br /><a id="L580" href="#L580">580</a><br /><a id="L581" href="#L581">581</a><br /><a id="L582" href="#L582">582</a><br /><a id="L583" href="#L583">583</a><br /><a id="L584" href="#L584">584</a><br /><a id="L585" href="#L585">585</a><br /><a id="L586" href="#L586">586</a><br /><a id="L587" href="#L587">587</a><br /><a id="L588" href="#L588">588</a><br /><a id="L589" href="#L589">589</a><br /><a id="L590" href="#L590">590</a><br /><a id="L591" href="#L591">591</a><br /><a id="L592" href="#L592">592</a><br /><a id="L593" href="#L593">593</a><br /><a id="L594" href="#L594">594</a><br /><a id="L595" href="#L595">595</a><br /><a id="L596" href="#L596">596</a><br /><a id="L597" href="#L597">597</a><br /><a id="L598" href="#L598">598</a><br /><a id="L599" href="#L599">599</a><br /><a id="L600" href="#L600">600</a><br /><a id="L601" href="#L601">601</a><br /><a id="L602" href="#L602">602</a><br /><a id="L603" href="#L603">603</a><br /><a id="L604" href="#L604">604</a><br /><a id="L605" href="#L605">605</a><br /><a id="L606" href="#L606">606</a><br /><a id="L607" href="#L607">607</a><br /><a id="L608" href="#L608">608</a><br /><a id="L609" href="#L609">609</a><br /><a id="L610" href="#L610">610</a><br /><a id="L611" href="#L611">611</a><br /><a id="L612" href="#L612">612</a><br /><a id="L613" href="#L613">613</a><br /><a id="L614" href="#L614">614</a><br /><a id="L615" href="#L615">615</a><br /><a id="L616" href="#L616">616</a><br /><a id="L617" href="#L617">617</a><br /><a id="L618" href="#L618">618</a><br /><a id="L619" href="#L619">619</a><br /><a id="L620" href="#L620">620</a><br /><a id="L621" href="#L621">621</a><br /><a id="L622" href="#L622">622</a><br /><a id="L623" href="#L623">623</a><br /><a id="L624" href="#L624">624</a><br /><a id="L625" href="#L625">625</a><br /><a id="L626" href="#L626">626</a><br /><a id="L627" href="#L627">627</a><br /><a id="L628" href="#L628">628</a><br /><a id="L629" href="#L629">629</a><br /><a id="L630" href="#L630">630</a><br /><a id="L631" href="#L631">631</a><br /><a id="L632" href="#L632">632</a><br /><a id="L633" href="#L633">633</a><br /><a id="L634" href="#L634">634</a><br /><a id="L635" href="#L635">635</a><br /><a id="L636" href="#L636">636</a><br /><a id="L637" href="#L637">637</a><br /><a id="L638" href="#L638">638</a><br /><a id="L639" href="#L639">639</a><br /><a id="L640" href="#L640">640</a><br /><a id="L641" href="#L641">641</a><br /><a id="L642" href="#L642">642</a><br /><a id="L643" href="#L643">643</a><br /><a id="L644" href="#L644">644</a><br /><a id="L645" href="#L645">645</a><br /><a id="L646" href="#L646">646</a><br /><a id="L647" href="#L647">647</a><br /><a id="L648" href="#L648">648</a><br /><a id="L649" href="#L649">649</a><br /><a id="L650" href="#L650">650</a><br /><a id="L651" href="#L651">651</a><br /><a id="L652" href="#L652">652</a><br /><a id="L653" href="#L653">653</a><br /><a id="L654" href="#L654">654</a><br /><a id="L655" href="#L655">655</a><br /><a id="L656" href="#L656">656</a><br /><a id="L657" href="#L657">657</a><br /><a id="L658" href="#L658">658</a><br /><a id="L659" href="#L659">659</a><br /><a id="L660" href="#L660">660</a><br /><a id="L661" href="#L661">661</a><br /><a id="L662" href="#L662">662</a><br /><a id="L663" href="#L663">663</a><br /><a id="L664" href="#L664">664</a><br /><a id="L665" href="#L665">665</a><br /><a id="L666" href="#L666">666</a><br /><a id="L667" href="#L667">667</a><br /><a id="L668" href="#L668">668</a><br /><a id="L669" href="#L669">669</a><br /><a id="L670" href="#L670">670</a><br /><a id="L671" href="#L671">671</a><br /><a id="L672" href="#L672">672</a><br /><a id="L673" href="#L673">673</a><br /><a id="L674" href="#L674">674</a><br /><a id="L675" href="#L675">675</a><br /><a id="L676" href="#L676">676</a><br /><a id="L677" href="#L677">677</a><br /><a id="L678" href="#L678">678</a><br /><a id="L679" href="#L679">679</a><br /><a id="L680" href="#L680">680</a><br /><a id="L681" href="#L681">681</a><br /><a id="L682" href="#L682">682</a><br /><a id="L683" href="#L683">683</a><br /><a id="L684" href="#L684">684</a><br /><a id="L685" href="#L685">685</a><br /><a id="L686" href="#L686">686</a><br /><a id="L687" href="#L687">687</a><br /><a id="L688" href="#L688">688</a><br /><a id="L689" href="#L689">689</a><br /><a id="L690" href="#L690">690</a><br /><a id="L691" href="#L691">691</a><br /><a id="L692" href="#L692">692</a><br /><a id="L693" href="#L693">693</a><br /><a id="L694" href="#L694">694</a><br /><a id="L695" href="#L695">695</a><br /><a id="L696" href="#L696">696</a><br /><a id="L697" href="#L697">697</a><br /><a id="L698" href="#L698">698</a><br /><a id="L699" href="#L699">699</a><br /><a id="L700" href="#L700">700</a><br /><a id="L701" href="#L701">701</a><br /><a id="L702" href="#L702">702</a><br /><a id="L703" href="#L703">703</a><br /><a id="L704" href="#L704">704</a><br /><a id="L705" href="#L705">705</a><br /><a id="L706" href="#L706">706</a><br /><a id="L707" href="#L707">707</a><br /><a id="L708" href="#L708">708</a><br /><a id="L709" href="#L709">709</a><br /><a id="L710" href="#L710">710</a><br /><a id="L711" href="#L711">711</a><br /><a id="L712" href="#L712">712</a><br /><a id="L713" href="#L713">713</a><br /><a id="L714" href="#L714">714</a><br /><a id="L715" href="#L715">715</a><br /><a id="L716" href="#L716">716</a><br /><a id="L717" href="#L717">717</a><br /><a id="L718" href="#L718">718</a><br /><a id="L719" href="#L719">719</a><br /><a id="L720" href="#L720">720</a><br /><a id="L721" href="#L721">721</a><br /><a id="L722" href="#L722">722</a><br /><a id="L723" href="#L723">723</a><br /><a id="L724" href="#L724">724</a><br /><a id="L725" href="#L725">725</a><br /><a id="L726" href="#L726">726</a><br /><a id="L727" href="#L727">727</a><br /><a id="L728" href="#L728">728</a><br /><a id="L729" href="#L729">729</a><br /><a id="L730" href="#L730">730</a><br /><a id="L731" href="#L731">731</a><br /><a id="L732" href="#L732">732</a><br /><a id="L733" href="#L733">733</a><br /><a id="L734" href="#L734">734</a><br /><a id="L735" href="#L735">735</a><br /><a id="L736" href="#L736">736</a><br /><a id="L737" href="#L737">737</a><br /><a id="L738" href="#L738">738</a><br /><a id="L739" href="#L739">739</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="no-highlight">{\rtf1\adeflang1025\ansi\ansicpg1252\uc1\adeff1\deff0\stshfdbch31505\stshfloch31506\stshfhich31506\stshfbi0\deflang1053\deflangfe1053\themelang1053\themelangfe0\themelangcs0{\fonttbl{\f0\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f1\fbidi \fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f34\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria Math;}{\f37\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}{\flomajor\f31500\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbmajor\f31501\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhimajor\f31502\fbidi \froman\fcharset0\fprq2{\*\panose 02040503050406030204}Cambria;}
+{\fbimajor\f31503\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\flominor\f31504\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\fdbminor\f31505\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\fhiminor\f31506\fbidi \fswiss\fcharset0\fprq2{\*\panose 020f0502020204030204}Calibri;}
+{\fbiminor\f31507\fbidi \froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}{\f39\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\f40\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\f42\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\f43\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\f44\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\f45\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\f46\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\f47\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\f49\fbidi \fswiss\fcharset238\fprq2 Arial CE;}{\f50\fbidi \fswiss\fcharset204\fprq2 Arial Cyr;}
+{\f52\fbidi \fswiss\fcharset161\fprq2 Arial Greek;}{\f53\fbidi \fswiss\fcharset162\fprq2 Arial Tur;}{\f54\fbidi \fswiss\fcharset177\fprq2 Arial (Hebrew);}{\f55\fbidi \fswiss\fcharset178\fprq2 Arial (Arabic);}
+{\f56\fbidi \fswiss\fcharset186\fprq2 Arial Baltic;}{\f57\fbidi \fswiss\fcharset163\fprq2 Arial (Vietnamese);}{\f379\fbidi \froman\fcharset238\fprq2 Cambria Math CE;}{\f380\fbidi \froman\fcharset204\fprq2 Cambria Math Cyr;}
+{\f382\fbidi \froman\fcharset161\fprq2 Cambria Math Greek;}{\f383\fbidi \froman\fcharset162\fprq2 Cambria Math Tur;}{\f386\fbidi \froman\fcharset186\fprq2 Cambria Math Baltic;}{\f387\fbidi \froman\fcharset163\fprq2 Cambria Math (Vietnamese);}
+{\f409\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}{\f410\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}{\f412\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\f413\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}
+{\f416\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}{\f417\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}{\flomajor\f31508\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\flomajor\f31509\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\flomajor\f31511\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\flomajor\f31512\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\flomajor\f31513\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\flomajor\f31514\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\flomajor\f31515\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\flomajor\f31516\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fdbmajor\f31518\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fdbmajor\f31519\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\fdbmajor\f31521\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fdbmajor\f31522\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fdbmajor\f31523\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\fdbmajor\f31524\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fdbmajor\f31525\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fdbmajor\f31526\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\fhimajor\f31528\fbidi \froman\fcharset238\fprq2 Cambria CE;}{\fhimajor\f31529\fbidi \froman\fcharset204\fprq2 Cambria Cyr;}{\fhimajor\f31531\fbidi \froman\fcharset161\fprq2 Cambria Greek;}{\fhimajor\f31532\fbidi \froman\fcharset162\fprq2 Cambria Tur;}
+{\fhimajor\f31535\fbidi \froman\fcharset186\fprq2 Cambria Baltic;}{\fhimajor\f31536\fbidi \froman\fcharset163\fprq2 Cambria (Vietnamese);}{\fbimajor\f31538\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fbimajor\f31539\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fbimajor\f31541\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fbimajor\f31542\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fbimajor\f31543\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fbimajor\f31544\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fbimajor\f31545\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fbimajor\f31546\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\flominor\f31548\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\flominor\f31549\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}
+{\flominor\f31551\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\flominor\f31552\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\flominor\f31553\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}
+{\flominor\f31554\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\flominor\f31555\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\flominor\f31556\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}
+{\fdbminor\f31558\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}{\fdbminor\f31559\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fdbminor\f31561\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}
+{\fdbminor\f31562\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}{\fdbminor\f31563\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fdbminor\f31564\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}
+{\fdbminor\f31565\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}{\fdbminor\f31566\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}{\fhiminor\f31568\fbidi \fswiss\fcharset238\fprq2 Calibri CE;}
+{\fhiminor\f31569\fbidi \fswiss\fcharset204\fprq2 Calibri Cyr;}{\fhiminor\f31571\fbidi \fswiss\fcharset161\fprq2 Calibri Greek;}{\fhiminor\f31572\fbidi \fswiss\fcharset162\fprq2 Calibri Tur;}
+{\fhiminor\f31575\fbidi \fswiss\fcharset186\fprq2 Calibri Baltic;}{\fhiminor\f31576\fbidi \fswiss\fcharset163\fprq2 Calibri (Vietnamese);}{\fbiminor\f31578\fbidi \froman\fcharset238\fprq2 Times New Roman CE;}
+{\fbiminor\f31579\fbidi \froman\fcharset204\fprq2 Times New Roman Cyr;}{\fbiminor\f31581\fbidi \froman\fcharset161\fprq2 Times New Roman Greek;}{\fbiminor\f31582\fbidi \froman\fcharset162\fprq2 Times New Roman Tur;}
+{\fbiminor\f31583\fbidi \froman\fcharset177\fprq2 Times New Roman (Hebrew);}{\fbiminor\f31584\fbidi \froman\fcharset178\fprq2 Times New Roman (Arabic);}{\fbiminor\f31585\fbidi \froman\fcharset186\fprq2 Times New Roman Baltic;}
+{\fbiminor\f31586\fbidi \froman\fcharset163\fprq2 Times New Roman (Vietnamese);}}{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;
+\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}{\*\defchp 
+\fs22\loch\af31506\hich\af31506\dbch\af31505 }{\*\defpap \ql \li0\ri0\sa200\sl276\slmult1\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 }\noqfpromote {\stylesheet{\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 
+\rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\f1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 \snext0 \sqformat \spriority0 Normal;}{\s1\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\outlinelevel0\rin0\lin0\itap0 
+\rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\f1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 \sbasedon0 \snext0 \slink15 \sqformat heading 1;}{
+\s2\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\outlinelevel1\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\f1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 \sbasedon0 \snext0 \slink16 \sqformat 
+heading 2;}{\s3\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\outlinelevel2\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\f1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 
+\sbasedon0 \snext0 \slink17 \sqformat heading 3;}{\*\cs10 \additive \sunhideused \spriority1 Default Paragraph Font;}{\*
+\ts11\tsrowd\trftsWidthB3\trpaddl108\trpaddr108\trpaddfl3\trpaddft3\trpaddfb3\trpaddfr3\trcbpat1\trcfpat1\tblind0\tblindtype3\tsvertalt\tsbrdrt\tsbrdrl\tsbrdrb\tsbrdrr\tsbrdrdgl\tsbrdrdgr\tsbrdrh\tsbrdrv \ql \li0\ri0\sa200\sl276\slmult1
+\widctlpar\wrapdefault\aspalpha\aspnum\faauto\adjustright\rin0\lin0\itap0 \rtlch\fcs1 \af0\afs22\alang1025 \ltrch\fcs0 \fs22\lang1053\langfe1053\loch\f31506\hich\af31506\dbch\af31505\cgrid\langnp1053\langfenp1053 \snext11 \ssemihidden \sunhideused 
+Normal Table;}{\*\cs15 \additive \rtlch\fcs1 \ab\af0\afs32 \ltrch\fcs0 \b\fs32\lang1033\langfe0\kerning32\loch\f31502\hich\af31502\dbch\af31501\langnp1033\langfenp0 \sbasedon10 \slink1 \slocked \spriority9 Rubrik 1 Char;}{\*\cs16 \additive \rtlch\fcs1 
+\ab\ai\af0\afs28 \ltrch\fcs0 \b\i\fs28\lang1033\langfe0\loch\f31502\hich\af31502\dbch\af31501\langnp1033\langfenp0 \sbasedon10 \slink2 \slocked \ssemihidden \spriority9 Rubrik 2 Char;}{\*\cs17 \additive \rtlch\fcs1 \ab\af0\afs26 \ltrch\fcs0 
+\b\fs26\lang1033\langfe0\loch\f31502\hich\af31502\dbch\af31501\langnp1033\langfenp0 \sbasedon10 \slink3 \slocked \ssemihidden \spriority9 Rubrik 3 Char;}}{\*\pgptbl {\pgp\ipgp0\itap0\li0\ri0\sb0\sa0}}{\*\rsidtbl \rsid488565\rsid490522\rsid532764
+\rsid543320\rsid556337\rsid617158\rsid750573\rsid876335\rsid930020\rsid940090\rsid1187219\rsid1190356\rsid1191142\rsid1202844\rsid1258951\rsid1261441\rsid1445386\rsid1706832\rsid1770393\rsid2060511\rsid2112235\rsid2112392\rsid2181632\rsid2260548
+\rsid2427760\rsid2443070\rsid2446079\rsid2641133\rsid2894529\rsid3036029\rsid3347855\rsid3547548\rsid3819803\rsid4460640\rsid4538894\rsid4542728\rsid4602097\rsid4675069\rsid4679726\rsid4981561\rsid5332441\rsid5462095\rsid5525810\rsid5712409\rsid6228168
+\rsid6309374\rsid6309794\rsid6362316\rsid6436444\rsid6499600\rsid6569652\rsid6633554\rsid6650094\rsid6845226\rsid6950962\rsid7041439\rsid7089377\rsid7167315\rsid7421144\rsid7616262\rsid7683346\rsid7807046\rsid7949161\rsid7952569\rsid8000484\rsid8001475
+\rsid8090374\rsid8137115\rsid8527940\rsid8541195\rsid8593145\rsid8799536\rsid8983788\rsid8999377\rsid9002512\rsid9047914\rsid9125746\rsid9175287\rsid9314635\rsid9515749\rsid9530285\rsid9907738\rsid10245607\rsid10426263\rsid10496751\rsid10631094
+\rsid11078728\rsid11279197\rsid11297517\rsid12068517\rsid12087407\rsid12156867\rsid12530193\rsid12595779\rsid12732549\rsid12788235\rsid12854747\rsid12982360\rsid12986669\rsid12992185\rsid13174672\rsid13180120\rsid13250408\rsid13316938\rsid13319718
+\rsid13336457\rsid13714332\rsid13915886\rsid14095979\rsid14102810\rsid14169293\rsid14295269\rsid14370947\rsid14892228\rsid15031452\rsid15620535\rsid15821976\rsid16147558\rsid16405367\rsid16470149\rsid16610750\rsid16655487\rsid16724586}{\mmathPr
+\mmathFont34\mbrkBin0\mbrkBinSub0\msmallFrac0\mdispDef1\mlMargin0\mrMargin0\mdefJc1\mwrapIndent1440\mintLim0\mnaryLim1}{\info{\operator Bo Haglund}{\creatim\yr2012\mo10\dy21\hr14\min22}{\revtim\yr2014\mo5\dy10\hr22\min31}{\version102}{\edmins831}
+{\nofpages10}{\nofwords3136}{\nofchars16621}{\nofcharsws19718}{\vern49167}}{\*\xmlnstbl {\xmlns1 http://schemas.microsoft.com/office/word/2003/wordml}}\paperw12240\paperh15840\margl1417\margr1417\margt1417\margb1417\gutter0\ltrsect 
+\widowctrl\ftnbj\aenddoc\hyphhotz425\trackmoves0\trackformatting1\donotembedsysfont0\relyonvml0\donotembedlingdata1\grfdocevents0\validatexml0\showplaceholdtext0\ignoremixedcontent0\saveinvalidxml0\showxmlerrors0\horzdoc\dghspace120\dgvspace120
+\dghorigin1701\dgvorigin1984\dghshow0\dgvshow3\jcompress\viewkind1\viewscale100\rsidroot4538894 \fet0{\*\wgrffmtfilter 2450}\ilfomacatclnup0\ltrpar \sectd \ltrsect\linex0\sectdefaultcl\sftnbj {\*\pnseclvl1\pnucrm\pnstart1\pnindent720\pnhang {\pntxta .}}
+{\*\pnseclvl2\pnucltr\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl3\pndec\pnstart1\pnindent720\pnhang {\pntxta .}}{\*\pnseclvl4\pnlcltr\pnstart1\pnindent720\pnhang {\pntxta )}}{\*\pnseclvl5\pndec\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}
+{\*\pnseclvl6\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl7\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl8\pnlcltr\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}{\*\pnseclvl9
+\pnlcrm\pnstart1\pnindent720\pnhang {\pntxtb (}{\pntxta )}}\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 
+\fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Bo Haglund, Bob Richardson
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12992185 \hich\af31506\dbch\af31505\loch\f31506 Rev T, 2014-03-01}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 Latest DLL issue with this description is available at }{\field\flddirty{\*\fldinst {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+HYPERLINK &#34;http://www.bahnhof.se/wb758135/&#34;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\lang1053\langfe1053\langnp1053\insrsid4538894\charrsid13915886 {\*\datafield 
+00d0c9ea79f9bace118c8200aa004ba90b0200000003000000e0c9ea79f9bace118c8200aa004ba90b5800000068007400740070003a002f002f007700770077002e006200610068006e0068006f0066002e00730065002f00770062003700350038003100330035002f000000795881f43b1d7f48af2c825dc48527630000
+0000a5ab00000000004b00000079000000000075000b00006d000000000b0100000000}}}{\fldrslt {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\ul\cf2\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 http://www.bahnhof.se/wb758135/}}}\sectd \ltrsect
+\linex0\sectdefaultcl\sftnbj {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par 
+\par 
+\par }\pard\plain \ltrpar\s2\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel1\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 
+\ab\af1 \ltrch\fcs0 \b\f31506\ul\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Short description of the DLL functions supported in D}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\ul\cf1\insrsid10496751 
+\hich\af31506\dbch\af31505\loch\f31506 ouble Dummy Problem Solver 2.5}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\ul\cf1\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\s3\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel2\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 
+\ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Callable functions
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall SolveBoard(struct deal, int target,  
+\par \hich\af31506\dbch\af31505\loch\f31506     int solutions,  int mode, struct futureTricks *futp, int threadIndex);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall SolveBoardPBN(struct dealPBN, int target,  
+\par \hich\af31506\dbch\af31505\loch\f31506   \hich\af31506\dbch\af31505\loch\f31506   int solutions,  int mode, struct futureTricks *futp, int threadIndex);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall CalcDDtable(struct ddTableDeal tableDeal, \line     struct ddTableResults * tablep);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall CalcDDt\hich\af31506\dbch\af31505\loch\f31506 ablePBN(struct ddTableDealPBN\line     tableDealPBN, struct ddTableResults * tablep);}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid488565 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid488565 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid488565 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 extern \&#39;93\loch\f31506 \hich\f31506 C\&#39;94\loch\f31506 
+__declspec(dllimport) int __stdcall }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid488565\charrsid488565 \hich\af37\dbch\af31505\loch\f37 CalcAllTables(struct ddTableDeals *dealsp,}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid488565 \line }{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f37\cf1\insrsid488565\charrsid488565 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid488565 \hich\af37\dbch\af31505\loch\f37    int mode, int trumpFilter[5], }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid488565\charrsid488565 \hich\af37\dbch\af31505\loch\f37 struct ddTables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid8983788 \hich\af37\dbch\af31505\loch\f37 Res *resp, }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6362316 
+\hich\af37\dbch\af31505\loch\f37 struct allParResults}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid488565\charrsid488565 \hich\af37\dbch\af31505\loch\f37 *presp);}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid488565 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid7041439 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439\charrsid7041439 \hich\af37\dbch\af31505\loch\f37 \hich\f37 extern \&#39;93\loch\f37 \hich\f37 C\&#39;94\loch\f37 
+__declspec(dllimport) int __stdcall CalcAllTables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439 \hich\af37\dbch\af31505\loch\f37 PBN}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439\charrsid7041439 \hich\af37\dbch\af31505\loch\f37 
+(struct ddTableDeals}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439 \hich\af37\dbch\af31505\loch\f37 PBN\line     *dealsp,}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6362316 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid7041439\charrsid7041439 \hich\af37\dbch\af31505\loch\f37 int mode, int trumpFilter[5], struct ddTablesRes *resp, }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid8983788 
+\par \hich\af37\dbch\af31505\loch\f37     }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439\charrsid7041439 \hich\af37\dbch\af31505\loch\f37 struct allParResults *presp);}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7041439\charrsid488565 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall SolveAll\hich\af31506\dbch\af31505\loch\f31506 Boards(struct boardsPBN *bop,
+\par \hich\af31506\dbch\af31505\loch\f31506     struct solvedBoards *solvedp); }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12986669 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12992185 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid12992185 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12992185\charrsid12992185 \hich\af37\dbch\af31505\loch\f37 extern &#34;C&#34; __declspec(dllimport) int __stdcall SolveAll}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12992185 \hich\af37\dbch\af31505\loch\f37 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13336457 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12992185\charrsid12992185 
+\hich\af37\dbch\af31505\loch\f37 (struct boardsPBN *bop,
+\par \hich\af37\dbch\af31505\loch\f37     struct solvedBoards *}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12992185 \hich\af37\dbch\af31505\loch\f37 solved, int chunkSize}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12992185\charrsid12992185 
+\hich\af37\dbch\af31505\loch\f37 );}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12992185\charrsid13915886 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12986669\charrsid13915886 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid12986669 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12986669\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+extern &#34;C&#34; __declspec(dllimport) int __stdcall CalcPar(struct ddTableDeal tableDeal, int vulnerable, struct ddTableResults * tablep, struct parResults *presp);
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 extern &#34;C&#34; __declspec(dllimport) int __stdcall CalcParPBN(struct ddTableDealPBN tableDealPBN, 
+\par \hich\af31506\dbch\af31505\loch\f31506   struct ddTableR}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2894529 \hich\af31506\dbch\af31505\loch\f31506 esults * tablep, int vulnerable}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid12986669\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 , struct parResults *presp);}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506             
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12986669\charrsid13915886 
+\par }\pard\plain \ltrpar\s3\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel2\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 
+\ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 SolveBoard
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 SolveBoard is threa}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4542728\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 d-safe, so several threads }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 can call SolveBoard in parallel.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4538894\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  The actual}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid4542728\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  maximum number is configured at initial start-up, this number is maximum 16. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Before SolveBoard can be called, a structure of type &#34;futureTricks&#34; must be declared. 
+\par 
+\par }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 SolveBoard}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ returns a status integer, &#34;no fault&#34; means the DLL supplies the trick data in\hich\af31506\dbch\af31505\loch\f31506  the &#34;futureTricks&#34; type structure.\line Status codes:   
+\par \hich\af31506\dbch\af31505\loch\f31506    1=No fault, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -1=Unknown fault, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -2=No of cards = 0, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -3=target &gt; Number of tricks left,                         
+\par \hich\af31506\dbch\af31505\loch\f31506   -4=Duplicated cards, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -5=target &lt; -1, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -7=target &gt;13, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -8=solutions &lt; 1, 
+\par \hich\af31506\dbch\af31505\loch\f31506   -9=solutions &gt; 3, 
+\par \hich\af31506\dbch\af31505\loch\f31506 -10=No of cards &gt; 52
+\par \hich\af31506\dbch\af31505\loch\f31506 -11=Not used
+\par \hich\af31506\dbch\af31505\loch\f31506 -12=Suit or rank value out of range for deal.currentTrickSuit or deal.currentTrickRank.
+\par \hich\af31506\dbch\af31505\loch\f31506 -13=Card already played in the current trick is also defined as a remaining card to play.
+\par \hich\af31506\dbch\af31505\loch\f31506 -14=Wrong number of remaining cards for a hand.
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4538894\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 -15=threadIndex &lt; 0 or &gt;=noOfThreads, noOfThreads is the configured maximum number of threads}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 .\line \hich\af31506\dbch\af31505\loch\f31506   \line \hich\f31506 Structure \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 deal}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\loch\f31506  defines all data needed to describe the deal to be analyzed.
+\par \hich\af31506\dbch\af31505\loch\f31506 struct deal \{}{\rtlch\fcs1 \af0 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506    int trump;   /\hich\af31506\dbch\af31505\loch\f31506 
+* I.e. which suit that is trump or if contract is NT, Spades=0, Hearts=1, Diamonds=2, Clubs=3,  NT=4 */}{\rtlch\fcs1 \af0 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506    int first;      /* 0-3, 0=North, 1=East, 2=South, 3=West , Leading hand for the trick.*/}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par \hich\af31506\dbch\af31505\loch\f31506     }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 int currentTrickSuit[3];  /* 0-2 for up to 3 cards in \hich\af31506\dbch\af31505\loch\f31506 
+the order played */
+\par \hich\af31506\dbch\af31505\loch\f31506    int currentTrickRank[3];  /* 2-14 for up to 3 cards}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6436444 \hich\af31506\dbch\af31505\loch\f31506 . Suits and ranks set to 0 otherwise.}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  */}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6436444\charrsid6436444 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506    unsigned int remainCards[4][4]; /* 1}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\super\insrsid6650094\charrsid13915886 
+\hich\af31506\dbch\af31505\loch\f31506 st}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  index hand (0-3), 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 nd}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ index suit (0-3), values as bitstring of ranks bit 0=0, bit 1=0, bit 2=rank 2\hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 , \&#39;85\&#39;85\&#39;85\loch\f31506 . bit 14=rank 14, bit 15=0}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+for cards remaining after already played cards (cards already played to the current trick are not included in this bitstring).  \line  The decimal value for a card then range between 4 (=rank 2) and 16384  (Ace=rank 14). */}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \}\hich\af31506\dbch\af31505\loch\f31506 ;}{\rtlch\fcs1 \af0 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Parameter \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 target}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\loch\f31506  is the number of tricks to be won by the side to play, -1 means that the program}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 shall find the }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 maximum number. For equivalent }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 cards only the highest is returned. 
+\par \line \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Parameter \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 solutions}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\hich\af31506\dbch\af31505\loch\f31506  defines how many card solutions that SolveBoard must return:
+\par \hich\af31506\dbch\af31505\loch\f31506   target=1-13, solutions=1:  Returns only one of the cards. Its returned score is the same as target when}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8137115 \hich\af31506\dbch\af31505\loch\f31506  }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 target or higher tricks can be won. Otherwise, score \hich\f31506 \endash \loch\f31506 1 is returned if target cannot be 
+\hich\af31506\dbch\af31505\loch\f31506 reached, or score 0 if no tricks can be won. \line   target=-1, solutions=1:  Returns only one of the optimum cards and its score.
+\par \hich\af31506\dbch\af31505\loch\f31506   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 target=0, solutions=1:  Returns only one of the cards legal to play with score set to 0.}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \line \hich\af31506\dbch\af31505\loch\f31506   target 1-13, solutions=2:  Return all\hich\af31506\dbch\af31505\loch\f31506 
+ cards meeting target. Their returned scores are the same as target when target or higher tricks can be won. Otherwise, only one card is returned with score \hich\f31506 \endash \loch\f31506 
+1 if target cannot be reached, or score 0 for all cards legal to play if no tricks can be won.\line   \hich\af31506\dbch\af31505\loch\f31506 t\hich\af31506\dbch\af31505\loch\f31506 arget \hich\f31506 \endash \loch\f31506 
+1, solutions=2:  Return all optimum cards with their scores.
+\par \hich\af31506\dbch\af31505\loch\f31506   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 target=0, solutions=2:  Return all cards legal to play with scores set to 0}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf6\insrsid6650094\charrsid13915886 .}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \line \hich\af31506\dbch\af31505\loch\f31506 
+  target irrelevant, solutions=3:  Return all cards that can be legally played w}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8137115 \hich\af31506\dbch\af31505\loch\f31506 ith their scores in descendin\hich\af31506\dbch\af31505\loch\f31506 g }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 order.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Parameter \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 mode}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\loch\f31506  defines the DLL mode of operation.\line 
+  mode=0:  Do not search to find the score if the hand to play has only one card, including its equivalents, to play. Score is set to \hich\f31506 \endash \loch\f31506 2 for this card, indicating that there are no alternative c
+\hich\af31506\dbch\af31505\loch\f31506 ards. If there are multiple choices for cards to play, search is done to find the score. This mode is very fast but you don\hich\f31506 \rquote \loch\f31506 t}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8137115 
+\hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid8137115 \hich\af37\dbch\af31505\loch\f37 a}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid8137115\charrsid8137115 \hich\af37\dbch\af31505\loch\f37 
+lways search to find the score. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par \hich\af31506\dbch\af31505\loch\f31506   mode=1:  Always }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 search to find the score. Even when the hand to play has only one card,  with
+\hich\af31506\dbch\af31505\loch\f31506 
+ possible equivalents, to play.  For both mode=0 and mode=1: If the preceding SolveBoard call had the same trump suit and the same deal, except for deal.first, then the transposition table contents is reused from the preceding SolveBoard call. Setting mod
+\hich\af31506\dbch\af31505\loch\f31506 e\hich\af31506\dbch\af31505\loch\f31506 =2 is no longer needed in this case, but can still be done for backwards compatibility.\line 
+  mode=2:  As for mode=1, but the transposition table contents is reused from the preceding SolveBoard call. It is the responsibility of the programmer using the DLL t\hich\af31506\dbch\af31505\loch\f31506 o\hich\af31506\dbch\af31505\loch\f31506 
+ ensure that reusing the table is safe in the actual situation. Example: Deal is the same, except for deal.first. Trump suit is the same. 
+\par }\pard \ltrpar\ql \fi720\li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 1}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 st}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ call:  SolveBoard(deal, -1, 1, 1, &amp;fut, 0),  deal.first=1, i.e. East leads.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  \tab 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 nd}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  call:  SolveBoard(deal, -1, 1, 
+\hich\af31506\dbch\af31505\loch\f31506 2, &amp;fut, 0),  deal.first=2, i.e. South leads.
+\par \hich\af31506\dbch\af31505\loch\f31506  \tab 3rd call:  SolveBoard(deal, -1, 1, 2, &amp;fut, 0),  deal.first=3, i.e. West leads. 
+\par }\pard \ltrpar\ql \fi720\li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+4th call:  SolveBoard(deal, -1, 1, 2, &amp;fut, 0),  deal.first=0, i.e. North leads.   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 futureTricks}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\hich\af31506\dbch\af31505\loch\f31506  \{ /* The DLL provides \hich\af31506\dbch\af31505\loch\f31506 the score (number of tricks) that can be won by the card to play defined by its suit and rank. Array of all alternative cards. */}{\rtlch\fcs1 \af0 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506   int nodes;     /* Number of searched nodes */
+\par \hich\af31506\dbch\af31505\loch\f31506   int cards;         /*  No of alternative cards  */}{\rtlch\fcs1 \af0 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506   int suit[13];         \hich\af31506\dbch\af31505\loch\f31506 /* 0=Spades, 1=Hearts, 2=Diamonds, 3=Clubs */
+\par \hich\af31506\dbch\af31505\loch\f31506   int rank[13];        /* 2-14 for 2 through Ace *}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 / 
+\par \hich\af31506\dbch\af31505\loch\f31506   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 
+int equals[13];        /* Bitstring of ranks for equivalent lower rank cards. The decimal value range between 4 (=2) and 8192 (King=rank 13).  When there are several \&#39;94\loch\f31506 \hich\f31506 equals\&#39;94\loch\f31506 \hich\f31506 
+, the value is the sum of each \&#39;94\loch\f31506 \hich\f31506 equal\&#39;94\loch\f31506 . *}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 /}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506   int score[13];     /* -1 indicates th\hich\af31506\dbch\af31505\loch\f31506 at target was not reached, otherwise target or max numbe of tricks */}{\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \}\hich\af31506\dbch\af31505\loch\f31506  ; 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Parameter \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 threadIndex}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\loch\f31506  defines the identity of the thread used when calling SolveBoard.
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16470149\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 A configured maximum number of}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\hich\af31506\dbch\af31505\loch\f31506  threads can call SolveBoard in parallel, threadIndex must}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16470149\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  b\hich\af31506\dbch\af31505\loch\f31506 
+e an integer in the range 0..max number of threads - 1. This maximum number is configured at DLL initial start-up and cannot exceed 16.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\s3\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel2\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 
+\ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 SolveBoardPBN
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 In SolveBoardPBN the remaining cards in the deal information are given in PBN text
+\par \hich\af31506\dbch\af31505\loch\f31506 format (e.g. \line W:T5.K\hich\af31506\dbch\af31505\loch\f31506 
+4.652.A98542 K6.QJT976.QT7.Q6 432.A.AKJ93.JT73 AQJ987.8532.84.K) instead of using bits 2-14 in an integer array. Otherwise, SolveboardPBN is identical to SolveBoard.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct dealPBN \{
+\par \hich\af31506\dbch\af31505\loch\f31506    int trump; 
+\par \hich\af31506\dbch\af31505\loch\f31506    int first; 
+\par \hich\af31506\dbch\af31505\loch\f31506    int currentTrickSuit[3];  }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506    }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 int curre\hich\af31506\dbch\af31505\loch\f31506 ntTrickRank[3];  
+\par \hich\af31506\dbch\af31505\loch\f31506    char remainCards[80];   /* First character identifies the hand having the cards given first
+\par \hich\af31506\dbch\af31505\loch\f31506                                          in the string, then the cards of the other hands are given in a
+\par \tab \tab \tab \hich\af31506\dbch\af31505\loch\f31506      clock-wise order, see example \hich\af31506\dbch\af31505\loch\f31506 above. Null characters fill out
+\par \tab \tab \tab \hich\af31506\dbch\af31505\loch\f31506      the character array at the end. */ 
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;
+\par }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 CalcDDtable
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af0 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\s1\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel0\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 CalcDDtable }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid1770393 \hich\af31506\dbch\af31505\loch\f31506 calculates the double}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  dummy values of the initial 52 cards for all the 20 trump suit/declarer hand combinations.   
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\s1\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel0\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Before CalcDDtable can be called, a structure of type &#34; ddTableResults&#34; must be declared.
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \ab\af1 \ltrch\fcs0 
+\b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 CalcDDtable}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ returns a status integer, &#34;no fault&#34; means the DLL supplies the double dummy scores in the &#34;ddTableResults&#34; type structure.\line Status codes:   
+\par \hich\af31506\dbch\af31505\loch\f31506    1=No fault,
+\par \hich\af31506\dbch\af31505\loch\f31506    Other status codes are errors, with codes equal to SolveBoard status codes.   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Structure \&#39;94}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 
+\hich\af31506\dbch\af31505\loch\f31506 ddTableDeal}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94\loch\f31506  defines the dealt cards to be analyzed.}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct ddTableDeal \{
+\par \hich\af31506\dbch\af31505\loch\f31506   unsigned int cards[4][4];   /* 1}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 st}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  index is hand, 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 nd}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  index is suit, same coding as \hich\af31506\dbch\af31505\loch\f31506 for deal.remainCards for SolveBoard. */
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 struct }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 ddTableResults}
+{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  \{ /* For each combination trump suit / declarer hand, the DLL provides the double dummy score. */}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506   int resTable[5][4];\tab /* 1}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 st}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  index is trump (0=Spades, 1=Hearts, 2=Diamonds, 3=Clubs, 4=No T\hich\af31506\dbch\af31505\loch\f31506 rump 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\super\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 nd}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ index is declarer hand, 0=North, 1=East, 2=South, 3=West */
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;
+\par 
+\par 
+\par }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 CalcDDtablePBN}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par 
+\par }\pard\plain \ltrpar\s3\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel2\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+In CalcDDtablePBN the remaining cards in the deal information are given in PBN text format, see the description above for SolveBoardPBN. Otherwise, CalcDDtablePBN is \hich\af31506\dbch\af31505\loch\f31506 identical to CalcDDtable.
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct ddTableDealPBN \{
+\par \hich\af31506\dbch\af31505\loch\f31506   char cards[80];
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2112235 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f31506\cf1\insrsid2112235\charrsid7616262 \hich\af31506\dbch\af31505\loch\f31506 CalcAllTables
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393 \hich\af37\dbch\af31505\loch\f37 CallAllTables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid1770393 \hich\af37\dbch\af31505\loch\f37 calculates }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37 the double dummy values }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393 
+\hich\af37\dbch\af31505\loch\f37 of the }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37 trump suit/declarer hand combinations }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12068517 
+\hich\af37\dbch\af31505\loch\f37 for }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37 a number of }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13319718 \hich\af37\dbch\af31505\loch\f37 DD table}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37 s in parallel}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12068517 \hich\af37\dbch\af31505\loch\f37 . This increases}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10631094 \hich\af37\dbch\af31505\loch\f37 the speed}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 
+\hich\af37\dbch\af31505\loch\f37  compared to }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid4602097 \hich\af37\dbch\af31505\loch\f37 calculating}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37  the}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12068517 \hich\af37\dbch\af31505\loch\f37 se values}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37  using a }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid12068517 \hich\af37\dbch\af31505\loch\f37 CalcDDtable call }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 \hich\af37\dbch\af31505\loch\f37 for each }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13319718 
+\hich\af37\dbch\af31505\loch\f37 DD table}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393\charrsid1770393 .}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1770393 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9175287 
+\par \hich\af37\dbch\af31505\loch\f37 The maximum number of DD tables in a CallAllTables call depends on the number of strains (the number of }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37 5 }{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid9175287 \hich\af37\dbch\af31505\loch\f37 trump alternatives, any of th\hich\af37\dbch\af31505\loch\f37 
+e 4 suits and no trump) to be part of the DD calculations. If all 5 strains are included there are 20 declarer hand / strain combinations. The maximum number of boards that can be calculated in parallel is 200, so the maximum number}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14102810 \hich\af37\dbch\af31505\loch\f37 of DD tables that can b\hich\af37\dbch\af31505\loch\f37 e included in a CallAllTable call is 10.
+}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9175287 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 \hich\af37\dbch\af31505\loch\f37 At fewer strains the maximum number of DD tables in a call is higher:}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9175287 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 \hich\af37\dbch\af31505\loch\f37 4 strains maximum 12 DD tables
+\par \hich\af37\dbch\af31505\loch\f37 3 strains maximum 16}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228\charrsid14892228 \hich\af37\dbch\af31505\loch\f37  DD tables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 
+\par \hich\af37\dbch\af31505\loch\f37 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228\charrsid14892228 \hich\af37\dbch\af31505\loch\f37  strains maximum }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 \hich\af37\dbch\af31505\loch\f37 25}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228\charrsid14892228 \hich\af37\dbch\af31505\loch\f37  DD tables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 
+\par \hich\af37\dbch\af31505\loch\f37 1 strain}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228\charrsid14892228 \hich\af37\dbch\af31505\loch\f37  maximum }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 \hich\af37\dbch\af31505\loch\f37 50}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228\charrsid14892228 \hich\af37\dbch\af31505\loch\f37  DD tables}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14892228 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810\charrsid5525810 \hich\af37\dbch\af31505\loch\f37 Before Calc}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810 \hich\af37\dbch\af31505\loch\f37 AllT}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid5525810\charrsid5525810 \hich\af37\dbch\af31505\loch\f37 able}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810\charrsid5525810 
+\hich\af37\dbch\af31505\loch\f37  can be called, a st}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810 \hich\af37\dbch\af31505\loch\f37 ructure of type &#34;ddTable}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid15031452 \hich\af37\dbch\af31505\loch\f37 s
+}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810 \hich\af37\dbch\af31505\loch\f37 Res}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5525810\charrsid5525810 \hich\af37\dbch\af31505\loch\f37 &#34; must be declared.}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid5525810 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid6569652 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652\charrsid16610750 \hich\af37\dbch\af31505\loch\f37 CallAllTables}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid6569652\charrsid6569652 \hich\af37\dbch\af31505\loch\f37  returns a status integer, &#34;no fault&#34; means the DLL supplies the double dum}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid15031452 \hich\af37\dbch\af31505\loch\f37 
+my scores in the &#34;ddTablesRes}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652\charrsid6569652 \hich\af37\dbch\af31505\loch\f37 &#34; type structure.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5332441 \hich\af37\dbch\af31505\loch\f37 \hich\f37 
+ Its contained structure of type \&#39;93\loch\f37 \hich\f37 ddTableResults\&#39;94\loch\f37  is d\hich\af37\dbch\af31505\loch\f37 escribed for the function CalcDDtable.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid617158 \hich\af37\dbch\af31505\loch\f37 
+\hich\f37  The variable \&#39;93\loch\f37 \hich\f37 noOfBoards\&#39;94\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid15620535 \hich\af37\dbch\af31505\loch\f37 show}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid617158 \hich\af37\dbch\af31505\loch\f37 
+s the number of solved boards (max 200).}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid940090 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090\charrsid940090 \hich\af37\dbch\af31505\loch\f37 struct ddTablesRes \{}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid940090 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13319718 \hich\af37\dbch\af31505\loch\f37   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13319718\charrsid13319718 \hich\af37\dbch\af31505\loch\f37 int noOfBoards;}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid13319718\charrsid940090 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090\charrsid940090 \hich\af37\dbch\af31505\loch\f37   struct ddTableResults results[MAXNOOFBOARDS / }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12595779 \hich\af37\dbch\af31505\loch\f37 4}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f37\cf1\insrsid940090\charrsid940090 \hich\af37\dbch\af31505\loch\f37 ];
+\par \}\hich\af37\dbch\af31505\loch\f37 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid6569652 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5332441\charrsid6569652 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652\charrsid6569652 \hich\af37\dbch\af31505\loch\f37 Status codes:   
+\par \hich\af37\dbch\af31505\loch\f37    1=No fault,}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid8983788 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12156867 \hich\af37\dbch\af31505\loch\f37    -201=Error, all trump suits an}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid15620535 \hich\af37\dbch\af31505\loch\f37 d the no trump suit alternative}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12156867 \hich\af37\dbch\af31505\loch\f37  have been marked in the\line 
+       calling parameter trumpFilter to be left out (i.e. they have }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10631094 \hich\af37\dbch\af31505\loch\f37 all }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2181632 \hich\af37\dbch\af31505\loch\f37 
+been set to TRUE),}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6569652 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12087407 \hich\af37\dbch\af31505\loch\f37    -202=Error, too many DD tables in the call.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid6569652 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090 
+\par \hich\af37\dbch\af31505\loch\f37 \hich\f37 Structure \&#39;93}{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f37\cf1\insrsid940090\charrsid6228168 \hich\af37\dbch\af31505\loch\f37 ddTableDeals}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid940090 
+\loch\af37\dbch\af31505\hich\f37 \&#39;94\loch\f37  con\hich\af37\dbch\af31505\loch\f37 tains }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6228168 \hich\af37\dbch\af31505\loch\f37 up to }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6309794 
+\hich\af37\dbch\af31505\loch\f37 5}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6228168 \hich\af37\dbch\af31505\loch\f37 0 }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9125746 \hich\af37\dbch\af31505\loch\f37 DD table }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid6228168 \hich\af37\dbch\af31505\loch\f37 \hich\f37 deals, each in a structure \&#39;93\loch\f37 \hich\f37 ddTableDeal\&#39;94\loch\f37 , 
+\par \hich\af37\dbch\af31505\loch\f37 described for the function CalcDDtable.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid15620535 \hich\af37\dbch\af31505\loch\f37 \hich\f37  The actual number is set in the \&#39;93\loch\f37 \hich\f37 noOfTables\&#39;94\loch\f37 
+ parameter.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6228168 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid6633554 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554\charrsid6633554 \hich\af37\dbch\af31505\loch\f37 struct ddTableDeals \{}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid6633554 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9125746 \hich\af37\dbch\af31505\loch\f37   int noOfTables;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9125746\charrsid6633554 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554\charrsid6633554 \hich\af37\dbch\af31505\loch\f37   struct ddTableDeal deals[MAXNOOFBOARDS / }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6309794 \hich\af37\dbch\af31505\loch\f37 4}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid6633554\charrsid6633554 \hich\af37\dbch\af31505\loch\f37 ];
+\par \}\hich\af37\dbch\af31505\loch\f37 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6309794 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid532764 \hich\af37\dbch\af31505\loch\f37 \hich\f37 Parameter \&#39;93}{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f37\cf1\insrsid532764\charrsid12854747 \hich\af37\dbch\af31505\loch\f37 mode}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid532764 \loch\af37\dbch\af31505\hich\f37 \&#39;94\loch\f37  specifies whether or not par score and par contracts }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10631094 \hich\af37\dbch\af31505\loch\f37 wi}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid532764 \hich\af37\dbch\af31505\loch\f37 ll be calculated\line and if so, wh}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548 \hich\af37\dbch\af31505\loch\f37 ich sides that are vulnerable:\line -1}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid532764 \hich\af37\dbch\af31505\loch\f37 : }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548 \hich\af37\dbch\af31505\loch\f37    }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548\charrsid3547548 \hich\af37\dbch\af31505\loch\f37 
+no par calculation}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid3547548 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548\charrsid3547548 \hich\af37\dbch\af31505\loch\f37 0:\tab par calculation, vulnerability None
+\par \hich\af37\dbch\af31505\loch\f37 1:\tab par calculation, vulnerability All
+\par \hich\af37\dbch\af31505\loch\f37 2:\tab par calculation, \hich\af37\dbch\af31505\loch\f37 vulnerability NS}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548 \hich\af37\dbch\af31505\loch\f37  only}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid3547548\charrsid3547548 
+\par \hich\af37\dbch\af31505\loch\f37 3:\tab par calculation, vulnerability EW}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid3547548 \hich\af37\dbch\af31505\loch\f37  only
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12854747 \hich\af37\dbch\af31505\loch\f37 \hich\f37 The results of the par calculations are given in the structure \&#39;93\loch\f37 \hich\f37 allParResults\&#39;94,
+\par \hich\af37\dbch\af31505\loch\f37 which contains the results for all boards. Each board results are given\line \hich\f37 in structure \&#39;93\loch\f37 \hich\f37 parResults\&#39;94\loch\f37 , described fo\hich\af37\dbch\af31505\loch\f37 r the CalcPar function.
+
+\par 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid6633554 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554\charrsid6633554 \hich\af37\dbch\af31505\loch\f37 struct allParResults \{
+\par \hich\af37\dbch\af31505\loch\f37   struct parResults presults[MAXNOOFBOARDS / }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12595779 \hich\af37\dbch\af31505\loch\f37 4}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554\charrsid6633554 
+\hich\af37\dbch\af31505\loch\f37 ];
+\par \}\hich\af37\dbch\af31505\loch\f37 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6633554 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12854747 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12854747 \hich\af37\dbch\af31505\loch\f37 \hich\f37 Parameter \&#39;93}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\b\f37\cf1\insrsid12854747\charrsid7949161 \hich\af37\dbch\af31505\loch\f37 trumpFilter}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12854747 \loch\af37\dbch\af31505\hich\f37 \&#39;94\loch\f37  describes which, if any, of the trump suits or the no trump suit
+}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7949161 \line \hich\af37\dbch\af31505\loch\f37 alternatives that will be excluded from the calculations.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37 They are defined in the order Spades, Hearts, Diamonds, Clubs and No Trump}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid617158 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37 . E.g. setting trumpFilter to }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12982360 \{\hich\af37\dbch\af31505\loch\f37 FALSE, FALSE, TRUE, TRUE, TRUE\}
+ means that values will only be calculated for}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12982360 \hich\af37\dbch\af31505\loch\f37 
+the trump suits Spades and Hearts.
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid5712409 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f37\cf1\insrsid2260548\charrsid2260548 \hich\af37\dbch\af31505\loch\f37 CalcAllTablesPBN
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12982360 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 \hich\af37\dbch\af31505\loch\f37 As for CalcAllTab\hich\af37\dbch\af31505\loch\f37 les except that the deals are given in PBN format. The structure\line \hich\f37 \&#39;93\loch\f37 \hich\f37 
+ddTableDealPBN\&#39;94\loch\f37  is }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid15620535 \hich\af37\dbch\af31505\loch\f37 described}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 \hich\af37\dbch\af31505\loch\f37  for the CalcDDtablePBN }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14095979 \hich\af37\dbch\af31505\loch\f37 function.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 
+\par 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid2260548 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548\charrsid2260548 \hich\af37\dbch\af31505\loch\f37 struct ddTableDealsPBN \{}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid2260548 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1445386 \hich\af37\dbch\af31505\loch\f37   int noOfTables;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid1445386\charrsid2260548 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548\charrsid2260548 \hich\af37\dbch\af31505\loch\f37   struct ddTableDealPBN deals[MAXNOOFBOARDS / }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12595779 \hich\af37\dbch\af31505\loch\f37 4}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f37\cf1\insrsid2260548\charrsid2260548 \hich\af37\dbch\af31505\loch\f37 ];
+\par \}\hich\af37\dbch\af31505\loch\f37 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid14095979 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid2260548\charrsid12982360 
+\par }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 SolveAll}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid9907738 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 
+\b\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid7616262\charrsid7616262 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 A \&#39;93\loch\f31506 \hich\f31506 chunk\&#39;94}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16610750 \hich\af31506\dbch\af31505\loch\f31506 
+ is a collection of boards to be }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 solved by the same thread.
+\par \hich\af31506\dbch\af31505\loch\f31506 SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid9907738 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid7616262 \hich\af31506\dbch\af31505\loch\f31506  solves a}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16405367 \hich\af31506\dbch\af31505\loch\f31506  number of }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid16610750 \hich\af31506\dbch\af31505\loch\f31506 chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16405367 \hich\af31506\dbch\af31505\loch\f31506 
+s in parallel for increased performance compared to solve them sequentionally using a SolveBoard call for each board.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid7616262 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16405367 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16147558 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  is called with a buffer\hich\af31506\dbch\af31505\loch\f31506  containi}
+{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid7807046 \hich\af31506\dbch\af31505\loch\f31506 ng }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2443070 \hich\af31506\dbch\af31505\loch\f31506 board dat}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid7807046 \hich\af31506\dbch\af31505\loch\f31506 a }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2443070 \hich\af31506\dbch\af31505\loch\f31506 for a }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid7807046 
+\hich\af31506\dbch\af31505\loch\f31506 number of boards, maximum 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+00 boards per call. Each board is defined with the same input data as in SolveBoardPBN. The input data per board can be freely given independent of the settings for the other d}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 
+\hich\af31506\dbch\af31505\loch\f31506 eals. SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16147558 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s
+}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  use\hich\af31506\dbch\af31505\loch\f31506 s multi-thread calls to SolveBoardPBN for solving the buffered boards.}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid16147558 \hich\af31506\dbch\af31505\loch\f31506  The chunkSize}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506  parameter in the SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid16147558 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16147558 
+\hich\af31506\dbch\af31505\loch\f31506  call specifies how many boards that are allocated per thread.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct boardsPBN \{
+\par \hich\af31506\dbch\af31505\loch\f31506   int noOfBoards;
+\par \hich\af31506\dbch\af31505\loch\f31506   struct dealPBN deals[MAXNOOFBOARDS];
+\par \hich\af31506\dbch\af31505\loch\f31506   int target[MAXNOOFBOARDS];
+\par \hich\af31506\dbch\af31505\loch\f31506   int solutions[MAXNOOFBOARDS];
+\par \hich\af31506\dbch\af31505\loch\f31506   int mode[MAXNOOFBOARDS];
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 struct solvedBoards \{
+\par \hich\af31506\dbch\af31505\loch\f31506   int noOfBoards;
+\par \hich\af31506\dbch\af31505\loch\f31506   struct futureTricks solvedBoard[MAXNOOFBOARDS];
+\par \}\hich\af31506\dbch\af31505\loch\f31506 ;
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 In the SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13714332 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  call, the cards are coded in PBN text format usi
+\hich\af31506\dbch\af31505\loch\f31506 ng the dealPBN structure. The number of boards to be solved must be defined in the boardsPBN structure, the number must not}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid12595779 
+\hich\af31506\dbch\af31505\loch\f31506  exceed MAXNOOFBOARDS which is 2}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 00. In the returned information in struct solvedBoards,}{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid13714332 \hich\af31506\dbch\af31505\loch\f31506  the number of solved boards is}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  given. The fut
+\hich\af31506\dbch\af31505\loch\f31506 ureTricks information is provided for all solved boards with the same returned information per board as with SolveBoard. 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13714332 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid9002512 \hich\af31506\dbch\af31505\loch\f31506  returns 1 if the call succeeds. In case chu}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid3036029 \hich\af31506\dbch\af31505\loch\f31506 n}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid9002512 \hich\af31506\dbch\af31505\loch\f31506 kSize is set to less than 1, the error code -201}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid3036029 \hich\af31506\dbch\af31505\loch\f31506  is given}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid9002512 ,}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16610750 \hich\af31506\dbch\af31505\loch\f31506  otherwise }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 error\hich\af31506\dbch\af31505\loch\f31506  code}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16610750 
+\hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  identical to the SolveBoard}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid15821976 
+\hich\af31506\dbch\af31505\loch\f31506 PBN}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  error codes is given when there is a problem in the input information.}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid6650094 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13250408 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f37\cf1\insrsid13250408\charrsid13250408 \hich\af37\dbch\af31505\loch\f37 SolveAllBoards
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13250408 
+\par \hich\af37\dbch\af31505\loch\f37 SolveAllBoards gives the same results as calling Solve}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13336457 \hich\af37\dbch\af31505\loch\f37 All}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13250408 
+\hich\af37\dbch\af31505\loch\f37 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13336457 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13250408 \hich\af37\dbch\af31505\loch\f37 
+ with chunksize=1. SolveAllBoards is included to obtain DD\hich\af37\dbch\af31505\loch\f37 S backward compatibility. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13250408\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Note}{\rtlch\fcs1 \ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid10631094 \hich\af31506\dbch\af31505\loch\f31506 s on DDS use for simulations}
+{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 Setting parameter chunkSize to 1 in the call to }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 SolveAll}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid543320 \hich\af31506\dbch\af31505\loch\f31506 Chunk}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13336457 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  is optimal when th}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 e input boards are dissimilar. If however, a}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 djacent boards in the boards buffer are similar (same trump, very minor difference between ca}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 rds distribution between hands), then the }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 transp}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 osition table information can often}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  be reused. }{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 But it is then necessary that}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  these boards use }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8000484 \hich\af31506\dbch\af31505\loch\f31506 the same thread}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2427760 \hich\af31506\dbch\af31505\loch\f31506 . }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid8000484 \hich\af31506\dbch\af31505\loch\f31506 For \hich\af31506\dbch\af31505\loch\f31506 example, when the simulation aims to find out which hand is best as declarer, the boards can be grouped in pairs where }{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\cf1\insrsid2446079 \hich\af31506\dbch\af31505\loch\f31506 the two}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8000484 \hich\af31506\dbch\af31505\loch\f31506  board}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2446079 
+\hich\af31506\dbch\af31505\loch\f31506 s in the pair have}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid8000484 \hich\af31506\dbch\af31505\loch\f31506  different declarer }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4675069 
+\hich\af31506\dbch\af31505\loch\f31506 hand}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2446079 \hich\af31506\dbch\af31505\loch\f31506 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4675069 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f31506\cf1\insrsid8000484 \hich\af31506\dbch\af31505\loch\f31506 but otherwise are the same. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4675069 \hich\af31506\dbch\af31505\loch\f31506 
+In this case, chunkSize should be set to 2 for obtai\hich\af31506\dbch\af31505\loch\f31506 ning transposition table information reuse.
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid1191142 \hich\af31506\dbch\af31505\loch\f31506 In simulation}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid10631094 \hich\af31506\dbch\af31505\loch\f31506 s involving }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid1191142 \hich\af31506\dbch\af31505\loch\f31506 different d}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid14169293 \hich\af31506\dbch\af31505\loch\f31506 eclarer hand alternatives and}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid1191142 \hich\af31506\dbch\af31505\loch\f31506  different trump }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid16610750 \hich\af31506\dbch\af31505\loch\f31506 suit }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid1191142 
+\hich\af31506\dbch\af31505\loch\f31506 alternatives, usage of }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid7167315 \hich\af31506\dbch\af31505\loch\f31506 Calc}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid1191142 
+\hich\af31506\dbch\af31505\loch\f31506 AllTables }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2112392 \hich\af31506\dbch\af31505\loch\f31506 can be}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid1191142 \hich\af31506\dbch\af31505\loch\f31506 
+ a more }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid2112392 \hich\af31506\dbch\af31505\loch\f31506 convenient}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid1191142 \hich\af31506\dbch\af31505\loch\f31506  alternative}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid2060511 .}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13915886\charrsid13915886 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f31506\cf1\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 CalcPar
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid556337 \hich\af31506\dbch\af31505\loch\f31506 CalcPar c}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+alculates the par score and par contracts of a given deal.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid750573 \hich\af31506\dbch\af31505\loch\f31506 
+ It also includes calculation and presentation of the double dummy values table otherwise calculated by the CalcDDtable function, since this table is a prerequisite for the par calculations. Thus th\hich\af31506\dbch\af31505\loch\f31506 
+ere is no need to make a CalcDDtable call before calling CalcPar. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13915886\charrsid13915886 \line 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid13915886 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Before Calc}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid7683346 \hich\af31506\dbch\af31505\loch\f31506 Par}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12530193 \hich\af31506\dbch\af31505\loch\f31506  can be called, }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13174672 
+\hich\af31506\dbch\af31505\loch\f31506 a }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 structure of }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13174672 
+\hich\af31506\dbch\af31505\loch\f31506 each }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 type &#34; ddTableResults&#34; }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12530193 
+\hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 and \&#39;93\loch\f31506 \hich\f31506 parResults\&#39;94\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 must be declared.
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12530193 \hich\af31506\dbch\af31505\loch\f31506 CalcPar}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+ returns a status integer, &#34;no fault&#34; means the DLL supplies the double d\hich\af31506\dbch\af31505\loch\f31506 ummy scores in the &#34;ddTableResults&#34; type structure}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12530193 
+\hich\af31506\dbch\af31505\loch\f31506 \hich\f31506  and the par results in the \&#39;93\loch\f31506 \hich\f31506 parResults\&#39;94\loch\f31506  structure.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid14295269 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Calling CalcPar with the structure of type \&#39;93\loch\f31506 \hich\f31506 ddTableDeal\&#39;94\loch\f31506 
+ is done in the same way as for calling CalcDDtable.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid8527940 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid14295269\charrsid13915886 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Status codes:   
+\par \hich\af31506\dbch\af31505\loch\f31506    1=No fault,
+\par \hich\af31506\dbch\af31505\loch\f31506    Other sta\hich\af31506\dbch\af31505\loch\f31506 tus codes are errors, with codes equal to SolveBoard status codes. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1190356 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1258951 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1190356 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Parameter \&#39;93}{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f31506\insrsid1261441 \hich\af31506\dbch\af31505\loch\f31506 vulnerable}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f31506\insrsid1190356 \loch\af31506\dbch\af31505\hich\f31506 \&#39;94}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid7952569 \hich\af31506\dbch\af31505\loch\f31506  is set according to:}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1190356 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid7952569 \hich\af31506\dbch\af31505\loch\f31506 0 = None
+\par \hich\af31506\dbch\af31505\loch\f31506 1 = Both sides
+\par \hich\af31506\dbch\af31505\loch\f31506 2 = North / South side vulnerable
+\par \hich\af31506\dbch\af31505\loch\f31506 3 = East / West side vulnerable
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1258951 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid5462095 \hich\af31506\dbch\af31505\loch\f31506 The structure t}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid12854747 \hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 ypes \&#39;93\loch\f31506 \hich\f31506 
+ddTableDeal\&#39;94\loch\f31506 \hich\f31506  and \&#39;93\loch\f31506 ddTableR}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid5462095 \hich\af31506\dbch\af31505\loch\f31506 esult\hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 s\&#39;94\loch\f31506 
+ are described for the function CalcDDtable.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid5462095 \line \hich\af31506\dbch\af31505\loch\f31506 
+\hich\f31506 The \&#39;93\loch\f31506 \hich\f31506 parResults\&#39;94\loch\f31506  structure type }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid8799536 \hich\af31506\dbch\af31505\loch\f31506 includes the par score and the par contracts results returned by }{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1190356 \hich\af31506\dbch\af31505\loch\f31506 the call to CalcPar:
+\par 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid1190356 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid1190356\charrsid1190356 \hich\af37\dbch\af31505\loch\f37 struct parResults \{
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid8541195 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid8541195 \hich\af37\dbch\af31505\loch\f37   char parScore[2][16];\tab /* index = 0 is from NS view and index =1 is 
+\hich\af37\dbch\af31505\loch\f37 from EW view. */}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid1190356\charrsid1190356 
+\par \hich\af37\dbch\af31505\loch\f37   char parContractsString[2][128];}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid8541195 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid8541195\charrsid1190356 \hich\af37\dbch\af31505\loch\f37 
+/* index = 0 is NS view and index = 1 is EW view. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid8541195 \hich\af37\dbch\af31505\loch\f37 \hich\f37 By \&#39;93\loch\f37 \hich\f37 view\&#39;94\loch\f37  is
+\par }\pard \ltrpar\ql \fi720\li2160\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin2160\itap0\pararsid9314635 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid8541195 \hich\af37\dbch\af31505\loch\f37        here meant which side that starts the bidding. }{\rtlch\fcs1 
+\af1 \ltrch\fcs0 \f37\insrsid8541195\charrsid1190356 \hich\af37\dbch\af31505\loch\f37 */}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid1190356\charrsid1190356 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid1190356 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid1190356\charrsid1190356 \}\hich\af37\dbch\af31505\loch\f37 ;}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid8799536 
+\hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid1187219 
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid11297517 \hich\af31506\dbch\af31505\loch\f31506 Par score is give}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid930020 \hich\af31506\dbch\af31505\loch\f31506 n as a text string, e.g NS -460. NS lost 460}{
+\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9314635 \hich\af31506\dbch\af31505\loch\f31506  points.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13915886\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid6650094 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9314635 \hich\af31506\dbch\af31505\loch\f31506 All par contracts }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9515749 \hich\af31506\dbch\af31505\loch\f31506 for different suits }{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\insrsid9314635 \hich\af31506\dbch\af31505\loch\f31506 are listed with comma separating }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9515749 \hich\af31506\dbch\af31505\loch\f31506 the }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9314635 
+\hich\af31506\dbch\af31505\loch\f31506 suits.\line Possible different trick levels of par score contracts are enumerated in the contract description, e.g the possible trick levels }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid930020 
+\hich\af31506\dbch\af31505\loch\f31506 3, }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9314635 \hich\af31506\dbch\af31505\loch\f31506 4 and 5 in }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid13180120 \hich\af31506\dbch\af31505\loch\f31506 No trumps, are}
+{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid930020 \hich\af31506\dbch\af31505\loch\f31506  given as 345N}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid9314635 .
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid3347855 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid930020 \hich\af31506\dbch\af31505\loch\f31506 Example of par contracts in different suits:
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid4679726\charrsid4679726 \hich\af37\dbch\af31505\loch\f37 NS:NS 23S,NS 23H}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid4679726 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid930020 \hich\af37\dbch\af31505\loch\f37 This is from the NS view. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid4679726 \hich\af37\dbch\af31505\loch\f37 North}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid930020 
+\hich\af37\dbch\af31505\loch\f37  and }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid4679726 \hich\af37\dbch\af31505\loch\f37 South}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid930020 \hich\af37\dbch\af31505\loch\f37  as declarer make 2 }{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\insrsid3347855 \hich\af37\dbch\af31505\loch\f37 or 3 }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749 \hich\af37\dbch\af31505\loch\f37 Spades and }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid930020 \hich\af37\dbch\af31505\loch\f37 Hearts}
+{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855 \hich\af37\dbch\af31505\loch\f37  contracts, 2 }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749 \hich\af37\dbch\af31505\loch\f37 Spades and 2 H}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855 
+\hich\af37\dbch\af31505\loch\f37 earts with an overtrick.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid9515749 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749\charrsid9515749 \hich\af37\dbch\af31505\loch\f37 If only North could make 3 Hearts, the text string would h
+\hich\af37\dbch\af31505\loch\f37 ave looked:
+\par \hich\af37\dbch\af31505\loch\f37 NS:NS 23S,N 23H}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid930020 \hich\af37\dbch\af31505\loch\f37  
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855\charrsid3347855 \hich\af37\dbch\af31505\loch\f37 NS before the colon refer}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid13180120 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\insrsid3347855\charrsid3347855 \hich\af37\dbch\af31505\loch\f37  to }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749 \hich\af37\dbch\af31505\loch\f37 the}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid12732549 \hich\af37\dbch\af31505\loch\f37 
+ assumed side that made the initial bid in the process for determining the par score / contracts}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855 \hich\af37\dbch\af31505\loch\f37 . }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid9515749 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid14370947 \hich\af37\dbch\af31505\loch\f37 Also, DDS calculates the par score / contracts when the assumed side is EW:
+\par \hich\af37\dbch\af31505\loch\f37 EW}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid14370947\charrsid14370947 \hich\af37\dbch\af31505\loch\f37 :NS 23S,N 23H  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid14370947 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid3347855 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid14370947 \hich\af37\dbch\af31505\loch\f37 
+Nearly always, the par score / contracts are the same for both starting points. One case where they are not is if both sides can make 1 NT but no other contract. }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid3347855 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid14370947\charrsid3347855 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid1190356 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid490522 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \b\f37\insrsid490522\charrsid8593145 \hich\af37\dbch\af31505\loch\f37 CalcParPBN
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid11279197 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid11279197 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid11279197 \hich\af37\dbch\af31505\loch\f37 \hich\f37 The only difference compared to CalcPar is that the structure type 
+\&#39;93\loch\f37 ddTableDeal\hich\af37\dbch\af31505\loch\f37 \hich\f37 PBN\&#39;94\loch\f37 \hich\f37  is used instead of \&#39;93\loch\f37 \hich\f37 ddTableDeal\&#39;94\loch\f37 \hich\f37 . For description of \&#39;93\loch\f37 \hich\f37 ddTableDealPBN\&#39;94\loch\f37 
+, see CalcDDtablePBN.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid11279197\charrsid11279197 \hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid11279197 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0\pararsid1190356 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid11279197 \hich\af37\dbch\af31505\loch\f37   }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\insrsid490522 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid490522\charrsid13915886 
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\insrsid6650094\charrsid13915886 
+\par }\pard\plain \ltrpar\s1\ql \li0\ri0\keepn\nowidctlpar\wrapdefault\faauto\outlinelevel0\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 
+\ab\af1 \ltrch\fcs0 \b\f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Revision History
+\par }\pard\plain \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 \rtlch\fcs1 \af1\afs24\alang1025 \ltrch\fcs0 \fs24\lang1033\langfe1053\loch\af1\hich\af1\dbch\af31505\cgrid\langnp1033\langfenp1053 {\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f31506\cf1\insrsid6650094\charrsid13915886 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev A, 2006-02-25.\tab \tab First issue.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev B, 2006-03-20\tab \tab Updated issue.
+\par 
+\par }\pard \ltrpar\ql \fi-2880\li2880\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin2880\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Rev C, 2006-03-28\tab 
+\hich\af31506\dbch\af31505\loch\f31506 \hich\f31506 Updated issue. Addition of the SolveBoard parameter \&#39;94\loch\f31506 \hich\f31506 mode\&#39;94.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev D, 2006-04-05\tab Updated issue. Usage of target=0 to list all cards that are legal to play.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev E, 2006-05-29\tab Updated issue. New error code \hich\f31506 \endash \loch\f31506 10 for number of cards &gt; 52.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev F, 2006-08-09\tab Upda\hich\af31506\dbch\af31505\loch\f31506 ted issue. New mode parameter value = 2. New error code \hich\f31506 \endash \loch\f31506 
+11 for calling SolveBoard with mode = 2 and forbidden values of other parameters.
+\par }\pard \ltrpar\ql \li0\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin0\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 
+\par }\pard \ltrpar\ql \fi-2880\li2880\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin2880\itap0 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 Rev F1, 2006-08-14\tab 
+Clarifications on conditions for returning scores for the different combinations of the values fo\hich\af31506\dbch\af31505\loch\f31506 r target and solutions.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev F2, 2006-08-26\tab New error code \hich\f31506 \endash \loch\f31506 12 for wrongly set valu}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid9047914 \hich\af31506\dbch\af31505\loch\f31506 
+es of deal.currentTrickSuit and }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 deal.currentTrickRank.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev G, 2007-01-04\tab New DDS release 1.1, otherwise no change compared to isse F2.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev H, 2007-04-23\tab DDS release 1.4, c\hich\af31506\dbch\af31505\loch\f31506 hanges for parameter mode=2.
+\par 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6309374 \hich\af31506\dbch\af31505\loch\f31506 Rev I, }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid6650094\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 2010-04-10\tab 
+DDS release 2.0, multi-thread support.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev J, 2010-05-29\tab DDS release 2.1, OpenMP support, reuse of previous DD transposition table results of similar deals.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev K, 2010-10-27\tab Correction of fault in the desc\hich\af31506\dbch\af31505\loch\f31506 ription:  2nd index in resTable of the structure ddTableResults is declarer hand.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev L, 2011-10-14\tab Added SolveBoardPBN and CalcDDtablePBN.
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev M, 2012-07-06\tab Added SolveAllBoards. 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev N, 2012-07-16\tab Max number of threads is 8.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4538894\charrsid13915886 
+\par 
+\par \hich\af31506\dbch\af31505\loch\f31506 Rev O, 2012-10-21\tab \hich\af31506\dbch\af31505\loch\f31506 Max number of threads is }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4542728\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506 
+configured at initial start-up, but never exceeds 16.}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4538894\charrsid13915886 \hich\af31506\dbch\af31505\loch\f31506  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid4538894 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f31506\cf1\insrsid13316938 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13316938 \hich\af37\dbch\af31505\loch\f37 Rev P, 2013-03-16}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13316938\charrsid13316938 \tab }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13316938 
+\hich\af37\dbch\af31505\loch\f37 Added functions CalcPar and CalcParPBN}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13316938\charrsid13316938 .}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13316938 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6950962 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid9530285 \hich\af37\dbch\af31505\loch\f37 Rev Q, 2014-01-09}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6950962\charrsid6950962 \tab \hich\af37\dbch\af31505\loch\f37 Added functions Calc}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid6950962 \hich\af37\dbch\af31505\loch\f37 AllTables/CalcAllTablesPBN. 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12595779 
+\par \hich\af37\dbch\af31505\loch\f37 Rev R, 2014-01-13\tab Updated }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid12595779\charrsid12595779 \hich\af37\dbch\af31505\loch\f37 functions CalcAllTables/CalcAllTablesPBN.}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid12595779 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7089377 
+\par \hich\af37\dbch\af31505\loch\f37 Rev S}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid7089377\charrsid7089377 \hich\af37\dbch\af31505\loch\f37 , 2014-01-13\tab Updated functions CalcAllTables/CalcAllTablesPBN.}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid7089377 
+\par }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10245607 
+\par }\pard \ltrpar\ql \fi-2880\li2880\ri0\nowidctlpar\wrapdefault\faauto\rin0\lin2880\itap0\pararsid16724586 {\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10245607 \hich\af37\dbch\af31505\loch\f37 Rev T, 2014-03-01}{\rtlch\fcs1 \af1 \ltrch\fcs0 
+\f37\cf1\insrsid10245607\charrsid10245607 \tab }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10245607 \hich\af37\dbch\af31505\loch\f37 Added function}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10245607\charrsid10245607 
+\hich\af37\dbch\af31505\loch\f37  }{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid13336457 \hich\af37\dbch\af31505\loch\f37 SolveAll}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid10245607 \hich\af37\dbch\af31505\loch\f37 Chunk}{\rtlch\fcs1 \af1 
+\ltrch\fcs0 \f37\cf1\insrsid13336457 \hich\af37\dbch\af31505\loch\f37 s}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid16724586 .}{\rtlch\fcs1 \af1 \ltrch\fcs0 \f37\cf1\insrsid6650094\charrsid16724586 
+\par }{\*\themedata 504b030414000600080000002100e9de0fbfff0000001c020000130000005b436f6e74656e745f54797065735d2e786d6cac91cb4ec3301045f748fc83e52d4a
+9cb2400825e982c78ec7a27cc0c8992416c9d8b2a755fbf74cd25442a820166c2cd933f79e3be372bd1f07b5c3989ca74aaff2422b24eb1b475da5df374fd9ad
+5689811a183c61a50f98f4babebc2837878049899a52a57be670674cb23d8e90721f90a4d2fa3802cb35762680fd800ecd7551dc18eb899138e3c943d7e503b6
+b01d583deee5f99824e290b4ba3f364eac4a430883b3c092d4eca8f946c916422ecab927f52ea42b89a1cd59c254f919b0e85e6535d135a8de20f20b8c12c3b0
+0c895fcf6720192de6bf3b9e89ecdbd6596cbcdd8eb28e7c365ecc4ec1ff1460f53fe813d3cc7f5b7f020000ffff0300504b030414000600080000002100a5d6
+a7e7c0000000360100000b0000005f72656c732f2e72656c73848fcf6ac3300c87ef85bd83d17d51d2c31825762fa590432fa37d00e1287f68221bdb1bebdb4f
+c7060abb0884a4eff7a93dfeae8bf9e194e720169aaa06c3e2433fcb68e1763dbf7f82c985a4a725085b787086a37bdbb55fbc50d1a33ccd311ba548b6309512
+0f88d94fbc52ae4264d1c910d24a45db3462247fa791715fd71f989e19e0364cd3f51652d73760ae8fa8c9ffb3c330cc9e4fc17faf2ce545046e37944c69e462
+a1a82fe353bd90a865aad41ed0b5b8f9d6fd010000ffff0300504b0304140006000800000021006b799616830000008a0000001c0000007468656d652f746865
+6d652f7468656d654d616e616765722e786d6c0ccc4d0ac3201040e17da17790d93763bb284562b2cbaebbf600439c1a41c7a0d29fdbd7e5e38337cedf14d59b
+4b0d592c9c070d8a65cd2e88b7f07c2ca71ba8da481cc52c6ce1c715e6e97818c9b48d13df49c873517d23d59085adb5dd20d6b52bd521ef2cdd5eb9246a3d8b
+4757e8d3f729e245eb2b260a0238fd010000ffff0300504b03041400060008000000210036cc113fa8060000a31b0000160000007468656d652f7468656d652f
+7468656d65312e786d6cec594f6f1b4514bf23f11d467b6f6327761a4775aad8b11b48d346b15bd4e37877bc3bcdecce6a669cd437d41e9190100571a012370e
+08a8d44a5ccaa709144191fa157833b3bbde89d7246923a8a039b4f6ec6fdefff79b37ebabd7eec70c1d1221294fda5efd72cd4324f1794093b0eddd1ef62fad
+79482a9c0498f184b4bd2991deb58df7dfbb8ad755446282607f22d771db8b944ad79796a40fcb585ee62949e0d9988b182bf82ac2a540e023901bb3a5e55a6d
+7529c634f1508263107b6b3ca63eb9a460abb791cbee31509028a9177c26065a327136186c7050d70839955d26d021666d0fd404fc6848ee2b0f312c153c687b
+35f3e72d6d5c5dc2ebd926a616ec2dedeb9bbf6c5fb6213858363a45382a94d6fb8dd695ad42be0130358febf57add5ebd906700d8f7c1536b4b5966a3bf56ef
+e4324b20fb715e76b7d6ac355c7c49feca9ccdad4ea7d36c65b658a106643f36e6f06bb5d5c6e6b28337208b6fcee11b9dcd6e77d5c11b90c5afcee1fb575aab
+0d176f4011a3c9c11c5a27b4dfcfa417903167db95f03580afd532f80c05d55054975631e6895a546b31bec7451f001ac8b0a20952d3948cb10f45dcc5f14850
+ac15e075824b4fec922fe796b42e247d4153d5f63e4c3134c44cdeabe7dfbf7afe141d3f7876fce0a7e3870f8f1ffc680539bbb671129677bdfcf6b33f1f7f8c
+fe78facdcb475f54e36519ffeb0f9ffcf2f3e7d540689f99392fbe7cf2dbb3272fbefaf4f7ef1e55c037051e95e1431a13896e9223b4cf6370cc44c5b59c8cc4
+f9760c234ccb3b369350e2046b2d15f27b2a72d037a79865d971ece81037827704d04715f0fae49e63f0201213452b34ef44b103dce59c75b8a88cc28ed6550a
+f3709284d5cac5a48cdbc7f8b04a7717274e7e7b931478332f4bc7f16e441c33f7184e140e494214d2cff8012115dedda5d489eb2ef505977cacd05d8a3a9856
+866448474e35cd366dd318f232adf219f2edc466f70eea7056e5f516397491d0159855183f24cc09e3753c5138ae1239c4312b07fc065651959183a9f0cbb89e
+5490e990308e7a0191b26acf2d01fe9692be8381b12ad3becba6b18b148a1e54c9bc81392f23b7f84137c2715a851dd0242a633f900750a218ed715505dfe56e
+87e8ef90079c2c4cf71d4a9c749fce06b769e898342b10fd64222a72799d70a77e075336c6c4500d90bac3d5314dfe8eb81905e6b61a2e8eb8812a5f7cfdb8c2
+eeb795b237e1f4aaea99ed1344bd0877929ebb5c04f4ed67e72d3c49f60834c4fc11f58e9cdf91b3f79f27e745fd7cf1943c636120683d8bd841db8cddf1c2a9
+7b4c191ba8292337a419bc259c3d411f16f53e73e124c52d2c8de0a3ee6450e0e04281cd1e24b8fa88aa6810e11486f6baa7858432131d4a9472099745b35c29
+5be361f057f6aad9d49710cb1c12ab5d1ed8e515bd9cdf350a31c6aad05c6873452b5ac05995ad5cc984826fafa3acae8d3ab3b6ba31cd90a2a3ad705987d85c
+ca21e4856bb0584413861a04a310447915aefc5a355c763023818ebbcd519e1693858b4c918c7040b21c69bfe773543749ca6b65ce11ed872d067d713c256a25
+6d2d2df60db49d254965758d05eaf2ecbd4996f20a9e6509a49d6c4796949b9325e8a8edb59acb4d0ff9386d7b63b827c3c73885ac4b3d476216c2bb265f095b
+f6a736b3e9f259365bb9636e13d4e1d5878dfb9cc30e0fa442aa2d2c235b1ae65156022cd19aacfdcb4d08eb453950c14667b362650d8ae15fb302e2e8a6968c
+c7c457e564975674ececd78c4af9441131888223346213b18f21fdba54c19f804a78dd6118417f8177733adae6914bce59d395df88199c5dc72c8d7046b7ba45
+f34eb6704348850de65bc93cf0add276e3dcf95d312d7f41ae94cbf87fe68a3e4fe0edc34aa033e0c39b618191ee94b6c7858a38b0501a51bf2f607030dc01d5
+02ef77e1311415bc9f36ff0b72a8ffb73d676598b6864ba4daa7211214ce23150942f680964cf59d22ac9e9d5d5624cb04998a2a992b536bf6881c1236d41cb8
+aacf760f4550ea864d321a30b893f5e77ecf3a6814ea21a7dc6f0e931567afed817f7af2b1cd0c4eb93c6c069a3cfe8589c578303b55ed7eb33d3f7bcb8ee807
+b331ab917705282b1d05adaced5fd384731eb596b1e63c5e6ee6c64116e73d86c562204ae11d12d2ffc0f94785cf8829637da00ef93e702b821f2fb430281ba8
+ea4b76f0409a20ede2080627bb688b498bb2a1cd46271db5fcb0bee049b7d07b22d8dab2b3e4fb9cc12e8633579dd38b1719ec2cc24eaceddac25043664fb628
+2c8df38b8c498cf995acfc4b161fdd83446fc16f0613a6a42926f89d4a6098a107a60fa0f9ad46b375e32f000000ffff0300504b030414000600080000002100
+0dd1909fb60000001b010000270000007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73848f4d0ac2301484f7
+8277086f6fd3ba109126dd88d0add40384e4350d363f2451eced0dae2c082e8761be9969bb979dc9136332de3168aa1a083ae995719ac16db8ec8e4052164e89
+d93b64b060828e6f37ed1567914b284d262452282e3198720e274a939cd08a54f980ae38a38f56e422a3a641c8bbd048f7757da0f19b017cc524bd62107bd500
+1996509affb3fd381a89672f1f165dfe514173d9850528a2c6cce0239baa4c04ca5bbabac4df000000ffff0300504b01022d0014000600080000002100e9de0f
+bfff0000001c0200001300000000000000000000000000000000005b436f6e74656e745f54797065735d2e786d6c504b01022d0014000600080000002100a5d6
+a7e7c0000000360100000b00000000000000000000000000300100005f72656c732f2e72656c73504b01022d00140006000800000021006b799616830000008a
+0000001c00000000000000000000000000190200007468656d652f7468656d652f7468656d654d616e616765722e786d6c504b01022d00140006000800000021
+0036cc113fa8060000a31b00001600000000000000000000000000d60200007468656d652f7468656d652f7468656d65312e786d6c504b01022d001400060008
+00000021000dd1909fb60000001b0100002700000000000000000000000000b20900007468656d652f7468656d652f5f72656c732f7468656d654d616e616765722e786d6c2e72656c73504b050600000000050005005d010000ad0a00000000}
+{\*\colorschememapping 3c3f786d6c2076657273696f6e3d22312e302220656e636f64696e673d225554462d3822207374616e64616c6f6e653d22796573223f3e0d0a3c613a636c724d
+617020786d6c6e733a613d22687474703a2f2f736368656d61732e6f70656e786d6c666f726d6174732e6f72672f64726177696e676d6c2f323030362f6d6169
+6e22206267313d226c743122207478313d22646b3122206267323d226c743222207478323d22646b322220616363656e74313d22616363656e74312220616363
+656e74323d22616363656e74322220616363656e74333d22616363656e74332220616363656e74343d22616363656e74342220616363656e74353d22616363656e74352220616363656e74363d22616363656e74362220686c696e6b3d22686c696e6b2220666f6c486c696e6b3d22666f6c486c696e6b222f3e}
+{\*\latentstyles\lsdstimax267\lsdlockeddef0\lsdsemihiddendef1\lsdunhideuseddef1\lsdqformatdef0\lsdprioritydef99{\lsdlockedexcept \lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority0 \lsdlocked0 Normal;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdlocked0 heading 1;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdlocked0 heading 2;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdlocked0 heading 3;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 4;
+\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 5;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 6;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 7;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 8;\lsdqformat1 \lsdpriority9 \lsdlocked0 heading 9;
+\lsdpriority39 \lsdlocked0 toc 1;\lsdpriority39 \lsdlocked0 toc 2;\lsdpriority39 \lsdlocked0 toc 3;\lsdpriority39 \lsdlocked0 toc 4;\lsdpriority39 \lsdlocked0 toc 5;\lsdpriority39 \lsdlocked0 toc 6;\lsdpriority39 \lsdlocked0 toc 7;
+\lsdpriority39 \lsdlocked0 toc 8;\lsdpriority39 \lsdlocked0 toc 9;\lsdqformat1 \lsdpriority35 \lsdlocked0 caption;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority10 \lsdlocked0 Title;\lsdpriority1 \lsdlocked0 Default Paragraph Font;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority11 \lsdlocked0 Subtitle;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority22 \lsdlocked0 Strong;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority20 \lsdlocked0 Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority59 \lsdlocked0 Table Grid;\lsdunhideused0 \lsdlocked0 Placeholder Text;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority1 \lsdlocked0 No Spacing;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 1;\lsdunhideused0 \lsdlocked0 Revision;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority34 \lsdlocked0 List Paragraph;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority29 \lsdlocked0 Quote;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority30 \lsdlocked0 Intense Quote;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 1;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 1;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 2;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 2;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 3;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 3;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 4;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 4;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 5;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 5;\lsdsemihidden0 \lsdunhideused0 \lsdpriority60 \lsdlocked0 Light Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority61 \lsdlocked0 Light List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority62 \lsdlocked0 Light Grid Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority63 \lsdlocked0 Medium Shading 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority64 \lsdlocked0 Medium Shading 2 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority65 \lsdlocked0 Medium List 1 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority66 \lsdlocked0 Medium List 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority67 \lsdlocked0 Medium Grid 1 Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority68 \lsdlocked0 Medium Grid 2 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority69 \lsdlocked0 Medium Grid 3 Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority70 \lsdlocked0 Dark List Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdpriority71 \lsdlocked0 Colorful Shading Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority72 \lsdlocked0 Colorful List Accent 6;\lsdsemihidden0 \lsdunhideused0 \lsdpriority73 \lsdlocked0 Colorful Grid Accent 6;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority19 \lsdlocked0 Subtle Emphasis;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority21 \lsdlocked0 Intense Emphasis;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority31 \lsdlocked0 Subtle Reference;\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority32 \lsdlocked0 Intense Reference;
+\lsdsemihidden0 \lsdunhideused0 \lsdqformat1 \lsdpriority33 \lsdlocked0 Book Title;\lsdpriority37 \lsdlocked0 Bibliography;\lsdqformat1 \lsdpriority39 \lsdlocked0 TOC Heading;}}{\*\datastore 010500000200000018000000
+4d73786d6c322e534158584d4c5265616465722e362e3000000000000000000000060000
+d0cf11e0a1b11ae1000000000000000000000000000000003e000300feff090006000000000000000000000001000000010000000000000000100000feffffff00000000feffffff0000000000000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+fffffffffffffffffdfffffffeffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+ffffffffffffffffffffffffffffffff52006f006f007400200045006e00740072007900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000016000500ffffffffffffffffffffffff0c6ad98892f1d411a65f0040963251e50000000000000000000000003065
+b7d78e6ccf01feffffff00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff00000000000000000000000000000000000000000000000000000000
+00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff0000000000000000000000000000000000000000000000000000
+000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000ffffffffffffffffffffffff000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000105000000000000}}</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/DLL-dds_252_t.rtf by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+</html>

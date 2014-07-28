@@ -1,0 +1,14 @@
+/*
+Copyright (C) 2013  Matthieu Caneill <matthieu.caneill@gmail.com>
+License: GNU Affero General Public License, version 3 or above.
+*/
+
+#ls{
+    list-style-type: none;
+}
+
+#ls img{
+    display: inline;
+    vertical-align: middle;
+    margin-right: 5px;
+}

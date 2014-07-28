@@ -1,0 +1,822 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/dll.h by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: dll.h | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../2.5.html">2.5.2+ddd105-1</a> / dll.h</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: dll.h</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (550 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../2.5.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/dll.h">download</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /><a id="L245" href="#L245">245</a><br /><a id="L246" href="#L246">246</a><br /><a id="L247" href="#L247">247</a><br /><a id="L248" href="#L248">248</a><br /><a id="L249" href="#L249">249</a><br /><a id="L250" href="#L250">250</a><br /><a id="L251" href="#L251">251</a><br /><a id="L252" href="#L252">252</a><br /><a id="L253" href="#L253">253</a><br /><a id="L254" href="#L254">254</a><br /><a id="L255" href="#L255">255</a><br /><a id="L256" href="#L256">256</a><br /><a id="L257" href="#L257">257</a><br /><a id="L258" href="#L258">258</a><br /><a id="L259" href="#L259">259</a><br /><a id="L260" href="#L260">260</a><br /><a id="L261" href="#L261">261</a><br /><a id="L262" href="#L262">262</a><br /><a id="L263" href="#L263">263</a><br /><a id="L264" href="#L264">264</a><br /><a id="L265" href="#L265">265</a><br /><a id="L266" href="#L266">266</a><br /><a id="L267" href="#L267">267</a><br /><a id="L268" href="#L268">268</a><br /><a id="L269" href="#L269">269</a><br /><a id="L270" href="#L270">270</a><br /><a id="L271" href="#L271">271</a><br /><a id="L272" href="#L272">272</a><br /><a id="L273" href="#L273">273</a><br /><a id="L274" href="#L274">274</a><br /><a id="L275" href="#L275">275</a><br /><a id="L276" href="#L276">276</a><br /><a id="L277" href="#L277">277</a><br /><a id="L278" href="#L278">278</a><br /><a id="L279" href="#L279">279</a><br /><a id="L280" href="#L280">280</a><br /><a id="L281" href="#L281">281</a><br /><a id="L282" href="#L282">282</a><br /><a id="L283" href="#L283">283</a><br /><a id="L284" href="#L284">284</a><br /><a id="L285" href="#L285">285</a><br /><a id="L286" href="#L286">286</a><br /><a id="L287" href="#L287">287</a><br /><a id="L288" href="#L288">288</a><br /><a id="L289" href="#L289">289</a><br /><a id="L290" href="#L290">290</a><br /><a id="L291" href="#L291">291</a><br /><a id="L292" href="#L292">292</a><br /><a id="L293" href="#L293">293</a><br /><a id="L294" href="#L294">294</a><br /><a id="L295" href="#L295">295</a><br /><a id="L296" href="#L296">296</a><br /><a id="L297" href="#L297">297</a><br /><a id="L298" href="#L298">298</a><br /><a id="L299" href="#L299">299</a><br /><a id="L300" href="#L300">300</a><br /><a id="L301" href="#L301">301</a><br /><a id="L302" href="#L302">302</a><br /><a id="L303" href="#L303">303</a><br /><a id="L304" href="#L304">304</a><br /><a id="L305" href="#L305">305</a><br /><a id="L306" href="#L306">306</a><br /><a id="L307" href="#L307">307</a><br /><a id="L308" href="#L308">308</a><br /><a id="L309" href="#L309">309</a><br /><a id="L310" href="#L310">310</a><br /><a id="L311" href="#L311">311</a><br /><a id="L312" href="#L312">312</a><br /><a id="L313" href="#L313">313</a><br /><a id="L314" href="#L314">314</a><br /><a id="L315" href="#L315">315</a><br /><a id="L316" href="#L316">316</a><br /><a id="L317" href="#L317">317</a><br /><a id="L318" href="#L318">318</a><br /><a id="L319" href="#L319">319</a><br /><a id="L320" href="#L320">320</a><br /><a id="L321" href="#L321">321</a><br /><a id="L322" href="#L322">322</a><br /><a id="L323" href="#L323">323</a><br /><a id="L324" href="#L324">324</a><br /><a id="L325" href="#L325">325</a><br /><a id="L326" href="#L326">326</a><br /><a id="L327" href="#L327">327</a><br /><a id="L328" href="#L328">328</a><br /><a id="L329" href="#L329">329</a><br /><a id="L330" href="#L330">330</a><br /><a id="L331" href="#L331">331</a><br /><a id="L332" href="#L332">332</a><br /><a id="L333" href="#L333">333</a><br /><a id="L334" href="#L334">334</a><br /><a id="L335" href="#L335">335</a><br /><a id="L336" href="#L336">336</a><br /><a id="L337" href="#L337">337</a><br /><a id="L338" href="#L338">338</a><br /><a id="L339" href="#L339">339</a><br /><a id="L340" href="#L340">340</a><br /><a id="L341" href="#L341">341</a><br /><a id="L342" href="#L342">342</a><br /><a id="L343" href="#L343">343</a><br /><a id="L344" href="#L344">344</a><br /><a id="L345" href="#L345">345</a><br /><a id="L346" href="#L346">346</a><br /><a id="L347" href="#L347">347</a><br /><a id="L348" href="#L348">348</a><br /><a id="L349" href="#L349">349</a><br /><a id="L350" href="#L350">350</a><br /><a id="L351" href="#L351">351</a><br /><a id="L352" href="#L352">352</a><br /><a id="L353" href="#L353">353</a><br /><a id="L354" href="#L354">354</a><br /><a id="L355" href="#L355">355</a><br /><a id="L356" href="#L356">356</a><br /><a id="L357" href="#L357">357</a><br /><a id="L358" href="#L358">358</a><br /><a id="L359" href="#L359">359</a><br /><a id="L360" href="#L360">360</a><br /><a id="L361" href="#L361">361</a><br /><a id="L362" href="#L362">362</a><br /><a id="L363" href="#L363">363</a><br /><a id="L364" href="#L364">364</a><br /><a id="L365" href="#L365">365</a><br /><a id="L366" href="#L366">366</a><br /><a id="L367" href="#L367">367</a><br /><a id="L368" href="#L368">368</a><br /><a id="L369" href="#L369">369</a><br /><a id="L370" href="#L370">370</a><br /><a id="L371" href="#L371">371</a><br /><a id="L372" href="#L372">372</a><br /><a id="L373" href="#L373">373</a><br /><a id="L374" href="#L374">374</a><br /><a id="L375" href="#L375">375</a><br /><a id="L376" href="#L376">376</a><br /><a id="L377" href="#L377">377</a><br /><a id="L378" href="#L378">378</a><br /><a id="L379" href="#L379">379</a><br /><a id="L380" href="#L380">380</a><br /><a id="L381" href="#L381">381</a><br /><a id="L382" href="#L382">382</a><br /><a id="L383" href="#L383">383</a><br /><a id="L384" href="#L384">384</a><br /><a id="L385" href="#L385">385</a><br /><a id="L386" href="#L386">386</a><br /><a id="L387" href="#L387">387</a><br /><a id="L388" href="#L388">388</a><br /><a id="L389" href="#L389">389</a><br /><a id="L390" href="#L390">390</a><br /><a id="L391" href="#L391">391</a><br /><a id="L392" href="#L392">392</a><br /><a id="L393" href="#L393">393</a><br /><a id="L394" href="#L394">394</a><br /><a id="L395" href="#L395">395</a><br /><a id="L396" href="#L396">396</a><br /><a id="L397" href="#L397">397</a><br /><a id="L398" href="#L398">398</a><br /><a id="L399" href="#L399">399</a><br /><a id="L400" href="#L400">400</a><br /><a id="L401" href="#L401">401</a><br /><a id="L402" href="#L402">402</a><br /><a id="L403" href="#L403">403</a><br /><a id="L404" href="#L404">404</a><br /><a id="L405" href="#L405">405</a><br /><a id="L406" href="#L406">406</a><br /><a id="L407" href="#L407">407</a><br /><a id="L408" href="#L408">408</a><br /><a id="L409" href="#L409">409</a><br /><a id="L410" href="#L410">410</a><br /><a id="L411" href="#L411">411</a><br /><a id="L412" href="#L412">412</a><br /><a id="L413" href="#L413">413</a><br /><a id="L414" href="#L414">414</a><br /><a id="L415" href="#L415">415</a><br /><a id="L416" href="#L416">416</a><br /><a id="L417" href="#L417">417</a><br /><a id="L418" href="#L418">418</a><br /><a id="L419" href="#L419">419</a><br /><a id="L420" href="#L420">420</a><br /><a id="L421" href="#L421">421</a><br /><a id="L422" href="#L422">422</a><br /><a id="L423" href="#L423">423</a><br /><a id="L424" href="#L424">424</a><br /><a id="L425" href="#L425">425</a><br /><a id="L426" href="#L426">426</a><br /><a id="L427" href="#L427">427</a><br /><a id="L428" href="#L428">428</a><br /><a id="L429" href="#L429">429</a><br /><a id="L430" href="#L430">430</a><br /><a id="L431" href="#L431">431</a><br /><a id="L432" href="#L432">432</a><br /><a id="L433" href="#L433">433</a><br /><a id="L434" href="#L434">434</a><br /><a id="L435" href="#L435">435</a><br /><a id="L436" href="#L436">436</a><br /><a id="L437" href="#L437">437</a><br /><a id="L438" href="#L438">438</a><br /><a id="L439" href="#L439">439</a><br /><a id="L440" href="#L440">440</a><br /><a id="L441" href="#L441">441</a><br /><a id="L442" href="#L442">442</a><br /><a id="L443" href="#L443">443</a><br /><a id="L444" href="#L444">444</a><br /><a id="L445" href="#L445">445</a><br /><a id="L446" href="#L446">446</a><br /><a id="L447" href="#L447">447</a><br /><a id="L448" href="#L448">448</a><br /><a id="L449" href="#L449">449</a><br /><a id="L450" href="#L450">450</a><br /><a id="L451" href="#L451">451</a><br /><a id="L452" href="#L452">452</a><br /><a id="L453" href="#L453">453</a><br /><a id="L454" href="#L454">454</a><br /><a id="L455" href="#L455">455</a><br /><a id="L456" href="#L456">456</a><br /><a id="L457" href="#L457">457</a><br /><a id="L458" href="#L458">458</a><br /><a id="L459" href="#L459">459</a><br /><a id="L460" href="#L460">460</a><br /><a id="L461" href="#L461">461</a><br /><a id="L462" href="#L462">462</a><br /><a id="L463" href="#L463">463</a><br /><a id="L464" href="#L464">464</a><br /><a id="L465" href="#L465">465</a><br /><a id="L466" href="#L466">466</a><br /><a id="L467" href="#L467">467</a><br /><a id="L468" href="#L468">468</a><br /><a id="L469" href="#L469">469</a><br /><a id="L470" href="#L470">470</a><br /><a id="L471" href="#L471">471</a><br /><a id="L472" href="#L472">472</a><br /><a id="L473" href="#L473">473</a><br /><a id="L474" href="#L474">474</a><br /><a id="L475" href="#L475">475</a><br /><a id="L476" href="#L476">476</a><br /><a id="L477" href="#L477">477</a><br /><a id="L478" href="#L478">478</a><br /><a id="L479" href="#L479">479</a><br /><a id="L480" href="#L480">480</a><br /><a id="L481" href="#L481">481</a><br /><a id="L482" href="#L482">482</a><br /><a id="L483" href="#L483">483</a><br /><a id="L484" href="#L484">484</a><br /><a id="L485" href="#L485">485</a><br /><a id="L486" href="#L486">486</a><br /><a id="L487" href="#L487">487</a><br /><a id="L488" href="#L488">488</a><br /><a id="L489" href="#L489">489</a><br /><a id="L490" href="#L490">490</a><br /><a id="L491" href="#L491">491</a><br /><a id="L492" href="#L492">492</a><br /><a id="L493" href="#L493">493</a><br /><a id="L494" href="#L494">494</a><br /><a id="L495" href="#L495">495</a><br /><a id="L496" href="#L496">496</a><br /><a id="L497" href="#L497">497</a><br /><a id="L498" href="#L498">498</a><br /><a id="L499" href="#L499">499</a><br /><a id="L500" href="#L500">500</a><br /><a id="L501" href="#L501">501</a><br /><a id="L502" href="#L502">502</a><br /><a id="L503" href="#L503">503</a><br /><a id="L504" href="#L504">504</a><br /><a id="L505" href="#L505">505</a><br /><a id="L506" href="#L506">506</a><br /><a id="L507" href="#L507">507</a><br /><a id="L508" href="#L508">508</a><br /><a id="L509" href="#L509">509</a><br /><a id="L510" href="#L510">510</a><br /><a id="L511" href="#L511">511</a><br /><a id="L512" href="#L512">512</a><br /><a id="L513" href="#L513">513</a><br /><a id="L514" href="#L514">514</a><br /><a id="L515" href="#L515">515</a><br /><a id="L516" href="#L516">516</a><br /><a id="L517" href="#L517">517</a><br /><a id="L518" href="#L518">518</a><br /><a id="L519" href="#L519">519</a><br /><a id="L520" href="#L520">520</a><br /><a id="L521" href="#L521">521</a><br /><a id="L522" href="#L522">522</a><br /><a id="L523" href="#L523">523</a><br /><a id="L524" href="#L524">524</a><br /><a id="L525" href="#L525">525</a><br /><a id="L526" href="#L526">526</a><br /><a id="L527" href="#L527">527</a><br /><a id="L528" href="#L528">528</a><br /><a id="L529" href="#L529">529</a><br /><a id="L530" href="#L530">530</a><br /><a id="L531" href="#L531">531</a><br /><a id="L532" href="#L532">532</a><br /><a id="L533" href="#L533">533</a><br /><a id="L534" href="#L534">534</a><br /><a id="L535" href="#L535">535</a><br /><a id="L536" href="#L536">536</a><br /><a id="L537" href="#L537">537</a><br /><a id="L538" href="#L538">538</a><br /><a id="L539" href="#L539">539</a><br /><a id="L540" href="#L540">540</a><br /><a id="L541" href="#L541">541</a><br /><a id="L542" href="#L542">542</a><br /><a id="L543" href="#L543">543</a><br /><a id="L544" href="#L544">544</a><br /><a id="L545" href="#L545">545</a><br /><a id="L546" href="#L546">546</a><br /><a id="L547" href="#L547">547</a><br /><a id="L548" href="#L548">548</a><br /><a id="L549" href="#L549">549</a><br /><a id="L550" href="#L550">550</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="cpp">/* portability-macros header prefix */
+
+/* Windows requires a __declspec(dllexport) tag, etc */
+#if defined(_WIN32)
+#    define DLLEXPORT __declspec(dllexport)
+#    define STDCALL __stdcall
+#else
+#    define DLLEXPORT
+#    define STDCALL
+#    define INT8 char
+#endif
+
+#ifdef __cplusplus
+#    define EXTERN_C extern &#34;C&#34;
+#else
+#    define EXTERN_C
+#endif
+
+#if defined(_WIN32) &amp;&amp; defined(__MINGW32__) 
+#define WINVER 0x500	
+#    include &lt;windows.h&gt;
+#    include &lt;process.h&gt;
+#endif
+
+#if defined(_WIN32) &amp;&amp; !defined(__MINGW32__)
+#    include &lt;windows.h&gt;
+#    include &lt;process.h&gt;
+#endif
+
+#ifdef __linux__   
+#    include &lt;unistd.h&gt;
+#endif
+
+
+#if defined(_MSC_VER)
+#    include &lt;intrin.h&gt;
+#else
+#    include &lt;omp.h&gt;
+#endif
+
+/* end of portability-macros section */
+
+#define DDS_VERSION	20502	/* Version 2.5.2. Allowing for 2 digit minor versions */
+
+#define PBN
+
+#define PBN_PLUS
+
+/*#define BENCH*/
+
+#include &lt;stdio.h&gt;
+/*#define _CRTDBG_MAP_ALLOC */ /* MEMORY LEAK? */
+#include &lt;stdlib.h&gt;
+/*#include &lt;crtdbg.h&gt; */  /* MEMORY LEAK? */
+#include &lt;string.h&gt;
+#include &lt;time.h&gt;
+#include &lt;assert.h&gt;
+#include &lt;math.h&gt;
+
+#ifdef __linux__
+typedef long long __int64;
+#endif
+
+/*#define STAT*/	/* Define STAT to generate a statistics log, stat.txt */
+/*#define TTDEBUG*/     /* Define TTDEBUG to generate transposition table debug information.
+						Only for a single thread! */
+
+#ifdef  TTDEBUG
+#define SEARCHSIZE  20000
+#else
+#define SEARCHSIZE  1
+#endif
+
+#if defined(INFINITY)
+#    undef INFINITY
+#endif
+#define INFINITY    32000
+
+#define MAXNOOFTHREADS	16
+
+#define MAXNODE     1
+#define MINNODE     0
+
+#define TRUE        1
+#define FALSE       0
+
+#define MOVESVALID  1
+#define MOVESLOCKED 2
+
+#define NSIZE	100000
+#define WSIZE   100000
+#define LSIZE   20000
+#define NINIT	250000
+#define WINIT	700000
+#define LINIT   50000
+
+#define SIMILARDEALLIMIT	5
+#define SIMILARMAXWINNODES      700000
+
+#define MAXNOOFBOARDS		200/*100*/
+
+#define Max(x, y) (((x) &gt;= (y)) ? (x) : (y))
+#define Min(x, y) (((x) &lt;= (y)) ? (x) : (y))
+
+/* &#34;hand&#34; is leading hand, &#34;relative&#34; is hand relative leading
+hand.
+The handId macro implementation follows a solution 
+by Thomas Andrews. 
+All hand identities are given as
+0=NORTH, 1=EAST, 2=SOUTH, 3=WEST. */
+
+#define handId(hand, relative) (hand + relative) &amp; 3
+#define CMP_SWAP(i, j) if (a[i].weight &lt; a[j].weight)  \
+  { struct moveType tmp = a[i]; a[i] = a[j]; a[j] = tmp; } 
+
+
+struct gameInfo  {          /* All info of a particular deal */
+  int declarer;
+  int leadHand;
+  int leadSuit;
+  int leadRank;
+  int first;
+  int noOfCards;
+  unsigned short int suit[4][4];
+    /* 1st index is hand id, 2nd index is suit id */
+};
+
+
+struct moveType {
+  int suit;
+  int rank;
+  unsigned short int sequence;          /* Whether or not this move is
+                                        the first in a sequence */
+  short int weight;                     /* Weight used at sorting */
+};
+
+struct movePlyType {
+  struct moveType move[14];             
+  int current;
+  int last;
+};
+
+struct highCardType {
+  int rank;
+  int hand;
+};
+
+struct futureTricks {
+  int nodes;
+  #ifdef BENCH
+  int totalNodes;
+  #endif
+  int cards;
+  int suit[13];
+  int rank[13];
+  int equals[13];
+  int score[13];
+};
+
+struct deal {
+  int trump;
+  int first;
+  int currentTrickSuit[3];
+  int currentTrickRank[3];
+  unsigned int remainCards[4][4];
+};
+
+
+struct dealPBN {
+  int trump;
+  int first;
+  int currentTrickSuit[3];
+  int currentTrickRank[3];
+  char remainCards[80];
+};
+
+
+struct pos {
+  unsigned short int rankInSuit[4][4];   /* 1st index is hand, 2nd index is
+                                        suit id */
+  int orderSet[4];
+  int winOrderSet[4];
+  int winMask[4];
+  int leastWin[4];
+  unsigned short int removedRanks[4];    /* Ranks removed from board,
+                                        index is suit */
+  unsigned short int winRanks[50][4];  /* Cards that win by rank,
+                                       indices are depth and suit */
+  unsigned char length[4][4];
+  int ubound;
+  int lbound;
+  int bestMoveSuit;
+  int bestMoveRank;
+  int first[50];                 /* Hand that leads the trick for each ply*/
+  int high[50];                  /* Hand that is presently winning the trick */
+  struct moveType move[50];      /* Presently winning move */              
+  int handRelFirst;              /* The current hand, relative first hand */
+  int tricksMAX;                 /* Aggregated tricks won by MAX */
+  struct highCardType winner[4]; /* Winning rank of the trick,
+                                    index is suit id. */
+  struct highCardType secondBest[4]; /* Second best rank, index is suit id. */
+};
+
+struct posSearchType {
+  struct winCardType * posSearchPoint; 
+  long long suitLengths;
+  struct posSearchType * left;
+  struct posSearchType * right;
+};
+
+
+struct nodeCardsType {
+  char ubound;	/* ubound and
+			lbound for the N-S side */
+  char lbound;
+  char bestMoveSuit;
+  char bestMoveRank;
+  char leastWin[4];
+};
+
+struct winCardType {
+  int orderSet;
+  int winMask;
+  struct nodeCardsType * first;
+  struct winCardType * prevWin;
+  struct winCardType * nextWin;
+  struct winCardType * next;
+}; 
+
+
+struct evalType {
+  int tricks;
+  unsigned short int winRanks[4];
+};
+
+struct absRankType {
+  char rank;
+  char hand;
+};
+
+struct relRanksType {
+  int aggrRanks[4];
+  int winMask[4];
+  char relRank[15][4];
+  struct absRankType absRank[15][4];
+};
+
+struct adaptWinRanksType {
+  unsigned short int winRanks[14];
+};
+
+
+struct ttStoreType {
+  struct nodeCardsType * cardsP;
+  char tricksLeft;
+  char target;
+  char ubound;
+  char lbound;
+  unsigned char first;
+  unsigned short int suit[4][4];
+};
+
+struct card {
+  int suit;
+  int rank;
+};
+
+struct boards {
+  int noOfBoards;
+  struct deal deals[MAXNOOFBOARDS];
+  int target[MAXNOOFBOARDS];
+  int solutions[MAXNOOFBOARDS];
+  int mode[MAXNOOFBOARDS];
+};
+
+struct boardsPBN {
+  int noOfBoards;
+  struct dealPBN deals[MAXNOOFBOARDS];
+  int target[MAXNOOFBOARDS];
+  int solutions[MAXNOOFBOARDS];
+  int mode[MAXNOOFBOARDS];
+};
+
+struct solvedBoards {
+  int noOfBoards;
+  struct futureTricks solvedBoard[MAXNOOFBOARDS];
+};
+
+struct paramType {
+  int noOfBoards;
+  struct boards *bop;
+  struct solvedBoards *solvedp;
+  int error;
+};
+
+struct ddTableDeal {
+  unsigned int cards[4][4];
+};
+
+struct ddTableDeals {
+  int noOfTables;
+  struct ddTableDeal deals[MAXNOOFBOARDS&gt;&gt;2];
+};
+
+struct ddTableDealPBN {
+  char cards[80];
+};
+
+struct ddTableDealsPBN {
+  int noOfTables;
+  struct ddTableDealPBN deals[MAXNOOFBOARDS&gt;&gt;2];
+};
+
+struct ddTableResults {
+  int resTable[5][4];
+};
+
+struct ddTablesRes {
+  int noOfBoards;
+  struct ddTableResults results[MAXNOOFBOARDS&gt;&gt;2];
+};
+
+
+struct parResults {
+  char parScore[2][16];	/* index = 0 is NS view and index = 1 is EW view. */
+  char parContractsString[2][128]; /* index = 0 is NS view and index = 1 
+				      is EW view. By �view� is here meant 
+				      which side that starts the bidding. */
+};
+
+
+struct allParResults {
+  struct parResults presults[MAXNOOFBOARDS / 20];
+};
+
+struct par_suits_type {
+  int suit;
+  int tricks;
+  int score;
+}; 
+
+
+struct localVarType {
+  int nodeTypeStore[4];
+  int trump;
+  unsigned short int lowestWin[50][4];
+  #ifdef STAT
+  int nodes;
+  #endif
+  int trickNodes;
+  int no[50];
+  int iniDepth;
+  int handToPlay;
+  int payOff;
+  int val;
+  struct pos iniPosition;
+  struct pos lookAheadPos; /* Is initialized for starting
+			      alpha-beta search */
+  struct moveType forbiddenMoves[14];
+  struct moveType initialMoves[4];
+  struct moveType cd;
+  struct movePlyType movePly[50];
+  int tricksTarget;
+  struct gameInfo game;
+  int newDeal;
+  int newTrump;
+  int similarDeal;
+  unsigned short int diffDeal;
+  unsigned short int aggDeal;
+  int estTricks[4];
+  FILE *fp2;
+  FILE *fp7;
+  FILE *fp11;
+  /*FILE *fdp */
+  struct moveType bestMove[50];
+  struct moveType bestMoveTT[50];
+  struct winCardType temp_win[5];
+  int nodeSetSizeLimit;
+  int winSetSizeLimit;
+  int lenSetSizeLimit;
+  unsigned long long maxmem;		/* bytes */
+  unsigned long long allocmem;
+  unsigned long long summem;
+  int wmem;
+  int nmem; 
+  int lmem;
+  int maxIndex;
+  int wcount;
+  int ncount;
+  int lcount;
+  int clearTTflag;
+  int windex;
+  /*int ttCollect;
+  int suppressTTlog;*/
+  struct relRanksType * rel;
+  struct adaptWinRanksType * adaptWins;
+  struct posSearchType *rootnp[14][4];
+  struct winCardType **pw;
+  struct nodeCardsType **pn;
+  struct posSearchType **pl;
+  struct nodeCardsType * nodeCards;
+  struct winCardType * winCards;
+  struct posSearchType * posSearch;
+  /*struct ttStoreType * ttStore;
+  int lastTTstore;*/
+  unsigned short int iniRemovedRanks[4];
+
+  int nodeSetSize; /* Index with range 0 to nodeSetSizeLimit */
+  int winSetSize;  /* Index with range 0 to winSetSizeLimit */
+  int lenSetSize;  /* Index with range 0 to lenSetSizeLimit */
+};
+
+extern int noOfThreads;
+extern int noOfCores;
+extern struct localVarType localVar[MAXNOOFTHREADS];
+extern int * highestRank;
+extern int * counttable;
+extern struct adaptWinRanksType * adaptWins;
+extern unsigned short int bitMapRank[16];
+extern unsigned short int relRankInSuit[4][4];
+extern int sum;
+extern int score1Counts[50], score0Counts[50];
+extern int c1[50], c2[50], c3[50], c4[50], c5[50], c6[50], c7[50],
+  c8[50], c9[50];
+extern int nodeTypeStore[4];            /* Look-up table for determining if
+                                        node is MAXNODE or MINNODE */
+extern int lho[4], rho[4], partner[4];                                        
+extern int nodes;                       /* Number of nodes searched */
+extern int no[50];                      /* Number of nodes searched on each
+                                        depth level */
+extern int payOff;
+extern int iniDepth;
+extern int treeDepth;
+extern int tricksTarget;                /* No of tricks for MAX in order to
+                                        meet the game goal, e.g. to make the
+                                        contract */
+extern int tricksTargetOpp;             /* Target no of tricks for MAX
+                                        opponent */
+extern int targetNS;
+extern int targetEW;
+extern int handToPlay;
+extern int searchTraceFlag;
+extern int countMax;
+extern int depthCount;
+extern int highHand;
+extern int nodeSetSizeLimit;
+extern int winSetSizeLimit;
+extern int lenSetSizeLimit;
+extern int estTricks[4];
+extern int recInd; 
+extern int suppressTTlog;
+extern unsigned char suitChar[4];
+extern unsigned char rankChar[15];
+extern unsigned char handChar[4];
+extern unsigned char cardRank[15], cardSuit[5], cardHand[4];
+extern int totalNodes;
+extern struct futureTricks fut, ft;
+extern struct futureTricks *futp;
+extern char stri[128];
+
+extern FILE *fp, /**fp2, *fp7, *fp11,*/ *fpx;
+  /* Pointers to logs */
+
+extern struct ttStoreType * ttStore;
+extern int lastTTstore;
+extern int ttCollect;
+extern int suppressTTlog;
+
+EXTERN_C DLLEXPORT int STDCALL SolveBoard(struct deal dl, 
+  int target, int solutions, int mode, struct futureTricks *futp, int threadIndex);
+EXTERN_C DLLEXPORT int STDCALL CalcDDtable(struct ddTableDeal tableDeal, 
+  struct ddTableResults * tablep);
+
+#ifdef PBN
+EXTERN_C DLLEXPORT int STDCALL SolveBoardPBN(struct dealPBN dlpbn, int target, 
+    int solutions, int mode, struct futureTricks *futp, int thrId);
+EXTERN_C DLLEXPORT int STDCALL CalcDDtablePBN(struct ddTableDealPBN tableDealPBN, 
+  struct ddTableResults * tablep);
+#endif
+
+#ifdef PBN_PLUS
+EXTERN_C DLLEXPORT int STDCALL SolveAllBoards(struct boardsPBN *bop, struct solvedBoards *solvedp);
+EXTERN_C DLLEXPORT int STDCALL SolveAllChunks(struct boardsPBN *bop, struct solvedBoards *solvedp, int chunkSize);
+EXTERN_C DLLEXPORT int STDCALL CalcAllTables(struct ddTableDeals *dealsp, int mode, 
+	int trumpFilter[5], struct ddTablesRes *resp, struct allParResults *presp);
+EXTERN_C DLLEXPORT int STDCALL CalcAllTablesPBN(struct ddTableDealsPBN *dealsp, int mode, 
+	int trumpFilter[5], struct ddTablesRes *resp, struct allParResults *presp);
+EXTERN_C DLLEXPORT int STDCALL CalcPar(struct ddTableDeal tableDeal, int vulnerable, 
+    struct ddTableResults * tablep, struct parResults *presp);
+EXTERN_C DLLEXPORT int STDCALL CalcParPBN(struct ddTableDealPBN tableDealPBN, 
+  struct ddTableResults * tablep, int vulnerable, struct parResults *presp);
+#endif
+
+#ifdef __linux
+EXTERN_C void InitStart(int gb_ram, int ncores);   /* For usage with ctypes in Linux. */ 
+#endif
+
+EXTERN_C void InitStart(int gb_ram, int ncores);
+void InitGame(int gameNo, int moveTreeFlag, int first, int handRelFirst, int thrId);
+void InitSearch(struct pos * posPoint, int depth,
+  struct moveType startMoves[], int first, int mtd, int thrId);
+int ABsearch(struct pos * posPoint, int target, int depth, int thrId);
+void Make(struct pos * posPoint, unsigned short int trickCards[4], 
+  int depth, int trump, struct movePlyType *mply, int thrId);
+int MoveGen(struct pos * posPoint, int depth, int trump, struct movePlyType *mply, int thrId);
+void MergeSort(int n, struct moveType *a);
+inline int WinningMove(struct moveType * mvp1, struct moveType * mvp2, int trump);
+inline int WinningMoveNT(struct moveType * mvp1, struct moveType * mvp2);
+int AdjustMoveList(int thrId);
+int QuickTricks(struct pos * posPoint, int hand, 
+	int depth, int target, int trump, int *result, int thrId);
+int LaterTricksMIN(struct pos *posPoint, int hand, int depth, int target, int trump, int thrId); 
+int LaterTricksMAX(struct pos *posPoint, int hand, int depth, int target, int trump, int thrId);
+struct nodeCardsType * CheckSOP(struct pos * posPoint, struct nodeCardsType
+  * nodep, int target, int tricks, int * result, int *value, int thrId);
+struct nodeCardsType * UpdateSOP(struct pos * posPoint, struct nodeCardsType
+  * nodep);  
+struct nodeCardsType * FindSOP(struct pos * posPoint,
+  struct winCardType * nodeP, int firstHand, 
+	int target, int tricks, int * valp, int thrId);  
+struct nodeCardsType * BuildPath(struct pos * posPoint, 
+  struct posSearchType *nodep, int * result, int thrId);
+void BuildSOP(struct pos * posPoint, long long suitLengths, int tricks, int firstHand, int target,
+  int depth, int scoreFlag, int score, int thrId);
+struct posSearchType * SearchLenAndInsert(struct posSearchType
+	* rootp, long long key, int insertNode, int *result, int thrId);  
+void Undo(struct pos * posPoint, int depth, struct movePlyType *mply, int thrId);
+int CheckDeal(struct moveType * cardp, int thrId);
+int InvBitMapRank(unsigned short bitMap);
+int InvWinMask(int mask);
+void ReceiveTTstore(struct pos *posPoint, struct nodeCardsType * cardsP, int target, 
+  int depth, int thrId);
+int NextMove(struct pos *posPoint, int depth, struct movePlyType *mply, int thrId); 
+int DumpInput(int errCode, struct deal dl, int target, int solutions, int mode); 
+void Wipe(int thrId);
+void AddNodeSet(int thrId);
+void AddLenSet(int thrId);
+void AddWinSet(int thrId);
+
+void PrintDeal(FILE *fp, unsigned short ranks[4][4]);
+
+int SolveAllBoards4(struct boards *bop, struct solvedBoards *solvedp);
+int SolveAllBoardsN(struct boards *bop, struct solvedBoards *solvedp, int chunkSize);
+int SolveAllBoards1(struct boards *bop, struct solvedBoards *solvedp);
+
+int IsCard(char cardChar);
+void UpdateDealInfo(int card);
+int IsVal(char cardChar);
+
+
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/dll.h by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+</html>

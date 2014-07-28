@@ -1,0 +1,2471 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/ddd.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: ddd.cpp | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../../2.5.html">2.5.2+ddd105-1</a> / <a href="../ddd.html">ddd</a> / ddd.cpp</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: ddd.cpp</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (2196 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../ddd.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/ddd/ddd.cpp">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=0e34099be543446c0a93b40352284202f600346bc2581bfdb8be693fb5b58d7c&amp;page=1">
+	  duplicates (2)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /><a id="L245" href="#L245">245</a><br /><a id="L246" href="#L246">246</a><br /><a id="L247" href="#L247">247</a><br /><a id="L248" href="#L248">248</a><br /><a id="L249" href="#L249">249</a><br /><a id="L250" href="#L250">250</a><br /><a id="L251" href="#L251">251</a><br /><a id="L252" href="#L252">252</a><br /><a id="L253" href="#L253">253</a><br /><a id="L254" href="#L254">254</a><br /><a id="L255" href="#L255">255</a><br /><a id="L256" href="#L256">256</a><br /><a id="L257" href="#L257">257</a><br /><a id="L258" href="#L258">258</a><br /><a id="L259" href="#L259">259</a><br /><a id="L260" href="#L260">260</a><br /><a id="L261" href="#L261">261</a><br /><a id="L262" href="#L262">262</a><br /><a id="L263" href="#L263">263</a><br /><a id="L264" href="#L264">264</a><br /><a id="L265" href="#L265">265</a><br /><a id="L266" href="#L266">266</a><br /><a id="L267" href="#L267">267</a><br /><a id="L268" href="#L268">268</a><br /><a id="L269" href="#L269">269</a><br /><a id="L270" href="#L270">270</a><br /><a id="L271" href="#L271">271</a><br /><a id="L272" href="#L272">272</a><br /><a id="L273" href="#L273">273</a><br /><a id="L274" href="#L274">274</a><br /><a id="L275" href="#L275">275</a><br /><a id="L276" href="#L276">276</a><br /><a id="L277" href="#L277">277</a><br /><a id="L278" href="#L278">278</a><br /><a id="L279" href="#L279">279</a><br /><a id="L280" href="#L280">280</a><br /><a id="L281" href="#L281">281</a><br /><a id="L282" href="#L282">282</a><br /><a id="L283" href="#L283">283</a><br /><a id="L284" href="#L284">284</a><br /><a id="L285" href="#L285">285</a><br /><a id="L286" href="#L286">286</a><br /><a id="L287" href="#L287">287</a><br /><a id="L288" href="#L288">288</a><br /><a id="L289" href="#L289">289</a><br /><a id="L290" href="#L290">290</a><br /><a id="L291" href="#L291">291</a><br /><a id="L292" href="#L292">292</a><br /><a id="L293" href="#L293">293</a><br /><a id="L294" href="#L294">294</a><br /><a id="L295" href="#L295">295</a><br /><a id="L296" href="#L296">296</a><br /><a id="L297" href="#L297">297</a><br /><a id="L298" href="#L298">298</a><br /><a id="L299" href="#L299">299</a><br /><a id="L300" href="#L300">300</a><br /><a id="L301" href="#L301">301</a><br /><a id="L302" href="#L302">302</a><br /><a id="L303" href="#L303">303</a><br /><a id="L304" href="#L304">304</a><br /><a id="L305" href="#L305">305</a><br /><a id="L306" href="#L306">306</a><br /><a id="L307" href="#L307">307</a><br /><a id="L308" href="#L308">308</a><br /><a id="L309" href="#L309">309</a><br /><a id="L310" href="#L310">310</a><br /><a id="L311" href="#L311">311</a><br /><a id="L312" href="#L312">312</a><br /><a id="L313" href="#L313">313</a><br /><a id="L314" href="#L314">314</a><br /><a id="L315" href="#L315">315</a><br /><a id="L316" href="#L316">316</a><br /><a id="L317" href="#L317">317</a><br /><a id="L318" href="#L318">318</a><br /><a id="L319" href="#L319">319</a><br /><a id="L320" href="#L320">320</a><br /><a id="L321" href="#L321">321</a><br /><a id="L322" href="#L322">322</a><br /><a id="L323" href="#L323">323</a><br /><a id="L324" href="#L324">324</a><br /><a id="L325" href="#L325">325</a><br /><a id="L326" href="#L326">326</a><br /><a id="L327" href="#L327">327</a><br /><a id="L328" href="#L328">328</a><br /><a id="L329" href="#L329">329</a><br /><a id="L330" href="#L330">330</a><br /><a id="L331" href="#L331">331</a><br /><a id="L332" href="#L332">332</a><br /><a id="L333" href="#L333">333</a><br /><a id="L334" href="#L334">334</a><br /><a id="L335" href="#L335">335</a><br /><a id="L336" href="#L336">336</a><br /><a id="L337" href="#L337">337</a><br /><a id="L338" href="#L338">338</a><br /><a id="L339" href="#L339">339</a><br /><a id="L340" href="#L340">340</a><br /><a id="L341" href="#L341">341</a><br /><a id="L342" href="#L342">342</a><br /><a id="L343" href="#L343">343</a><br /><a id="L344" href="#L344">344</a><br /><a id="L345" href="#L345">345</a><br /><a id="L346" href="#L346">346</a><br /><a id="L347" href="#L347">347</a><br /><a id="L348" href="#L348">348</a><br /><a id="L349" href="#L349">349</a><br /><a id="L350" href="#L350">350</a><br /><a id="L351" href="#L351">351</a><br /><a id="L352" href="#L352">352</a><br /><a id="L353" href="#L353">353</a><br /><a id="L354" href="#L354">354</a><br /><a id="L355" href="#L355">355</a><br /><a id="L356" href="#L356">356</a><br /><a id="L357" href="#L357">357</a><br /><a id="L358" href="#L358">358</a><br /><a id="L359" href="#L359">359</a><br /><a id="L360" href="#L360">360</a><br /><a id="L361" href="#L361">361</a><br /><a id="L362" href="#L362">362</a><br /><a id="L363" href="#L363">363</a><br /><a id="L364" href="#L364">364</a><br /><a id="L365" href="#L365">365</a><br /><a id="L366" href="#L366">366</a><br /><a id="L367" href="#L367">367</a><br /><a id="L368" href="#L368">368</a><br /><a id="L369" href="#L369">369</a><br /><a id="L370" href="#L370">370</a><br /><a id="L371" href="#L371">371</a><br /><a id="L372" href="#L372">372</a><br /><a id="L373" href="#L373">373</a><br /><a id="L374" href="#L374">374</a><br /><a id="L375" href="#L375">375</a><br /><a id="L376" href="#L376">376</a><br /><a id="L377" href="#L377">377</a><br /><a id="L378" href="#L378">378</a><br /><a id="L379" href="#L379">379</a><br /><a id="L380" href="#L380">380</a><br /><a id="L381" href="#L381">381</a><br /><a id="L382" href="#L382">382</a><br /><a id="L383" href="#L383">383</a><br /><a id="L384" href="#L384">384</a><br /><a id="L385" href="#L385">385</a><br /><a id="L386" href="#L386">386</a><br /><a id="L387" href="#L387">387</a><br /><a id="L388" href="#L388">388</a><br /><a id="L389" href="#L389">389</a><br /><a id="L390" href="#L390">390</a><br /><a id="L391" href="#L391">391</a><br /><a id="L392" href="#L392">392</a><br /><a id="L393" href="#L393">393</a><br /><a id="L394" href="#L394">394</a><br /><a id="L395" href="#L395">395</a><br /><a id="L396" href="#L396">396</a><br /><a id="L397" href="#L397">397</a><br /><a id="L398" href="#L398">398</a><br /><a id="L399" href="#L399">399</a><br /><a id="L400" href="#L400">400</a><br /><a id="L401" href="#L401">401</a><br /><a id="L402" href="#L402">402</a><br /><a id="L403" href="#L403">403</a><br /><a id="L404" href="#L404">404</a><br /><a id="L405" href="#L405">405</a><br /><a id="L406" href="#L406">406</a><br /><a id="L407" href="#L407">407</a><br /><a id="L408" href="#L408">408</a><br /><a id="L409" href="#L409">409</a><br /><a id="L410" href="#L410">410</a><br /><a id="L411" href="#L411">411</a><br /><a id="L412" href="#L412">412</a><br /><a id="L413" href="#L413">413</a><br /><a id="L414" href="#L414">414</a><br /><a id="L415" href="#L415">415</a><br /><a id="L416" href="#L416">416</a><br /><a id="L417" href="#L417">417</a><br /><a id="L418" href="#L418">418</a><br /><a id="L419" href="#L419">419</a><br /><a id="L420" href="#L420">420</a><br /><a id="L421" href="#L421">421</a><br /><a id="L422" href="#L422">422</a><br /><a id="L423" href="#L423">423</a><br /><a id="L424" href="#L424">424</a><br /><a id="L425" href="#L425">425</a><br /><a id="L426" href="#L426">426</a><br /><a id="L427" href="#L427">427</a><br /><a id="L428" href="#L428">428</a><br /><a id="L429" href="#L429">429</a><br /><a id="L430" href="#L430">430</a><br /><a id="L431" href="#L431">431</a><br /><a id="L432" href="#L432">432</a><br /><a id="L433" href="#L433">433</a><br /><a id="L434" href="#L434">434</a><br /><a id="L435" href="#L435">435</a><br /><a id="L436" href="#L436">436</a><br /><a id="L437" href="#L437">437</a><br /><a id="L438" href="#L438">438</a><br /><a id="L439" href="#L439">439</a><br /><a id="L440" href="#L440">440</a><br /><a id="L441" href="#L441">441</a><br /><a id="L442" href="#L442">442</a><br /><a id="L443" href="#L443">443</a><br /><a id="L444" href="#L444">444</a><br /><a id="L445" href="#L445">445</a><br /><a id="L446" href="#L446">446</a><br /><a id="L447" href="#L447">447</a><br /><a id="L448" href="#L448">448</a><br /><a id="L449" href="#L449">449</a><br /><a id="L450" href="#L450">450</a><br /><a id="L451" href="#L451">451</a><br /><a id="L452" href="#L452">452</a><br /><a id="L453" href="#L453">453</a><br /><a id="L454" href="#L454">454</a><br /><a id="L455" href="#L455">455</a><br /><a id="L456" href="#L456">456</a><br /><a id="L457" href="#L457">457</a><br /><a id="L458" href="#L458">458</a><br /><a id="L459" href="#L459">459</a><br /><a id="L460" href="#L460">460</a><br /><a id="L461" href="#L461">461</a><br /><a id="L462" href="#L462">462</a><br /><a id="L463" href="#L463">463</a><br /><a id="L464" href="#L464">464</a><br /><a id="L465" href="#L465">465</a><br /><a id="L466" href="#L466">466</a><br /><a id="L467" href="#L467">467</a><br /><a id="L468" href="#L468">468</a><br /><a id="L469" href="#L469">469</a><br /><a id="L470" href="#L470">470</a><br /><a id="L471" href="#L471">471</a><br /><a id="L472" href="#L472">472</a><br /><a id="L473" href="#L473">473</a><br /><a id="L474" href="#L474">474</a><br /><a id="L475" href="#L475">475</a><br /><a id="L476" href="#L476">476</a><br /><a id="L477" href="#L477">477</a><br /><a id="L478" href="#L478">478</a><br /><a id="L479" href="#L479">479</a><br /><a id="L480" href="#L480">480</a><br /><a id="L481" href="#L481">481</a><br /><a id="L482" href="#L482">482</a><br /><a id="L483" href="#L483">483</a><br /><a id="L484" href="#L484">484</a><br /><a id="L485" href="#L485">485</a><br /><a id="L486" href="#L486">486</a><br /><a id="L487" href="#L487">487</a><br /><a id="L488" href="#L488">488</a><br /><a id="L489" href="#L489">489</a><br /><a id="L490" href="#L490">490</a><br /><a id="L491" href="#L491">491</a><br /><a id="L492" href="#L492">492</a><br /><a id="L493" href="#L493">493</a><br /><a id="L494" href="#L494">494</a><br /><a id="L495" href="#L495">495</a><br /><a id="L496" href="#L496">496</a><br /><a id="L497" href="#L497">497</a><br /><a id="L498" href="#L498">498</a><br /><a id="L499" href="#L499">499</a><br /><a id="L500" href="#L500">500</a><br /><a id="L501" href="#L501">501</a><br /><a id="L502" href="#L502">502</a><br /><a id="L503" href="#L503">503</a><br /><a id="L504" href="#L504">504</a><br /><a id="L505" href="#L505">505</a><br /><a id="L506" href="#L506">506</a><br /><a id="L507" href="#L507">507</a><br /><a id="L508" href="#L508">508</a><br /><a id="L509" href="#L509">509</a><br /><a id="L510" href="#L510">510</a><br /><a id="L511" href="#L511">511</a><br /><a id="L512" href="#L512">512</a><br /><a id="L513" href="#L513">513</a><br /><a id="L514" href="#L514">514</a><br /><a id="L515" href="#L515">515</a><br /><a id="L516" href="#L516">516</a><br /><a id="L517" href="#L517">517</a><br /><a id="L518" href="#L518">518</a><br /><a id="L519" href="#L519">519</a><br /><a id="L520" href="#L520">520</a><br /><a id="L521" href="#L521">521</a><br /><a id="L522" href="#L522">522</a><br /><a id="L523" href="#L523">523</a><br /><a id="L524" href="#L524">524</a><br /><a id="L525" href="#L525">525</a><br /><a id="L526" href="#L526">526</a><br /><a id="L527" href="#L527">527</a><br /><a id="L528" href="#L528">528</a><br /><a id="L529" href="#L529">529</a><br /><a id="L530" href="#L530">530</a><br /><a id="L531" href="#L531">531</a><br /><a id="L532" href="#L532">532</a><br /><a id="L533" href="#L533">533</a><br /><a id="L534" href="#L534">534</a><br /><a id="L535" href="#L535">535</a><br /><a id="L536" href="#L536">536</a><br /><a id="L537" href="#L537">537</a><br /><a id="L538" href="#L538">538</a><br /><a id="L539" href="#L539">539</a><br /><a id="L540" href="#L540">540</a><br /><a id="L541" href="#L541">541</a><br /><a id="L542" href="#L542">542</a><br /><a id="L543" href="#L543">543</a><br /><a id="L544" href="#L544">544</a><br /><a id="L545" href="#L545">545</a><br /><a id="L546" href="#L546">546</a><br /><a id="L547" href="#L547">547</a><br /><a id="L548" href="#L548">548</a><br /><a id="L549" href="#L549">549</a><br /><a id="L550" href="#L550">550</a><br /><a id="L551" href="#L551">551</a><br /><a id="L552" href="#L552">552</a><br /><a id="L553" href="#L553">553</a><br /><a id="L554" href="#L554">554</a><br /><a id="L555" href="#L555">555</a><br /><a id="L556" href="#L556">556</a><br /><a id="L557" href="#L557">557</a><br /><a id="L558" href="#L558">558</a><br /><a id="L559" href="#L559">559</a><br /><a id="L560" href="#L560">560</a><br /><a id="L561" href="#L561">561</a><br /><a id="L562" href="#L562">562</a><br /><a id="L563" href="#L563">563</a><br /><a id="L564" href="#L564">564</a><br /><a id="L565" href="#L565">565</a><br /><a id="L566" href="#L566">566</a><br /><a id="L567" href="#L567">567</a><br /><a id="L568" href="#L568">568</a><br /><a id="L569" href="#L569">569</a><br /><a id="L570" href="#L570">570</a><br /><a id="L571" href="#L571">571</a><br /><a id="L572" href="#L572">572</a><br /><a id="L573" href="#L573">573</a><br /><a id="L574" href="#L574">574</a><br /><a id="L575" href="#L575">575</a><br /><a id="L576" href="#L576">576</a><br /><a id="L577" href="#L577">577</a><br /><a id="L578" href="#L578">578</a><br /><a id="L579" href="#L579">579</a><br /><a id="L580" href="#L580">580</a><br /><a id="L581" href="#L581">581</a><br /><a id="L582" href="#L582">582</a><br /><a id="L583" href="#L583">583</a><br /><a id="L584" href="#L584">584</a><br /><a id="L585" href="#L585">585</a><br /><a id="L586" href="#L586">586</a><br /><a id="L587" href="#L587">587</a><br /><a id="L588" href="#L588">588</a><br /><a id="L589" href="#L589">589</a><br /><a id="L590" href="#L590">590</a><br /><a id="L591" href="#L591">591</a><br /><a id="L592" href="#L592">592</a><br /><a id="L593" href="#L593">593</a><br /><a id="L594" href="#L594">594</a><br /><a id="L595" href="#L595">595</a><br /><a id="L596" href="#L596">596</a><br /><a id="L597" href="#L597">597</a><br /><a id="L598" href="#L598">598</a><br /><a id="L599" href="#L599">599</a><br /><a id="L600" href="#L600">600</a><br /><a id="L601" href="#L601">601</a><br /><a id="L602" href="#L602">602</a><br /><a id="L603" href="#L603">603</a><br /><a id="L604" href="#L604">604</a><br /><a id="L605" href="#L605">605</a><br /><a id="L606" href="#L606">606</a><br /><a id="L607" href="#L607">607</a><br /><a id="L608" href="#L608">608</a><br /><a id="L609" href="#L609">609</a><br /><a id="L610" href="#L610">610</a><br /><a id="L611" href="#L611">611</a><br /><a id="L612" href="#L612">612</a><br /><a id="L613" href="#L613">613</a><br /><a id="L614" href="#L614">614</a><br /><a id="L615" href="#L615">615</a><br /><a id="L616" href="#L616">616</a><br /><a id="L617" href="#L617">617</a><br /><a id="L618" href="#L618">618</a><br /><a id="L619" href="#L619">619</a><br /><a id="L620" href="#L620">620</a><br /><a id="L621" href="#L621">621</a><br /><a id="L622" href="#L622">622</a><br /><a id="L623" href="#L623">623</a><br /><a id="L624" href="#L624">624</a><br /><a id="L625" href="#L625">625</a><br /><a id="L626" href="#L626">626</a><br /><a id="L627" href="#L627">627</a><br /><a id="L628" href="#L628">628</a><br /><a id="L629" href="#L629">629</a><br /><a id="L630" href="#L630">630</a><br /><a id="L631" href="#L631">631</a><br /><a id="L632" href="#L632">632</a><br /><a id="L633" href="#L633">633</a><br /><a id="L634" href="#L634">634</a><br /><a id="L635" href="#L635">635</a><br /><a id="L636" href="#L636">636</a><br /><a id="L637" href="#L637">637</a><br /><a id="L638" href="#L638">638</a><br /><a id="L639" href="#L639">639</a><br /><a id="L640" href="#L640">640</a><br /><a id="L641" href="#L641">641</a><br /><a id="L642" href="#L642">642</a><br /><a id="L643" href="#L643">643</a><br /><a id="L644" href="#L644">644</a><br /><a id="L645" href="#L645">645</a><br /><a id="L646" href="#L646">646</a><br /><a id="L647" href="#L647">647</a><br /><a id="L648" href="#L648">648</a><br /><a id="L649" href="#L649">649</a><br /><a id="L650" href="#L650">650</a><br /><a id="L651" href="#L651">651</a><br /><a id="L652" href="#L652">652</a><br /><a id="L653" href="#L653">653</a><br /><a id="L654" href="#L654">654</a><br /><a id="L655" href="#L655">655</a><br /><a id="L656" href="#L656">656</a><br /><a id="L657" href="#L657">657</a><br /><a id="L658" href="#L658">658</a><br /><a id="L659" href="#L659">659</a><br /><a id="L660" href="#L660">660</a><br /><a id="L661" href="#L661">661</a><br /><a id="L662" href="#L662">662</a><br /><a id="L663" href="#L663">663</a><br /><a id="L664" href="#L664">664</a><br /><a id="L665" href="#L665">665</a><br /><a id="L666" href="#L666">666</a><br /><a id="L667" href="#L667">667</a><br /><a id="L668" href="#L668">668</a><br /><a id="L669" href="#L669">669</a><br /><a id="L670" href="#L670">670</a><br /><a id="L671" href="#L671">671</a><br /><a id="L672" href="#L672">672</a><br /><a id="L673" href="#L673">673</a><br /><a id="L674" href="#L674">674</a><br /><a id="L675" href="#L675">675</a><br /><a id="L676" href="#L676">676</a><br /><a id="L677" href="#L677">677</a><br /><a id="L678" href="#L678">678</a><br /><a id="L679" href="#L679">679</a><br /><a id="L680" href="#L680">680</a><br /><a id="L681" href="#L681">681</a><br /><a id="L682" href="#L682">682</a><br /><a id="L683" href="#L683">683</a><br /><a id="L684" href="#L684">684</a><br /><a id="L685" href="#L685">685</a><br /><a id="L686" href="#L686">686</a><br /><a id="L687" href="#L687">687</a><br /><a id="L688" href="#L688">688</a><br /><a id="L689" href="#L689">689</a><br /><a id="L690" href="#L690">690</a><br /><a id="L691" href="#L691">691</a><br /><a id="L692" href="#L692">692</a><br /><a id="L693" href="#L693">693</a><br /><a id="L694" href="#L694">694</a><br /><a id="L695" href="#L695">695</a><br /><a id="L696" href="#L696">696</a><br /><a id="L697" href="#L697">697</a><br /><a id="L698" href="#L698">698</a><br /><a id="L699" href="#L699">699</a><br /><a id="L700" href="#L700">700</a><br /><a id="L701" href="#L701">701</a><br /><a id="L702" href="#L702">702</a><br /><a id="L703" href="#L703">703</a><br /><a id="L704" href="#L704">704</a><br /><a id="L705" href="#L705">705</a><br /><a id="L706" href="#L706">706</a><br /><a id="L707" href="#L707">707</a><br /><a id="L708" href="#L708">708</a><br /><a id="L709" href="#L709">709</a><br /><a id="L710" href="#L710">710</a><br /><a id="L711" href="#L711">711</a><br /><a id="L712" href="#L712">712</a><br /><a id="L713" href="#L713">713</a><br /><a id="L714" href="#L714">714</a><br /><a id="L715" href="#L715">715</a><br /><a id="L716" href="#L716">716</a><br /><a id="L717" href="#L717">717</a><br /><a id="L718" href="#L718">718</a><br /><a id="L719" href="#L719">719</a><br /><a id="L720" href="#L720">720</a><br /><a id="L721" href="#L721">721</a><br /><a id="L722" href="#L722">722</a><br /><a id="L723" href="#L723">723</a><br /><a id="L724" href="#L724">724</a><br /><a id="L725" href="#L725">725</a><br /><a id="L726" href="#L726">726</a><br /><a id="L727" href="#L727">727</a><br /><a id="L728" href="#L728">728</a><br /><a id="L729" href="#L729">729</a><br /><a id="L730" href="#L730">730</a><br /><a id="L731" href="#L731">731</a><br /><a id="L732" href="#L732">732</a><br /><a id="L733" href="#L733">733</a><br /><a id="L734" href="#L734">734</a><br /><a id="L735" href="#L735">735</a><br /><a id="L736" href="#L736">736</a><br /><a id="L737" href="#L737">737</a><br /><a id="L738" href="#L738">738</a><br /><a id="L739" href="#L739">739</a><br /><a id="L740" href="#L740">740</a><br /><a id="L741" href="#L741">741</a><br /><a id="L742" href="#L742">742</a><br /><a id="L743" href="#L743">743</a><br /><a id="L744" href="#L744">744</a><br /><a id="L745" href="#L745">745</a><br /><a id="L746" href="#L746">746</a><br /><a id="L747" href="#L747">747</a><br /><a id="L748" href="#L748">748</a><br /><a id="L749" href="#L749">749</a><br /><a id="L750" href="#L750">750</a><br /><a id="L751" href="#L751">751</a><br /><a id="L752" href="#L752">752</a><br /><a id="L753" href="#L753">753</a><br /><a id="L754" href="#L754">754</a><br /><a id="L755" href="#L755">755</a><br /><a id="L756" href="#L756">756</a><br /><a id="L757" href="#L757">757</a><br /><a id="L758" href="#L758">758</a><br /><a id="L759" href="#L759">759</a><br /><a id="L760" href="#L760">760</a><br /><a id="L761" href="#L761">761</a><br /><a id="L762" href="#L762">762</a><br /><a id="L763" href="#L763">763</a><br /><a id="L764" href="#L764">764</a><br /><a id="L765" href="#L765">765</a><br /><a id="L766" href="#L766">766</a><br /><a id="L767" href="#L767">767</a><br /><a id="L768" href="#L768">768</a><br /><a id="L769" href="#L769">769</a><br /><a id="L770" href="#L770">770</a><br /><a id="L771" href="#L771">771</a><br /><a id="L772" href="#L772">772</a><br /><a id="L773" href="#L773">773</a><br /><a id="L774" href="#L774">774</a><br /><a id="L775" href="#L775">775</a><br /><a id="L776" href="#L776">776</a><br /><a id="L777" href="#L777">777</a><br /><a id="L778" href="#L778">778</a><br /><a id="L779" href="#L779">779</a><br /><a id="L780" href="#L780">780</a><br /><a id="L781" href="#L781">781</a><br /><a id="L782" href="#L782">782</a><br /><a id="L783" href="#L783">783</a><br /><a id="L784" href="#L784">784</a><br /><a id="L785" href="#L785">785</a><br /><a id="L786" href="#L786">786</a><br /><a id="L787" href="#L787">787</a><br /><a id="L788" href="#L788">788</a><br /><a id="L789" href="#L789">789</a><br /><a id="L790" href="#L790">790</a><br /><a id="L791" href="#L791">791</a><br /><a id="L792" href="#L792">792</a><br /><a id="L793" href="#L793">793</a><br /><a id="L794" href="#L794">794</a><br /><a id="L795" href="#L795">795</a><br /><a id="L796" href="#L796">796</a><br /><a id="L797" href="#L797">797</a><br /><a id="L798" href="#L798">798</a><br /><a id="L799" href="#L799">799</a><br /><a id="L800" href="#L800">800</a><br /><a id="L801" href="#L801">801</a><br /><a id="L802" href="#L802">802</a><br /><a id="L803" href="#L803">803</a><br /><a id="L804" href="#L804">804</a><br /><a id="L805" href="#L805">805</a><br /><a id="L806" href="#L806">806</a><br /><a id="L807" href="#L807">807</a><br /><a id="L808" href="#L808">808</a><br /><a id="L809" href="#L809">809</a><br /><a id="L810" href="#L810">810</a><br /><a id="L811" href="#L811">811</a><br /><a id="L812" href="#L812">812</a><br /><a id="L813" href="#L813">813</a><br /><a id="L814" href="#L814">814</a><br /><a id="L815" href="#L815">815</a><br /><a id="L816" href="#L816">816</a><br /><a id="L817" href="#L817">817</a><br /><a id="L818" href="#L818">818</a><br /><a id="L819" href="#L819">819</a><br /><a id="L820" href="#L820">820</a><br /><a id="L821" href="#L821">821</a><br /><a id="L822" href="#L822">822</a><br /><a id="L823" href="#L823">823</a><br /><a id="L824" href="#L824">824</a><br /><a id="L825" href="#L825">825</a><br /><a id="L826" href="#L826">826</a><br /><a id="L827" href="#L827">827</a><br /><a id="L828" href="#L828">828</a><br /><a id="L829" href="#L829">829</a><br /><a id="L830" href="#L830">830</a><br /><a id="L831" href="#L831">831</a><br /><a id="L832" href="#L832">832</a><br /><a id="L833" href="#L833">833</a><br /><a id="L834" href="#L834">834</a><br /><a id="L835" href="#L835">835</a><br /><a id="L836" href="#L836">836</a><br /><a id="L837" href="#L837">837</a><br /><a id="L838" href="#L838">838</a><br /><a id="L839" href="#L839">839</a><br /><a id="L840" href="#L840">840</a><br /><a id="L841" href="#L841">841</a><br /><a id="L842" href="#L842">842</a><br /><a id="L843" href="#L843">843</a><br /><a id="L844" href="#L844">844</a><br /><a id="L845" href="#L845">845</a><br /><a id="L846" href="#L846">846</a><br /><a id="L847" href="#L847">847</a><br /><a id="L848" href="#L848">848</a><br /><a id="L849" href="#L849">849</a><br /><a id="L850" href="#L850">850</a><br /><a id="L851" href="#L851">851</a><br /><a id="L852" href="#L852">852</a><br /><a id="L853" href="#L853">853</a><br /><a id="L854" href="#L854">854</a><br /><a id="L855" href="#L855">855</a><br /><a id="L856" href="#L856">856</a><br /><a id="L857" href="#L857">857</a><br /><a id="L858" href="#L858">858</a><br /><a id="L859" href="#L859">859</a><br /><a id="L860" href="#L860">860</a><br /><a id="L861" href="#L861">861</a><br /><a id="L862" href="#L862">862</a><br /><a id="L863" href="#L863">863</a><br /><a id="L864" href="#L864">864</a><br /><a id="L865" href="#L865">865</a><br /><a id="L866" href="#L866">866</a><br /><a id="L867" href="#L867">867</a><br /><a id="L868" href="#L868">868</a><br /><a id="L869" href="#L869">869</a><br /><a id="L870" href="#L870">870</a><br /><a id="L871" href="#L871">871</a><br /><a id="L872" href="#L872">872</a><br /><a id="L873" href="#L873">873</a><br /><a id="L874" href="#L874">874</a><br /><a id="L875" href="#L875">875</a><br /><a id="L876" href="#L876">876</a><br /><a id="L877" href="#L877">877</a><br /><a id="L878" href="#L878">878</a><br /><a id="L879" href="#L879">879</a><br /><a id="L880" href="#L880">880</a><br /><a id="L881" href="#L881">881</a><br /><a id="L882" href="#L882">882</a><br /><a id="L883" href="#L883">883</a><br /><a id="L884" href="#L884">884</a><br /><a id="L885" href="#L885">885</a><br /><a id="L886" href="#L886">886</a><br /><a id="L887" href="#L887">887</a><br /><a id="L888" href="#L888">888</a><br /><a id="L889" href="#L889">889</a><br /><a id="L890" href="#L890">890</a><br /><a id="L891" href="#L891">891</a><br /><a id="L892" href="#L892">892</a><br /><a id="L893" href="#L893">893</a><br /><a id="L894" href="#L894">894</a><br /><a id="L895" href="#L895">895</a><br /><a id="L896" href="#L896">896</a><br /><a id="L897" href="#L897">897</a><br /><a id="L898" href="#L898">898</a><br /><a id="L899" href="#L899">899</a><br /><a id="L900" href="#L900">900</a><br /><a id="L901" href="#L901">901</a><br /><a id="L902" href="#L902">902</a><br /><a id="L903" href="#L903">903</a><br /><a id="L904" href="#L904">904</a><br /><a id="L905" href="#L905">905</a><br /><a id="L906" href="#L906">906</a><br /><a id="L907" href="#L907">907</a><br /><a id="L908" href="#L908">908</a><br /><a id="L909" href="#L909">909</a><br /><a id="L910" href="#L910">910</a><br /><a id="L911" href="#L911">911</a><br /><a id="L912" href="#L912">912</a><br /><a id="L913" href="#L913">913</a><br /><a id="L914" href="#L914">914</a><br /><a id="L915" href="#L915">915</a><br /><a id="L916" href="#L916">916</a><br /><a id="L917" href="#L917">917</a><br /><a id="L918" href="#L918">918</a><br /><a id="L919" href="#L919">919</a><br /><a id="L920" href="#L920">920</a><br /><a id="L921" href="#L921">921</a><br /><a id="L922" href="#L922">922</a><br /><a id="L923" href="#L923">923</a><br /><a id="L924" href="#L924">924</a><br /><a id="L925" href="#L925">925</a><br /><a id="L926" href="#L926">926</a><br /><a id="L927" href="#L927">927</a><br /><a id="L928" href="#L928">928</a><br /><a id="L929" href="#L929">929</a><br /><a id="L930" href="#L930">930</a><br /><a id="L931" href="#L931">931</a><br /><a id="L932" href="#L932">932</a><br /><a id="L933" href="#L933">933</a><br /><a id="L934" href="#L934">934</a><br /><a id="L935" href="#L935">935</a><br /><a id="L936" href="#L936">936</a><br /><a id="L937" href="#L937">937</a><br /><a id="L938" href="#L938">938</a><br /><a id="L939" href="#L939">939</a><br /><a id="L940" href="#L940">940</a><br /><a id="L941" href="#L941">941</a><br /><a id="L942" href="#L942">942</a><br /><a id="L943" href="#L943">943</a><br /><a id="L944" href="#L944">944</a><br /><a id="L945" href="#L945">945</a><br /><a id="L946" href="#L946">946</a><br /><a id="L947" href="#L947">947</a><br /><a id="L948" href="#L948">948</a><br /><a id="L949" href="#L949">949</a><br /><a id="L950" href="#L950">950</a><br /><a id="L951" href="#L951">951</a><br /><a id="L952" href="#L952">952</a><br /><a id="L953" href="#L953">953</a><br /><a id="L954" href="#L954">954</a><br /><a id="L955" href="#L955">955</a><br /><a id="L956" href="#L956">956</a><br /><a id="L957" href="#L957">957</a><br /><a id="L958" href="#L958">958</a><br /><a id="L959" href="#L959">959</a><br /><a id="L960" href="#L960">960</a><br /><a id="L961" href="#L961">961</a><br /><a id="L962" href="#L962">962</a><br /><a id="L963" href="#L963">963</a><br /><a id="L964" href="#L964">964</a><br /><a id="L965" href="#L965">965</a><br /><a id="L966" href="#L966">966</a><br /><a id="L967" href="#L967">967</a><br /><a id="L968" href="#L968">968</a><br /><a id="L969" href="#L969">969</a><br /><a id="L970" href="#L970">970</a><br /><a id="L971" href="#L971">971</a><br /><a id="L972" href="#L972">972</a><br /><a id="L973" href="#L973">973</a><br /><a id="L974" href="#L974">974</a><br /><a id="L975" href="#L975">975</a><br /><a id="L976" href="#L976">976</a><br /><a id="L977" href="#L977">977</a><br /><a id="L978" href="#L978">978</a><br /><a id="L979" href="#L979">979</a><br /><a id="L980" href="#L980">980</a><br /><a id="L981" href="#L981">981</a><br /><a id="L982" href="#L982">982</a><br /><a id="L983" href="#L983">983</a><br /><a id="L984" href="#L984">984</a><br /><a id="L985" href="#L985">985</a><br /><a id="L986" href="#L986">986</a><br /><a id="L987" href="#L987">987</a><br /><a id="L988" href="#L988">988</a><br /><a id="L989" href="#L989">989</a><br /><a id="L990" href="#L990">990</a><br /><a id="L991" href="#L991">991</a><br /><a id="L992" href="#L992">992</a><br /><a id="L993" href="#L993">993</a><br /><a id="L994" href="#L994">994</a><br /><a id="L995" href="#L995">995</a><br /><a id="L996" href="#L996">996</a><br /><a id="L997" href="#L997">997</a><br /><a id="L998" href="#L998">998</a><br /><a id="L999" href="#L999">999</a><br /><a id="L1000" href="#L1000">1000</a><br /><a id="L1001" href="#L1001">1001</a><br /><a id="L1002" href="#L1002">1002</a><br /><a id="L1003" href="#L1003">1003</a><br /><a id="L1004" href="#L1004">1004</a><br /><a id="L1005" href="#L1005">1005</a><br /><a id="L1006" href="#L1006">1006</a><br /><a id="L1007" href="#L1007">1007</a><br /><a id="L1008" href="#L1008">1008</a><br /><a id="L1009" href="#L1009">1009</a><br /><a id="L1010" href="#L1010">1010</a><br /><a id="L1011" href="#L1011">1011</a><br /><a id="L1012" href="#L1012">1012</a><br /><a id="L1013" href="#L1013">1013</a><br /><a id="L1014" href="#L1014">1014</a><br /><a id="L1015" href="#L1015">1015</a><br /><a id="L1016" href="#L1016">1016</a><br /><a id="L1017" href="#L1017">1017</a><br /><a id="L1018" href="#L1018">1018</a><br /><a id="L1019" href="#L1019">1019</a><br /><a id="L1020" href="#L1020">1020</a><br /><a id="L1021" href="#L1021">1021</a><br /><a id="L1022" href="#L1022">1022</a><br /><a id="L1023" href="#L1023">1023</a><br /><a id="L1024" href="#L1024">1024</a><br /><a id="L1025" href="#L1025">1025</a><br /><a id="L1026" href="#L1026">1026</a><br /><a id="L1027" href="#L1027">1027</a><br /><a id="L1028" href="#L1028">1028</a><br /><a id="L1029" href="#L1029">1029</a><br /><a id="L1030" href="#L1030">1030</a><br /><a id="L1031" href="#L1031">1031</a><br /><a id="L1032" href="#L1032">1032</a><br /><a id="L1033" href="#L1033">1033</a><br /><a id="L1034" href="#L1034">1034</a><br /><a id="L1035" href="#L1035">1035</a><br /><a id="L1036" href="#L1036">1036</a><br /><a id="L1037" href="#L1037">1037</a><br /><a id="L1038" href="#L1038">1038</a><br /><a id="L1039" href="#L1039">1039</a><br /><a id="L1040" href="#L1040">1040</a><br /><a id="L1041" href="#L1041">1041</a><br /><a id="L1042" href="#L1042">1042</a><br /><a id="L1043" href="#L1043">1043</a><br /><a id="L1044" href="#L1044">1044</a><br /><a id="L1045" href="#L1045">1045</a><br /><a id="L1046" href="#L1046">1046</a><br /><a id="L1047" href="#L1047">1047</a><br /><a id="L1048" href="#L1048">1048</a><br /><a id="L1049" href="#L1049">1049</a><br /><a id="L1050" href="#L1050">1050</a><br /><a id="L1051" href="#L1051">1051</a><br /><a id="L1052" href="#L1052">1052</a><br /><a id="L1053" href="#L1053">1053</a><br /><a id="L1054" href="#L1054">1054</a><br /><a id="L1055" href="#L1055">1055</a><br /><a id="L1056" href="#L1056">1056</a><br /><a id="L1057" href="#L1057">1057</a><br /><a id="L1058" href="#L1058">1058</a><br /><a id="L1059" href="#L1059">1059</a><br /><a id="L1060" href="#L1060">1060</a><br /><a id="L1061" href="#L1061">1061</a><br /><a id="L1062" href="#L1062">1062</a><br /><a id="L1063" href="#L1063">1063</a><br /><a id="L1064" href="#L1064">1064</a><br /><a id="L1065" href="#L1065">1065</a><br /><a id="L1066" href="#L1066">1066</a><br /><a id="L1067" href="#L1067">1067</a><br /><a id="L1068" href="#L1068">1068</a><br /><a id="L1069" href="#L1069">1069</a><br /><a id="L1070" href="#L1070">1070</a><br /><a id="L1071" href="#L1071">1071</a><br /><a id="L1072" href="#L1072">1072</a><br /><a id="L1073" href="#L1073">1073</a><br /><a id="L1074" href="#L1074">1074</a><br /><a id="L1075" href="#L1075">1075</a><br /><a id="L1076" href="#L1076">1076</a><br /><a id="L1077" href="#L1077">1077</a><br /><a id="L1078" href="#L1078">1078</a><br /><a id="L1079" href="#L1079">1079</a><br /><a id="L1080" href="#L1080">1080</a><br /><a id="L1081" href="#L1081">1081</a><br /><a id="L1082" href="#L1082">1082</a><br /><a id="L1083" href="#L1083">1083</a><br /><a id="L1084" href="#L1084">1084</a><br /><a id="L1085" href="#L1085">1085</a><br /><a id="L1086" href="#L1086">1086</a><br /><a id="L1087" href="#L1087">1087</a><br /><a id="L1088" href="#L1088">1088</a><br /><a id="L1089" href="#L1089">1089</a><br /><a id="L1090" href="#L1090">1090</a><br /><a id="L1091" href="#L1091">1091</a><br /><a id="L1092" href="#L1092">1092</a><br /><a id="L1093" href="#L1093">1093</a><br /><a id="L1094" href="#L1094">1094</a><br /><a id="L1095" href="#L1095">1095</a><br /><a id="L1096" href="#L1096">1096</a><br /><a id="L1097" href="#L1097">1097</a><br /><a id="L1098" href="#L1098">1098</a><br /><a id="L1099" href="#L1099">1099</a><br /><a id="L1100" href="#L1100">1100</a><br /><a id="L1101" href="#L1101">1101</a><br /><a id="L1102" href="#L1102">1102</a><br /><a id="L1103" href="#L1103">1103</a><br /><a id="L1104" href="#L1104">1104</a><br /><a id="L1105" href="#L1105">1105</a><br /><a id="L1106" href="#L1106">1106</a><br /><a id="L1107" href="#L1107">1107</a><br /><a id="L1108" href="#L1108">1108</a><br /><a id="L1109" href="#L1109">1109</a><br /><a id="L1110" href="#L1110">1110</a><br /><a id="L1111" href="#L1111">1111</a><br /><a id="L1112" href="#L1112">1112</a><br /><a id="L1113" href="#L1113">1113</a><br /><a id="L1114" href="#L1114">1114</a><br /><a id="L1115" href="#L1115">1115</a><br /><a id="L1116" href="#L1116">1116</a><br /><a id="L1117" href="#L1117">1117</a><br /><a id="L1118" href="#L1118">1118</a><br /><a id="L1119" href="#L1119">1119</a><br /><a id="L1120" href="#L1120">1120</a><br /><a id="L1121" href="#L1121">1121</a><br /><a id="L1122" href="#L1122">1122</a><br /><a id="L1123" href="#L1123">1123</a><br /><a id="L1124" href="#L1124">1124</a><br /><a id="L1125" href="#L1125">1125</a><br /><a id="L1126" href="#L1126">1126</a><br /><a id="L1127" href="#L1127">1127</a><br /><a id="L1128" href="#L1128">1128</a><br /><a id="L1129" href="#L1129">1129</a><br /><a id="L1130" href="#L1130">1130</a><br /><a id="L1131" href="#L1131">1131</a><br /><a id="L1132" href="#L1132">1132</a><br /><a id="L1133" href="#L1133">1133</a><br /><a id="L1134" href="#L1134">1134</a><br /><a id="L1135" href="#L1135">1135</a><br /><a id="L1136" href="#L1136">1136</a><br /><a id="L1137" href="#L1137">1137</a><br /><a id="L1138" href="#L1138">1138</a><br /><a id="L1139" href="#L1139">1139</a><br /><a id="L1140" href="#L1140">1140</a><br /><a id="L1141" href="#L1141">1141</a><br /><a id="L1142" href="#L1142">1142</a><br /><a id="L1143" href="#L1143">1143</a><br /><a id="L1144" href="#L1144">1144</a><br /><a id="L1145" href="#L1145">1145</a><br /><a id="L1146" href="#L1146">1146</a><br /><a id="L1147" href="#L1147">1147</a><br /><a id="L1148" href="#L1148">1148</a><br /><a id="L1149" href="#L1149">1149</a><br /><a id="L1150" href="#L1150">1150</a><br /><a id="L1151" href="#L1151">1151</a><br /><a id="L1152" href="#L1152">1152</a><br /><a id="L1153" href="#L1153">1153</a><br /><a id="L1154" href="#L1154">1154</a><br /><a id="L1155" href="#L1155">1155</a><br /><a id="L1156" href="#L1156">1156</a><br /><a id="L1157" href="#L1157">1157</a><br /><a id="L1158" href="#L1158">1158</a><br /><a id="L1159" href="#L1159">1159</a><br /><a id="L1160" href="#L1160">1160</a><br /><a id="L1161" href="#L1161">1161</a><br /><a id="L1162" href="#L1162">1162</a><br /><a id="L1163" href="#L1163">1163</a><br /><a id="L1164" href="#L1164">1164</a><br /><a id="L1165" href="#L1165">1165</a><br /><a id="L1166" href="#L1166">1166</a><br /><a id="L1167" href="#L1167">1167</a><br /><a id="L1168" href="#L1168">1168</a><br /><a id="L1169" href="#L1169">1169</a><br /><a id="L1170" href="#L1170">1170</a><br /><a id="L1171" href="#L1171">1171</a><br /><a id="L1172" href="#L1172">1172</a><br /><a id="L1173" href="#L1173">1173</a><br /><a id="L1174" href="#L1174">1174</a><br /><a id="L1175" href="#L1175">1175</a><br /><a id="L1176" href="#L1176">1176</a><br /><a id="L1177" href="#L1177">1177</a><br /><a id="L1178" href="#L1178">1178</a><br /><a id="L1179" href="#L1179">1179</a><br /><a id="L1180" href="#L1180">1180</a><br /><a id="L1181" href="#L1181">1181</a><br /><a id="L1182" href="#L1182">1182</a><br /><a id="L1183" href="#L1183">1183</a><br /><a id="L1184" href="#L1184">1184</a><br /><a id="L1185" href="#L1185">1185</a><br /><a id="L1186" href="#L1186">1186</a><br /><a id="L1187" href="#L1187">1187</a><br /><a id="L1188" href="#L1188">1188</a><br /><a id="L1189" href="#L1189">1189</a><br /><a id="L1190" href="#L1190">1190</a><br /><a id="L1191" href="#L1191">1191</a><br /><a id="L1192" href="#L1192">1192</a><br /><a id="L1193" href="#L1193">1193</a><br /><a id="L1194" href="#L1194">1194</a><br /><a id="L1195" href="#L1195">1195</a><br /><a id="L1196" href="#L1196">1196</a><br /><a id="L1197" href="#L1197">1197</a><br /><a id="L1198" href="#L1198">1198</a><br /><a id="L1199" href="#L1199">1199</a><br /><a id="L1200" href="#L1200">1200</a><br /><a id="L1201" href="#L1201">1201</a><br /><a id="L1202" href="#L1202">1202</a><br /><a id="L1203" href="#L1203">1203</a><br /><a id="L1204" href="#L1204">1204</a><br /><a id="L1205" href="#L1205">1205</a><br /><a id="L1206" href="#L1206">1206</a><br /><a id="L1207" href="#L1207">1207</a><br /><a id="L1208" href="#L1208">1208</a><br /><a id="L1209" href="#L1209">1209</a><br /><a id="L1210" href="#L1210">1210</a><br /><a id="L1211" href="#L1211">1211</a><br /><a id="L1212" href="#L1212">1212</a><br /><a id="L1213" href="#L1213">1213</a><br /><a id="L1214" href="#L1214">1214</a><br /><a id="L1215" href="#L1215">1215</a><br /><a id="L1216" href="#L1216">1216</a><br /><a id="L1217" href="#L1217">1217</a><br /><a id="L1218" href="#L1218">1218</a><br /><a id="L1219" href="#L1219">1219</a><br /><a id="L1220" href="#L1220">1220</a><br /><a id="L1221" href="#L1221">1221</a><br /><a id="L1222" href="#L1222">1222</a><br /><a id="L1223" href="#L1223">1223</a><br /><a id="L1224" href="#L1224">1224</a><br /><a id="L1225" href="#L1225">1225</a><br /><a id="L1226" href="#L1226">1226</a><br /><a id="L1227" href="#L1227">1227</a><br /><a id="L1228" href="#L1228">1228</a><br /><a id="L1229" href="#L1229">1229</a><br /><a id="L1230" href="#L1230">1230</a><br /><a id="L1231" href="#L1231">1231</a><br /><a id="L1232" href="#L1232">1232</a><br /><a id="L1233" href="#L1233">1233</a><br /><a id="L1234" href="#L1234">1234</a><br /><a id="L1235" href="#L1235">1235</a><br /><a id="L1236" href="#L1236">1236</a><br /><a id="L1237" href="#L1237">1237</a><br /><a id="L1238" href="#L1238">1238</a><br /><a id="L1239" href="#L1239">1239</a><br /><a id="L1240" href="#L1240">1240</a><br /><a id="L1241" href="#L1241">1241</a><br /><a id="L1242" href="#L1242">1242</a><br /><a id="L1243" href="#L1243">1243</a><br /><a id="L1244" href="#L1244">1244</a><br /><a id="L1245" href="#L1245">1245</a><br /><a id="L1246" href="#L1246">1246</a><br /><a id="L1247" href="#L1247">1247</a><br /><a id="L1248" href="#L1248">1248</a><br /><a id="L1249" href="#L1249">1249</a><br /><a id="L1250" href="#L1250">1250</a><br /><a id="L1251" href="#L1251">1251</a><br /><a id="L1252" href="#L1252">1252</a><br /><a id="L1253" href="#L1253">1253</a><br /><a id="L1254" href="#L1254">1254</a><br /><a id="L1255" href="#L1255">1255</a><br /><a id="L1256" href="#L1256">1256</a><br /><a id="L1257" href="#L1257">1257</a><br /><a id="L1258" href="#L1258">1258</a><br /><a id="L1259" href="#L1259">1259</a><br /><a id="L1260" href="#L1260">1260</a><br /><a id="L1261" href="#L1261">1261</a><br /><a id="L1262" href="#L1262">1262</a><br /><a id="L1263" href="#L1263">1263</a><br /><a id="L1264" href="#L1264">1264</a><br /><a id="L1265" href="#L1265">1265</a><br /><a id="L1266" href="#L1266">1266</a><br /><a id="L1267" href="#L1267">1267</a><br /><a id="L1268" href="#L1268">1268</a><br /><a id="L1269" href="#L1269">1269</a><br /><a id="L1270" href="#L1270">1270</a><br /><a id="L1271" href="#L1271">1271</a><br /><a id="L1272" href="#L1272">1272</a><br /><a id="L1273" href="#L1273">1273</a><br /><a id="L1274" href="#L1274">1274</a><br /><a id="L1275" href="#L1275">1275</a><br /><a id="L1276" href="#L1276">1276</a><br /><a id="L1277" href="#L1277">1277</a><br /><a id="L1278" href="#L1278">1278</a><br /><a id="L1279" href="#L1279">1279</a><br /><a id="L1280" href="#L1280">1280</a><br /><a id="L1281" href="#L1281">1281</a><br /><a id="L1282" href="#L1282">1282</a><br /><a id="L1283" href="#L1283">1283</a><br /><a id="L1284" href="#L1284">1284</a><br /><a id="L1285" href="#L1285">1285</a><br /><a id="L1286" href="#L1286">1286</a><br /><a id="L1287" href="#L1287">1287</a><br /><a id="L1288" href="#L1288">1288</a><br /><a id="L1289" href="#L1289">1289</a><br /><a id="L1290" href="#L1290">1290</a><br /><a id="L1291" href="#L1291">1291</a><br /><a id="L1292" href="#L1292">1292</a><br /><a id="L1293" href="#L1293">1293</a><br /><a id="L1294" href="#L1294">1294</a><br /><a id="L1295" href="#L1295">1295</a><br /><a id="L1296" href="#L1296">1296</a><br /><a id="L1297" href="#L1297">1297</a><br /><a id="L1298" href="#L1298">1298</a><br /><a id="L1299" href="#L1299">1299</a><br /><a id="L1300" href="#L1300">1300</a><br /><a id="L1301" href="#L1301">1301</a><br /><a id="L1302" href="#L1302">1302</a><br /><a id="L1303" href="#L1303">1303</a><br /><a id="L1304" href="#L1304">1304</a><br /><a id="L1305" href="#L1305">1305</a><br /><a id="L1306" href="#L1306">1306</a><br /><a id="L1307" href="#L1307">1307</a><br /><a id="L1308" href="#L1308">1308</a><br /><a id="L1309" href="#L1309">1309</a><br /><a id="L1310" href="#L1310">1310</a><br /><a id="L1311" href="#L1311">1311</a><br /><a id="L1312" href="#L1312">1312</a><br /><a id="L1313" href="#L1313">1313</a><br /><a id="L1314" href="#L1314">1314</a><br /><a id="L1315" href="#L1315">1315</a><br /><a id="L1316" href="#L1316">1316</a><br /><a id="L1317" href="#L1317">1317</a><br /><a id="L1318" href="#L1318">1318</a><br /><a id="L1319" href="#L1319">1319</a><br /><a id="L1320" href="#L1320">1320</a><br /><a id="L1321" href="#L1321">1321</a><br /><a id="L1322" href="#L1322">1322</a><br /><a id="L1323" href="#L1323">1323</a><br /><a id="L1324" href="#L1324">1324</a><br /><a id="L1325" href="#L1325">1325</a><br /><a id="L1326" href="#L1326">1326</a><br /><a id="L1327" href="#L1327">1327</a><br /><a id="L1328" href="#L1328">1328</a><br /><a id="L1329" href="#L1329">1329</a><br /><a id="L1330" href="#L1330">1330</a><br /><a id="L1331" href="#L1331">1331</a><br /><a id="L1332" href="#L1332">1332</a><br /><a id="L1333" href="#L1333">1333</a><br /><a id="L1334" href="#L1334">1334</a><br /><a id="L1335" href="#L1335">1335</a><br /><a id="L1336" href="#L1336">1336</a><br /><a id="L1337" href="#L1337">1337</a><br /><a id="L1338" href="#L1338">1338</a><br /><a id="L1339" href="#L1339">1339</a><br /><a id="L1340" href="#L1340">1340</a><br /><a id="L1341" href="#L1341">1341</a><br /><a id="L1342" href="#L1342">1342</a><br /><a id="L1343" href="#L1343">1343</a><br /><a id="L1344" href="#L1344">1344</a><br /><a id="L1345" href="#L1345">1345</a><br /><a id="L1346" href="#L1346">1346</a><br /><a id="L1347" href="#L1347">1347</a><br /><a id="L1348" href="#L1348">1348</a><br /><a id="L1349" href="#L1349">1349</a><br /><a id="L1350" href="#L1350">1350</a><br /><a id="L1351" href="#L1351">1351</a><br /><a id="L1352" href="#L1352">1352</a><br /><a id="L1353" href="#L1353">1353</a><br /><a id="L1354" href="#L1354">1354</a><br /><a id="L1355" href="#L1355">1355</a><br /><a id="L1356" href="#L1356">1356</a><br /><a id="L1357" href="#L1357">1357</a><br /><a id="L1358" href="#L1358">1358</a><br /><a id="L1359" href="#L1359">1359</a><br /><a id="L1360" href="#L1360">1360</a><br /><a id="L1361" href="#L1361">1361</a><br /><a id="L1362" href="#L1362">1362</a><br /><a id="L1363" href="#L1363">1363</a><br /><a id="L1364" href="#L1364">1364</a><br /><a id="L1365" href="#L1365">1365</a><br /><a id="L1366" href="#L1366">1366</a><br /><a id="L1367" href="#L1367">1367</a><br /><a id="L1368" href="#L1368">1368</a><br /><a id="L1369" href="#L1369">1369</a><br /><a id="L1370" href="#L1370">1370</a><br /><a id="L1371" href="#L1371">1371</a><br /><a id="L1372" href="#L1372">1372</a><br /><a id="L1373" href="#L1373">1373</a><br /><a id="L1374" href="#L1374">1374</a><br /><a id="L1375" href="#L1375">1375</a><br /><a id="L1376" href="#L1376">1376</a><br /><a id="L1377" href="#L1377">1377</a><br /><a id="L1378" href="#L1378">1378</a><br /><a id="L1379" href="#L1379">1379</a><br /><a id="L1380" href="#L1380">1380</a><br /><a id="L1381" href="#L1381">1381</a><br /><a id="L1382" href="#L1382">1382</a><br /><a id="L1383" href="#L1383">1383</a><br /><a id="L1384" href="#L1384">1384</a><br /><a id="L1385" href="#L1385">1385</a><br /><a id="L1386" href="#L1386">1386</a><br /><a id="L1387" href="#L1387">1387</a><br /><a id="L1388" href="#L1388">1388</a><br /><a id="L1389" href="#L1389">1389</a><br /><a id="L1390" href="#L1390">1390</a><br /><a id="L1391" href="#L1391">1391</a><br /><a id="L1392" href="#L1392">1392</a><br /><a id="L1393" href="#L1393">1393</a><br /><a id="L1394" href="#L1394">1394</a><br /><a id="L1395" href="#L1395">1395</a><br /><a id="L1396" href="#L1396">1396</a><br /><a id="L1397" href="#L1397">1397</a><br /><a id="L1398" href="#L1398">1398</a><br /><a id="L1399" href="#L1399">1399</a><br /><a id="L1400" href="#L1400">1400</a><br /><a id="L1401" href="#L1401">1401</a><br /><a id="L1402" href="#L1402">1402</a><br /><a id="L1403" href="#L1403">1403</a><br /><a id="L1404" href="#L1404">1404</a><br /><a id="L1405" href="#L1405">1405</a><br /><a id="L1406" href="#L1406">1406</a><br /><a id="L1407" href="#L1407">1407</a><br /><a id="L1408" href="#L1408">1408</a><br /><a id="L1409" href="#L1409">1409</a><br /><a id="L1410" href="#L1410">1410</a><br /><a id="L1411" href="#L1411">1411</a><br /><a id="L1412" href="#L1412">1412</a><br /><a id="L1413" href="#L1413">1413</a><br /><a id="L1414" href="#L1414">1414</a><br /><a id="L1415" href="#L1415">1415</a><br /><a id="L1416" href="#L1416">1416</a><br /><a id="L1417" href="#L1417">1417</a><br /><a id="L1418" href="#L1418">1418</a><br /><a id="L1419" href="#L1419">1419</a><br /><a id="L1420" href="#L1420">1420</a><br /><a id="L1421" href="#L1421">1421</a><br /><a id="L1422" href="#L1422">1422</a><br /><a id="L1423" href="#L1423">1423</a><br /><a id="L1424" href="#L1424">1424</a><br /><a id="L1425" href="#L1425">1425</a><br /><a id="L1426" href="#L1426">1426</a><br /><a id="L1427" href="#L1427">1427</a><br /><a id="L1428" href="#L1428">1428</a><br /><a id="L1429" href="#L1429">1429</a><br /><a id="L1430" href="#L1430">1430</a><br /><a id="L1431" href="#L1431">1431</a><br /><a id="L1432" href="#L1432">1432</a><br /><a id="L1433" href="#L1433">1433</a><br /><a id="L1434" href="#L1434">1434</a><br /><a id="L1435" href="#L1435">1435</a><br /><a id="L1436" href="#L1436">1436</a><br /><a id="L1437" href="#L1437">1437</a><br /><a id="L1438" href="#L1438">1438</a><br /><a id="L1439" href="#L1439">1439</a><br /><a id="L1440" href="#L1440">1440</a><br /><a id="L1441" href="#L1441">1441</a><br /><a id="L1442" href="#L1442">1442</a><br /><a id="L1443" href="#L1443">1443</a><br /><a id="L1444" href="#L1444">1444</a><br /><a id="L1445" href="#L1445">1445</a><br /><a id="L1446" href="#L1446">1446</a><br /><a id="L1447" href="#L1447">1447</a><br /><a id="L1448" href="#L1448">1448</a><br /><a id="L1449" href="#L1449">1449</a><br /><a id="L1450" href="#L1450">1450</a><br /><a id="L1451" href="#L1451">1451</a><br /><a id="L1452" href="#L1452">1452</a><br /><a id="L1453" href="#L1453">1453</a><br /><a id="L1454" href="#L1454">1454</a><br /><a id="L1455" href="#L1455">1455</a><br /><a id="L1456" href="#L1456">1456</a><br /><a id="L1457" href="#L1457">1457</a><br /><a id="L1458" href="#L1458">1458</a><br /><a id="L1459" href="#L1459">1459</a><br /><a id="L1460" href="#L1460">1460</a><br /><a id="L1461" href="#L1461">1461</a><br /><a id="L1462" href="#L1462">1462</a><br /><a id="L1463" href="#L1463">1463</a><br /><a id="L1464" href="#L1464">1464</a><br /><a id="L1465" href="#L1465">1465</a><br /><a id="L1466" href="#L1466">1466</a><br /><a id="L1467" href="#L1467">1467</a><br /><a id="L1468" href="#L1468">1468</a><br /><a id="L1469" href="#L1469">1469</a><br /><a id="L1470" href="#L1470">1470</a><br /><a id="L1471" href="#L1471">1471</a><br /><a id="L1472" href="#L1472">1472</a><br /><a id="L1473" href="#L1473">1473</a><br /><a id="L1474" href="#L1474">1474</a><br /><a id="L1475" href="#L1475">1475</a><br /><a id="L1476" href="#L1476">1476</a><br /><a id="L1477" href="#L1477">1477</a><br /><a id="L1478" href="#L1478">1478</a><br /><a id="L1479" href="#L1479">1479</a><br /><a id="L1480" href="#L1480">1480</a><br /><a id="L1481" href="#L1481">1481</a><br /><a id="L1482" href="#L1482">1482</a><br /><a id="L1483" href="#L1483">1483</a><br /><a id="L1484" href="#L1484">1484</a><br /><a id="L1485" href="#L1485">1485</a><br /><a id="L1486" href="#L1486">1486</a><br /><a id="L1487" href="#L1487">1487</a><br /><a id="L1488" href="#L1488">1488</a><br /><a id="L1489" href="#L1489">1489</a><br /><a id="L1490" href="#L1490">1490</a><br /><a id="L1491" href="#L1491">1491</a><br /><a id="L1492" href="#L1492">1492</a><br /><a id="L1493" href="#L1493">1493</a><br /><a id="L1494" href="#L1494">1494</a><br /><a id="L1495" href="#L1495">1495</a><br /><a id="L1496" href="#L1496">1496</a><br /><a id="L1497" href="#L1497">1497</a><br /><a id="L1498" href="#L1498">1498</a><br /><a id="L1499" href="#L1499">1499</a><br /><a id="L1500" href="#L1500">1500</a><br /><a id="L1501" href="#L1501">1501</a><br /><a id="L1502" href="#L1502">1502</a><br /><a id="L1503" href="#L1503">1503</a><br /><a id="L1504" href="#L1504">1504</a><br /><a id="L1505" href="#L1505">1505</a><br /><a id="L1506" href="#L1506">1506</a><br /><a id="L1507" href="#L1507">1507</a><br /><a id="L1508" href="#L1508">1508</a><br /><a id="L1509" href="#L1509">1509</a><br /><a id="L1510" href="#L1510">1510</a><br /><a id="L1511" href="#L1511">1511</a><br /><a id="L1512" href="#L1512">1512</a><br /><a id="L1513" href="#L1513">1513</a><br /><a id="L1514" href="#L1514">1514</a><br /><a id="L1515" href="#L1515">1515</a><br /><a id="L1516" href="#L1516">1516</a><br /><a id="L1517" href="#L1517">1517</a><br /><a id="L1518" href="#L1518">1518</a><br /><a id="L1519" href="#L1519">1519</a><br /><a id="L1520" href="#L1520">1520</a><br /><a id="L1521" href="#L1521">1521</a><br /><a id="L1522" href="#L1522">1522</a><br /><a id="L1523" href="#L1523">1523</a><br /><a id="L1524" href="#L1524">1524</a><br /><a id="L1525" href="#L1525">1525</a><br /><a id="L1526" href="#L1526">1526</a><br /><a id="L1527" href="#L1527">1527</a><br /><a id="L1528" href="#L1528">1528</a><br /><a id="L1529" href="#L1529">1529</a><br /><a id="L1530" href="#L1530">1530</a><br /><a id="L1531" href="#L1531">1531</a><br /><a id="L1532" href="#L1532">1532</a><br /><a id="L1533" href="#L1533">1533</a><br /><a id="L1534" href="#L1534">1534</a><br /><a id="L1535" href="#L1535">1535</a><br /><a id="L1536" href="#L1536">1536</a><br /><a id="L1537" href="#L1537">1537</a><br /><a id="L1538" href="#L1538">1538</a><br /><a id="L1539" href="#L1539">1539</a><br /><a id="L1540" href="#L1540">1540</a><br /><a id="L1541" href="#L1541">1541</a><br /><a id="L1542" href="#L1542">1542</a><br /><a id="L1543" href="#L1543">1543</a><br /><a id="L1544" href="#L1544">1544</a><br /><a id="L1545" href="#L1545">1545</a><br /><a id="L1546" href="#L1546">1546</a><br /><a id="L1547" href="#L1547">1547</a><br /><a id="L1548" href="#L1548">1548</a><br /><a id="L1549" href="#L1549">1549</a><br /><a id="L1550" href="#L1550">1550</a><br /><a id="L1551" href="#L1551">1551</a><br /><a id="L1552" href="#L1552">1552</a><br /><a id="L1553" href="#L1553">1553</a><br /><a id="L1554" href="#L1554">1554</a><br /><a id="L1555" href="#L1555">1555</a><br /><a id="L1556" href="#L1556">1556</a><br /><a id="L1557" href="#L1557">1557</a><br /><a id="L1558" href="#L1558">1558</a><br /><a id="L1559" href="#L1559">1559</a><br /><a id="L1560" href="#L1560">1560</a><br /><a id="L1561" href="#L1561">1561</a><br /><a id="L1562" href="#L1562">1562</a><br /><a id="L1563" href="#L1563">1563</a><br /><a id="L1564" href="#L1564">1564</a><br /><a id="L1565" href="#L1565">1565</a><br /><a id="L1566" href="#L1566">1566</a><br /><a id="L1567" href="#L1567">1567</a><br /><a id="L1568" href="#L1568">1568</a><br /><a id="L1569" href="#L1569">1569</a><br /><a id="L1570" href="#L1570">1570</a><br /><a id="L1571" href="#L1571">1571</a><br /><a id="L1572" href="#L1572">1572</a><br /><a id="L1573" href="#L1573">1573</a><br /><a id="L1574" href="#L1574">1574</a><br /><a id="L1575" href="#L1575">1575</a><br /><a id="L1576" href="#L1576">1576</a><br /><a id="L1577" href="#L1577">1577</a><br /><a id="L1578" href="#L1578">1578</a><br /><a id="L1579" href="#L1579">1579</a><br /><a id="L1580" href="#L1580">1580</a><br /><a id="L1581" href="#L1581">1581</a><br /><a id="L1582" href="#L1582">1582</a><br /><a id="L1583" href="#L1583">1583</a><br /><a id="L1584" href="#L1584">1584</a><br /><a id="L1585" href="#L1585">1585</a><br /><a id="L1586" href="#L1586">1586</a><br /><a id="L1587" href="#L1587">1587</a><br /><a id="L1588" href="#L1588">1588</a><br /><a id="L1589" href="#L1589">1589</a><br /><a id="L1590" href="#L1590">1590</a><br /><a id="L1591" href="#L1591">1591</a><br /><a id="L1592" href="#L1592">1592</a><br /><a id="L1593" href="#L1593">1593</a><br /><a id="L1594" href="#L1594">1594</a><br /><a id="L1595" href="#L1595">1595</a><br /><a id="L1596" href="#L1596">1596</a><br /><a id="L1597" href="#L1597">1597</a><br /><a id="L1598" href="#L1598">1598</a><br /><a id="L1599" href="#L1599">1599</a><br /><a id="L1600" href="#L1600">1600</a><br /><a id="L1601" href="#L1601">1601</a><br /><a id="L1602" href="#L1602">1602</a><br /><a id="L1603" href="#L1603">1603</a><br /><a id="L1604" href="#L1604">1604</a><br /><a id="L1605" href="#L1605">1605</a><br /><a id="L1606" href="#L1606">1606</a><br /><a id="L1607" href="#L1607">1607</a><br /><a id="L1608" href="#L1608">1608</a><br /><a id="L1609" href="#L1609">1609</a><br /><a id="L1610" href="#L1610">1610</a><br /><a id="L1611" href="#L1611">1611</a><br /><a id="L1612" href="#L1612">1612</a><br /><a id="L1613" href="#L1613">1613</a><br /><a id="L1614" href="#L1614">1614</a><br /><a id="L1615" href="#L1615">1615</a><br /><a id="L1616" href="#L1616">1616</a><br /><a id="L1617" href="#L1617">1617</a><br /><a id="L1618" href="#L1618">1618</a><br /><a id="L1619" href="#L1619">1619</a><br /><a id="L1620" href="#L1620">1620</a><br /><a id="L1621" href="#L1621">1621</a><br /><a id="L1622" href="#L1622">1622</a><br /><a id="L1623" href="#L1623">1623</a><br /><a id="L1624" href="#L1624">1624</a><br /><a id="L1625" href="#L1625">1625</a><br /><a id="L1626" href="#L1626">1626</a><br /><a id="L1627" href="#L1627">1627</a><br /><a id="L1628" href="#L1628">1628</a><br /><a id="L1629" href="#L1629">1629</a><br /><a id="L1630" href="#L1630">1630</a><br /><a id="L1631" href="#L1631">1631</a><br /><a id="L1632" href="#L1632">1632</a><br /><a id="L1633" href="#L1633">1633</a><br /><a id="L1634" href="#L1634">1634</a><br /><a id="L1635" href="#L1635">1635</a><br /><a id="L1636" href="#L1636">1636</a><br /><a id="L1637" href="#L1637">1637</a><br /><a id="L1638" href="#L1638">1638</a><br /><a id="L1639" href="#L1639">1639</a><br /><a id="L1640" href="#L1640">1640</a><br /><a id="L1641" href="#L1641">1641</a><br /><a id="L1642" href="#L1642">1642</a><br /><a id="L1643" href="#L1643">1643</a><br /><a id="L1644" href="#L1644">1644</a><br /><a id="L1645" href="#L1645">1645</a><br /><a id="L1646" href="#L1646">1646</a><br /><a id="L1647" href="#L1647">1647</a><br /><a id="L1648" href="#L1648">1648</a><br /><a id="L1649" href="#L1649">1649</a><br /><a id="L1650" href="#L1650">1650</a><br /><a id="L1651" href="#L1651">1651</a><br /><a id="L1652" href="#L1652">1652</a><br /><a id="L1653" href="#L1653">1653</a><br /><a id="L1654" href="#L1654">1654</a><br /><a id="L1655" href="#L1655">1655</a><br /><a id="L1656" href="#L1656">1656</a><br /><a id="L1657" href="#L1657">1657</a><br /><a id="L1658" href="#L1658">1658</a><br /><a id="L1659" href="#L1659">1659</a><br /><a id="L1660" href="#L1660">1660</a><br /><a id="L1661" href="#L1661">1661</a><br /><a id="L1662" href="#L1662">1662</a><br /><a id="L1663" href="#L1663">1663</a><br /><a id="L1664" href="#L1664">1664</a><br /><a id="L1665" href="#L1665">1665</a><br /><a id="L1666" href="#L1666">1666</a><br /><a id="L1667" href="#L1667">1667</a><br /><a id="L1668" href="#L1668">1668</a><br /><a id="L1669" href="#L1669">1669</a><br /><a id="L1670" href="#L1670">1670</a><br /><a id="L1671" href="#L1671">1671</a><br /><a id="L1672" href="#L1672">1672</a><br /><a id="L1673" href="#L1673">1673</a><br /><a id="L1674" href="#L1674">1674</a><br /><a id="L1675" href="#L1675">1675</a><br /><a id="L1676" href="#L1676">1676</a><br /><a id="L1677" href="#L1677">1677</a><br /><a id="L1678" href="#L1678">1678</a><br /><a id="L1679" href="#L1679">1679</a><br /><a id="L1680" href="#L1680">1680</a><br /><a id="L1681" href="#L1681">1681</a><br /><a id="L1682" href="#L1682">1682</a><br /><a id="L1683" href="#L1683">1683</a><br /><a id="L1684" href="#L1684">1684</a><br /><a id="L1685" href="#L1685">1685</a><br /><a id="L1686" href="#L1686">1686</a><br /><a id="L1687" href="#L1687">1687</a><br /><a id="L1688" href="#L1688">1688</a><br /><a id="L1689" href="#L1689">1689</a><br /><a id="L1690" href="#L1690">1690</a><br /><a id="L1691" href="#L1691">1691</a><br /><a id="L1692" href="#L1692">1692</a><br /><a id="L1693" href="#L1693">1693</a><br /><a id="L1694" href="#L1694">1694</a><br /><a id="L1695" href="#L1695">1695</a><br /><a id="L1696" href="#L1696">1696</a><br /><a id="L1697" href="#L1697">1697</a><br /><a id="L1698" href="#L1698">1698</a><br /><a id="L1699" href="#L1699">1699</a><br /><a id="L1700" href="#L1700">1700</a><br /><a id="L1701" href="#L1701">1701</a><br /><a id="L1702" href="#L1702">1702</a><br /><a id="L1703" href="#L1703">1703</a><br /><a id="L1704" href="#L1704">1704</a><br /><a id="L1705" href="#L1705">1705</a><br /><a id="L1706" href="#L1706">1706</a><br /><a id="L1707" href="#L1707">1707</a><br /><a id="L1708" href="#L1708">1708</a><br /><a id="L1709" href="#L1709">1709</a><br /><a id="L1710" href="#L1710">1710</a><br /><a id="L1711" href="#L1711">1711</a><br /><a id="L1712" href="#L1712">1712</a><br /><a id="L1713" href="#L1713">1713</a><br /><a id="L1714" href="#L1714">1714</a><br /><a id="L1715" href="#L1715">1715</a><br /><a id="L1716" href="#L1716">1716</a><br /><a id="L1717" href="#L1717">1717</a><br /><a id="L1718" href="#L1718">1718</a><br /><a id="L1719" href="#L1719">1719</a><br /><a id="L1720" href="#L1720">1720</a><br /><a id="L1721" href="#L1721">1721</a><br /><a id="L1722" href="#L1722">1722</a><br /><a id="L1723" href="#L1723">1723</a><br /><a id="L1724" href="#L1724">1724</a><br /><a id="L1725" href="#L1725">1725</a><br /><a id="L1726" href="#L1726">1726</a><br /><a id="L1727" href="#L1727">1727</a><br /><a id="L1728" href="#L1728">1728</a><br /><a id="L1729" href="#L1729">1729</a><br /><a id="L1730" href="#L1730">1730</a><br /><a id="L1731" href="#L1731">1731</a><br /><a id="L1732" href="#L1732">1732</a><br /><a id="L1733" href="#L1733">1733</a><br /><a id="L1734" href="#L1734">1734</a><br /><a id="L1735" href="#L1735">1735</a><br /><a id="L1736" href="#L1736">1736</a><br /><a id="L1737" href="#L1737">1737</a><br /><a id="L1738" href="#L1738">1738</a><br /><a id="L1739" href="#L1739">1739</a><br /><a id="L1740" href="#L1740">1740</a><br /><a id="L1741" href="#L1741">1741</a><br /><a id="L1742" href="#L1742">1742</a><br /><a id="L1743" href="#L1743">1743</a><br /><a id="L1744" href="#L1744">1744</a><br /><a id="L1745" href="#L1745">1745</a><br /><a id="L1746" href="#L1746">1746</a><br /><a id="L1747" href="#L1747">1747</a><br /><a id="L1748" href="#L1748">1748</a><br /><a id="L1749" href="#L1749">1749</a><br /><a id="L1750" href="#L1750">1750</a><br /><a id="L1751" href="#L1751">1751</a><br /><a id="L1752" href="#L1752">1752</a><br /><a id="L1753" href="#L1753">1753</a><br /><a id="L1754" href="#L1754">1754</a><br /><a id="L1755" href="#L1755">1755</a><br /><a id="L1756" href="#L1756">1756</a><br /><a id="L1757" href="#L1757">1757</a><br /><a id="L1758" href="#L1758">1758</a><br /><a id="L1759" href="#L1759">1759</a><br /><a id="L1760" href="#L1760">1760</a><br /><a id="L1761" href="#L1761">1761</a><br /><a id="L1762" href="#L1762">1762</a><br /><a id="L1763" href="#L1763">1763</a><br /><a id="L1764" href="#L1764">1764</a><br /><a id="L1765" href="#L1765">1765</a><br /><a id="L1766" href="#L1766">1766</a><br /><a id="L1767" href="#L1767">1767</a><br /><a id="L1768" href="#L1768">1768</a><br /><a id="L1769" href="#L1769">1769</a><br /><a id="L1770" href="#L1770">1770</a><br /><a id="L1771" href="#L1771">1771</a><br /><a id="L1772" href="#L1772">1772</a><br /><a id="L1773" href="#L1773">1773</a><br /><a id="L1774" href="#L1774">1774</a><br /><a id="L1775" href="#L1775">1775</a><br /><a id="L1776" href="#L1776">1776</a><br /><a id="L1777" href="#L1777">1777</a><br /><a id="L1778" href="#L1778">1778</a><br /><a id="L1779" href="#L1779">1779</a><br /><a id="L1780" href="#L1780">1780</a><br /><a id="L1781" href="#L1781">1781</a><br /><a id="L1782" href="#L1782">1782</a><br /><a id="L1783" href="#L1783">1783</a><br /><a id="L1784" href="#L1784">1784</a><br /><a id="L1785" href="#L1785">1785</a><br /><a id="L1786" href="#L1786">1786</a><br /><a id="L1787" href="#L1787">1787</a><br /><a id="L1788" href="#L1788">1788</a><br /><a id="L1789" href="#L1789">1789</a><br /><a id="L1790" href="#L1790">1790</a><br /><a id="L1791" href="#L1791">1791</a><br /><a id="L1792" href="#L1792">1792</a><br /><a id="L1793" href="#L1793">1793</a><br /><a id="L1794" href="#L1794">1794</a><br /><a id="L1795" href="#L1795">1795</a><br /><a id="L1796" href="#L1796">1796</a><br /><a id="L1797" href="#L1797">1797</a><br /><a id="L1798" href="#L1798">1798</a><br /><a id="L1799" href="#L1799">1799</a><br /><a id="L1800" href="#L1800">1800</a><br /><a id="L1801" href="#L1801">1801</a><br /><a id="L1802" href="#L1802">1802</a><br /><a id="L1803" href="#L1803">1803</a><br /><a id="L1804" href="#L1804">1804</a><br /><a id="L1805" href="#L1805">1805</a><br /><a id="L1806" href="#L1806">1806</a><br /><a id="L1807" href="#L1807">1807</a><br /><a id="L1808" href="#L1808">1808</a><br /><a id="L1809" href="#L1809">1809</a><br /><a id="L1810" href="#L1810">1810</a><br /><a id="L1811" href="#L1811">1811</a><br /><a id="L1812" href="#L1812">1812</a><br /><a id="L1813" href="#L1813">1813</a><br /><a id="L1814" href="#L1814">1814</a><br /><a id="L1815" href="#L1815">1815</a><br /><a id="L1816" href="#L1816">1816</a><br /><a id="L1817" href="#L1817">1817</a><br /><a id="L1818" href="#L1818">1818</a><br /><a id="L1819" href="#L1819">1819</a><br /><a id="L1820" href="#L1820">1820</a><br /><a id="L1821" href="#L1821">1821</a><br /><a id="L1822" href="#L1822">1822</a><br /><a id="L1823" href="#L1823">1823</a><br /><a id="L1824" href="#L1824">1824</a><br /><a id="L1825" href="#L1825">1825</a><br /><a id="L1826" href="#L1826">1826</a><br /><a id="L1827" href="#L1827">1827</a><br /><a id="L1828" href="#L1828">1828</a><br /><a id="L1829" href="#L1829">1829</a><br /><a id="L1830" href="#L1830">1830</a><br /><a id="L1831" href="#L1831">1831</a><br /><a id="L1832" href="#L1832">1832</a><br /><a id="L1833" href="#L1833">1833</a><br /><a id="L1834" href="#L1834">1834</a><br /><a id="L1835" href="#L1835">1835</a><br /><a id="L1836" href="#L1836">1836</a><br /><a id="L1837" href="#L1837">1837</a><br /><a id="L1838" href="#L1838">1838</a><br /><a id="L1839" href="#L1839">1839</a><br /><a id="L1840" href="#L1840">1840</a><br /><a id="L1841" href="#L1841">1841</a><br /><a id="L1842" href="#L1842">1842</a><br /><a id="L1843" href="#L1843">1843</a><br /><a id="L1844" href="#L1844">1844</a><br /><a id="L1845" href="#L1845">1845</a><br /><a id="L1846" href="#L1846">1846</a><br /><a id="L1847" href="#L1847">1847</a><br /><a id="L1848" href="#L1848">1848</a><br /><a id="L1849" href="#L1849">1849</a><br /><a id="L1850" href="#L1850">1850</a><br /><a id="L1851" href="#L1851">1851</a><br /><a id="L1852" href="#L1852">1852</a><br /><a id="L1853" href="#L1853">1853</a><br /><a id="L1854" href="#L1854">1854</a><br /><a id="L1855" href="#L1855">1855</a><br /><a id="L1856" href="#L1856">1856</a><br /><a id="L1857" href="#L1857">1857</a><br /><a id="L1858" href="#L1858">1858</a><br /><a id="L1859" href="#L1859">1859</a><br /><a id="L1860" href="#L1860">1860</a><br /><a id="L1861" href="#L1861">1861</a><br /><a id="L1862" href="#L1862">1862</a><br /><a id="L1863" href="#L1863">1863</a><br /><a id="L1864" href="#L1864">1864</a><br /><a id="L1865" href="#L1865">1865</a><br /><a id="L1866" href="#L1866">1866</a><br /><a id="L1867" href="#L1867">1867</a><br /><a id="L1868" href="#L1868">1868</a><br /><a id="L1869" href="#L1869">1869</a><br /><a id="L1870" href="#L1870">1870</a><br /><a id="L1871" href="#L1871">1871</a><br /><a id="L1872" href="#L1872">1872</a><br /><a id="L1873" href="#L1873">1873</a><br /><a id="L1874" href="#L1874">1874</a><br /><a id="L1875" href="#L1875">1875</a><br /><a id="L1876" href="#L1876">1876</a><br /><a id="L1877" href="#L1877">1877</a><br /><a id="L1878" href="#L1878">1878</a><br /><a id="L1879" href="#L1879">1879</a><br /><a id="L1880" href="#L1880">1880</a><br /><a id="L1881" href="#L1881">1881</a><br /><a id="L1882" href="#L1882">1882</a><br /><a id="L1883" href="#L1883">1883</a><br /><a id="L1884" href="#L1884">1884</a><br /><a id="L1885" href="#L1885">1885</a><br /><a id="L1886" href="#L1886">1886</a><br /><a id="L1887" href="#L1887">1887</a><br /><a id="L1888" href="#L1888">1888</a><br /><a id="L1889" href="#L1889">1889</a><br /><a id="L1890" href="#L1890">1890</a><br /><a id="L1891" href="#L1891">1891</a><br /><a id="L1892" href="#L1892">1892</a><br /><a id="L1893" href="#L1893">1893</a><br /><a id="L1894" href="#L1894">1894</a><br /><a id="L1895" href="#L1895">1895</a><br /><a id="L1896" href="#L1896">1896</a><br /><a id="L1897" href="#L1897">1897</a><br /><a id="L1898" href="#L1898">1898</a><br /><a id="L1899" href="#L1899">1899</a><br /><a id="L1900" href="#L1900">1900</a><br /><a id="L1901" href="#L1901">1901</a><br /><a id="L1902" href="#L1902">1902</a><br /><a id="L1903" href="#L1903">1903</a><br /><a id="L1904" href="#L1904">1904</a><br /><a id="L1905" href="#L1905">1905</a><br /><a id="L1906" href="#L1906">1906</a><br /><a id="L1907" href="#L1907">1907</a><br /><a id="L1908" href="#L1908">1908</a><br /><a id="L1909" href="#L1909">1909</a><br /><a id="L1910" href="#L1910">1910</a><br /><a id="L1911" href="#L1911">1911</a><br /><a id="L1912" href="#L1912">1912</a><br /><a id="L1913" href="#L1913">1913</a><br /><a id="L1914" href="#L1914">1914</a><br /><a id="L1915" href="#L1915">1915</a><br /><a id="L1916" href="#L1916">1916</a><br /><a id="L1917" href="#L1917">1917</a><br /><a id="L1918" href="#L1918">1918</a><br /><a id="L1919" href="#L1919">1919</a><br /><a id="L1920" href="#L1920">1920</a><br /><a id="L1921" href="#L1921">1921</a><br /><a id="L1922" href="#L1922">1922</a><br /><a id="L1923" href="#L1923">1923</a><br /><a id="L1924" href="#L1924">1924</a><br /><a id="L1925" href="#L1925">1925</a><br /><a id="L1926" href="#L1926">1926</a><br /><a id="L1927" href="#L1927">1927</a><br /><a id="L1928" href="#L1928">1928</a><br /><a id="L1929" href="#L1929">1929</a><br /><a id="L1930" href="#L1930">1930</a><br /><a id="L1931" href="#L1931">1931</a><br /><a id="L1932" href="#L1932">1932</a><br /><a id="L1933" href="#L1933">1933</a><br /><a id="L1934" href="#L1934">1934</a><br /><a id="L1935" href="#L1935">1935</a><br /><a id="L1936" href="#L1936">1936</a><br /><a id="L1937" href="#L1937">1937</a><br /><a id="L1938" href="#L1938">1938</a><br /><a id="L1939" href="#L1939">1939</a><br /><a id="L1940" href="#L1940">1940</a><br /><a id="L1941" href="#L1941">1941</a><br /><a id="L1942" href="#L1942">1942</a><br /><a id="L1943" href="#L1943">1943</a><br /><a id="L1944" href="#L1944">1944</a><br /><a id="L1945" href="#L1945">1945</a><br /><a id="L1946" href="#L1946">1946</a><br /><a id="L1947" href="#L1947">1947</a><br /><a id="L1948" href="#L1948">1948</a><br /><a id="L1949" href="#L1949">1949</a><br /><a id="L1950" href="#L1950">1950</a><br /><a id="L1951" href="#L1951">1951</a><br /><a id="L1952" href="#L1952">1952</a><br /><a id="L1953" href="#L1953">1953</a><br /><a id="L1954" href="#L1954">1954</a><br /><a id="L1955" href="#L1955">1955</a><br /><a id="L1956" href="#L1956">1956</a><br /><a id="L1957" href="#L1957">1957</a><br /><a id="L1958" href="#L1958">1958</a><br /><a id="L1959" href="#L1959">1959</a><br /><a id="L1960" href="#L1960">1960</a><br /><a id="L1961" href="#L1961">1961</a><br /><a id="L1962" href="#L1962">1962</a><br /><a id="L1963" href="#L1963">1963</a><br /><a id="L1964" href="#L1964">1964</a><br /><a id="L1965" href="#L1965">1965</a><br /><a id="L1966" href="#L1966">1966</a><br /><a id="L1967" href="#L1967">1967</a><br /><a id="L1968" href="#L1968">1968</a><br /><a id="L1969" href="#L1969">1969</a><br /><a id="L1970" href="#L1970">1970</a><br /><a id="L1971" href="#L1971">1971</a><br /><a id="L1972" href="#L1972">1972</a><br /><a id="L1973" href="#L1973">1973</a><br /><a id="L1974" href="#L1974">1974</a><br /><a id="L1975" href="#L1975">1975</a><br /><a id="L1976" href="#L1976">1976</a><br /><a id="L1977" href="#L1977">1977</a><br /><a id="L1978" href="#L1978">1978</a><br /><a id="L1979" href="#L1979">1979</a><br /><a id="L1980" href="#L1980">1980</a><br /><a id="L1981" href="#L1981">1981</a><br /><a id="L1982" href="#L1982">1982</a><br /><a id="L1983" href="#L1983">1983</a><br /><a id="L1984" href="#L1984">1984</a><br /><a id="L1985" href="#L1985">1985</a><br /><a id="L1986" href="#L1986">1986</a><br /><a id="L1987" href="#L1987">1987</a><br /><a id="L1988" href="#L1988">1988</a><br /><a id="L1989" href="#L1989">1989</a><br /><a id="L1990" href="#L1990">1990</a><br /><a id="L1991" href="#L1991">1991</a><br /><a id="L1992" href="#L1992">1992</a><br /><a id="L1993" href="#L1993">1993</a><br /><a id="L1994" href="#L1994">1994</a><br /><a id="L1995" href="#L1995">1995</a><br /><a id="L1996" href="#L1996">1996</a><br /><a id="L1997" href="#L1997">1997</a><br /><a id="L1998" href="#L1998">1998</a><br /><a id="L1999" href="#L1999">1999</a><br /><a id="L2000" href="#L2000">2000</a><br /><a id="L2001" href="#L2001">2001</a><br /><a id="L2002" href="#L2002">2002</a><br /><a id="L2003" href="#L2003">2003</a><br /><a id="L2004" href="#L2004">2004</a><br /><a id="L2005" href="#L2005">2005</a><br /><a id="L2006" href="#L2006">2006</a><br /><a id="L2007" href="#L2007">2007</a><br /><a id="L2008" href="#L2008">2008</a><br /><a id="L2009" href="#L2009">2009</a><br /><a id="L2010" href="#L2010">2010</a><br /><a id="L2011" href="#L2011">2011</a><br /><a id="L2012" href="#L2012">2012</a><br /><a id="L2013" href="#L2013">2013</a><br /><a id="L2014" href="#L2014">2014</a><br /><a id="L2015" href="#L2015">2015</a><br /><a id="L2016" href="#L2016">2016</a><br /><a id="L2017" href="#L2017">2017</a><br /><a id="L2018" href="#L2018">2018</a><br /><a id="L2019" href="#L2019">2019</a><br /><a id="L2020" href="#L2020">2020</a><br /><a id="L2021" href="#L2021">2021</a><br /><a id="L2022" href="#L2022">2022</a><br /><a id="L2023" href="#L2023">2023</a><br /><a id="L2024" href="#L2024">2024</a><br /><a id="L2025" href="#L2025">2025</a><br /><a id="L2026" href="#L2026">2026</a><br /><a id="L2027" href="#L2027">2027</a><br /><a id="L2028" href="#L2028">2028</a><br /><a id="L2029" href="#L2029">2029</a><br /><a id="L2030" href="#L2030">2030</a><br /><a id="L2031" href="#L2031">2031</a><br /><a id="L2032" href="#L2032">2032</a><br /><a id="L2033" href="#L2033">2033</a><br /><a id="L2034" href="#L2034">2034</a><br /><a id="L2035" href="#L2035">2035</a><br /><a id="L2036" href="#L2036">2036</a><br /><a id="L2037" href="#L2037">2037</a><br /><a id="L2038" href="#L2038">2038</a><br /><a id="L2039" href="#L2039">2039</a><br /><a id="L2040" href="#L2040">2040</a><br /><a id="L2041" href="#L2041">2041</a><br /><a id="L2042" href="#L2042">2042</a><br /><a id="L2043" href="#L2043">2043</a><br /><a id="L2044" href="#L2044">2044</a><br /><a id="L2045" href="#L2045">2045</a><br /><a id="L2046" href="#L2046">2046</a><br /><a id="L2047" href="#L2047">2047</a><br /><a id="L2048" href="#L2048">2048</a><br /><a id="L2049" href="#L2049">2049</a><br /><a id="L2050" href="#L2050">2050</a><br /><a id="L2051" href="#L2051">2051</a><br /><a id="L2052" href="#L2052">2052</a><br /><a id="L2053" href="#L2053">2053</a><br /><a id="L2054" href="#L2054">2054</a><br /><a id="L2055" href="#L2055">2055</a><br /><a id="L2056" href="#L2056">2056</a><br /><a id="L2057" href="#L2057">2057</a><br /><a id="L2058" href="#L2058">2058</a><br /><a id="L2059" href="#L2059">2059</a><br /><a id="L2060" href="#L2060">2060</a><br /><a id="L2061" href="#L2061">2061</a><br /><a id="L2062" href="#L2062">2062</a><br /><a id="L2063" href="#L2063">2063</a><br /><a id="L2064" href="#L2064">2064</a><br /><a id="L2065" href="#L2065">2065</a><br /><a id="L2066" href="#L2066">2066</a><br /><a id="L2067" href="#L2067">2067</a><br /><a id="L2068" href="#L2068">2068</a><br /><a id="L2069" href="#L2069">2069</a><br /><a id="L2070" href="#L2070">2070</a><br /><a id="L2071" href="#L2071">2071</a><br /><a id="L2072" href="#L2072">2072</a><br /><a id="L2073" href="#L2073">2073</a><br /><a id="L2074" href="#L2074">2074</a><br /><a id="L2075" href="#L2075">2075</a><br /><a id="L2076" href="#L2076">2076</a><br /><a id="L2077" href="#L2077">2077</a><br /><a id="L2078" href="#L2078">2078</a><br /><a id="L2079" href="#L2079">2079</a><br /><a id="L2080" href="#L2080">2080</a><br /><a id="L2081" href="#L2081">2081</a><br /><a id="L2082" href="#L2082">2082</a><br /><a id="L2083" href="#L2083">2083</a><br /><a id="L2084" href="#L2084">2084</a><br /><a id="L2085" href="#L2085">2085</a><br /><a id="L2086" href="#L2086">2086</a><br /><a id="L2087" href="#L2087">2087</a><br /><a id="L2088" href="#L2088">2088</a><br /><a id="L2089" href="#L2089">2089</a><br /><a id="L2090" href="#L2090">2090</a><br /><a id="L2091" href="#L2091">2091</a><br /><a id="L2092" href="#L2092">2092</a><br /><a id="L2093" href="#L2093">2093</a><br /><a id="L2094" href="#L2094">2094</a><br /><a id="L2095" href="#L2095">2095</a><br /><a id="L2096" href="#L2096">2096</a><br /><a id="L2097" href="#L2097">2097</a><br /><a id="L2098" href="#L2098">2098</a><br /><a id="L2099" href="#L2099">2099</a><br /><a id="L2100" href="#L2100">2100</a><br /><a id="L2101" href="#L2101">2101</a><br /><a id="L2102" href="#L2102">2102</a><br /><a id="L2103" href="#L2103">2103</a><br /><a id="L2104" href="#L2104">2104</a><br /><a id="L2105" href="#L2105">2105</a><br /><a id="L2106" href="#L2106">2106</a><br /><a id="L2107" href="#L2107">2107</a><br /><a id="L2108" href="#L2108">2108</a><br /><a id="L2109" href="#L2109">2109</a><br /><a id="L2110" href="#L2110">2110</a><br /><a id="L2111" href="#L2111">2111</a><br /><a id="L2112" href="#L2112">2112</a><br /><a id="L2113" href="#L2113">2113</a><br /><a id="L2114" href="#L2114">2114</a><br /><a id="L2115" href="#L2115">2115</a><br /><a id="L2116" href="#L2116">2116</a><br /><a id="L2117" href="#L2117">2117</a><br /><a id="L2118" href="#L2118">2118</a><br /><a id="L2119" href="#L2119">2119</a><br /><a id="L2120" href="#L2120">2120</a><br /><a id="L2121" href="#L2121">2121</a><br /><a id="L2122" href="#L2122">2122</a><br /><a id="L2123" href="#L2123">2123</a><br /><a id="L2124" href="#L2124">2124</a><br /><a id="L2125" href="#L2125">2125</a><br /><a id="L2126" href="#L2126">2126</a><br /><a id="L2127" href="#L2127">2127</a><br /><a id="L2128" href="#L2128">2128</a><br /><a id="L2129" href="#L2129">2129</a><br /><a id="L2130" href="#L2130">2130</a><br /><a id="L2131" href="#L2131">2131</a><br /><a id="L2132" href="#L2132">2132</a><br /><a id="L2133" href="#L2133">2133</a><br /><a id="L2134" href="#L2134">2134</a><br /><a id="L2135" href="#L2135">2135</a><br /><a id="L2136" href="#L2136">2136</a><br /><a id="L2137" href="#L2137">2137</a><br /><a id="L2138" href="#L2138">2138</a><br /><a id="L2139" href="#L2139">2139</a><br /><a id="L2140" href="#L2140">2140</a><br /><a id="L2141" href="#L2141">2141</a><br /><a id="L2142" href="#L2142">2142</a><br /><a id="L2143" href="#L2143">2143</a><br /><a id="L2144" href="#L2144">2144</a><br /><a id="L2145" href="#L2145">2145</a><br /><a id="L2146" href="#L2146">2146</a><br /><a id="L2147" href="#L2147">2147</a><br /><a id="L2148" href="#L2148">2148</a><br /><a id="L2149" href="#L2149">2149</a><br /><a id="L2150" href="#L2150">2150</a><br /><a id="L2151" href="#L2151">2151</a><br /><a id="L2152" href="#L2152">2152</a><br /><a id="L2153" href="#L2153">2153</a><br /><a id="L2154" href="#L2154">2154</a><br /><a id="L2155" href="#L2155">2155</a><br /><a id="L2156" href="#L2156">2156</a><br /><a id="L2157" href="#L2157">2157</a><br /><a id="L2158" href="#L2158">2158</a><br /><a id="L2159" href="#L2159">2159</a><br /><a id="L2160" href="#L2160">2160</a><br /><a id="L2161" href="#L2161">2161</a><br /><a id="L2162" href="#L2162">2162</a><br /><a id="L2163" href="#L2163">2163</a><br /><a id="L2164" href="#L2164">2164</a><br /><a id="L2165" href="#L2165">2165</a><br /><a id="L2166" href="#L2166">2166</a><br /><a id="L2167" href="#L2167">2167</a><br /><a id="L2168" href="#L2168">2168</a><br /><a id="L2169" href="#L2169">2169</a><br /><a id="L2170" href="#L2170">2170</a><br /><a id="L2171" href="#L2171">2171</a><br /><a id="L2172" href="#L2172">2172</a><br /><a id="L2173" href="#L2173">2173</a><br /><a id="L2174" href="#L2174">2174</a><br /><a id="L2175" href="#L2175">2175</a><br /><a id="L2176" href="#L2176">2176</a><br /><a id="L2177" href="#L2177">2177</a><br /><a id="L2178" href="#L2178">2178</a><br /><a id="L2179" href="#L2179">2179</a><br /><a id="L2180" href="#L2180">2180</a><br /><a id="L2181" href="#L2181">2181</a><br /><a id="L2182" href="#L2182">2182</a><br /><a id="L2183" href="#L2183">2183</a><br /><a id="L2184" href="#L2184">2184</a><br /><a id="L2185" href="#L2185">2185</a><br /><a id="L2186" href="#L2186">2186</a><br /><a id="L2187" href="#L2187">2187</a><br /><a id="L2188" href="#L2188">2188</a><br /><a id="L2189" href="#L2189">2189</a><br /><a id="L2190" href="#L2190">2190</a><br /><a id="L2191" href="#L2191">2191</a><br /><a id="L2192" href="#L2192">2192</a><br /><a id="L2193" href="#L2193">2193</a><br /><a id="L2194" href="#L2194">2194</a><br /><a id="L2195" href="#L2195">2195</a><br /><a id="L2196" href="#L2196">2196</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="cpp">/* **************************************************************************
+   ddd.cpp  bridge double dummy driver
+            PM Cronje June 2006
+
+   Copyright 2006 P.M.Cronje
+
+   This file is part of the Double Dummer Driver (DDD).
+
+   DDD is a driver for the double dummy solver DDS,
+   released separately under the GPL by Bo Haglund.
+
+   DDD is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   DDD is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with DDD; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+   ************************************************************************** */
+
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;ctype.h&gt;
+
+// -----------------------------------------------------------------------------
+
+// HOW TO COMPILE AND LINK THIS WITH THE LATEST VERSION OF DDS
+//
+// The following is suggested:
+//
+//   - obtain the latest dds11x.cpp and dds11x.h file for version 1.1x
+//     of Bo Haglund&#39;s DDS and copy them into this directory
+//
+// Linux: compile and link as follows:
+//   g++ -O2 -Wall -o ./ddd ddd.cpp dds11x.cpp defs.cpp timer.cpp giblib.cpp rng.cpp
+//
+// Windows: compile and link as follows:
+//   g++ -O2 -Wall -o ddd.exe ddd.cpp dds11x.cpp defs.cpp timer.cpp giblib.cpp rng.cpp
+//
+// for debugging change the switch &#39;-O2&#39; to &#39;-g&#39;
+//
+// Note: on MingW you must have _WIN32 defined to compile code in timer.cpp
+//
+// -----------------------------------------------------------------------------
+
+#include &#34;dds11x.h&#34;
+#include &#34;giblib.h&#34;
+#include &#34;timer.h&#34;
+
+#define szVERSION &#34;1.05&#34;
+#define szVERSION_DATE &#34;25-Jan-2007&#34;
+
+/* v1.03 10-Jul-2006  add set tricks to -giblib option
+                      add -tricks option
+   v1.04 12-Jul-2006  changed giblib to C++ class cGIBLib
+                      (not struct sGIBLIb anymore)
+         13-jul-2006  add generateDeal(. ..) in class cGibLib
+         14-Jul-2006  add optional flag &#39;all&#39; for option
+                         -giblib=d1-d2[-all]
+                      changes to szTricks etc. in class cGibLib
+         15-Jul-2006  fix 0 elapsed times for -gen
+         25-Jan-2007  changes to use dds11x
+*/
+// -----------------------------------------------------------------------------
+// solve board status
+// -----------------------------------------------------------------------------
+
+// solve board status
+struct sbstatus
+{   int Code;
+   char szCode[32];
+};
+
+#define SBSTATUS_NUM 15
+#define SBSTATUS_MIN -11
+#define SBSTATUS_NOFAULT 12
+#define SBSTATUS_CANCELLED 2
+struct sbstatus szSBStatus[SBSTATUS_NUM]
+  = { { -11, &#34;invalid status (less than -10)&#34;},
+      { -10, &#34;too many cards (more than 52)&#34;},
+      {  -9, &#34;solutions &gt; 3&#34;},
+      {  -8, &#34;solutions &lt; 1&#34;},
+      {  -7, &#34;target &gt; 13&#34;},
+      {  -6, &#34;invalid status 6&#34;},
+      {  -5, &#34;target &lt; -1&#34;},
+      {  -4, &#34;duplicate cards&#34;},
+      {  -3, &#34;target &gt; number of tricks left&#34;},
+      {  -2, &#34;number of cards 0&#34;},
+      {  -1, &#34;unknown fault&#34;},
+      {   0, &#34;invalid status 0&#34;},
+      {   1, &#34;no fault&#34;},
+      {   2, &#34;cancelled 2&#34;},
+      {   3, &#34;invalid status &gt; 1&#34;}
+    };
+
+// -----------------------------------------------------------------------------
+// prototypes defined in this file
+// -----------------------------------------------------------------------------
+
+void cleanSB();
+void getSBScore(const struct futureTricks &amp;fut, int *pmaxscore,
+                bool bscore[14], ushort m[14][4]);
+bool generate(int gen, unsigned int genseed, int gencards, int gentricks);
+bool giblib(char *pszfile, int target, int sol, int mode, char *pszgiblib);
+FILE *openFile(char *pszfile);
+void playDD(cGIBLib *pgib, int target, int sol, int trumps, int leader);
+void printSBScore(int target, int solutions, struct futureTricks *pfut,
+                  double elapsed);
+void printSBScore(bool bscore[14], ushort m[14][4]);
+bool setDDS(cGIBLib *pgib, struct deal *pdl);
+bool testSBCode(int sbcode);
+bool timeAll(char *pszfile, int trumps, int leader);
+bool timeg(char *pszfile, int target, int sol, int mode,
+           char *pszxcn, int leader, bool bverbose);
+bool tricks(cGIBLib *pgib, int ideal, int target, int sol, int mode);
+
+// -----------------------------------------------------------------------------
+// macros to convert to/from DDS players/cards
+// -----------------------------------------------------------------------------
+
+#define PLAYER2DDS(pl) ((pl-1)&amp;3)
+#define CARD2DDS(card) (14-card)
+
+#define DDS2PLAYER(ddspl) ((ddspl+1)&amp;3)
+#define DDS2CARD(ddscard) (14-ddscard)
+
+#define szGENFILE &#34;gen.txt&#34;
+
+// *****************************************************************************
+// DDD definitions
+// *****************************************************************************
+
+int main(int argc, char *argv[])
+{
+  cGIBLib gib;
+  char *pszfile=0, *pszname=0, *pszxcn=0, *pszgiblib=0;
+  int iarg, target=-1, solutions=3, mode=1, deal=1, trumps=-1, leader=-1;
+  int sbcode;
+  bool bok=false, btimeall=false, bplaydd=false, bverbose=false, btricks=false;
+   int gen=0, gencards=52, gentricks=1;
+  unsigned int genseed=0;
+  FILE *fp;
+  cTimer timer;
+  int success = true;
+
+  struct deal dl;
+  struct futureTricks fut;
+
+  printf(&#34;\nDouble Dummy Driver (DDD) version %s (%s)\n&#34;,
+         szVERSION,szVERSION_DATE);
+
+  if(argc &lt; 2)
+  { printf(
+    &#34;\n&#34;
+    &#34;DDD usage:\n&#34;
+    &#34;      ddd_executable file [opts]\n&#34;
+    &#34;where:\n&#34;
+    &#34;                file : path for &#39;giblib&#39; input file \n&#34;
+    &#34;optional arguments [opts] are one or more of: \n&#34;
+    &#34;                  -v : verbose where applicable \n&#34;
+    &#34;           -target=d : (default -1), see dll reference \n&#34;
+    &#34;              -sol=d : solution 1/2/3 (default 3), see dll reference \n&#34;
+    &#34;             -mode=d : 0/1 (default 1), see dll reference \n&#34;
+    &#34;           -trumps=t : s/h/d/c/n, this overrides the file (default=n) \n&#34;
+    &#34;           -leader=l : w/n/e/s, this overrides the file (default=w) \n&#34;
+    &#34;                       but used only when no cards have been played \n&#34;
+    &#34;             -deal=d : 1/2/... deal number in giblib file \n&#34;
+    &#34;                       only one of -deal or -name should be specified \n&#34;
+    &#34;           -name=str : deal with &#39;name=str&#39; in giblib file \n&#34;
+    &#34;                       only one of -deal or -name should be specified \n&#34;
+    &#34;             -playdd : play deal choosing between DDS alternatives \n&#34;
+    &#34;            -timeall : time all deals in file for sol=1/2/3, print stats \n&#34;
+    &#34;          -timeg=xcn : x - hex digit, total tricks by n-s \n&#34;
+    &#34;                       c - contract s/h/d/c/n \n&#34;
+    &#34;                       n - number of deals \n&#34;
+    &#34;                       time the first n deals in the giblib file, \n&#34;
+    &#34;                       having total tricks x at contract c, \n&#34;
+    &#34;                       for target=-1 sol=1 mode=1 \n&#34;
+    &#34;                       and for the specified/default leader,\n&#34;
+    &#34;                       each deal is validated \n&#34;
+    &#34; -giblib=d1-d2[-all] : validate all deals from d1 to d2 in giblib file \n&#34;
+    &#34;                       for target=-1 sol=1 mode=1 \n&#34;
+    &#34;                       1. if &#39;-all&#39; is given, this is done for all of  \n&#34;
+    &#34;                          the 20 trick values even if some of them are &#39;-&#39;   \n&#34;
+    &#34;                       2. if &#39;-all&#39; is not given, this is done only for \n&#34;
+    &#34;                          those trick values which are not &#39;-&#39; \n&#34;
+    &#34;             -tricks : like -giblib, but for single deal specified \n&#34;
+    &#34;                       by -name=str -deal=d or option \n&#34;
+    &#34; generate deals: \n&#34;
+    &#34;              -gen=n : (required) n=number of deals to generate \n&#34;
+    &#34;                       output is written to a file (see below) \n&#34;
+    &#34;          -genseed=s : (default 0) seed for random generator \n&#34;
+    &#34;         -gencards=c : (default=52) number of cards generated per deal,\n&#34;
+    &#34;                       must be multiple of 4 \n&#34;
+    &#34;        -gentricks=t : 0,1,...,20 (default 1), number of tricks values \n&#34;
+    &#34;                       to set randomly \n&#34;
+    &#34; generate output is written to a file:        \n&#34;
+    &#34;    gen-&#39;genseed&#39;-&#39;ndeal&#39;-&#39;gencards&#39;-&#39;gentricks&#39;.txt \n&#34;
+    &#34;\n&#34;
+    );
+    return -1;
+  }
+  for(iarg=1; iarg&lt;argc; iarg++)
+  {
+    if(argv[iarg][0] == &#39;-&#39;)
+    {
+      if(strncasecmp(argv[iarg],&#34;-target=&#34;,8) == 0)
+        target = atol(argv[iarg]+8);
+      else if(strcasecmp(argv[iarg],&#34;-timeall&#34;) == 0)
+        btimeall = true;
+      else if(strncasecmp(argv[iarg],&#34;-timeg=&#34;,7) == 0)
+        pszxcn = argv[iarg] + 7;
+      else if(strncasecmp(argv[iarg],&#34;-giblib=&#34;,8) == 0)
+        pszgiblib = argv[iarg] + 8;
+      else if(strncasecmp(argv[iarg],&#34;-tricks&#34;,7) == 0)
+        btricks = true;
+      else if(strcasecmp(argv[iarg],&#34;-playdd&#34;) == 0)
+        bplaydd = true;
+      else if(strncasecmp(argv[iarg],&#34;-gen=&#34;,5) == 0)
+        gen = atol(argv[iarg]+5);
+      else if(strncasecmp(argv[iarg],&#34;-genseed=&#34;,9) == 0)
+        genseed = (unsigned int)atol(argv[iarg]+9);
+      else if(strncasecmp(argv[iarg],&#34;-gencards=&#34;,10) == 0)
+        gencards = atol(argv[iarg]+10);
+      else if(strncasecmp(argv[iarg],&#34;-gentricks=&#34;,11) == 0)
+        gentricks = atol(argv[iarg]+11);
+      else if(strncasecmp(argv[iarg],&#34;-sol=&#34;,5) == 0)
+        solutions = atol(argv[iarg]+5);
+      else if(strncasecmp(argv[iarg],&#34;-mode=&#34;,6) == 0)
+      { mode = atol(argv[iarg]+6);
+        if(mode &lt; 0)
+          mode = 0;
+        else if(mode &gt; 0)
+          mode = 1;
+      }
+      else if(strncasecmp(argv[iarg],&#34;-trumps=&#34;,8) == 0)
+      { if(tolower(argv[iarg][8]) == &#39;s&#39;) trumps = 0;
+        else if(tolower(argv[iarg][8]) == &#39;h&#39;) trumps = 1;
+        else if(tolower(argv[iarg][8]) == &#39;d&#39;) trumps = 2;
+        else if(tolower(argv[iarg][8]) == &#39;c&#39;) trumps = 3;
+        else if(tolower(argv[iarg][8]) == &#39;n&#39;) trumps = 4;
+        else
+        { printf(&#34;*** error: invalid trumps option &#39;%s&#39;\n&#34;,argv[iarg]);
+          return -1;
+        }
+      }
+      else if(strncasecmp(argv[iarg],&#34;-leader=&#34;,8) == 0)
+      { if(tolower(argv[iarg][8]) == &#39;w&#39;) leader = 0;
+        else if(tolower(argv[iarg][8]) == &#39;n&#39;) leader = 1;
+        else if(tolower(argv[iarg][8]) == &#39;e&#39;) leader = 2;
+        else if(tolower(argv[iarg][8]) == &#39;s&#39;) leader = 3;
+        else
+        { printf(&#34;*** error: invalid leader option &#39;%s&#39;\n&#34;,argv[iarg]);
+          return -1;
+        }
+      }
+      else if(strncasecmp(argv[iarg],&#34;-deal=&#34;,6) == 0)
+      { deal = atol(argv[iarg]+6);
+        if(deal &lt; 1)
+          deal = 1;
+      }
+      else if(strncasecmp(argv[iarg],&#34;-name=&#34;,6) == 0)
+        pszname = argv[iarg] + 6;
+      else if(strcasecmp(argv[iarg],&#34;-v&#34;) == 0)
+        bverbose = true;
+      else
+      { printf(&#34;*** error: invalid option &#39;%s&#39;\n&#34;,argv[iarg]);
+        return -1;
+      }
+    }
+    else
+      pszfile = argv[iarg];
+  }
+
+  if(gen &gt; 0)
+  { success = generate(gen,genseed,gencards,gentricks);
+    goto cleanup;
+  }
+  if(btimeall)
+  { success = timeAll(pszfile,trumps,leader);
+    goto cleanup;
+  }
+  else if(pszxcn)
+  { success = timeg(pszfile,-1,1,1,pszxcn,(leader==-1?0:leader),bverbose);
+    goto cleanup;
+  }
+  else if(pszgiblib)
+  { success = giblib(pszfile,-1,1,1,pszgiblib);
+    goto cleanup;
+  }
+
+  // open file
+  fp = openFile(pszfile);
+  if(fp == 0)
+    return -1;
+
+  // read giblib deal
+  bok = gib.readFile(deal-1,pszname,fp);
+  fclose(fp);
+  if(!bok)
+  { printf(&#34;%s&#34;,gib.szErrMsg);
+    return -1;
+  }
+
+  if(btricks)
+  { success = tricks(&amp;gib,deal,-1,1,1);
+    goto cleanup;
+  }
+
+  // if overridden from command line, set trumps/leader
+  if(trumps != -1)
+    gib.Trumps = trumps;
+  if((gib.nPlayed == 0) &amp;&amp; (leader != -1))
+  { // override leader/player only when no cards have been played
+    gib.Leader = gib.Player = leader;
+  }
+
+  if(bplaydd)
+  { playDD(&amp;gib,target,solutions,trumps,leader);
+    goto cleanup;
+  }
+
+  // set up dds10
+  if(success = setDDS(&amp;gib,&amp;dl) == false)
+    return -1;
+
+  printf(&#34;\n&#34;);
+  gib.print();
+  printf(&#34;\n&#34;);
+  gib.printHands();
+  gib.printInfo();
+  printf(&#34;\n&#34;);
+  fflush(stdout);
+
+  timer.start();
+#if DDS_VERSION &gt;= 20101
+  InitStart(1, 1);
+#else
+  InitStart();
+#endif
+  sbcode = SolveBoard(dl,target,solutions,mode,&amp;fut,0);
+  timer.check();
+  if(testSBCode(sbcode) == false)
+    exit(-1);
+  printSBScore(target,solutions,&amp;fut,timer.dblElapsed());
+
+  cleanup:
+  cleanSB();
+
+  return !success;
+
+} // main
+// *****************************************************************************
+
+void cleanSB()
+{
+  // this is the detach code from DDS
+
+  if(ttStore)
+    free(ttStore);
+  ttStore = 0;
+
+} // cleanSB
+// *****************************************************************************
+
+bool generate(int gen, unsigned int genseed, int gencards, int gentricks)
+{
+  // generate deals
+  // write giblib extended format to specified file
+
+  cGIBLib gib;
+      int ntrick, sbcode, ideal, trickpos, trumps, leader;
+      int settrick[20], setpos[20], nsettrick, itrick;
+      int maxscore, nerror, score, ntotal;
+     bool bscore[14];
+   ushort m[14][4];
+
+  FILE *fp;
+  cTimer timer;
+  struct deal dl;
+  struct futureTricks fut;
+
+  double elapsed, totalelapsed;
+  unsigned long long nodes, totalnodes;
+  char sz1[32], szfile[256];
+
+  int target=-1, sol=1, mode=1;
+
+  // check arguments
+  sprintf(szfile,&#34;gen-%u-%d-%d-%d.txt&#34;,genseed,gen,gencards,gentricks);
+  // if existing file, warn the user
+  if(access(szfile,F_OK) == 0)
+  { printf(&#34;\n*** WARNING: generate deals\n&#34;
+             &#34;             the file &#39;%s&#39; is an existing file\n&#34;
+             &#34;             and it may be overwritten\n&#34;
+             &#34;do you want to continue? (y/n)):&#34;,szfile);
+    fflush(stdout);
+    char buf[80], *pch;
+    pch = fgets(buf,255,stdin);
+    if(pch == 0)
+      return false;
+    if(tolower(*pch) != &#39;y&#39;)
+      return false;
+  }
+
+  if(gen &lt; 0)
+  { printf(&#34;*** error: gen=%d invalid number of deals to generate\n&#34;,gen);
+    return false;
+  }
+  if((gencards &lt; 4) || (gencards &gt; 52))
+  { printf(&#34;*** error: gencards=%d must be &gt;=4 and &lt;=52\n&#34;,gencards);
+    return false;
+  }
+  if((gencards % 4) != 0)
+  { printf(&#34;*** error: gencards=%d not a multiple ofg 4\n&#34;,gencards);
+    return false;
+  }
+  if((gentricks &lt; 0) || (gentricks &gt; 20))
+  { printf(&#34;*** error: gentricks=%d must be &gt;=0 and &lt;=20\n&#34;,gentricks);
+    return false;
+  }
+
+  fp = fopen(szfile,&#34;w&#34;);
+  if(fp == 0)
+  { printf(&#34;*** error: %s: cannot open gen file %s for writing\n&#34;,
+           strerror(errno),szfile);
+    return false;
+  }
+
+  printf(&#34;\ngenerate: seed=%u deals=%d cards=%d tricks=%d file=%s\n&#34;,
+         genseed,gen,gencards,gentricks,szfile);
+  fflush(stdout);
+
+  gib.setRNGSeed(genseed);
+
+  timer.start();
+
+  nerror = ntotal = 0;
+  elapsed = totalelapsed = 0;
+  nodes = totalnodes = 0;
+
+  for(ideal=0; ideal&lt;gen; ideal++)
+  { // loop over generated deal
+
+    // generate the deal
+    if(gib.generateDeal(gencards/4) == false)
+      return false;
+    if(gib.setGeneratedDeal() == false)
+      break;
+
+    // set tricks
+    if(gentricks &gt; 0)
+    {
+      // initialize trick positions
+      for(trickpos=0; trickpos&lt;20; trickpos++)
+        settrick[trickpos] = trickpos;
+      nsettrick = 20;
+
+      // get sorted trick positions
+      for(itrick=0; itrick&lt;gentricks; itrick++)
+      { // get a random trick position
+        trickpos = (int)gib.pRNG-&gt;randomUint(nsettrick);
+        setpos[itrick] = settrick[trickpos];
+        if(trickpos &lt; nsettrick-1)
+          memmove(settrick+trickpos,settrick+trickpos+1,
+                 (nsettrick-1-trickpos)*sizeof(int));
+        nsettrick--;
+      }
+
+      // compute trick values
+      for(itrick=0; itrick&lt;gentricks; itrick++)
+      { timer.check();
+        trickpos = setpos[itrick];
+        gib.getTricks(trickpos,&amp;leader,&amp;trumps,&amp;ntrick);
+        // set up dds10
+        gib.Trumps = trumps;
+        gib.Leader = leader;
+        if(setDDS(&amp;gib,&amp;dl) == false)
+          return false;
+#if DDS_VERSION &gt;= 20101
+        InitStart(1, 1);
+#else
+        InitStart();
+#endif
+        sbcode = SolveBoard(dl,target,sol,mode,&amp;fut,0);
+        if(testSBCode(sbcode) == false)
+          return false;
+        getSBScore(fut,&amp;maxscore,bscore,m);
+        if(maxscore &lt; 0)
+        { printf(&#34;*** error: deal=%d leader=%c : no score\n&#34;,
+               ideal+1,chPLAYER[gib.Leader]);
+          return false;
+        }
+        score = maxscore;
+        if(score &gt;= 0)
+          score = ((gib.Leader &amp; 1) ? score: gib.numCard()/4-score);
+
+        timer.check();
+        nodes = (unsigned long long)fut.nodes;
+        totalnodes += nodes;
+        elapsed = timer.dblDeltaElapsed();
+
+        printf(&#34;  deal=%d leader=%c %d%c nodes=%s elapsed=%0.2lf\n&#34;,
+               ideal+1,chPLAYER[gib.Leader],score,(trumps==4)?&#39;N&#39;:chSUIT[trumps],
+               format64(nodes,sz1),elapsed);
+
+        if(score &lt; 10)
+          gib.szTricks[trickpos] = (score + &#39;0&#39;);
+        else
+          gib.szTricks[trickpos] = (score -10 + &#39;A&#39;);
+      }
+    }
+
+    // write the deal to file
+    fprintf(fp,&#34;%s:%s\n&#34;,gib.szDeal,gib.szTricks);
+    // flush file, so that cancel does not lose data
+    fflush(fp);
+
+    // print the deal
+    printf(&#34;%d %s:%s\n&#34;,ideal+1,gib.szDeal,gib.szTricks);
+  }
+
+  timer.check();
+  totalelapsed = timer.dElapsed;
+  printf(&#34;deals=%d nodes=%s elapsed=%0.2lf\n&#34;
+         &#34;output written to file %s\n&#34;,
+         gen,format64(totalnodes,sz1),
+         totalelapsed,szfile);
+
+  fclose(fp);
+  return true;
+
+} // generate
+// *****************************************************************************
+
+void getSBScore(const struct futureTricks &amp;fut, int *pmaxscore,
+                bool bscore[14], ushort m[14][4])
+{
+  // get DDS &#39;score&#39; after SolveBoard(..) has been run
+
+  int iscore, suit, alt;
+
+  for(iscore=0; iscore&lt;14; iscore++)
+    bscore[iscore] = false;
+  memset(m,0,14*4*sizeof(ushort));
+  *pmaxscore = -1;
+
+  for(alt=0; alt&lt;fut.cards; alt++)
+  { iscore = fut.score[alt];
+    if(iscore == -1)
+      continue;
+    if(fut.rank[alt])
+    { bscore[iscore] = true;
+      if(*pmaxscore &lt; iscore)
+        *pmaxscore = iscore;
+      suit = fut.suit[alt];
+      setBit(m[iscore][suit],14-fut.rank[alt]);
+      ushort malt = fut.equals[alt];
+      while(malt)
+      { int c = leastSignificant1Bit(malt);
+        clearBit(malt,c);
+        setBit(m[iscore][suit],14-c);
+      }
+    }
+  }
+
+} // getSBScore
+// *****************************************************************************
+
+bool giblib(char *pszfile, int target, int sol, int mode, char *pszgiblib)
+{
+  // run deals in giblib file for all possible tricks,
+  // collect and print the stats
+
+  cGIBLib gib;
+      int sbcode, ideal1, ideal2, ideal, trickpos, trumps,
+          tricks=0, leader;
+      int maxscore, nerror, score, ntotal;
+     char *pch;
+     bool ball, bscore[14];
+   ushort m[14][4];
+
+  bool bok=false;
+  FILE *fp;
+  cTimer timer;
+  struct deal dl;
+  struct futureTricks fut;
+
+  double elapsed, dealelapsed, totalelapsed;
+  unsigned long long nodes, dealnodes, totalnodes;
+  char sz1[32], sz2[32];
+
+  // get/test arguments
+  pch = strchr(pszgiblib,&#39;-&#39;);
+  if(pch == 0)
+  { printf(&#34;*** error: giblib=%s not &#39;deal1-deal2[-all]&#39;\n&#34;,pszgiblib);
+    return false;
+  }
+  ideal1 = atol(pszgiblib);
+  if((ideal1 &lt; 1) || (strlen(pszgiblib) == 0))
+  { printf(&#34;*** error: giblib=%s invalid deal1\n&#34;,pszgiblib);
+    return false;
+  }
+  pch++;
+  ideal2 = atol(pch);
+  if((ideal2 &lt; 1) || (strlen(pch) == 0))
+  { printf(&#34;*** error: giblib=%s invalid deal2\n&#34;,pszgiblib);
+    return false;
+  }
+  if(ideal1 &gt; ideal2)
+  { printf(&#34;*** error: giblib=%s ideal1 &gt; ideal2\n&#34;,pszgiblib);
+    return false;
+  }
+  ball = false;
+  pch = strchr(pch,&#39;-&#39;);
+  if(pch)
+  { if(strcmp(pch,&#34;-all&#34;) != 0)
+    { printf(&#34;*** error: giblib=%s expected &#39;-all&#39; after ideal2\n&#34;,pszgiblib);
+      return false;
+    }
+    ball = true;
+  }
+
+  fp = openFile(pszfile);
+  if(fp == 0)
+    return false;
+
+  printf(&#34;\n&#34;
+         &#34;giblib=%s target=%d sol=%d mode=%d\n&#34;,pszgiblib,target,sol,mode);
+  fflush(stdout);
+
+  timer.start();
+
+  nerror = ntotal = 0;
+  elapsed = totalelapsed = 0;
+  nodes = totalnodes = 0;
+
+  // skip to startdeal
+  for(ideal=1; ideal&lt;ideal1; ideal++)
+  { bok = gib.readDeal(fp);
+    if(!bok)
+      return false;
+  }
+
+  for(ideal=ideal1; ideal&lt;=ideal2; ideal++)
+  { // loop over deals in file
+
+    // read giblib deal
+    bok = gib.readDeal(fp);
+    if(!bok)
+      break;
+    if(gib.setDeal() == false)
+      break;
+
+    if((gib.numCard() % 4) != 0)
+    { printf(&#34;  warning: deal=%d cards=%d not multiple of 4, skipping deal ...\n&#34;,
+           ideal,gib.numCard());
+      continue;
+    }
+
+    // Note that we are using gib.szTricks internally,
+    //   - if not read, we are setting it,
+    //   - in addition we are correcting any errors.
+
+    dealnodes = 0;
+    dealelapsed = 0.0;
+
+    for(trickpos=0; trickpos&lt;20; trickpos++)
+    {
+      if(gib.getTricks(trickpos,&amp;leader,&amp;trumps,&amp;tricks) == false)
+      { if(ball == false)
+          continue;
+      }
+
+      // set up dds10
+      gib.Trumps = trumps;
+      gib.Leader = leader;
+      if(setDDS(&amp;gib,&amp;dl) == false)
+        return false;
+
+#if DDS_VERSION &gt;= 20101
+      InitStart(1, 1);
+#else
+      InitStart();
+#endif
+      sbcode = SolveBoard(dl,target,sol,mode,&amp;fut,0);
+      timer.check();
+      if(testSBCode(sbcode) == false)
+        return false;
+
+      getSBScore(fut,&amp;maxscore,bscore,m);
+      if(maxscore &lt; 0)
+      { printf(&#34;*** error: deal=%d leader=%c no score\n&#34;,
+               ideal,chPLAYER[gib.Leader]);
+        return false;
+      }
+      score = maxscore;
+      if(score &gt;= 0)
+        score = ((gib.Leader &amp; 1) ? score: gib.numCard()/4-score);
+
+      nodes = (unsigned long long)fut.nodes;
+      dealnodes += nodes;
+      totalnodes += nodes;
+      elapsed = timer.dblDeltaElapsed();
+      dealelapsed += elapsed;
+      totalelapsed += elapsed;
+
+      if(gib.szTricks[trickpos] != &#39;-&#39;)
+      { printf(&#34;    deal=%d leader=%c %d%c score=%d nodes=%s elapsed=%0.2lf\n&#34;,
+               ideal,chPLAYER[gib.Leader],tricks,(trumps==4)?&#39;N&#39;:chSUIT[trumps],
+               score,format64(nodes,sz1),elapsed);
+        bok = true;
+
+        // test that tricks and score agree
+        if((score &lt; 0) || score != tricks)
+        { nerror++;
+          bok = false;
+          printf(&#34;        error: deal=%d leader=%c %d%c score=%d\n&#34;,
+                 ideal,chPLAYER[gib.Leader],tricks,(trumps==4)?&#39;N&#39;:chSUIT[trumps],
+                 score);
+        }
+      }
+      else
+      { printf(&#34;    deal=%d leader=%c %d%c nodes=%s elapsed=%0.2lf\n&#34;,
+               ideal,chPLAYER[gib.Leader],score,(trumps==4)?&#39;N&#39;:chSUIT[trumps],
+               format64(nodes,sz1),elapsed);
+        bok = false;
+      }
+      if(bok == false)
+      { if(score &lt; 10)
+          gib.szTricks[trickpos] = (char)(score + (int)&#39;0&#39;);
+        else
+          gib.szTricks[trickpos] = (char)(score - 10 + (int)&#39;A&#39;);
+      }
+      ntotal++;
+    }
+
+    printf(&#34;  deal=%d nodes=%s elapsed=%0.2lf totalelapsed=%0.2lf\n&#34;
+           &#34;       &#34;,
+           ideal,format64(dealnodes,sz1),dealelapsed,totalelapsed);
+    if(strlen(gib.pszName))
+      printf(&#34;name=%s &#34;,gib.pszName);
+    printf(&#34;tricks=%s (max=%d)\n&#34;,
+           gib.szTricks,gib.numCard()/4);
+  }
+
+  printf(&#34;deals=%s nodes=%s avg=%s elapsed=%0.2lf avg=%.02lf\n&#34;,
+         pszgiblib,format64(totalnodes,sz1),
+         ntotal?format64(totalnodes/ntotal,sz2):format64(totalnodes,sz2),
+         totalelapsed,ntotal?totalelapsed/(double)ntotal:totalelapsed);
+  if(nerror) 
+  {
+    printf(&#34;*** ERROR: nerror=%d, tricks and score different\n&#34;,nerror);
+    return false;
+  }
+  printf(&#34;\n&#34;);
+
+  fclose(fp);
+
+  return true;
+
+} // giblib
+// *****************************************************************************
+
+FILE *openFile(char *pszfile)
+{
+  if(pszfile == 0)
+  { printf(&#34;*** error: no &#39;giblib&#39; file specified\n&#34;);
+    return 0;
+  }
+  if(access(pszfile,F_OK) != 0)
+  { printf(&#34;*** error: non-existing file %s\n&#34;,pszfile);
+    return 0;
+  }
+  FILE *fp = fopen(pszfile,&#34;r&#34;);
+  if(fp == 0)
+  { printf(&#34;*** error: %s: cannot open file %s for reading\n&#34;,
+           strerror(errno),pszfile);
+    return 0;
+  }
+
+  return fp;
+
+} // openFile
+// *****************************************************************************
+
+void playDD(cGIBLib *pgib, int target, int sol, int trumps, int leader)
+{
+  cTimer timer;
+  double elapsed=0;
+  struct deal dl;
+  struct futureTricks fut;
+  int sbcode, suit, card, ntotalcard;
+  char *pch, *pchend, buf[80];
+  bool bhelp=false, bcompute=true;
+  char *szplayer[4] = {&#34;west&#34;,&#34;north&#34;,&#34;east&#34;,&#34;south&#34;};
+
+  printf(&#34;\n&#34;);
+  pgib-&gt;print();
+  printf(&#34;\n&#34;);
+
+  timer.start();
+  for(;;)
+  {
+    pgib-&gt;printHands();
+    pgib-&gt;printInfo();
+    printf(&#34;\n&#34;);
+    fflush(stdout);
+
+    ntotalcard = pgib-&gt;numCard();
+    if(ntotalcard)
+    { // DDS only when there are cards left to play
+      if(bcompute)
+      { // set up dds10
+        if(setDDS(pgib,&amp;dl) == false)
+          return;
+  
+        timer.check();
+#if DDS_VERSION &gt;= 20101
+        InitStart(1, 1);
+#else
+        InitStart();
+#endif
+        sbcode = SolveBoard(dl,target,sol,1,&amp;fut,0);
+        timer.check();
+        if(testSBCode(sbcode) == false)
+          exit(-1);
+        elapsed += timer.dblDeltaElapsed();
+      }
+      printSBScore(target,sol,&amp;fut,elapsed);
+    }
+
+    if(bhelp)
+    { printf(&#34;help for options:\n&#34;
+             &#34;  &#39;q&#39;  - quit \n&#34;
+             &#34;  &#39;h&#39;  - print this help \n&#34;
+             &#34;  &#39;u&#39;  - unplay previous card (if available) \n&#34;
+             &#34;  &#39;sc&#39; - card/suit to play, e.g. dq/ht/s3\n&#34;
+             &#34;         must be valid for current player \n&#34;
+            );
+      bhelp = false;
+    }
+
+    bcompute = false;
+    if(ntotalcard &gt; 0)
+      printf(&#34;enter options for %s &#34;,szplayer[pgib-&gt;Player]);
+    else
+      printf(&#34;enter options &#34;);
+    if(ntotalcard &lt;= 0)
+      printf(&#34;(q/h/u): &#34;);
+    else if(pgib-&gt;nPlayed &gt; 0)
+      printf(&#34;(q/h/u/sc): &#34;);
+    else
+      printf(&#34;(q/h/sc): &#34;);
+    fflush(stdout);
+    pch = fgets(buf,255,stdin);
+    if(pch == 0)
+      continue;
+    pchend = strchr(buf,&#39;\n&#39;);
+    if(pchend)
+      *pchend = &#39;\0&#39;;
+    pchend = strchr(buf,&#39;\r&#39;);
+    if(pchend)
+      *pch = &#39;\0&#39;;
+    while(*pch == &#39; &#39;)
+      pch++;
+    if(*pch == &#39;\0&#39;)
+      continue;
+    if(*pch == &#39;q&#39;)
+      break;
+    else if((pch[0] == &#39;h&#39;) &amp;&amp; ((pch[1] == &#39; &#39;) || (pch[1] == &#39;\0&#39;)))
+    { bhelp = true;
+      continue;
+    }
+    else if((pgib-&gt;nPlayed &gt; 0) &amp;&amp; (*pch == &#39;u&#39;))
+    { if(pgib-&gt;unplayCard())
+        bcompute = true;
+    }
+    else if(ntotalcard)
+    {      if(tolower(pch[0]) == &#39;s&#39;) suit = 0;
+      else if(tolower(pch[0]) == &#39;h&#39;) suit = 1;
+      else if(tolower(pch[0]) == &#39;d&#39;) suit = 2;
+      else if(tolower(pch[0]) == &#39;c&#39;) suit = 3;
+      else
+        continue;
+      pch++;
+      card = (int)cGIBLib::getCard(pch[0]);
+      if(card == eCARD_NONE)
+        continue;
+
+      // play the card
+      pgib-&gt;SuitPlayed[pgib-&gt;nPlayed] = suit;
+      pgib-&gt;CardPlayed[pgib-&gt;nPlayed] = card;
+      if(pgib-&gt;playCard(suit,card))
+        bcompute = true;
+    }
+  }
+
+} // playDD
+// *****************************************************************************
+
+void printSBScore(int target, int solutions, struct futureTricks *pfut,
+                  double elapsed)
+{
+  // print DDS &#39;score&#39; after SolveBoard(..) has been run
+
+    char sz1[32];
+    bool bscore[14];
+  ushort m[14][4];
+     int maxscore;
+
+  printf(&#34;-- sb completed: nodes=%s tgt=%d sol=%d alt=%d elapsed=%0.2lf\n&#34;,
+         format(pfut-&gt;nodes,sz1),target,solutions,pfut-&gt;cards,elapsed);
+  getSBScore(*pfut,&amp;maxscore,bscore,m);
+  printSBScore(bscore,m);
+
+} // printSBScore
+// *****************************************************************************
+
+void printSBScore(bool bscore[14], ushort m[14][4])
+{
+  int iscore, suit, nscore=0;
+
+  for(iscore=0; iscore&lt;14; iscore++)
+  { if(bscore[iscore])
+    { nscore++;
+      printf(&#34;     %2d: &#34;,iscore);
+      for(suit=0; suit&lt;4; suit++)
+      { if(m[iscore][suit])
+        { printf(&#34;%c &#34;,chSUIT[suit]);
+          while(m[iscore][suit])
+          { int c = leastSignificant1Bit(m[iscore][suit]);
+            clearBit(m[iscore][suit],c);
+            printf(&#34;%c&#34;,chCARD[c]);
+          }
+          printf(&#34;  &#34;);
+        }
+      }
+      printf(&#34;\n&#34;);
+    }
+  }
+
+  if(nscore == 0)
+    printf(&#34;     none\n&#34;);
+
+} // printSBScore
+// *****************************************************************************
+
+bool setDDS(cGIBLib *pgib, struct deal *pdl)
+{
+  // setup deal structure for DDS
+
+  int pl, suit, ntrick, ntrickcard;
+  int lastsuit, lastcard, card;
+
+  pdl-&gt;trump = pgib-&gt;Trumps;               // s=0,h=1,d=2,c=3,nt=4
+
+  // remaining cards from partial trick
+  ntrick = (pgib-&gt;nPlayed / 4);
+  ntrickcard = (pgib-&gt;nPlayed - 4 * ntrick);
+  memset(pdl-&gt;currentTrickSuit,0,3*sizeof(int));
+  memset(pdl-&gt;currentTrickRank,0,3*sizeof(int));
+  if(ntrickcard &gt; 0)
+  { for(pl=0; pl&lt;ntrickcard; pl++)
+    { lastsuit = pgib-&gt;SuitPlayed[4*ntrick+pl];
+      lastcard = pgib-&gt;CardPlayed[4*ntrick+pl];
+      pdl-&gt;currentTrickSuit[pl] = lastsuit;
+      pdl-&gt;currentTrickRank[pl] = CARD2DDS(lastcard);
+    }
+  }
+
+  // DDS leader
+  pdl-&gt;first = PLAYER2DDS(pgib-&gt;Leader);   // n=0,e=1,s=2,w=3
+
+  // DDS remaining cards
+  for(pl=0; pl&lt;4; pl++)
+  { int ddspl = PLAYER2DDS(pl);
+    for(suit=0; suit&lt;4; suit++)
+    { ushort m=0, mp=pgib-&gt;mPlayerSuit[pl][suit];
+      while(mp)
+      { card = leastSignificant1Bit(mp);
+        clearBit(mp,card);
+        setBit(m,CARD2DDS(card));
+      }
+      pdl-&gt;remainCards[ddspl][suit] = (unsigned int)m;
+    }
+  }
+
+  return true;
+
+} // setDDDS
+// *****************************************************************************
+
+bool testSBCode(int sbcode)
+{
+  // test DDS return code after SolveBoard(..) has been run
+
+  if(sbcode &lt; SBSTATUS_MIN)
+     sbcode = SBSTATUS_MIN;
+  else if(sbcode &gt;= SBSTATUS_MIN+SBSTATUS_NUM)
+     sbcode = SBSTATUS_MIN + SBSTATUS_NUM - 1;
+  sbcode -= SBSTATUS_MIN;
+  if(sbcode != SBSTATUS_NOFAULT)
+  { printf(&#34;*** error: %s\n&#34;,szSBStatus[0].szCode);
+    return false;
+  }
+
+  return true;
+
+} // testSBCode
+// *****************************************************************************
+
+bool timeAll(char *pszfile, int trumps, int leader)
+{
+  // run all deals in giblib file for sol=1/2/3,
+  // collect and print the stats
+
+  cGIBLib gib;
+  int sbcode, ideal;
+  bool bok=false;
+  FILE *fp;
+  cTimer timer;
+  struct deal dl;
+  struct futureTricks fut;
+
+  double totalelapsed=0.0, elapsed[3]={0.0,0.0,0.0};
+  unsigned long long totalnodes=0, nodes[3]={0,0,0};
+
+  #define LEN_RESULTNAME 15
+  struct sResult
+  {    int nNode[3];
+    double Elapsed[3];
+      char szName[LEN_RESULTNAME+1];
+  };
+
+  #define MAX_RESULT 10
+  int sol, target=-1, mode=1, ndealalloc=0, ndeal, nresult=0;
+  struct sResult *presult=0;
+
+  for(sol=1; sol&lt;=3; sol++)
+  { ndeal = 0;
+    for(;;)
+    { // loop over deals in file
+
+      // open file
+      fp = openFile(pszfile);
+      if(fp == 0)
+        return false;
+
+      // read giblib deal
+      bok = gib.readFile(ndeal,0,fp);
+      fclose(fp);
+      if(!bok)
+        break;
+
+      if(trumps != -1)
+        gib.Trumps = trumps;
+      if(leader != -1)
+        gib.Leader = leader;
+
+      printf(&#34;\n&#34;);
+      gib.print();
+      printf(&#34;\n&#34;);
+      gib.printHands();
+      gib.printInfo();
+      printf(&#34;\n&#34;);
+      fflush(stdout);
+
+      // set up dds10
+      if(setDDS(&amp;gib,&amp;dl) == false)
+        return false;
+
+      timer.start();
+#if DDS_VERSION &gt;= 20101
+      InitStart(1, 1);
+#else
+      InitStart();
+#endif
+      sbcode = SolveBoard(dl,target,sol,mode,&amp;fut,0);
+      timer.check();
+      if(testSBCode(sbcode) == false)
+        return false;
+      printSBScore(target,sol,&amp;fut,timer.dblElapsed());
+
+      if(ndeal &gt;= ndealalloc)
+      { presult = (struct sResult*)realloc(presult,
+                                      (ndealalloc+25)*sizeof(struct sResult));
+        if(presult == 0)
+        { printf(&#34;*** error: cannot allocate result array\n&#34;);
+          return false;
+        }
+        ndealalloc += 25;
+      }
+
+      presult[ndeal].nNode[sol-1]   = fut.nodes;
+      presult[ndeal].Elapsed[sol-1] = timer.dblElapsed();
+      strncpy(presult[ndeal].szName,gib.pszName,LEN_RESULTNAME);
+      presult[ndeal].szName[LEN_RESULTNAME] = &#39;\0&#39;;
+      ndeal++;
+      if(nresult &lt; ndeal)
+        nresult = ndeal;
+
+      totalnodes += (unsigned long long)fut.nodes;
+      nodes[sol-1] += (unsigned long long)fut.nodes;
+      totalelapsed += timer.dblElapsed();
+      elapsed[sol-1] += timer.dblElapsed();
+    }
+  }
+
+  // print the results
+  printf(&#34;\n&#34;
+         &#34;test                     sol=1                 sol=2              sol=3\n&#34;
+         &#34;---------         ----------------     ----------------      ---------------\n&#34;
+        );
+  for(ideal=0; ideal&lt;nresult; ideal++)
+  { char szline[128], sz1[32], sz2[32];
+    int len, pos;
+    memset(szline,&#39; &#39;,127);
+    len = strlen(presult[ideal].szName);
+    if(len)
+      strncpy(szline,presult[ideal].szName,len);
+    pos = LEN_RESULTNAME + 1;
+    for(sol=0; sol&lt;3; sol++)
+    { format(presult[ideal].nNode[sol],sz1);
+      sprintf(sz2,&#34;%0.2lf&#34;,presult[ideal].Elapsed[sol]);
+      len = strlen(sz1);
+      strncpy(szline+pos+12-len,sz1,len);
+      pos += 13;
+      len = strlen(sz2);
+      strncpy(szline+pos+5-len,sz2,len);
+      pos += 8;
+    }
+    szline[pos] = &#39;\0&#39;;
+    printf(&#34;%s\n&#34;,szline);
+  }
+  printf(&#34;\n&#34;);
+  { char sz1[32], sz2[32], sz3[32], sz4[32];
+    printf(&#34;  nodes: total=%s  sol-1=%s  sol-2=%s  sol-3=%s\n&#34;,
+           format64(totalnodes,sz1),format64(nodes[0],sz2),
+           format64(nodes[1],sz3),format64(nodes[2],sz4));
+  }
+  printf(&#34;elapsed: total=%0.2lf  sol-1=%0.2lf  sol-2=%0.2lf  sol-3=%0.2lf\n&#34;,
+         totalelapsed,elapsed[0],elapsed[1],elapsed[2]);
+
+  return true;
+
+} // timeAll
+// *****************************************************************************
+
+bool timeg(char *pszfile, int target, int sol, int mode,
+           char *pszxcn, int leader, bool bverbose)
+{
+  // run and validate specified number of deals deals in
+  // giblib file for given contract/leader/target/sol/mode
+
+  cGIBLib gib;
+      int sbcode, ideal, currentdeal, trickpos;
+      int maxscore, nerror, score;
+     bool bscore[14];
+   ushort m[14][4];
+
+  bool bok=false;
+  FILE *fp;
+  cTimer timer;
+  struct deal dl;
+  struct futureTricks fut;
+
+  double elapsed=0.0, minelapsed=1.0e10, maxelapsed=0.0;
+  unsigned long long nodes=0;
+  int minnode=2000000000, maxnode=0;
+  char sz1[32], sz2[32], sz3[32];
+  char optx;
+  int tricks, contract, ndeal;
+
+  // get/test arguments
+  if(strlen(pszxcn) &lt; 3)
+  { printf(&#34;*** error: timeg options=%s is not &gt;=3\n&#34;,pszxcn);
+    return false;
+  }
+  optx = pszxcn[0];
+  if(!isxdigit(optx))
+  { printf(&#34;*** error: timeg optionX=%c is not hex digit 3\n&#34;,optx);
+    return false;
+  }
+  if((tolower(optx)==&#39;e&#39;) || (tolower(optx)==&#39;f&#39;))
+  { printf(&#34;*** error: timeg optionX=%c more than 13 tricks\n&#34;,optx);
+    return false;
+  }
+  optx = tolower(optx);
+  tricks = ((int)optx - (int)&#39;0&#39;);
+  if((tricks &lt; 0) || (tricks &gt; 9))
+    tricks = ((int)optx - (int)&#39;a&#39; + 10);
+
+       if(pszxcn[1] == &#39;s&#39;) contract = 0;
+  else if(pszxcn[1] == &#39;h&#39;) contract = 1;
+  else if(pszxcn[1] == &#39;d&#39;) contract = 2;
+  else if(pszxcn[1] == &#39;c&#39;) contract = 3;
+  else if(pszxcn[1] == &#39;n&#39;) contract = 4;
+  else
+  { printf(&#34;*** error: timeg contract=%c is not s/h/d/c/n\n&#34;,pszxcn[1]);
+    return false;
+  }
+  ndeal = atol(pszxcn+2);
+  if(ndeal &lt;= 0)
+  { printf(&#34;*** error: timeg ndeal=%d is not &gt;= 0\n&#34;,ndeal);
+    return false;
+  }
+
+  if(contract == 4)
+    trickpos = 0;               // nt
+  else
+    trickpos = 4 + 4 * contract;    // s/h/d/c
+  // giblib leader goes s/e/n/w
+  //    our leader goes w/n/e/s
+  trickpos += (3 - leader);
+
+  fp = openFile(pszfile);
+  if(fp == 0)
+    return false;
+
+  printf(&#34;\n&#34;
+         &#34;timeg tricks=%d contract=%c deals=%d target=%d sol=%d mode=%d leader=%c\n&#34;,
+         tricks,&#34;shdcn&#34;[contract],ndeal,target,sol,mode,chPLAYER[leader]);
+  fflush(stdout);
+
+  timer.start();
+
+  ideal = currentdeal = nerror = 0;
+  for(;;)
+  { // loop over deals in file
+
+    // read giblib deal
+    bok = gib.readDeal(fp);
+    if(!bok)
+      break;
+    if(gib.setDeal() == false)
+      break;
+
+    currentdeal++;
+
+    if(optx != tolower(gib.szTricks[trickpos]))
+      continue;
+
+    ideal++;
+    // set up dds10
+    gib.Trumps = contract;
+    if(leader != -1)
+      gib.Leader = leader;
+    if(setDDS(&amp;gib,&amp;dl) == false)
+      return false;
+
+#if DDS_VERSION &gt;= 20101
+    InitStart(1, 1);
+#else
+    InitStart();
+#endif
+    sbcode = SolveBoard(dl,target,sol,mode,&amp;fut,0);
+    timer.check();
+    if(testSBCode(sbcode) == false)
+      return false;
+
+    getSBScore(fut,&amp;maxscore,bscore,m);
+    if(maxscore &lt; 0)
+    { nerror++;
+      printf(&#34;\r  --- error: deal=%d ndeal=%d no score\n&#34;,
+             currentdeal,ideal);
+    }
+    else
+    { score = maxscore;
+      if(score &gt;= 0)
+        //score = ((leader &amp; 1) ? gib.numCard()/4-score : score);
+        score = ((leader &amp; 1) ? score: gib.numCard()/4-score);
+      if((score &lt; 0) || score != tricks)
+      { nerror++;
+        printf(&#34;\r  --- error: deal=%d ndeal=%d tricks=%d score=%d\n&#34;,
+               currentdeal,ideal,tricks,score);
+      }
+    }
+
+    if(!bverbose)
+      printf(&#34;\r&#34;);
+    printf(&#34;  deal=%d ndeal=%d nodes=%s elapsed=%0.2lf&#34;,
+           currentdeal,ideal,format64(fut.nodes,sz1),timer.deltaElapsed);
+    if(!bverbose)
+      printf(&#34;                    &#34;);
+    else
+      printf(&#34;\n&#34;);
+    fflush(stdout);
+
+    nodes += (unsigned long long)fut.nodes;
+    elapsed += timer.dblDeltaElapsed();
+
+    if(minnode &gt; fut.nodes)
+      minnode = fut.nodes;
+    if(maxnode &lt; fut.nodes)
+      maxnode = fut.nodes;
+
+    if(minelapsed &gt; timer.deltaElapsed)
+      minelapsed = timer.deltaElapsed;
+    if(maxelapsed &lt; timer.deltaElapsed)
+      maxelapsed = timer.deltaElapsed;
+
+    if(ideal &gt;= ndeal)
+      break;
+  }
+  if(ideal &lt;= 0)
+    printf(&#34;no deals found\n&#34;);
+  else
+  { printf(&#34;\rdeals=%d nodes=%s elapsed=%0.2lf                              \n&#34;,
+           ndeal,format64(nodes,sz1),elapsed);
+    printf(&#34;min_node=%s max_node=%s avg=%s\n&#34;,
+           format(minnode,sz1),format(maxnode,sz2),
+           format((ideal&gt;0)?nodes/ideal:nodes,sz3));
+    printf(&#34;min_elapsed=%0.2lf max_elapsed=%0.2lf avg=%0.2lf\n&#34;,
+           minelapsed,maxelapsed,(elapsed&gt;0.0)?elapsed/(double)ideal:elapsed);
+  }
+  if(nerror)
+    printf(&#34;*** ERROR: nerror=%d, incorrect maximum tricks\n&#34;,nerror);
+  else
+    printf(&#34;errors=0\n&#34;);
+  printf(&#34;\n&#34;);
+
+  fclose(fp);
+
+  return true;
+
+} // timeg
+// *****************************************************************************
+
+bool tricks(cGIBLib *pgib, int ideal, int target, int sol, int mode)
+{
+  // run deal in giblib file for all possible tricks,
+  // collect and print the stats
+
+     int sbcode, trickpos, trumps;
+     int maxscore, score;
+    bool bscore[14];
+  ushort m[14][4];
+
+  cTimer timer;
+  struct deal dl;
+  struct futureTricks fut;
+
+  double elapsed, dealelapsed, totalelapsed;
+  unsigned long long nodes, dealnodes, totalnodes;
+  char sz1[32];
+
+  if(pgib-&gt;pszName &amp;&amp; strlen(pgib-&gt;pszName))
+    printf(&#34;\nname=%s&#34;,pgib-&gt;pszName);
+  else
+    printf(&#34;\ndeal=%d&#34;,ideal);
+  printf(&#34; target=%d sol=%d mode=%d\n&#34;,target,sol,mode);
+  fflush(stdout);
+
+  timer.start();
+
+  elapsed = totalelapsed = 0;
+  nodes = totalnodes = 0;
+
+  dealnodes = 0;
+  dealelapsed = 0.0;
+
+  memset(pgib-&gt;szTricks,&#39;-&#39;,20);
+  pgib-&gt;szTricks[20] = &#39;\0&#39;;
+
+  for(trickpos=0; trickpos&lt;20; trickpos++)
+  {
+    if(trickpos &lt; 4)
+      trumps = 4;
+    else
+      trumps = (trickpos - 4) / 4;
+
+    // set up dds10
+    pgib-&gt;Trumps = trumps;
+      pgib-&gt;Leader = 3 - (trickpos % 4);
+    if(setDDS(pgib,&amp;dl) == false)
+      return false;
+
+#if DDS_VERSION &gt;= 20101
+    InitStart(1, 1);
+#else
+    InitStart();
+#endif
+    sbcode = SolveBoard(dl,target,sol,mode,&amp;fut,0);
+    timer.check();
+    if(testSBCode(sbcode) == false)
+      return false;
+
+    getSBScore(fut,&amp;maxscore,bscore,m);
+    if(maxscore &lt; 0)
+    { printf(&#34;*** error: leader=%c no score\n&#34;,
+           chPLAYER[pgib-&gt;Leader]);
+      return false;
+    }
+    score = maxscore;
+    if(score &gt;= 0)
+      score = ((pgib-&gt;Leader &amp; 1) ? score: pgib-&gt;numCard()/4-score);
+
+    nodes = (unsigned long long)fut.nodes;
+    dealnodes += nodes;
+    totalnodes += nodes;
+    elapsed = timer.dblDeltaElapsed();
+    dealelapsed += elapsed;
+    totalelapsed += elapsed;
+
+    printf(&#34;  leader=%c %d%c nodes=%s elapsed=%0.2lf\n&#34;,
+           chPLAYER[pgib-&gt;Leader],score,(trumps==4)?&#39;N&#39;:chSUIT[trumps],
+           format64(nodes,sz1),elapsed);
+
+    if(score &lt; 10)
+      pgib-&gt;szTricks[trickpos] = (char)(score + (int)&#39;0&#39;);
+    else
+      pgib-&gt;szTricks[trickpos] = (char)(score - 10 + (int)&#39;A&#39;);
+  }
+  printf(&#34;nodes=%s elapsed=%0.2lf totalelapsed=%0.2lf\n&#34;,
+         format64(dealnodes,sz1),dealelapsed,totalelapsed);
+
+  printf(&#34;\n&#34;);
+  pgib-&gt;printHands();
+  printf(&#34;\n&#34;);
+  if(pgib-&gt;pszName &amp;&amp; strlen(pgib-&gt;pszName))
+    printf(&#34;name=%s&#34;,pgib-&gt;pszName);
+  else
+    printf(&#34;deal=%d&#34;,ideal);
+  printf(&#34;  tricks(leader=senw):&#34;);
+  for(trickpos=0; trickpos&lt;20; trickpos++)
+  { if((trickpos%4) == 0)
+    { if(trickpos == 0)
+        printf(&#34; n=&#34;);
+      else if(trickpos == 4)
+        printf(&#34; s=&#34;);
+      else if(trickpos == 8)
+        printf(&#34; h=&#34;);
+      else if(trickpos == 12)
+        printf(&#34; d=&#34;);
+      else if(trickpos == 16)
+        printf(&#34; c=&#34;);
+    }
+    printf(&#34;%c&#34;,pgib-&gt;szTricks[trickpos]);
+  }
+  printf(&#34;  (max=%d)\n\n&#34;,pgib-&gt;numCard()/4);
+
+  return true;
+
+} // tricks
+// *****************************************************************************
+/*
+================================================================================
+output for:   test.gib -timeall
+================================================================================
+
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                      13  0.02             17  0.02             17  0.02
+gib3                      55  0.02             74  0.03             74  0.02
+gib4                     144  0.02            239  0.02            290  0.02
+gib5                     283  0.02            828  0.03          1,321  0.02
+gib10                 24,616  0.05         56,172  0.09         73,522  0.10
+gin                   17,372  0.05        330,860  0.37        836,869  0.96
+dbldum1                1,806  0.03          3,052  0.03          3,084  0.03
+dbldum2              272,365  0.25        767,339  0.71        767,339  0.69
+devil1                94,935  0.12        179,691  0.21        336,969  0.34
+callahan             502,044  0.60      1,303,934  1.99      1,679,319  2.33
+g410-scc             121,233  0.15        140,942  0.20        464,298  0.45
+giblibno1          4,026,572  5.01      6,887,233  9.50      8,470,777 11.83
+giblibno2            469,241  0.48        586,377  0.61        586,377  0.60
+bo17                 578,078  0.69      1,342,200  1.64      1,813,889  2.06
+bo21               2,614,869  3.65      3,229,875  4.45      6,668,155  9.07
+giblib1               70,093  0.10        158,829  0.20        158,829  0.18
+giblib2            1,362,230  1.34      1,698,895  1.68      7,052,520  6.82
+giblib3              178,884  0.18        477,891  0.38        477,899  0.39
+giblib4              148,267  0.16        345,545  0.35      1,523,658  1.43
+giblib5              997,945  1.00      3,119,281  3.24      3,119,281  3.24
+giblib6            1,634,670  1.60      3,446,862  3.70      3,805,367  3.85
+giblib7              116,215  0.16        575,832  0.67        606,341  0.64
+giblib8              188,369  0.20      1,115,375  1.08      1,115,375  1.06
+giblib9            1,287,045  1.33      2,542,975  2.88      4,461,078  5.17
+giblib10             141,894  0.41        440,351  0.49        872,148  0.91
+
+  nodes: total=88,494,703  sol-1=14,849,238  sol-2=28,750,669  sol-3=44,894,796
+elapsed: total=104.43  sol-1=17.65  sol-2=34.56  sol-3=52.23
+
+================================================================================
+output for:   ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=148,267 elapsed=0.17
+  deal=5 ndeal=2 nodes=997,945 elapsed=1.02
+  deal=8 ndeal=3 nodes=188,369 elapsed=0.20
+  deal=56 ndeal=4 nodes=2,496,093 elapsed=2.88
+  deal=68 ndeal=5 nodes=1,942,886 elapsed=2.07
+  deal=81 ndeal=6 nodes=595,946 elapsed=0.57
+  deal=94 ndeal=7 nodes=910,639 elapsed=1.07
+  deal=99 ndeal=8 nodes=2,916,346 elapsed=3.54
+  deal=103 ndeal=9 nodes=247,399 elapsed=0.26
+  deal=116 ndeal=10 nodes=353,807 elapsed=0.38
+deals=10 nodes=10,797,697 elapsed=12.16
+min_node=148,267 max_node=2,916,346 avg=1,079,769
+min_elapsed=0.17 max_elapsed=3.54 avg=1.22
+errors=0
+
+================================================================================
+output for:   ../giblib -giblib=1-1
+================================================================================
+
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=76,507 elapsed=0.10
+    deal=1 leader=E 8N score=8 nodes=73,856 elapsed=0.10
+    deal=1 leader=N 8N score=8 nodes=66,062 elapsed=0.09
+    deal=1 leader=W 8N score=8 nodes=70,093 elapsed=0.10
+    deal=1 leader=S 7S score=7 nodes=633,804 elapsed=0.77
+    deal=1 leader=E 7S score=7 nodes=227,684 elapsed=0.26
+    deal=1 leader=N 7S score=7 nodes=617,829 elapsed=0.78
+    deal=1 leader=W 7S score=7 nodes=239,070 elapsed=0.28
+    deal=1 leader=S 10H score=10 nodes=44,135 elapsed=0.07
+    deal=1 leader=E 9H score=9 nodes=64,593 elapsed=0.10
+    deal=1 leader=N 10H score=10 nodes=25,802 elapsed=0.05
+    deal=1 leader=W 9H score=9 nodes=66,538 elapsed=0.10
+    deal=1 leader=S 7D score=7 nodes=710,876 elapsed=0.95
+    deal=1 leader=E 7D score=7 nodes=129,917 elapsed=0.17
+    deal=1 leader=N 7D score=7 nodes=740,822 elapsed=1.00
+    deal=1 leader=W 7D score=7 nodes=156,316 elapsed=0.20
+    deal=1 leader=S 8C score=8 nodes=287,964 elapsed=0.31
+    deal=1 leader=E 8C score=8 nodes=234,815 elapsed=0.26
+    deal=1 leader=N 8C score=8 nodes=367,526 elapsed=0.39
+    deal=1 leader=W 8C score=8 nodes=128,382 elapsed=0.16
+  deal=1 nodes=4,962,591 elapsed=6.25 totalelapsed=6.25
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=4,962,591 avg=248,129 elapsed=6.25 avg=0.31
+
+================================================================================
+output for:   test.gib -tricks -name=gin
+================================================================================
+
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=252,521 elapsed=0.32
+  leader=E 9N nodes=538,589 elapsed=0.59
+  leader=N 9N nodes=276,076 elapsed=0.35
+  leader=W 8N nodes=17,372 elapsed=0.05
+  leader=S 9S nodes=1,268,000 elapsed=2.08
+  leader=E 8S nodes=1,726,949 elapsed=2.50
+  leader=N 9S nodes=695,799 elapsed=0.96
+  leader=W 8S nodes=1,656,521 elapsed=2.83
+  leader=S 9H nodes=476,674 elapsed=0.59
+  leader=E 9H nodes=531,859 elapsed=0.61
+  leader=N 9H nodes=437,013 elapsed=0.53
+  leader=W 9H nodes=298,225 elapsed=0.33
+  leader=S 6D nodes=474,565 elapsed=0.57
+  leader=E 6D nodes=238,345 elapsed=0.29
+  leader=N 6D nodes=370,831 elapsed=0.44
+  leader=W 6D nodes=60,061 elapsed=0.09
+  leader=S 7C nodes=1,118,923 elapsed=1.46
+  leader=E 7C nodes=1,074,097 elapsed=1.27
+  leader=N 7C nodes=1,267,293 elapsed=1.70
+  leader=W 7C nodes=587,523 elapsed=0.62
+nodes=13,367,236 elapsed=18.18 totalelapsed=18.18
+
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+
+dds/jack database format:
+-------------------------
+deal: A873.QJ8.T832.42 T52.965.J76.JT86 KJ96.K7.AQ.A9753 Q4.AT432.K954.KQ
+
+sol=3
+contract:hearts  play:W
+      6: D T
+      7: S A873  H QJ8  D 832  C 42
+contract:hearts  play:N
+      5: D J
+      6: S T52  H 965  D 76  C JT86
+contract:hearts  play:E
+      7: S KJ96  H K7  D AQ  C A9753
+contract:hearts  play:S
+      5: D K954
+      6: S Q4  H AT432  C KQ
+
+db row for sol=3:
+A873.QJ8.T832.42 T52.965.J76.JT86 KJ96.K7.AQ.A9753 Q4.AT432.K954.KQ:H:
+7777777677777666666566666677777777777776666666555566
+
+================================================================================
+dds10x output for:   test.gib -timeall
+================================================================================
+
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                      13  0.02             17  0.02             17  0.02
+gib3                      55  0.02             74  0.02             74  0.02
+gib4                     132  0.02            220  0.03            267  0.02
+gib5                     232  0.02            677  0.02          1,091  0.03
+gib10                 23,990  0.05         54,710  0.09         71,783  0.10
+gin                   12,536  0.05        301,204  0.36        712,655  0.82
+dbldum1                1,320  0.03          2,045  0.02          2,070  0.03
+dbldum2              271,126  0.26        761,667  0.75        761,667  0.72
+devil1                80,278  0.11        145,941  0.17        279,078  0.30
+callahan             373,482  0.47        987,935  1.54      1,273,233  1.87
+g410-scc              82,136  0.12         98,589  0.13        324,586  0.41
+giblibno1          2,905,488  3.92      5,015,652  7.65      6,153,242  9.48
+giblibno2            339,994  0.38        440,591  0.49        440,591  0.49
+bo17                 448,820  0.56        985,737  1.23      1,378,182  1.62
+bo21               2,103,531  3.08      2,622,826  3.82      5,511,592  7.83
+giblib1               39,201  0.08         97,312  0.13         97,312  0.14
+giblib2              838,043  0.95      1,081,582  1.19      5,357,787  5.55
+giblib3              118,210  0.12        310,481  0.28        310,487  0.28
+giblib4              113,139  0.14        210,143  0.23      1,155,003  1.14
+giblib5              720,826  0.77      2,301,738  2.66      2,301,738  2.60
+giblib6              813,750  0.90      1,629,511  1.92      1,837,380  2.04
+giblib7               89,093  0.12        443,105  0.51        469,467  0.54
+giblib8              137,034  0.20        751,701  0.81        751,701  0.78
+giblib9              936,282  1.05      1,734,880  2.02      3,170,680  3.77
+giblib10             117,587  0.15        371,259  0.44        710,326  0.79
+  nodes: total=63,987,904  sol-1=10,566,298  sol-2=20,349,597  sol-3=33,072,009
+elapsed: total=81.50  sol-1=13.60  sol-2=26.52  sol-3=41.38
+
+================================================================================
+dds10x output for:   ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=113,139 elapsed=0.14
+  deal=5 ndeal=2 nodes=720,826 elapsed=0.79
+  deal=8 ndeal=3 nodes=137,034 elapsed=0.17
+  deal=56 ndeal=4 nodes=1,837,912 elapsed=2.17
+  deal=68 ndeal=5 nodes=1,224,530 elapsed=1.37
+  deal=81 ndeal=6 nodes=410,308 elapsed=0.42
+  deal=94 ndeal=7 nodes=593,127 elapsed=0.73
+  deal=99 ndeal=8 nodes=1,946,230 elapsed=2.37
+  deal=103 ndeal=9 nodes=155,728 elapsed=0.18
+  deal=116 ndeal=10 nodes=174,796 elapsed=0.22
+deals=10 nodes=7,313,630 elapsed=8.57
+min_node=113,139 max_node=1,946,230 avg=731,363
+min_elapsed=0.14 max_elapsed=2.37 avg=0.86
+errors=0
+
+================================================================================
+dds10x output for:   ../giblib -giblib=1-1
+================================================================================
+
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=50,178 elapsed=0.08
+    deal=1 leader=E 8N score=8 nodes=39,811 elapsed=0.08
+    deal=1 leader=N 8N score=8 nodes=43,703 elapsed=0.08
+    deal=1 leader=W 8N score=8 nodes=39,201 elapsed=0.07
+    deal=1 leader=S 7S score=7 nodes=420,588 elapsed=0.56
+    deal=1 leader=E 7S score=7 nodes=155,765 elapsed=0.23
+    deal=1 leader=N 7S score=7 nodes=426,794 elapsed=0.60
+    deal=1 leader=W 7S score=7 nodes=164,092 elapsed=0.23
+    deal=1 leader=S 10H score=10 nodes=33,596 elapsed=0.07
+    deal=1 leader=E 9H score=9 nodes=45,895 elapsed=0.09
+    deal=1 leader=N 10H score=10 nodes=19,817 elapsed=0.05
+    deal=1 leader=W 9H score=9 nodes=47,289 elapsed=0.09
+    deal=1 leader=S 7D score=7 nodes=454,538 elapsed=0.63
+    deal=1 leader=E 7D score=7 nodes=80,961 elapsed=0.13
+    deal=1 leader=N 7D score=7 nodes=492,525 elapsed=0.69
+    deal=1 leader=W 7D score=7 nodes=90,791 elapsed=0.14
+    deal=1 leader=S 8C score=8 nodes=169,389 elapsed=0.21
+    deal=1 leader=E 8C score=8 nodes=144,696 elapsed=0.19
+    deal=1 leader=N 8C score=8 nodes=239,940 elapsed=0.29
+    deal=1 leader=W 8C score=8 nodes=86,347 elapsed=0.13
+  deal=1 nodes=3,245,916 elapsed=4.63 totalelapsed=4.63
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=3,245,916 avg=162,295 elapsed=4.63 avg=0.23
+
+================================================================================
+dds105 output for:   test.gib -timeall
+================================================================================
+
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                      13  0.02             17  0.02             17  0.02
+gib3                      51  0.03             70  0.02             70  0.02
+gib4                     108  0.02            196  0.02            241  0.02
+gib5                     201  0.02            615  0.02          1,029  0.03
+gib10                 23,631  0.05         53,970  0.08         70,393  0.09
+gin                   11,804  0.05        264,863  0.32        639,086  0.77
+dbldum1                1,190  0.02          1,756  0.02          1,781  0.03
+dbldum2              244,373  0.24        691,508  0.68        691,508  0.68
+devil1                77,028  0.11        140,404  0.17        269,045  0.29
+callahan             342,844  0.44        918,162  1.45      1,182,747  1.72
+g410-scc              77,328  0.12         92,379  0.14        316,332  0.36
+giblibno1          2,211,230  3.19      3,884,687  6.13      4,797,243  7.54
+giblibno2            307,453  0.36        401,005  0.47        401,005  0.47
+bo17                 344,725  0.44        826,074  1.08      1,184,613  1.42
+bo21               1,793,723  2.60      2,249,871  3.23      4,791,239  6.78
+giblib1               37,717  0.07         90,410  0.13         90,410  0.13
+giblib2              780,451  0.88      1,009,229  1.15      5,027,108  5.38
+giblib3              111,864  0.12        294,222  0.28        294,228  0.28
+giblib4              102,296  0.13        191,583  0.22      1,086,325  1.13
+giblib5              671,160  0.73      2,180,365  2.49      2,180,365  2.50
+giblib6              763,607  0.85      1,531,703  1.79      1,722,183  1.98
+giblib7               71,888  0.10        375,551  0.47        399,876  0.49
+giblib8              120,940  0.15        689,874  0.73        689,874  0.73
+giblib9              802,763  0.93      1,507,576  1.80      2,802,602  3.46
+giblib10              88,779  0.13        272,940  0.34        586,850  0.69
+  nodes: total=55,882,367  sol-1=8,987,167  sol-2=17,669,030  sol-3=29,226,170
+elapsed: total=72.11  sol-1=11.83  sol-2=23.27  sol-3=37.01
+
+================================================================================
+dds105 output for:   ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=102,296 elapsed=0.14
+  deal=5 ndeal=2 nodes=671,160 elapsed=0.74
+  deal=8 ndeal=3 nodes=120,940 elapsed=0.17
+  deal=56 ndeal=4 nodes=1,700,168 elapsed=2.07
+  deal=68 ndeal=5 nodes=1,070,739 elapsed=1.26
+  deal=81 ndeal=6 nodes=372,940 elapsed=0.40
+  deal=94 ndeal=7 nodes=490,804 elapsed=0.61
+  deal=99 ndeal=8 nodes=1,819,501 elapsed=2.30
+  deal=103 ndeal=9 nodes=103,882 elapsed=0.14
+  deal=116 ndeal=10 nodes=150,449 elapsed=0.19
+deals=10 nodes=6,602,879 elapsed=8.01
+min_node=102,296 max_node=1,819,501 avg=660,287
+min_elapsed=0.14 max_elapsed=2.30 avg=0.80
+errors=0
+
+================================================================================
+dds105 output for:   ../giblib -giblib=1-1
+================================================================================
+
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=44,008 elapsed=0.08
+    deal=1 leader=E 8N score=8 nodes=38,642 elapsed=0.07
+    deal=1 leader=N 8N score=8 nodes=36,150 elapsed=0.07
+    deal=1 leader=W 8N score=8 nodes=37,717 elapsed=0.07
+    deal=1 leader=S 7S score=7 nodes=342,376 elapsed=0.46
+    deal=1 leader=E 7S score=7 nodes=134,659 elapsed=0.18
+    deal=1 leader=N 7S score=7 nodes=358,216 elapsed=0.49
+    deal=1 leader=W 7S score=7 nodes=143,287 elapsed=0.20
+    deal=1 leader=S 10H score=10 nodes=26,798 elapsed=0.06
+    deal=1 leader=E 9H score=9 nodes=36,768 elapsed=0.08
+    deal=1 leader=N 10H score=10 nodes=16,269 elapsed=0.05
+    deal=1 leader=W 9H score=9 nodes=37,968 elapsed=0.08
+    deal=1 leader=S 7D score=7 nodes=417,861 elapsed=0.60
+    deal=1 leader=E 7D score=7 nodes=77,732 elapsed=0.14
+    deal=1 leader=N 7D score=7 nodes=448,376 elapsed=0.66
+    deal=1 leader=W 7D score=7 nodes=86,576 elapsed=0.15
+    deal=1 leader=S 8C score=8 nodes=147,551 elapsed=0.21
+    deal=1 leader=E 8C score=8 nodes=132,378 elapsed=0.18
+    deal=1 leader=N 8C score=8 nodes=212,582 elapsed=0.27
+    deal=1 leader=W 8C score=8 nodes=78,989 elapsed=0.13
+  deal=1 nodes=2,854,903 elapsed=4.23 totalelapsed=4.23
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=2,854,903 avg=142,745 elapsed=4.23 avg=0.21
+
+================================================================================
+dds105 output for:   test.gib -tricks -name=gin
+================================================================================
+
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=217,042 elapsed=0.30
+  leader=E 9N nodes=490,389 elapsed=0.54
+  leader=N 9N nodes=242,708 elapsed=0.32
+  leader=W 8N nodes=12,536 elapsed=0.05
+  leader=S 9S nodes=1,067,876 elapsed=1.72
+  leader=E 8S nodes=1,423,650 elapsed=2.10
+  leader=N 9S nodes=579,046 elapsed=0.82
+  leader=W 8S nodes=1,413,760 elapsed=2.35
+  leader=S 9H nodes=421,052 elapsed=0.54
+  leader=E 9H nodes=462,996 elapsed=0.55
+  leader=N 9H nodes=388,427 elapsed=0.50
+  leader=W 9H nodes=263,960 elapsed=0.30
+  leader=S 6D nodes=400,416 elapsed=0.51
+  leader=E 6D nodes=192,319 elapsed=0.24
+  leader=N 6D nodes=312,717 elapsed=0.40
+  leader=W 6D nodes=47,573 elapsed=0.09
+  leader=S 7C nodes=987,365 elapsed=1.38
+  leader=E 7C nodes=946,439 elapsed=1.20
+  leader=N 7C nodes=1,102,393 elapsed=1.59
+  leader=W 7C nodes=487,664 elapsed=0.56
+nodes=11,460,328 elapsed=16.06 totalelapsed=16.06
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+
+================================================================================
+dds105 output for:   test.gib -tricks -name=gin
+================================================================================
+
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=196,320 elapsed=0.27
+  leader=E 9N nodes=422,811 elapsed=0.49
+  leader=N 9N nodes=216,293 elapsed=0.29
+  leader=W 8N nodes=11,804 elapsed=0.05
+  leader=S 9S nodes=966,576 elapsed=1.68
+  leader=E 8S nodes=1,247,854 elapsed=2.01
+  leader=N 9S nodes=514,885 elapsed=0.76
+  leader=W 8S nodes=1,225,697 elapsed=2.09
+  leader=S 9H nodes=388,951 elapsed=0.52
+  leader=E 9H nodes=428,708 elapsed=0.55
+  leader=N 9H nodes=360,926 elapsed=0.48
+  leader=W 9H nodes=238,759 elapsed=0.28
+  leader=S 6D nodes=307,283 elapsed=0.41
+  leader=E 6D nodes=164,629 elapsed=0.22
+  leader=N 6D nodes=240,740 elapsed=0.32
+  leader=W 6D nodes=43,630 elapsed=0.08
+  leader=S 7C nodes=847,071 elapsed=1.21
+  leader=E 7C nodes=831,338 elapsed=1.09
+  leader=N 7C nodes=966,299 elapsed=1.45
+  leader=W 7C nodes=430,252 elapsed=0.51
+nodes=10,050,826 elapsed=14.77 totalelapsed=14.77
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+================================================================================
+dds106 test.gib -timeal
+ ================================================================================
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                       6  0.02             10  0.02             10  0.02
+gib3                      29  0.02             45  0.02             45  0.02
+gib4                      65  0.02            153  0.02            179  0.02
+gib5                     150  0.02            518  0.02            857  0.02
+gib10                 17,663  0.04         41,178  0.06         52,041  0.07
+gin                    8,763  0.04        224,298  0.27        581,064  0.69
+dbldum1                  988  0.02          1,514  0.02          1,539  0.02
+dbldum2              136,602  0.15        385,323  0.41        385,323  0.42
+devil1                74,661  0.10        135,218  0.15        234,862  0.24
+callahan             261,312  0.33        747,439  1.13        938,208  1.33
+g410-scc              45,331  0.08         57,262  0.09        237,488  0.27
+giblibno1          1,744,338  2.56      3,109,979  5.08      3,888,830  6.30
+giblibno2            203,773  0.25        270,424  0.31        270,424  0.32
+bo17                 290,006  0.35        691,275  0.85        930,229  1.07
+bo21               1,502,044  2.16      1,882,400  2.66      3,926,551  5.61
+giblib1               34,024  0.06         75,758  0.10         75,758  0.10
+giblib2              685,093  0.73        889,056  0.93      3,631,179  3.96
+giblib3               39,792  0.06        113,138  0.13        113,144  0.13
+giblib4               58,370  0.08        108,555  0.12        724,213  0.74
+giblib5              565,021  0.60      1,738,081  2.07      1,738,081  2.08
+giblib6              631,095  0.66      1,332,592  1.48      1,502,434  1.64
+giblib7               49,494  0.07        261,284  0.32        282,134  0.34
+giblib8              106,018  0.12        625,995  0.66        625,995  0.66
+giblib9              534,453  0.58      1,145,748  1.36      2,246,335  2.71
+giblib10              28,477  0.06         91,990  0.12        371,359  0.40
+  nodes: total=43,705,083  sol-1=7,017,568  sol-2=13,929,233  sol-3=22,758,282
+elapsed: total=56.73  sol-1=9.17  sol-2=18.39  sol-3=29.17
+================================================================================
+dds106 ../exe/ddd ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=58,370 elapsed=0.09
+  deal=5 ndeal=2 nodes=565,021 elapsed=0.61
+  deal=8 ndeal=3 nodes=106,018 elapsed=0.13
+  deal=56 ndeal=4 nodes=1,436,228 elapsed=1.74
+  deal=68 ndeal=5 nodes=853,171 elapsed=0.99
+  deal=81 ndeal=6 nodes=341,423 elapsed=0.35
+  deal=94 ndeal=7 nodes=450,116 elapsed=0.54
+  deal=99 ndeal=8 nodes=1,483,787 elapsed=1.92
+  deal=103 ndeal=9 nodes=92,027 elapsed=0.11
+  deal=116 ndeal=10 nodes=129,085 elapsed=0.16
+deals=10 nodes=5,515,246 elapsed=6.65
+min_node=58,370 max_node=1,483,787 avg=551,524
+min_elapsed=0.09 max_elapsed=1.92 avg=0.66
+errors=0
+================================================================================
+dds106 ../exe/ddd ../giblib -giblib=1-1
+================================================================================
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=32,808 elapsed=0.06
+    deal=1 leader=E 8N score=8 nodes=32,398 elapsed=0.06
+    deal=1 leader=N 8N score=8 nodes=24,961 elapsed=0.05
+    deal=1 leader=W 8N score=8 nodes=34,024 elapsed=0.06
+    deal=1 leader=S 7S score=7 nodes=286,567 elapsed=0.35
+    deal=1 leader=E 7S score=7 nodes=103,269 elapsed=0.13
+    deal=1 leader=N 7S score=7 nodes=298,877 elapsed=0.38
+    deal=1 leader=W 7S score=7 nodes=123,280 elapsed=0.16
+    deal=1 leader=S 10H score=10 nodes=23,933 elapsed=0.05
+    deal=1 leader=E 9H score=9 nodes=34,552 elapsed=0.06
+    deal=1 leader=N 10H score=10 nodes=14,916 elapsed=0.04
+    deal=1 leader=W 9H score=9 nodes=32,641 elapsed=0.06
+    deal=1 leader=S 7D score=7 nodes=348,309 elapsed=0.47
+    deal=1 leader=E 7D score=7 nodes=70,070 elapsed=0.10
+    deal=1 leader=N 7D score=7 nodes=372,832 elapsed=0.50
+    deal=1 leader=W 7D score=7 nodes=76,573 elapsed=0.11
+    deal=1 leader=S 8C score=8 nodes=124,102 elapsed=0.15
+    deal=1 leader=E 8C score=8 nodes=108,527 elapsed=0.13
+    deal=1 leader=N 8C score=8 nodes=169,251 elapsed=0.20
+    deal=1 leader=W 8C score=8 nodes=67,632 elapsed=0.10
+  deal=1 nodes=2,379,522 elapsed=3.22 totalelapsed=3.22
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=2,379,522 avg=118,976 elapsed=3.22 avg=0.16
+================================================================================
+dds106 ../exe/ddd test.gib -tricks -name=gin
+================================================================================
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=189,465 elapsed=0.25
+  leader=E 9N nodes=367,149 elapsed=0.43
+  leader=N 9N nodes=208,008 elapsed=0.27
+  leader=W 8N nodes=8,763 elapsed=0.04
+  leader=S 9S nodes=804,494 elapsed=1.43
+  leader=E 8S nodes=1,078,255 elapsed=1.69
+  leader=N 9S nodes=436,355 elapsed=0.64
+  leader=W 8S nodes=1,058,980 elapsed=1.86
+  leader=S 9H nodes=320,228 elapsed=0.42
+  leader=E 9H nodes=336,922 elapsed=0.41
+  leader=N 9H nodes=293,834 elapsed=0.38
+  leader=W 9H nodes=199,614 elapsed=0.24
+  leader=S 6D nodes=259,761 elapsed=0.33
+  leader=E 6D nodes=143,529 elapsed=0.19
+  leader=N 6D nodes=213,182 elapsed=0.27
+  leader=W 6D nodes=40,411 elapsed=0.07
+  leader=S 7C nodes=591,728 elapsed=0.75
+  leader=E 7C nodes=565,863 elapsed=0.69
+  leader=N 7C nodes=596,756 elapsed=0.77
+  leader=W 7C nodes=256,286 elapsed=0.29
+nodes=7,969,583 elapsed=11.38 totalelapsed=11.38
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+================================================================================
+dds110 ./ddd test.gib -timeall
+================================================================================
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                       6  0.02             10  0.02             10  0.02
+gib3                      29  0.02             45  0.02             45  0.02
+gib4                      65  0.02            153  0.02            179  0.02
+gib5                     150  0.02            518  0.02            857  0.02
+gib10                 17,639  0.04         41,129  0.06         51,992  0.07
+gin                    8,763  0.04        224,637  0.25        582,238  0.64
+dbldum1                  988  0.02          1,514  0.02          1,539  0.02
+dbldum2              137,710  0.14        387,069  0.35        387,069  0.35
+devil1                74,416  0.09        135,018  0.15        234,410  0.24
+callahan             258,062  0.28        747,584  0.80        938,511  0.98
+g410-scc              45,860  0.08         57,788  0.09        240,189  0.27
+giblibno1          1,747,984  1.83      3,116,388  3.34      3,897,902  4.19
+giblibno2            203,086  0.22        269,483  0.29        269,483  0.29
+bo17                 291,051  0.32        694,139  0.73        931,866  0.95
+bo21               1,460,883  1.54      1,838,366  1.93      3,875,408  4.04
+giblib1               34,009  0.06         75,902  0.10         75,902  0.10
+giblib2              686,922  0.66        891,102  0.85      3,662,838  3.45
+giblib3               39,792  0.06        113,138  0.12        113,144  0.12
+giblib4               58,380  0.08        109,081  0.13        724,372  0.70
+giblib5              558,633  0.56      1,741,928  1.73      1,741,928  1.73
+giblib6              630,322  0.63      1,336,872  1.35      1,505,222  1.50
+giblib7               49,621  0.07        261,723  0.28        282,573  0.30
+giblib8              105,897  0.12        630,239  0.64        630,239  0.64
+giblib9              526,845  0.53      1,146,045  1.16      2,250,098  2.30
+giblib10              28,477  0.06         92,836  0.13        372,485  0.41
+  nodes: total=43,648,796  sol-1=6,965,590  sol-2=13,912,707  sol-3=22,770,499
+elapsed: total=45.42  sol-1=7.49  sol-2=14.56  sol-3=23.37
+================================================================================
+dds110 ./ddd ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=58,380 elapsed=0.09
+  deal=5 ndeal=2 nodes=558,633 elapsed=0.56
+  deal=8 ndeal=3 nodes=105,897 elapsed=0.13
+  deal=56 ndeal=4 nodes=1,431,474 elapsed=1.46
+  deal=68 ndeal=5 nodes=851,777 elapsed=0.88
+  deal=81 ndeal=6 nodes=341,552 elapsed=0.33
+  deal=94 ndeal=7 nodes=449,189 elapsed=0.46
+  deal=99 ndeal=8 nodes=1,495,869 elapsed=1.53
+  deal=103 ndeal=9 nodes=92,254 elapsed=0.11
+  deal=116 ndeal=10 nodes=129,354 elapsed=0.16
+deals=10 nodes=5,514,379 elapsed=5.71
+min_node=58,380 max_node=1,495,869 avg=551,437
+min_elapsed=0.09 max_elapsed=1.53 avg=0.57
+errors=0
+================================================================================
+dds110 ./ddd ../giblib -giblib=1-1
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=32,808 elapsed=0.06
+    deal=1 leader=E 8N score=8 nodes=32,441 elapsed=0.06
+    deal=1 leader=N 8N score=8 nodes=25,021 elapsed=0.05
+    deal=1 leader=W 8N score=8 nodes=34,009 elapsed=0.06
+    deal=1 leader=S 7S score=7 nodes=279,639 elapsed=0.31
+    deal=1 leader=E 7S score=7 nodes=102,254 elapsed=0.13
+    deal=1 leader=N 7S score=7 nodes=301,914 elapsed=0.33
+    deal=1 leader=W 7S score=7 nodes=121,529 elapsed=0.14
+    deal=1 leader=S 10H score=10 nodes=24,004 elapsed=0.05
+    deal=1 leader=E 9H score=9 nodes=34,337 elapsed=0.06
+    deal=1 leader=N 10H score=10 nodes=14,921 elapsed=0.04
+    deal=1 leader=W 9H score=9 nodes=32,523 elapsed=0.06
+    deal=1 leader=S 7D score=7 nodes=347,634 elapsed=0.42
+    deal=1 leader=E 7D score=7 nodes=69,322 elapsed=0.11
+    deal=1 leader=N 7D score=7 nodes=371,443 elapsed=0.44
+    deal=1 leader=W 7D score=7 nodes=76,652 elapsed=0.11
+    deal=1 leader=S 8C score=8 nodes=129,621 elapsed=0.15
+    deal=1 leader=E 8C score=8 nodes=110,722 elapsed=0.13
+    deal=1 leader=N 8C score=8 nodes=172,313 elapsed=0.20
+    deal=1 leader=W 8C score=8 nodes=64,853 elapsed=0.09
+  deal=1 nodes=2,377,960 elapsed=2.99 totalelapsed=2.99
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=2,377,960 avg=118,898 elapsed=2.99 avg=0.15
+================================================================================
+dds110 ./ddd test.gib -tricks -name=gin
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=192,174 elapsed=0.24
+  leader=E 9N nodes=367,542 elapsed=0.40
+  leader=N 9N nodes=207,824 elapsed=0.25
+  leader=W 8N nodes=8,763 elapsed=0.04
+  leader=S 9S nodes=785,551 elapsed=0.89
+  leader=E 8S nodes=1,083,174 elapsed=1.24
+  leader=N 9S nodes=437,999 elapsed=0.50
+  leader=W 8S nodes=1,067,505 elapsed=1.18
+  leader=S 9H nodes=321,295 elapsed=0.38
+  leader=E 9H nodes=332,370 elapsed=0.39
+  leader=N 9H nodes=295,031 elapsed=0.34
+  leader=W 9H nodes=200,005 elapsed=0.22
+  leader=S 6D nodes=260,627 elapsed=0.31
+  leader=E 6D nodes=143,798 elapsed=0.19
+  leader=N 6D nodes=214,479 elapsed=0.26
+  leader=W 6D nodes=40,383 elapsed=0.07
+  leader=S 7C nodes=596,131 elapsed=0.65
+  leader=E 7C nodes=580,584 elapsed=0.64
+  leader=N 7C nodes=596,086 elapsed=0.67
+  leader=W 7C nodes=258,317 elapsed=0.28
+nodes=7,989,638 elapsed=9.12 totalelapsed=9.12
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+================================================================================
+ddd112 ./ddd test.gib -timeall
+================================================================================
+test                     sol=1                 sol=2              sol=3
+---------         ----------------     ----------------      ---------------
+gib2                       6  0.02             10  0.02             10  0.02
+gib3                      29  0.02             45  0.03             45  0.02
+gib4                      65  0.02            153  0.02            177  0.02
+gib5                     155  0.02            486  0.02            657  0.02
+gib10                  9,258  0.03         19,016  0.04         22,652  0.04
+gin                    6,324  0.03        219,444  0.26        475,279  0.56
+dbldum1                  540  0.02          1,013  0.03          1,038  0.02
+dbldum2              136,598  0.15        259,032  0.25        259,032  0.25
+devil1                81,548  0.10        116,045  0.14        153,721  0.18
+callahan             174,145  0.21        430,962  0.49        471,674  0.54
+g410-scc              43,903  0.08         44,681  0.08        112,062  0.15
+giblibno1          1,163,737  1.32      1,697,850  1.98      1,788,191  2.13
+giblibno2            160,340  0.20        223,954  0.27        223,954  0.27
+bo17                 157,301  0.19        372,446  0.43        438,133  0.49
+bo21               1,795,469  2.03      1,959,809  2.25      2,407,449  2.85
+giblib1               31,058  0.06         44,026  0.08         44,026  0.07
+giblib2              255,255  0.28        418,134  0.53      1,931,126  2.06
+giblib3               18,470  0.04         38,885  0.06         38,891  0.07
+giblib4               48,509  0.07        143,359  0.17        401,817  0.45
+giblib5              417,649  0.43      1,711,054  1.99      1,711,054  1.86
+giblib6              560,081  0.60        937,852  1.02        996,590  1.10
+giblib7               41,668  0.07        114,334  0.14        119,228  0.14
+giblib8               74,780  0.10        264,695  0.29        264,695  0.29
+giblib9              427,057  0.48        899,105  1.00      1,163,416  1.32
+giblib10              30,338  0.06         96,455  0.14        270,423  0.33
+  nodes: total=28,942,468  sol-1=5,634,283  sol-2=10,012,845  sol-3=13,295,340
+elapsed: total=33.59  sol-1=6.62  sol-2=11.71  sol-3=15.26
+================================================================================
+ddd112 ./ddd ../giblib -sol=1 -v -timeg=9n10
+================================================================================
+Double Dummy Driver (DDD) version 1.05 (25-Jan-2007)
+timeg tricks=9 contract=n deals=10 target=-1 sol=1 mode=1 leader=W
+  deal=4 ndeal=1 nodes=48,509 elapsed=0.07
+  deal=5 ndeal=2 nodes=417,649 elapsed=0.43
+  deal=8 ndeal=3 nodes=74,780 elapsed=0.10
+  deal=56 ndeal=4 nodes=1,241,660 elapsed=1.34
+  deal=68 ndeal=5 nodes=319,869 elapsed=0.36
+  deal=81 ndeal=6 nodes=158,661 elapsed=0.18
+  deal=94 ndeal=7 nodes=666,682 elapsed=0.73
+  deal=99 ndeal=8 nodes=1,607,014 elapsed=1.79
+  deal=103 ndeal=9 nodes=51,985 elapsed=0.08
+  deal=116 ndeal=10 nodes=128,401 elapsed=0.16
+deals=10 nodes=4,715,210 elapsed=5.24
+min_node=48,509 max_node=1,607,014 avg=471,521
+min_elapsed=0.07 max_elapsed=1.79 avg=0.52
+errors=0
+================================================================================
+ddd112 ./ddd ../giblib -giblib=1-1
+================================================================================
+Double Dummy Driver (DDD) version 1.05 (25-Jan-2007)
+giblib=1-1 target=-1 sol=1 mode=1
+    deal=1 leader=S 8N score=8 nodes=18,322 elapsed=0.04
+    deal=1 leader=E 8N score=8 nodes=32,837 elapsed=0.06
+    deal=1 leader=N 8N score=8 nodes=10,500 elapsed=0.04
+    deal=1 leader=W 8N score=8 nodes=31,058 elapsed=0.06
+    deal=1 leader=S 7S score=7 nodes=79,659 elapsed=0.11
+    deal=1 leader=E 7S score=7 nodes=47,581 elapsed=0.07
+    deal=1 leader=N 7S score=7 nodes=52,907 elapsed=0.08
+    deal=1 leader=W 7S score=7 nodes=45,893 elapsed=0.07
+    deal=1 leader=S 10H score=10 nodes=9,517 elapsed=0.03
+    deal=1 leader=E 9H score=9 nodes=26,390 elapsed=0.05
+    deal=1 leader=N 10H score=10 nodes=6,318 elapsed=0.03
+    deal=1 leader=W 9H score=9 nodes=37,377 elapsed=0.07
+    deal=1 leader=S 7D score=7 nodes=143,865 elapsed=0.19
+    deal=1 leader=E 7D score=7 nodes=31,690 elapsed=0.06
+    deal=1 leader=N 7D score=7 nodes=139,623 elapsed=0.19
+    deal=1 leader=W 7D score=7 nodes=42,067 elapsed=0.07
+    deal=1 leader=S 8C score=8 nodes=22,516 elapsed=0.05
+    deal=1 leader=E 8C score=8 nodes=51,243 elapsed=0.08
+    deal=1 leader=N 8C score=8 nodes=13,037 elapsed=0.04
+    deal=1 leader=W 8C score=8 nodes=53,801 elapsed=0.08
+  deal=1 nodes=896,201 elapsed=1.48 totalelapsed=1.48
+       tricks=88887777A9A977778888 (max=13)
+deals=1-1 nodes=896,201 avg=44,810 elapsed=1.48 avg=0.07
+================================================================================
+./ddd test.gib -tricks -name=gin
+================================================================================
+Double Dummy Driver (DDD) version 1.05 (25-Jan-2007)
+name=gin target=-1 sol=1 mode=1
+  leader=S 9N nodes=204,883 elapsed=0.25
+  leader=E 9N nodes=341,850 elapsed=0.39
+  leader=N 9N nodes=202,525 elapsed=0.26
+  leader=W 8N nodes=6,324 elapsed=0.03
+  leader=S 9S nodes=404,513 elapsed=0.51
+  leader=E 8S nodes=880,321 elapsed=1.09
+  leader=N 9S nodes=481,945 elapsed=0.62
+  leader=W 8S nodes=679,639 elapsed=0.83
+  leader=S 9H nodes=317,100 elapsed=0.40
+  leader=E 9H nodes=230,488 elapsed=0.32
+  leader=N 9H nodes=341,234 elapsed=0.45
+  leader=W 9H nodes=53,051 elapsed=0.08
+  leader=S 6D nodes=420,142 elapsed=0.52
+  leader=E 6D nodes=111,851 elapsed=0.15
+  leader=N 6D nodes=448,369 elapsed=0.56
+  leader=W 6D nodes=37,943 elapsed=0.07
+  leader=S 7C nodes=460,906 elapsed=0.55
+  leader=E 7C nodes=276,054 elapsed=0.34
+  leader=N 7C nodes=515,007 elapsed=0.63
+  leader=W 7C nodes=297,298 elapsed=0.33
+nodes=6,711,443 elapsed=8.38 totalelapsed=8.38
+               K Q 9
+               A Q J
+               9 6 4 3 2
+               8 6
+  T 6                     8 7 3 2
+  T 9 2                   7 5 3
+  T                       A K Q J 8 5
+  A J T 9 5 3 2           -
+               A J 5 4
+               K 8 6 4
+               7
+               K Q 7 4
+name=gin  tricks(leader=senw): n=9998 s=9898 h=9999 d=6666 c=7777  (max=13)
+*/
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/ddd.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+</html>

@@ -1,0 +1,994 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/DDS_alg_descr-revE4.txt by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: DDS_alg_descr-revE4.txt | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../2.5.html">2.5.2+ddd105-1</a> / DDS_alg_descr-revE4.txt</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: DDS_alg_descr-revE4.txt</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (719 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../2.5.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/DDS_alg_descr-revE4.txt">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=d5b9c68cfd89fec38d12d2c81d9e57cf26aa017ab1023c4bc96ec03e29300106&amp;page=1">
+	  duplicates (3)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /><a id="L245" href="#L245">245</a><br /><a id="L246" href="#L246">246</a><br /><a id="L247" href="#L247">247</a><br /><a id="L248" href="#L248">248</a><br /><a id="L249" href="#L249">249</a><br /><a id="L250" href="#L250">250</a><br /><a id="L251" href="#L251">251</a><br /><a id="L252" href="#L252">252</a><br /><a id="L253" href="#L253">253</a><br /><a id="L254" href="#L254">254</a><br /><a id="L255" href="#L255">255</a><br /><a id="L256" href="#L256">256</a><br /><a id="L257" href="#L257">257</a><br /><a id="L258" href="#L258">258</a><br /><a id="L259" href="#L259">259</a><br /><a id="L260" href="#L260">260</a><br /><a id="L261" href="#L261">261</a><br /><a id="L262" href="#L262">262</a><br /><a id="L263" href="#L263">263</a><br /><a id="L264" href="#L264">264</a><br /><a id="L265" href="#L265">265</a><br /><a id="L266" href="#L266">266</a><br /><a id="L267" href="#L267">267</a><br /><a id="L268" href="#L268">268</a><br /><a id="L269" href="#L269">269</a><br /><a id="L270" href="#L270">270</a><br /><a id="L271" href="#L271">271</a><br /><a id="L272" href="#L272">272</a><br /><a id="L273" href="#L273">273</a><br /><a id="L274" href="#L274">274</a><br /><a id="L275" href="#L275">275</a><br /><a id="L276" href="#L276">276</a><br /><a id="L277" href="#L277">277</a><br /><a id="L278" href="#L278">278</a><br /><a id="L279" href="#L279">279</a><br /><a id="L280" href="#L280">280</a><br /><a id="L281" href="#L281">281</a><br /><a id="L282" href="#L282">282</a><br /><a id="L283" href="#L283">283</a><br /><a id="L284" href="#L284">284</a><br /><a id="L285" href="#L285">285</a><br /><a id="L286" href="#L286">286</a><br /><a id="L287" href="#L287">287</a><br /><a id="L288" href="#L288">288</a><br /><a id="L289" href="#L289">289</a><br /><a id="L290" href="#L290">290</a><br /><a id="L291" href="#L291">291</a><br /><a id="L292" href="#L292">292</a><br /><a id="L293" href="#L293">293</a><br /><a id="L294" href="#L294">294</a><br /><a id="L295" href="#L295">295</a><br /><a id="L296" href="#L296">296</a><br /><a id="L297" href="#L297">297</a><br /><a id="L298" href="#L298">298</a><br /><a id="L299" href="#L299">299</a><br /><a id="L300" href="#L300">300</a><br /><a id="L301" href="#L301">301</a><br /><a id="L302" href="#L302">302</a><br /><a id="L303" href="#L303">303</a><br /><a id="L304" href="#L304">304</a><br /><a id="L305" href="#L305">305</a><br /><a id="L306" href="#L306">306</a><br /><a id="L307" href="#L307">307</a><br /><a id="L308" href="#L308">308</a><br /><a id="L309" href="#L309">309</a><br /><a id="L310" href="#L310">310</a><br /><a id="L311" href="#L311">311</a><br /><a id="L312" href="#L312">312</a><br /><a id="L313" href="#L313">313</a><br /><a id="L314" href="#L314">314</a><br /><a id="L315" href="#L315">315</a><br /><a id="L316" href="#L316">316</a><br /><a id="L317" href="#L317">317</a><br /><a id="L318" href="#L318">318</a><br /><a id="L319" href="#L319">319</a><br /><a id="L320" href="#L320">320</a><br /><a id="L321" href="#L321">321</a><br /><a id="L322" href="#L322">322</a><br /><a id="L323" href="#L323">323</a><br /><a id="L324" href="#L324">324</a><br /><a id="L325" href="#L325">325</a><br /><a id="L326" href="#L326">326</a><br /><a id="L327" href="#L327">327</a><br /><a id="L328" href="#L328">328</a><br /><a id="L329" href="#L329">329</a><br /><a id="L330" href="#L330">330</a><br /><a id="L331" href="#L331">331</a><br /><a id="L332" href="#L332">332</a><br /><a id="L333" href="#L333">333</a><br /><a id="L334" href="#L334">334</a><br /><a id="L335" href="#L335">335</a><br /><a id="L336" href="#L336">336</a><br /><a id="L337" href="#L337">337</a><br /><a id="L338" href="#L338">338</a><br /><a id="L339" href="#L339">339</a><br /><a id="L340" href="#L340">340</a><br /><a id="L341" href="#L341">341</a><br /><a id="L342" href="#L342">342</a><br /><a id="L343" href="#L343">343</a><br /><a id="L344" href="#L344">344</a><br /><a id="L345" href="#L345">345</a><br /><a id="L346" href="#L346">346</a><br /><a id="L347" href="#L347">347</a><br /><a id="L348" href="#L348">348</a><br /><a id="L349" href="#L349">349</a><br /><a id="L350" href="#L350">350</a><br /><a id="L351" href="#L351">351</a><br /><a id="L352" href="#L352">352</a><br /><a id="L353" href="#L353">353</a><br /><a id="L354" href="#L354">354</a><br /><a id="L355" href="#L355">355</a><br /><a id="L356" href="#L356">356</a><br /><a id="L357" href="#L357">357</a><br /><a id="L358" href="#L358">358</a><br /><a id="L359" href="#L359">359</a><br /><a id="L360" href="#L360">360</a><br /><a id="L361" href="#L361">361</a><br /><a id="L362" href="#L362">362</a><br /><a id="L363" href="#L363">363</a><br /><a id="L364" href="#L364">364</a><br /><a id="L365" href="#L365">365</a><br /><a id="L366" href="#L366">366</a><br /><a id="L367" href="#L367">367</a><br /><a id="L368" href="#L368">368</a><br /><a id="L369" href="#L369">369</a><br /><a id="L370" href="#L370">370</a><br /><a id="L371" href="#L371">371</a><br /><a id="L372" href="#L372">372</a><br /><a id="L373" href="#L373">373</a><br /><a id="L374" href="#L374">374</a><br /><a id="L375" href="#L375">375</a><br /><a id="L376" href="#L376">376</a><br /><a id="L377" href="#L377">377</a><br /><a id="L378" href="#L378">378</a><br /><a id="L379" href="#L379">379</a><br /><a id="L380" href="#L380">380</a><br /><a id="L381" href="#L381">381</a><br /><a id="L382" href="#L382">382</a><br /><a id="L383" href="#L383">383</a><br /><a id="L384" href="#L384">384</a><br /><a id="L385" href="#L385">385</a><br /><a id="L386" href="#L386">386</a><br /><a id="L387" href="#L387">387</a><br /><a id="L388" href="#L388">388</a><br /><a id="L389" href="#L389">389</a><br /><a id="L390" href="#L390">390</a><br /><a id="L391" href="#L391">391</a><br /><a id="L392" href="#L392">392</a><br /><a id="L393" href="#L393">393</a><br /><a id="L394" href="#L394">394</a><br /><a id="L395" href="#L395">395</a><br /><a id="L396" href="#L396">396</a><br /><a id="L397" href="#L397">397</a><br /><a id="L398" href="#L398">398</a><br /><a id="L399" href="#L399">399</a><br /><a id="L400" href="#L400">400</a><br /><a id="L401" href="#L401">401</a><br /><a id="L402" href="#L402">402</a><br /><a id="L403" href="#L403">403</a><br /><a id="L404" href="#L404">404</a><br /><a id="L405" href="#L405">405</a><br /><a id="L406" href="#L406">406</a><br /><a id="L407" href="#L407">407</a><br /><a id="L408" href="#L408">408</a><br /><a id="L409" href="#L409">409</a><br /><a id="L410" href="#L410">410</a><br /><a id="L411" href="#L411">411</a><br /><a id="L412" href="#L412">412</a><br /><a id="L413" href="#L413">413</a><br /><a id="L414" href="#L414">414</a><br /><a id="L415" href="#L415">415</a><br /><a id="L416" href="#L416">416</a><br /><a id="L417" href="#L417">417</a><br /><a id="L418" href="#L418">418</a><br /><a id="L419" href="#L419">419</a><br /><a id="L420" href="#L420">420</a><br /><a id="L421" href="#L421">421</a><br /><a id="L422" href="#L422">422</a><br /><a id="L423" href="#L423">423</a><br /><a id="L424" href="#L424">424</a><br /><a id="L425" href="#L425">425</a><br /><a id="L426" href="#L426">426</a><br /><a id="L427" href="#L427">427</a><br /><a id="L428" href="#L428">428</a><br /><a id="L429" href="#L429">429</a><br /><a id="L430" href="#L430">430</a><br /><a id="L431" href="#L431">431</a><br /><a id="L432" href="#L432">432</a><br /><a id="L433" href="#L433">433</a><br /><a id="L434" href="#L434">434</a><br /><a id="L435" href="#L435">435</a><br /><a id="L436" href="#L436">436</a><br /><a id="L437" href="#L437">437</a><br /><a id="L438" href="#L438">438</a><br /><a id="L439" href="#L439">439</a><br /><a id="L440" href="#L440">440</a><br /><a id="L441" href="#L441">441</a><br /><a id="L442" href="#L442">442</a><br /><a id="L443" href="#L443">443</a><br /><a id="L444" href="#L444">444</a><br /><a id="L445" href="#L445">445</a><br /><a id="L446" href="#L446">446</a><br /><a id="L447" href="#L447">447</a><br /><a id="L448" href="#L448">448</a><br /><a id="L449" href="#L449">449</a><br /><a id="L450" href="#L450">450</a><br /><a id="L451" href="#L451">451</a><br /><a id="L452" href="#L452">452</a><br /><a id="L453" href="#L453">453</a><br /><a id="L454" href="#L454">454</a><br /><a id="L455" href="#L455">455</a><br /><a id="L456" href="#L456">456</a><br /><a id="L457" href="#L457">457</a><br /><a id="L458" href="#L458">458</a><br /><a id="L459" href="#L459">459</a><br /><a id="L460" href="#L460">460</a><br /><a id="L461" href="#L461">461</a><br /><a id="L462" href="#L462">462</a><br /><a id="L463" href="#L463">463</a><br /><a id="L464" href="#L464">464</a><br /><a id="L465" href="#L465">465</a><br /><a id="L466" href="#L466">466</a><br /><a id="L467" href="#L467">467</a><br /><a id="L468" href="#L468">468</a><br /><a id="L469" href="#L469">469</a><br /><a id="L470" href="#L470">470</a><br /><a id="L471" href="#L471">471</a><br /><a id="L472" href="#L472">472</a><br /><a id="L473" href="#L473">473</a><br /><a id="L474" href="#L474">474</a><br /><a id="L475" href="#L475">475</a><br /><a id="L476" href="#L476">476</a><br /><a id="L477" href="#L477">477</a><br /><a id="L478" href="#L478">478</a><br /><a id="L479" href="#L479">479</a><br /><a id="L480" href="#L480">480</a><br /><a id="L481" href="#L481">481</a><br /><a id="L482" href="#L482">482</a><br /><a id="L483" href="#L483">483</a><br /><a id="L484" href="#L484">484</a><br /><a id="L485" href="#L485">485</a><br /><a id="L486" href="#L486">486</a><br /><a id="L487" href="#L487">487</a><br /><a id="L488" href="#L488">488</a><br /><a id="L489" href="#L489">489</a><br /><a id="L490" href="#L490">490</a><br /><a id="L491" href="#L491">491</a><br /><a id="L492" href="#L492">492</a><br /><a id="L493" href="#L493">493</a><br /><a id="L494" href="#L494">494</a><br /><a id="L495" href="#L495">495</a><br /><a id="L496" href="#L496">496</a><br /><a id="L497" href="#L497">497</a><br /><a id="L498" href="#L498">498</a><br /><a id="L499" href="#L499">499</a><br /><a id="L500" href="#L500">500</a><br /><a id="L501" href="#L501">501</a><br /><a id="L502" href="#L502">502</a><br /><a id="L503" href="#L503">503</a><br /><a id="L504" href="#L504">504</a><br /><a id="L505" href="#L505">505</a><br /><a id="L506" href="#L506">506</a><br /><a id="L507" href="#L507">507</a><br /><a id="L508" href="#L508">508</a><br /><a id="L509" href="#L509">509</a><br /><a id="L510" href="#L510">510</a><br /><a id="L511" href="#L511">511</a><br /><a id="L512" href="#L512">512</a><br /><a id="L513" href="#L513">513</a><br /><a id="L514" href="#L514">514</a><br /><a id="L515" href="#L515">515</a><br /><a id="L516" href="#L516">516</a><br /><a id="L517" href="#L517">517</a><br /><a id="L518" href="#L518">518</a><br /><a id="L519" href="#L519">519</a><br /><a id="L520" href="#L520">520</a><br /><a id="L521" href="#L521">521</a><br /><a id="L522" href="#L522">522</a><br /><a id="L523" href="#L523">523</a><br /><a id="L524" href="#L524">524</a><br /><a id="L525" href="#L525">525</a><br /><a id="L526" href="#L526">526</a><br /><a id="L527" href="#L527">527</a><br /><a id="L528" href="#L528">528</a><br /><a id="L529" href="#L529">529</a><br /><a id="L530" href="#L530">530</a><br /><a id="L531" href="#L531">531</a><br /><a id="L532" href="#L532">532</a><br /><a id="L533" href="#L533">533</a><br /><a id="L534" href="#L534">534</a><br /><a id="L535" href="#L535">535</a><br /><a id="L536" href="#L536">536</a><br /><a id="L537" href="#L537">537</a><br /><a id="L538" href="#L538">538</a><br /><a id="L539" href="#L539">539</a><br /><a id="L540" href="#L540">540</a><br /><a id="L541" href="#L541">541</a><br /><a id="L542" href="#L542">542</a><br /><a id="L543" href="#L543">543</a><br /><a id="L544" href="#L544">544</a><br /><a id="L545" href="#L545">545</a><br /><a id="L546" href="#L546">546</a><br /><a id="L547" href="#L547">547</a><br /><a id="L548" href="#L548">548</a><br /><a id="L549" href="#L549">549</a><br /><a id="L550" href="#L550">550</a><br /><a id="L551" href="#L551">551</a><br /><a id="L552" href="#L552">552</a><br /><a id="L553" href="#L553">553</a><br /><a id="L554" href="#L554">554</a><br /><a id="L555" href="#L555">555</a><br /><a id="L556" href="#L556">556</a><br /><a id="L557" href="#L557">557</a><br /><a id="L558" href="#L558">558</a><br /><a id="L559" href="#L559">559</a><br /><a id="L560" href="#L560">560</a><br /><a id="L561" href="#L561">561</a><br /><a id="L562" href="#L562">562</a><br /><a id="L563" href="#L563">563</a><br /><a id="L564" href="#L564">564</a><br /><a id="L565" href="#L565">565</a><br /><a id="L566" href="#L566">566</a><br /><a id="L567" href="#L567">567</a><br /><a id="L568" href="#L568">568</a><br /><a id="L569" href="#L569">569</a><br /><a id="L570" href="#L570">570</a><br /><a id="L571" href="#L571">571</a><br /><a id="L572" href="#L572">572</a><br /><a id="L573" href="#L573">573</a><br /><a id="L574" href="#L574">574</a><br /><a id="L575" href="#L575">575</a><br /><a id="L576" href="#L576">576</a><br /><a id="L577" href="#L577">577</a><br /><a id="L578" href="#L578">578</a><br /><a id="L579" href="#L579">579</a><br /><a id="L580" href="#L580">580</a><br /><a id="L581" href="#L581">581</a><br /><a id="L582" href="#L582">582</a><br /><a id="L583" href="#L583">583</a><br /><a id="L584" href="#L584">584</a><br /><a id="L585" href="#L585">585</a><br /><a id="L586" href="#L586">586</a><br /><a id="L587" href="#L587">587</a><br /><a id="L588" href="#L588">588</a><br /><a id="L589" href="#L589">589</a><br /><a id="L590" href="#L590">590</a><br /><a id="L591" href="#L591">591</a><br /><a id="L592" href="#L592">592</a><br /><a id="L593" href="#L593">593</a><br /><a id="L594" href="#L594">594</a><br /><a id="L595" href="#L595">595</a><br /><a id="L596" href="#L596">596</a><br /><a id="L597" href="#L597">597</a><br /><a id="L598" href="#L598">598</a><br /><a id="L599" href="#L599">599</a><br /><a id="L600" href="#L600">600</a><br /><a id="L601" href="#L601">601</a><br /><a id="L602" href="#L602">602</a><br /><a id="L603" href="#L603">603</a><br /><a id="L604" href="#L604">604</a><br /><a id="L605" href="#L605">605</a><br /><a id="L606" href="#L606">606</a><br /><a id="L607" href="#L607">607</a><br /><a id="L608" href="#L608">608</a><br /><a id="L609" href="#L609">609</a><br /><a id="L610" href="#L610">610</a><br /><a id="L611" href="#L611">611</a><br /><a id="L612" href="#L612">612</a><br /><a id="L613" href="#L613">613</a><br /><a id="L614" href="#L614">614</a><br /><a id="L615" href="#L615">615</a><br /><a id="L616" href="#L616">616</a><br /><a id="L617" href="#L617">617</a><br /><a id="L618" href="#L618">618</a><br /><a id="L619" href="#L619">619</a><br /><a id="L620" href="#L620">620</a><br /><a id="L621" href="#L621">621</a><br /><a id="L622" href="#L622">622</a><br /><a id="L623" href="#L623">623</a><br /><a id="L624" href="#L624">624</a><br /><a id="L625" href="#L625">625</a><br /><a id="L626" href="#L626">626</a><br /><a id="L627" href="#L627">627</a><br /><a id="L628" href="#L628">628</a><br /><a id="L629" href="#L629">629</a><br /><a id="L630" href="#L630">630</a><br /><a id="L631" href="#L631">631</a><br /><a id="L632" href="#L632">632</a><br /><a id="L633" href="#L633">633</a><br /><a id="L634" href="#L634">634</a><br /><a id="L635" href="#L635">635</a><br /><a id="L636" href="#L636">636</a><br /><a id="L637" href="#L637">637</a><br /><a id="L638" href="#L638">638</a><br /><a id="L639" href="#L639">639</a><br /><a id="L640" href="#L640">640</a><br /><a id="L641" href="#L641">641</a><br /><a id="L642" href="#L642">642</a><br /><a id="L643" href="#L643">643</a><br /><a id="L644" href="#L644">644</a><br /><a id="L645" href="#L645">645</a><br /><a id="L646" href="#L646">646</a><br /><a id="L647" href="#L647">647</a><br /><a id="L648" href="#L648">648</a><br /><a id="L649" href="#L649">649</a><br /><a id="L650" href="#L650">650</a><br /><a id="L651" href="#L651">651</a><br /><a id="L652" href="#L652">652</a><br /><a id="L653" href="#L653">653</a><br /><a id="L654" href="#L654">654</a><br /><a id="L655" href="#L655">655</a><br /><a id="L656" href="#L656">656</a><br /><a id="L657" href="#L657">657</a><br /><a id="L658" href="#L658">658</a><br /><a id="L659" href="#L659">659</a><br /><a id="L660" href="#L660">660</a><br /><a id="L661" href="#L661">661</a><br /><a id="L662" href="#L662">662</a><br /><a id="L663" href="#L663">663</a><br /><a id="L664" href="#L664">664</a><br /><a id="L665" href="#L665">665</a><br /><a id="L666" href="#L666">666</a><br /><a id="L667" href="#L667">667</a><br /><a id="L668" href="#L668">668</a><br /><a id="L669" href="#L669">669</a><br /><a id="L670" href="#L670">670</a><br /><a id="L671" href="#L671">671</a><br /><a id="L672" href="#L672">672</a><br /><a id="L673" href="#L673">673</a><br /><a id="L674" href="#L674">674</a><br /><a id="L675" href="#L675">675</a><br /><a id="L676" href="#L676">676</a><br /><a id="L677" href="#L677">677</a><br /><a id="L678" href="#L678">678</a><br /><a id="L679" href="#L679">679</a><br /><a id="L680" href="#L680">680</a><br /><a id="L681" href="#L681">681</a><br /><a id="L682" href="#L682">682</a><br /><a id="L683" href="#L683">683</a><br /><a id="L684" href="#L684">684</a><br /><a id="L685" href="#L685">685</a><br /><a id="L686" href="#L686">686</a><br /><a id="L687" href="#L687">687</a><br /><a id="L688" href="#L688">688</a><br /><a id="L689" href="#L689">689</a><br /><a id="L690" href="#L690">690</a><br /><a id="L691" href="#L691">691</a><br /><a id="L692" href="#L692">692</a><br /><a id="L693" href="#L693">693</a><br /><a id="L694" href="#L694">694</a><br /><a id="L695" href="#L695">695</a><br /><a id="L696" href="#L696">696</a><br /><a id="L697" href="#L697">697</a><br /><a id="L698" href="#L698">698</a><br /><a id="L699" href="#L699">699</a><br /><a id="L700" href="#L700">700</a><br /><a id="L701" href="#L701">701</a><br /><a id="L702" href="#L702">702</a><br /><a id="L703" href="#L703">703</a><br /><a id="L704" href="#L704">704</a><br /><a id="L705" href="#L705">705</a><br /><a id="L706" href="#L706">706</a><br /><a id="L707" href="#L707">707</a><br /><a id="L708" href="#L708">708</a><br /><a id="L709" href="#L709">709</a><br /><a id="L710" href="#L710">710</a><br /><a id="L711" href="#L711">711</a><br /><a id="L712" href="#L712">712</a><br /><a id="L713" href="#L713">713</a><br /><a id="L714" href="#L714">714</a><br /><a id="L715" href="#L715">715</a><br /><a id="L716" href="#L716">716</a><br /><a id="L717" href="#L717">717</a><br /><a id="L718" href="#L718">718</a><br /><a id="L719" href="#L719">719</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="no-highlight">﻿Bo Haglund
+Rev. E4,  2010-04-09
+
+
+Search Algorithms for a Bridge Double Dummy Solver 
+
+This description is intended for anyone interested in the inner workings of a bridge double dummy solver (DDS). It describes my solver implemented in the Win32 environment as a DLL.  
+
+DDS algorithm descriptions already exist, see reference list at the end. However, to my knowledge, no document exists that gives an in depth description of all algorithms covered in this document.
+
+
+
+
+1.The basic search algorithm
+
+ The search is based on the zero window search [Pearl 1980]. 
+ Pseudo code for its application on DD solver search is given.
+ Cards searched are described as ”moves” in contrast to cards that are really played.
+
+ int  Search(posPoint, target, depth) {
+    if (depth==0) {
+        tricks=Evaluate;
+        if  (tricks &gt;= target) 
+            value=TRUE;
+        else
+            value=FALSE;
+        return value;
+    }
+    else {
+        GenerateMoves;
+        if  (player_side_to_move) {
+            value=FALSE;   moveExists=TRUE;
+            while (moveExists) {
+                Make;
+                value=Search(posPoint, target, depth-1);
+                Undo;
+                if  (value==TRUE) 
+ 	goto searchExit;	/* Cutoff, current move recorded as ”best move” */
+                moveExists=NextMove;
+            }
+        }	/* Opponents to move */
+        else {	    
+             value=TRUE;   moveExists=TRUE;
+             while (moveExists) {
+                 Make;
+                 value=Search(posPoint, target, depth-1);
+                 Undo;
+                 if  (value==FALSE) 
+ 	goto searchExit;	/* Cutoff, current move recorded as ”best move” */
+                 moveExists=NextMove;
+             }
+        }
+    }
+
+    searchExit:
+    return  value;
+}
+
+
+The Search  parameters are:
+posPoint -  a pointer to a structure containing state information for the position (deal) to be searched, e.g. leading hand,  hand-to-play, cards yet to play etc.
+target -  the number of tricks the player must take. 
+depth -  the current search depth.
+
+Search returns TRUE if the target is reached, otherwise FALSE.
+
+When Search is called, depth is set to the number of cards left to play minus 4. 
+GenerateMoves generates a list of alternative moves (=cards) that can be played in the initial position whose state data is pointed to by posPoint. For cards that are equivalent (e.g. AK) only the card with highest rank is generated. Card equivalence is reanalyzed after each trick. 
+E.g. if the hand-to-play has AQ in a suit where K was played in a previous trick, then A and Q become equivalents.
+
+If the side of the player has the move, Search tries to find a move that meets the target, i.e that evaluates to TRUE. If such a move is found, search returns TRUE, and saves the move as ”best”.
+If the other side has the move, Search tries to find a move that defies meeting the target, i.e. that evaluates to FALSE. If such a move is found, search returns FALSE, and saves the move as ”best”.
+
+Each move in the generated move list is handled by first calling Make, which removes the card from the position state information. Search is then recursively called with a position state that now has excluded the played card, depth has been decremented by one. For each new recursive call to Search, a card is removed from the position state information and depth is decremented. This goes on until depth equals 0 in which case only one trick remains. The outcome of this trick is calculated by Evaluate. If the total number of tricks won by the side of the player then reaches target, Search returns TRUE, otherwise FALSE. This result propagates upwards as Search returns for each level, Undo is called which reinstalls the searched card on this level.
+Finally, Search returns for the top level.
+
+This basic search algorithm is not powerful enough to terminate the search of a typical 52 cards deal in a reasonable time. To accomplish this, a number of search algorithm enhancements are required, which will be described in the following chapters.  
+
+The described search algorithm only tells if a predefined target can be reached. It does not tell how many tricks that the side of the player can get. This is accomplished by repeated calls to Search:
+
+g = guessed number of tricks for side of the player
+iniDepth = number of cards to play minus 4
+upperbound = 13;
+lowerbound = 0;
+do  {
+    if  (g==lowerbound)
+        tricks=g+1;
+    else
+        tricks=g;
+    if  ((Search(posPoint, tricks, iniDepth)==FALSE)  {
+        upperbound=tricks-1;
+        g=upperbound;
+    }
+    else  {
+        lowerbound=tricks;
+        g=lowerbound;
+    }
+}
+while (lowerbound &lt; upperbound);
+g=maximum tricks to be won by side of player.
+
+
+
+2.Overview of the search algorithms used in the DD solver 
+
+The additional functions in the pseudo code for supporting the search speed enhancements are given in italics.  
+
+int  Search(posPoint, target, depth) {
+      if (no_move_yet_in_trick)  {
+          TargetTooLowOrHigh;
+          if (target_already_obtained)
+              return TRUE;
+          else if (target_can_no_longer_be_obtained)
+              return FALSE; 
+          QuickTricks;
+          LaterTricks;
+          if  (cutoff_for_player_side) 
+             return TRUE;
+          else if  (cutoff_for_opponent_side)
+             return FALSE;
+          RetrieveTTresult;
+          if (transposition_table_entry_match) {
+             if  (target_reached)
+                return TRUE;
+            else
+                return FALSE;
+         }
+     }
+
+      if (depth==0) {
+          evalRes=Evaluate;
+          if  (evalRes.tricks &gt;= target) 
+             value=TRUE;
+         else
+             value=FALSE;
+         return value;
+      }
+      else {
+          GenerateMoves; 
+          MoveOrdering;
+          CheckMovesForCutoff;   /* For pseudo-code, see chapter 6 */  
+          if  (player_side_to_move) {
+              value=FALSE;    moveExists=TRUE;
+              while (moveExists) {
+                 Make;
+                 value=Search(posPoint, target, depth-1);	
+                 Undo;
+                 if  (value==TRUE)  {
+	MergeMoveData; 
+ 	goto searchExit;	/* Cutoff, current move recorded as ”best move” */
+                 }
+                 MergeAllMovesData;
+                 moveExists=NextMove;
+             }
+         }	/* Opponents to move */
+         else {	    
+             value=TRUE;   moveExists=TRUE;
+             while (moveExists) {
+                 Make;
+                 value=Search(posPoint, target, depth-1);	
+                 Undo;
+                 if  (value==FALSE)  { 
+	MergeMoveData;
+ 	goto searchExit;	/* Cutoff, current move recorded as ”best move” */
+                 }
+                 MergeAllMovesData;
+                 moveExists=NextMove;
+             }
+         }
+     }
+     searchExit:
+     AddNewTTentry;
+     return  value;
+ }
+
+
+TargetTooLowOrHigh  checks the target value against the number of tricks currently won by      side of the player and against number of tricks left to play.
+It is executed at the beginning of each trick, before any card has been played.
+If number of currently won tricks by player’s side equals or exceeds target, Search returns TRUE.
+If number of currently won tricks by player’s side plus tricks left to play is less than target Search returns FALSE.
+Since possible winning cards for the remaining tricks are irrelevant, no winning cards are backed up at cutoff termination.
+
+TargetTooLowOrHigh  search enhancement is described e.g. in [Chang].
+
+QuickTricks determines if the side to move can take one or more sure tricks. E.g. if the hand to move has an Ace in an NT contract, at least one sure trick can be taken.
+It is executed at the beginning of each trick, before any card has been played. A simple quick trick is also executed after the leading card of the trick is played.
+Assuming that the sure tricks are won by the side to move, then the conditions for search cutoff in TargetTooLowOrHigh are again tested to produce further search cutoffs.
+The detailed conditions for determination of sure tricks are described in Chapter 3.
+When quicktricks win by rank, they are backed up at cutoff termination. 
+
+The idea of QuickTricks is described e.g. in [Chang].
+
+LaterTricks determines if the opponents of the side to move can take one or more tricks at their turn or later in the play. It is also executed at the beginning of each trick and uses similar criteria for search cutoff as Quicktricks. 
+When quicktricks win by rank, they are backed up at cutoff termination.
+For a detailed description, see Chapter 4.
+
+RetrieveTTresult scans the set of positions in the transposition table to see if there is a match against the current position. 
+It is executed at the beginning of each trick, before any card has been played. After detection of a  transposition table entry match, the winning ranks necessary in the remaining cards are backed up. 
+For details, see Chapter 7.
+
+Evaluate  returns evalResult which updates the position state information. evalResult contains:
+evalResult.tricks, the number of tricks won by the side of the player, and
+evalResult.winRank which includes the card in the last trick that won by rank.  
+E.g. if the last trick includes the spades A, Q, 9 and 3, evalResult.winRank returns spade A. But
+if the last trick was won without a win by rank as for spade 5 (leading and winning card), heart A, heart Q, heart 5, no winning rank is returned. 
+
+Keeping record of cards that win by ranks and subsequently using this information to ignore ranks for other cards is discussed in the Partition Search concept invented by Matthew Ginsberg and described in his paper [Ginsberg]. 
+
+MoveOrdering. The alternative cards created by MoveGenerate are sorted, with the cards most likely to terminate the search fastest being sorted first in the move list.The allocation of card weights are described in detail in Chapter 5.
+
+CheckMovesForCutoff checks if any of the moves just generated will lead to a position that can be found in the transposition table. If so, an immediate Search return can be done, saving unnecessary search effort. This is further described in Chapter 6.
+
+To my knowledge this is not described anywhere for usage in a DDS. It is described in [Plaat et al.] and named Enhanced Transposition Cutoffs.
+
+At move search cutoff, MergeMoveData collects the union of the backed up accumulated winning ranks and the rank of the made move, assuming it did win by rank. The state data of the position is updated with the collected information.
+
+MergeAllMovesData collects the union of the backed up accumulated winning ranks, the previous accumulated winning ranks of the alternative moves generated on this depth, and the rank of the made move, assuming it did win by rank. When all alternative moves have been searched without a cutoff, the state data of the position is updated with the collected information.
+
+The information from MergeMoveData and MergeAllMovesData is later stored in the transposition table and determines which ranks that are essential when RetrieveTTresult scans the set of positions in the transposition table. A match of ranks with the current position is only needed for winning ranks. See Chapter 7.
+
+AddNewTTentry adds the evaluated position as a new entry in the transposition table. See Chapter 7.
+
+NextMove filters out all ”small” cards except one per hand/suit combination. A ”small” card is a backed up card that is shown to never win by rank. The rest of the ”small” card moves for the hand/suit combination are never searched, leading to a smaller search tree.
+This search enhancement was suggested by Hans Kuijf [Kuijf]. 
+
+
+
+3.The Quick Tricks cutoff algorithm
+
+The number of tricks that can immediately be taken by the side to play the leading card of the trick consists of:
+a)The number of tricks that can be taken by the hand-to-play, and
+b)The number of tricks that can be taken by the partner of the hand-to-play
+At return by QuickTricks, the position state information is updated with the winning ranks found. 
+
+Of course, in order to add b), there must be an entry from the hand-to-play to the partner’s hand.
+
+For each ”s” (suit) the following is calculated:
+
+If the hand-to-play is the only hand having cards in s, and the opponents have no trumps (when s is not trumps), the number of quick tricks for s is the suit length of the hand-to-play.
+
+If the opponents have no trumps, a check is made to see if quick tricks equal to the maximum of the trumps length for leading hand and the partner causes a search cutoff.
+
+If the hand-to-play has a card in a suit where the partner has a winning rank, and partner is the only hand having cards in s:
+The number of quick tricks for s is the suit length of partner.
+
+Else:
+If the winning rank is in hand-to-play, and the opponents cannot ruff, the number of quick tricks is incremented by one. Further, if the second best rank is also in hand-to-play, and the opponents cannot still ruff, the quick tricks is again incremented by one.
+
+Else:
+If the winning rank is in partner and partner has winning rank as entry, the same applies for the partner as for the hand-to-play described above.
+
+If it is a trump contract, the first suit to be investigated is the trump suit. Then if there are trump suit quick tricks for the side to play, those are cashed and quick tricks incremented accordingly.
+
+When the other suits are investigated for quick tricks, only the remaining opponent trump cards need to be considered.
+
+The quick tricks are then summarized from each suit, and the total calculated.
+
+A simple Quick Tricks algorithm is also executed after the leading card of the trick has been played:
+
+A quick trick is gained either if the hand-to-play or the partner can win the current trick with the card having the highest rank of the suit played, or if hand-to-play or the partner can win the trick by ruffing.
+
+The idea to also execute Quick Tricks after the leading card has been played was given by Hans Kuijf [Kuijf].
+
+
+
+4.The Later Tricks cutoff algorithm 
+
+Check for search cutoff if the opponents to the trick leading hand have at least a sure trick later. 
+
+If not trump contract:
+
+1)The opponents have at least a sure trick if for all suits where the trick leading hand has a card, the side of the leading hand does not have the highest rank.
+More than one sure trick can be taken by the opponents if they possess the winning rank for more than one suit, or
+
+2)Assume that all suits where the side of the trick leading hand has the winning rank give maximum possible number of tricks, i.e. that the sure trick number is the sum of the
+maximum lengths of these suits.
+If this still cannot cause a cutoff for the trick leading side, allocate one sure trick for the opponents side.   
+
+If trump contract:
+
+Quick tricks for the opponents of the leading hand are added when the opponents have one or more winning trumps. This idea was given by Pedja Stanojevic [Stanojevic].
+
+1)   If the opponent side have all the trumps, the number of sure tricks is the maximum suit length
+      length, or
+
+2)   If the opponent side has the highest trump, they have 1 sure trick. If they also have the second
+      highest trump, they have 2 sure tricks, or
+
+3)  If the opponent side has the second highest trump plus at least one trump more behind the 
+     hand with the highest trump, the opponent side has 1 sure trick.
+
+5.The Move Ordering algorithm
+
+The weight of a card in the move list is affected by the suit and the rank of the card and by the other cards in the same trick.
+The weights of the cards in the move list are used to sort them, with the cards having the highest weight being sorted first in the list. 
+
+If the hand-to-play is trick leading hand or void in the suit played by leading hand, the card with the highest weight for each present suit will get a high additional bonus weight. After list resorting, those cards will occupy the first positions in the move list.
+
+Two &#34;best moves&#34; are maintained for each searched depth, one for an alpha-beta cutoff and one at a Transposition Table entry match. At an alpha-beta cutoff, the move causing the cutoff overwrites the present &#34;best move&#34; for the current depth. When a Transposition Table entry is created, the current best move is stored in that entry if:
+The target is met and the leading hand belongs to the player’s side, or target is not met and the leading hand belongs to the other side. Otherwise the best move is not stored in the Transposition Table entry. 
+At a Transposition Table entry match, its stored best move will be best move for the current search depth.
+
+By ”card move” in the following pseudo code is meant the card by the hand-to-play that is getting a weight in the move list. The ”card rank” is a value in the range 2-14, corresponding to the card ranks 2 to the Ace. 
+
+For the determination of the weight, it is calculated whether or not the current card move is a card that wins the current trick for the side of the hand-to-play, assuming that both sides play their optimum cards. 
+
+If the hand-to-play is void in the trick lead suit, the suit selected for the discard gets the following
+bonus:
+
+suitAdd = ((suit length) * 64)/36;
+
+If the suit length is 2, and the hand-to-play has the next highest rank of the suit, the bonus 
+(suitAdd) is subtracted by 2. 
+
+
+Hand-to-play is trick leading hand
+
+The contribution of the suit to the weight:
+ 
+suitWeightDelta = suitBonus – ((countLH+countRH) * 32)/15
+
+suitBonus has the initial value 0, changed if conditions below apply:
+
+If trump contract, and the suit is not trump, then there is a (negative) suitBonus change of  –10  if 
+LHO is void and LHO has trump card(s), or
+RHO is void and RHO has trump card(s)
+
+If RHO has either the highest rank of the suit played by hand-to-play or the next highest rank,
+then there is a suitBonus change of –18.  
+
+If it is a trump contract, the suit is not trump, own hand has a singleton, own hand has at least one trump, partner has the highest rank in the suit and at least a suit length of 2, then there is a suitBonus change of +16.
+
+countLH = (suit length of LHO) * 4, if LHO is not void in the suit,
+countLH = (depth + 4), if LHO is void in the suit
+
+countRH = (suit length of RHO) * 4, if RHO is not void in the suit,
+countRH = (depth + 4), if RHO is void in the suit
+
+Suits are thus favoured where the opponents have as few move alternatives as possible. 
+
+
+if (trick winning card move) {
+    if (one of the opponents has a singleton highest rank in the suit)
+        weight = suitWeightDelta + 40 – (rank of card move)
+    else if (hand-to-play has highest rank in suit)  {
+        if (partner has second highest rank in suit)
+            weight = suitWeightDelta + 50 – (rank of card move)
+        else if  (the card move is the card with highest rank in the suit)
+            weight = suitWeightDelta + 31
+        else
+            weight = suitWeightDelta + 19 – (rank of card move)
+    }
+    else if  (partner  has highest rank in suit)  {
+        if (hand-to-play has second highest rank in suit)
+            weight = suitWeightDelta + 50 – (rank of card move)
+        else
+            weight = suitWeightDelta + 35 – (rank of card move)  
+    }
+    else if  (hand-to-play has second highest rank together with equivalent card(s) in suit)
+        weight = suitWeightDelta + 40 
+    else
+        weight = suitWeightDelta + 30 – (rank of card move)
+    if  (the card move  is ”best move” as obtained at alpha-beta cutoff)
+        weight = weight + 52;
+    if  (the card move  is ”best move” as obtained from a Transposition Table entry match)
+        weight = weight + 11;
+}
+else {	/* Not a trick winning move */
+    if  (either LHO or RHO has singleton in suit which has highest rank)
+        weight = suitWeightDelta + 29 – (rank of card move)
+    else if (hand-to-play has highest rank in suit)  {
+        if (partner has second highest rank in suit)
+            weight = suitWeightDelta + 44 – (rank of card move)
+        else if  (the card move is the card with highest rank in the suit)
+            weight = suitWeightDelta + 25
+        else
+            weight = suitWeightDelta + 13 – (rank of card move)
+    }
+    else if  (partner  has highest rank in suit)  {
+        if (hand-to-play has second highest rank in suit)
+            weight = suitWeightDelta + 44 – (rank of card move)
+        else
+            weight = suitWeightDelta + 29 – (rank of card move)  
+    }
+    else if  (hand-to-play has second highest rank together with equivalent card(s) in suit)
+        weight = suitWeightDelta + 29 
+    else
+        weight = suitWeightDelta + 13 – (rank of card move)
+    if  (the card move  is ”best move” as obtained at alpha-beta cutoff)
+        weight = weight + 20;
+    if  (the card move  is ”best move” as obtained from a Transposition Table entry match)
+        weight = weight + 9;
+}
+
+
+ Hand-to-play is left hand opponent (LHO) to leading hand
+
+if (trick winning card move) {
+    if  (hand-to-play void in the suit played by the leading hand)  {
+        if  (trump contract and trump is equal to card move suit)
+            weight = 30 - (rank of card move) + suitAdd
+        else
+            weight = 60 - (rank of card move) + suitAdd
+    }
+    else if (lowest card for partner to leading hand is higher than LHO played card)
+        weight = 45 - (rank of card move)
+    else if (RHO has a card in the leading suit that is higher than the trick leading card
+               but lower than the highest rank of the leading hand)
+        weight = 60 - (rank of card move)
+    else if (LHO played card is higher than card played by the leading hand) {
+        if (played card by LHO is lower than any card for RHO in the same suit)
+            weight = 75 - (rank of card move)
+        else if (played card by LHO is higher than any card in the same suit for the leading hand)
+            weight = 70 - (rank of card move)
+        else  {
+            if  (LHO move card has at least one equivalent card) {
+                weight = 60 - (rank of card move) 
+            else
+                weight = 45 - (rank of card move)
+        }
+    }
+    else if (RHO is not void in the suit played by the leading hand) {
+        if  (LHO move card has at least one equivalent card)    
+            weight = 50 - (rank of card move)
+        else
+            weight = 45 - (rank of card move)
+    }
+    else
+        weight = 45 - (rank of card move)
+}
+else {	/* card move is not trick winning */
+    if  (hand-to-play void in the suit played by the leading hand)  {
+        if  (trump contract and trump is equal to card move suit)
+            weight = 15 - (rank of card move) + suitAdd
+        else
+            weight = - (rank of card move) + suitAdd
+    }
+    else if (lowest card for partner to leading hand or for RHO in the suit played is higher 
+               than played card for LHO) 
+        weight = - (rank of card move) 
+    else if (LHO played card is higher than card played by the leading hand) { 
+        if  (LHO move card has at least one equivalent card)
+            weight = 20 - (rank of card move) 
+         else 
+             weight = 10 - (rank of card move)
+     }  
+     else 
+         weight = - (rank of card move)
+}      
+
+
+
+Hand-to-play is partner to trick leading hand
+
+if (trick winning card move) {
+    if  (hand-to-play void in the suit played by the leading hand)  {
+        if (card played by the leading hand is highest so far) {
+            if (card by hand-to-play is trump and the suit played by the leading hand is not trump) 
+                weight = 30 - (rank of card move) + suitAdd
+            else
+                weight = 60 - (rank of card move) + suitAdd
+        }
+        else if (hand-to-play is on top by ruffing)
+            weight = 70 - (rank of card move) + suitAdd
+        else if (hand-to-play discards a trump but still loses)
+            weight = 15 - (rank of card move) + suitAdd 
+        else       
+            weight = 30 - (rank of card move) + suitAdd
+    }
+    else 
+        weight = 60 - (rank of card move) 
+}
+else {               /* card move is not trick winning */
+    if  (hand-to-play void in the suit played by the leading hand)  {
+        if (hand-to-play is on top by ruffing)
+            weight = 40 - (rank of card move) + suitAdd
+        else if (hand-to-play underruffs */
+            weight = -15 - (rank of card move) + suitAdd
+        else
+            weight = - (rank of card move) + suitAdd
+    }
+    else {
+         if (the card by hand-to-play is highest so far) {
+             if (rank of played card is second highest in the suit)
+                weight = 25  
+             else if (hand-to-play card has at least one equivalent card)
+                 weight = 20 - (rank of card move)
+             else
+                 weight = 10 - (rank of card move)
+         }
+         else
+             weight = -10 - (rank of card move)
+    }
+}
+
+Hand-to-play is right hand opponent (RHO) to leading hand
+
+if  (hand-to-play is void in leading suit)  {
+    if  (LHO has current highest rank of the trick)  {
+       if  (card move ruffs)
+          weight = 14- (rank of card move) + suitAdd
+       else
+          weight = 30- (rank of card move) + suitAdd 
+     }
+    else if  (hand-to-play ruffs and wins) 
+         weight = 30- (rank of card move) + suitAdd
+    else if  (card move suit is trump, but not winning)
+        weight = - (rank of card move)
+    else
+        weight = 14- (rank of card move) + suitAdd
+}
+else if  (LHO has current winning move)  {
+    if  (RHO ruffs LHO’s winner)
+        weight = 24 - (rank of card move) 
+    else
+        weight = 30- (rank of card move) 
+}
+else if  (card move superior to present winning move not by LHO)  {        
+     weight = 30- (rank of card move)
+else  {
+    if  (card move ruffs but still losing)
+        weight = - (rank of card move)
+    else
+        weight = 14- (rank of card move)
+}
+
+
+
+6.Algorithm to try early cutoff for generated moves
+
+After generating moves at the end of a trick, they are each checked to see if one of them will lead to a position that already is stored in the Transposition Table.
+Due to the processing overhead, this check is only made if the depth is 33 or more (i.e there are at least 33 cards in the position). 
+Pseudo code:
+
+moveExists = TRUE;
+while  (moveExists)  {
+     Make;
+     depth = depth –1;
+     RetrieveTTresult;
+     if (hit in the transposition table)  {
+          Search returnsTRUE if value of the position is TRUE and player side to move, or 
+          FALSE if value of the position is FALSE and opponents side to move.  
+          Else: Increment weight of move with 100.  
+      }
+       depth = depth +1;
+       Undo;
+       moveExists = NextMove;
+}
+    
+The performance improvement for this enhancement is less than for the other enhancements. The number of generated nodes is roughly decreased by 10% and the search time is slighly decreased.
+
+
+
+7.Storage and retrieval of position state data in the Transposition Table
+ 
+Positions stored in the Transposition Table always consist of completed tricks. Positions stored start at depth=4, then 8,12, and so on. The information stored is information on won cards, the suit lengths of the hands, the hand to play the leading card in the position and upper and lower bounds for the number of future tricks to be taken by the side of the player.
+
+Starting from issue 1.1.8, each ”winning cards node” contain all winning cards for one suit after an idea by Joël Bradmetz. This new solution is faster.
+
+7.1   Transposition Table storing winning card ranks
+
+For the outcome of played tricks, only card ranks that are winning due to their ranks matter:
+Assume that the last two tricks of a deal without trumps looks like the following:
+Trick 12: Leading hand North plays heart A, East, South and West follow by hearts Q, 9 and 7 respectively. 
+Trick 13: North then leads spade A, the other hands plays diamonds  J, 8,3 in that order.
+
+In trick 12, heart A wins by rank. In trick 13, spade A wins but not by rank.
+The sequence of cards could have been the following without  changing the outcome:
+Trick 12:  heart A, heart x, heart x, heart x
+Trick 13:  spade x, diamond x, diamond x, diamond x
+where x is any rank below lowest winning rank.
+
+The cards that win by rank are recorded during the search and backed up similarly to the search value. If a card wins by rank and there are equivalent cards, e.g. only spade A is searched from a sequence of AKQ, then also the other cards K and Q must be recorded as having won by rank.
+
+The cards winning by rank are stored in the Transposition Table as relative ranks, however any rank larger than the lowest winning rank in the suit are also stored as ”winning ranks”. Using relative ranks rather than absolute ranks considerably increases the number of positions that match this Transposition Table entry:
+As an example, assume that there are only 4 cards left in a suit, A, Q, 9, 7 where each hand has one card in the suit. Then any combination of ranks, e.g. 8, 6, 3, 2 that preserves the relative order of ranks between hands will cause a match.
+
+In the state position information absolute ranks are used, it is only in the Transposition Table where the ranks are stored as relatives. 
+ 
+
+7.2  Backing up the winning ranks
+
+At the search termination, either at the last trick or at a cutoff, the cards that have won by rank are backed up in the search tree together with the search value.
+As this information propagates upwards, it is aggregated  with backed up information from other tree branches.
+At a search cutoff, MergeMoveData merges the information (V is a union):
+   
+(winning ranks of all suits for current depth) = (winning ranks of all suits for depth - 1)  V  (possible winning rank for the current move causing the cutoff)
+
+For each new move not causing cutoff, MergeAllMovesData merges:
+
+(winning ranks of all suits for current depth) = (winning ranks of all suits for current depth)  V (winning ranks of all suits for depth - 1)  V  (possible winning rank for the current move) 
+
+
+7.3	Checking the current position for a Transposition Table entry match 
+
+The &#34;Transposition Table&#34; has a tree structure rather than a table, consisting of 2 interconnected trees. 
+For deciding if there is a match, input is the position state data, including the cards left to play and the current leading hand. 
+There are ”root pointers” per number of tricks left and per leading hand which  each points to the root of a tree of  ”suit lengths combination” nodes. Each such node includes a 64-bit code that uniquely defines one combination of suit lengths for the hands. The nodes are ordered such that the value of the 64-bit code in a parent node is higher than the 64-bit code of its left child but lower than the 64-bit code of its right child. So to find the node with the suit lengths combination for the actual position, a binary search is made. The basic binary search algorithm is described in [Knuth]. 
+Each ”suit length combination node” points to the root of a tree consisting of ”winning cards nodes”, ie. cards that win by rank. (So the Transposition Table is really a number of trees, a forest.)
+When a position is checked for a possible Transposition Table match, a tree branch is selected consisting of 4 subsequent ”winning cards nodes”, each ”winning cards node” includes an aggregate of all winning cards for one suit. This branch is followed as long as the ”winning cards” also can be found in the current position. (Note that the ranks of the ”winning card nodes” are relative, so the ranks of the current position must first be translated from absolute to relative ranks.)  When the ”winning cards node” no longer matches with the current position and there is no other alternative ”winning cards node” that fits, then the search backs up and tries an alternative ”winning cards node” on a higher level. 
+
+When the last of the 4 subsequent ”winning cards nodes” containing clubs is reached, it points to a ”set of positions node”. Its stored upper and lower value bounds are checked against the number of tricks won so far by the player’s side and the target value. The following conditions are then checked, assuming that it is the North/South side that is the player’s side: 
+
+If the sum of the stored lower value bound and the number of tricks won so far for the player’s side is equal or larger than target, then target can be reached for the player’s side in the current position. Search on this depth is terminated and TRUE is returned.
+
+If the sum of the stored upper value bound and the number of tricks won so far for the player’s side is less than target, then reaching target can be prevented by the opponents to the player’s side in the current position. Search on this depth is terminated and FALSE is returned.
+
+If instead it is East/West that is the player’s side, the following conditions apply:
+
+If the sum of number of tricks remaining and the number of tricks won so far for the player’s side minus the upper value bound is equal or larger than target, then target can be reached for the player’s side in the current position. Search on this depth is terminated and TRUE is returned.
+
+If the sum of number of tricks remaining and the number of tricks won so far for the player’s side minus the lower value bound is less than target, then reaching target can be prevented by the opponents to the player’s side in the current position. Search on this depth is terminated and FALSE is returned.
+
+For all other cases, the search continues for the current depth.
+
+For example, take the previous example with 2 tricks remaining with spade rank order 1 at North. (Rank order 1 is highest rank.) The hearts have rank orders 1 at North, 2 at East, 3 at South and 4 at West.  The diamond rank orders are orders 1 at East, 2 at South and 3 at West.  North is leading hand.
+The ”root pointer” is now defined by the number of tricks remaining (=2) and North as leading hand.
+The ”root pointer” points to the root node of its ”suit lengths combination” tree. The 64-bit integer coded from the suit lengths for all suits and hands is now searched within the tree. When the node is found with matching 64-bit suit lengths code, this node will point to the root of its ”winning card” tree.
+This pointer points to a &#34;winning cards node&#34; containing spade rank order 1 at North which fits with the current position. This ”winning cards node” points to another &#34;winning cards node&#34; containing hearts rank orders 1 at North and 2 at East  which also fits the current position. Next ”winning cards node” pointed to contains diamonds order 1 at South, which does not match the current position. However, there is an alternative ”winning cards node” that has diamonds order 1 at East, which fits. (If there had been no alternative ”winning cards node” which fitted, the search had backed up to the previous ”winning cards node” to see if there was an alternative ”winning cards node” on this level which also fitted.) The next ”winning cards node” pointed to is for clubs. This node is empty, which fits the current position which have no clubs. 
+This ”winning cards node” points to a &#34;set of positions node” which have upper and lower value bounds defined. The conditions for these bounds are assumed to be fulfilled causing search termination on this depth, as described earlier. 
+
+The usage of upper and lower value bounds in transposition tables is described in [Chang] and [Kupferschmid, Helmert].
+
+
+
+The ”suit lengths combination” node includes:
+      The suit lengths combination as a 64-bit integer.
+      A pointer to the top ”winning cards node”.
+      A pointer to next left ”suit lengths combination node” in the binary tree.
+      A pointer to next right ”suit lengths combination node” in the binary tree.
+
+
+The ”winning cards node” includes:
+The hands of the relative ranks for each winning card of the actual suit.
+A pointer to the next winning cards node required to achieve a Transposition Table match for this branch of the tree.
+A pointer to the previous winning cards node.
+A pointer to the next alternative winning cards node that leads to a Transposition Table match in an alternative tree branch.
+      A pointer to the &#34;set of positions node&#34;. 
+
+
+The &#34;set of positions node” includes:
+An upper and a lower bound for the winning tricks of the North/South side. These values
+are used to determine whether or not a search cutoff can be done.
+The lowest winning rank per suit, expressed as relative rank.
+The suit and rank for the currently best move.
+
+ 
+After a Transposition Table match, the current position may later be part of a position that will be stored in the Transposition Table. Therefore, the stored winning ranks in the Transposition Table must be included in the state information of the current position. However, the winning ranks cannot be taken as is, because they are stored as relative ranks which now must be converted to absolute ranks in the current position.
+This is done using the lowest winning relative rank for each suit that is stored in the ”set of positions” node that gave the Transposition Table match:
+The aggregated set of (absolute) ranks for each suit in the current position is filtered using the stored information on the lowest winning relative rank. The winning ranks for each suit is then the aggregated set with only the number of highest ranks implied by the stored lowest winning relative rank in the ”set of positions” node.
+E.g. if the aggregated rank set for spades is A J 9 4 2 and lowest winning relative rank is order=2, then winning ranks are A J.
+
+
+7.4  Building a new entry in the Transposition Table
+
+When the value of the current position is known and it is the end of a trick (except the last),  position state information is collected for storage in the Transposition Table. 
+The ranks of the backed up winning cards are converted from absolute to relative.
+For each suit, it is determined which winning rank that is lowest. The relative ranks then stored in the new Transposition Table entry are all ranks above and including the lowest rank, filling out any ”holes” in the ranks that might have been present.
+The trees of the Transposition Table are searched starting from the ”root pointer” and additional nodes are inserted corresponding to the current position. 
+First, the suit lengths of the current position are used to find a ”suit lengths combination node” or to create a new such node if it does not exist already.
+The next step is to search for a ”winning card node” that has the ”suit length combination node” as parent. This ”winning card node” has then winning cards for spades.
+If no such node yet exists, ”winning card nodes”, one for each suit, are created using the winning cards of the current position. Each such node includes all winning cards for one of the suits. Then, a ”set of positions” node is created. This node is pointed to from the last created ”winning card node” created for the winning cards of clubs. 
+Otherwise, if there already exists a matching ”winning card node” with the ”suit length combination node” as parent, it is checked whether or not the ”winning card nodes” in a subsequent tree branch already created for hearts, diamonds and clubs also are matched with the current position.
+If such a sequence of nodes can be found, the upper or lower bound in the connected ”set of positions node” may be updated to allow for an increased number of cutoffs:
+
+If the current  position upper value bound is less than the stored upper value bound, the stored value is updated with the current position value.   
+If the current  position lower value bound is larger than the stored lower value bound, the stored value is updated with the current position value.
+
+In case a matching ”winning card node” cannot be found, a new ”winning card node” is created and linked to the last matching node. E.g. if existing ”winning card nodes” for spades and hearts match the current position, but no node match for diamonds, then a ”winning cards node” for diamonds is created and linked to the previous ”winning cards node” for hearts. Then a clubs ”winning cards node” and a ”set of positions node” are created.
+
+ 
+
+
+
+References
+
+James Dow Allen:
+Source code for a simple DDS.
+http://freepages.genealogy.rootsweb.com/~jamesdow/Tech/dbldum.htm
+
+Matthias Brill:
+DDS algorithms description (in German) and DDS source code.
+ http://linux.softpedia.com/get/Science-and-Engineering/Artificial-Intelligence/cddsolve-20055.shtml 
+
+Ming-Sheng Chang:
+DDS algorithms description.
+cs.nyu.edu/web/Research/TechReports/TR1996-725/TR1996-725.ps.gz
+
+
+Ed Colley:
+DDS source code and DDS executable.
+http://freefinesse.sourceforge.net/
+
+Matthew L. Ginsberg:
+DDS algorithms description.
+http://www.cs.cmu.edu/afs/cs/project/jair/pub/volume14/ginsberg01a.pdf
+
+Dan Hirschberg:
+DDS algorithms description and DDS executable (MS DOS, cannot run in XP?)
+http://www.ics.uci.edu/~dan/bridge/index.html
+
+Alexey Slovesnov:
+DDS source code and DDS executable.
+
+Judea Pearl: Asymptotic properties of minimax trees and game search precedures.
+   Artificial Intelligence 14(2):113-138. [Pearl 1980]
+
+Aske Plaat, Jonathan Schaeffer, Wim Pijls and Arie de Bruin:  Exploiting graph properties of game trees. In Proceedings of the Thirteenth National Conference on Artificial Intelligence, pages 234-239, 1996  [Plaat et al.]
+
+Hans Kuijf, personal communication.
+
+Pedja Stanojevic, personal communication.
+
+Knuth: The art of computer programming, Vol. 3, Searching and Sorting, chapter 6.2.2, Algorithm T.
+
+Sebastian Kupferschmid, Malte Helmert: A Skat Player Based on Monte Carlo Simulation.
+
+Joël Bradmetz, personal communication.
+http://jibe-bridge.perso.cegetel.net/
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/DDS_alg_descr-revE4.txt by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:07:59 GMT -->
+</html>

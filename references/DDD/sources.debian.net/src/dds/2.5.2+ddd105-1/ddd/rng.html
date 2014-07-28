@@ -1,0 +1,1078 @@
+
+
+
+
+
+
+
+
+<!doctype html>
+<html>
+  
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/rng.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+  
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/debian.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../../../static/css/base.css" />
+    <link rel="shortcut icon"
+          href="http://sources.debian.net/static/favicon.ico" />
+    <title>File: rng.cpp | Debian sources</title>
+    
+
+  <link rel="stylesheet"
+        href="../../../../javascript/highlight/styles/googlecode.css">
+  <script src="../../../../javascript/highlight/highlight.pack.js"></script>
+  <link rel="stylesheet" type="text/css"
+        href="../../../../static/css/source_file.css" />
+
+
+  </head>
+  <body>
+    <header id="header">
+      <div id="upperheader">
+        <div id="logo">
+          <a href="http://debian.org/" title="Debian Home"><img src="../../../../static/img/debian-50.png" alt="Debian"></a>
+        </div> <!-- end logo -->
+        <p class="section"><a href="http://sources.debian.net/">Debsources</a></p>
+	<div id="searchbox">
+	    <form action="http://sources.debian.net/search/" name="searchform"
+        method="post" style="display: inline;">
+      <input id="query-1" name="query" placeholder="package name" type="text" value="">
+    
+    
+    <input type="submit" value="Search package" />
+  </form>
+	    <form name="codesearch" method="get"
+		  action="http://codesearch.debian.net/search">
+	      <input name="q" value="package:dds "
+		     type="text" />
+	      <input type="submit" value="Search code" />
+	    </form>
+	</div>   <!-- end sitetools -->
+      </div> <!-- end upperheader -->
+      <!--UdmComment-->
+      <nav id="navbar">
+        <p class="hidecss"><a href="#content">Skip Quicknav</a></p>
+        <ul>
+          <li><a href="http://sources.debian.net/">Home</a></li>
+          <li><a href="http://sources.debian.net/advancedsearch/">Search</a></li>
+          <li><a href="http://sources.debian.net/doc/">Documentation</a></li>
+          <li><a href="http://sources.debian.net/stats/">Stats</a></li>
+          <li><a href="http://sources.debian.net/about/">About</a></li>
+        </ul>
+      </nav> <!-- end navbar -->
+      <p id="breadcrumbs">source / <a href="http://sources.debian.net/src/dds">dds</a> / <a href="../../2.5.html">2.5.2+ddd105-1</a> / <a href="../ddd.html">ddd</a> / rng.cpp</p>
+    </header> <!-- end header -->
+    
+    <div id="content">
+      
+
+
+<h2>File: rng.cpp</h2>
+
+
+
+<script type="text/javascript">
+    function toggle(id)
+    {
+    var elem = document.getElementById(id);
+    if(elem.style.display == "none")
+      elem.style.display = "block";
+    else
+      elem.style.display = "none";
+    }
+  </script>
+
+
+<div id="pkginfobox" class="pkginfobox_fixed">
+
+  
+  <span onclick="toggle('infobox_content')">package info
+    <small>(click to toggle)</small></span>
+  
+  <div id="infobox_content">
+    
+    <em>dds 2.5.2+ddd105-1</em>
+    
+    <ul>
+      <li>links:
+	<a href="http://packages.qa.debian.org/dds"><abbr title="Debian Package Tracking
+							   System">PTS</abbr></a>,
+	<a href="http://svn.df7cb.de/bridge/dds/trunk"><abbr title="Version Control System">VCS</abbr></a>
+	</li>
+      <li>area: main</li>
+      <li>in suites: jessie, sid</li>
+      
+        <li>size: 1,552 kB</li>
+      
+      
+        <li><abbr title="source lines of code">sloc</abbr>:
+	  
+            
+              cpp: 8,945; 
+            
+              ansic: 281; 
+            
+              python: 89; 
+            
+              makefile: 87
+            
+	  
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+
+<table id="file_metadata">
+  <tr>
+    <td>
+    file content (803 lines)
+    | permissions: rw-r--r--
+    </td>
+    <td style="text-align: right;">
+    <a href="../ddd.html">parent folder</a>
+    | <a href="http://sources.debian.net/data/main/d/dds/2.5.2+ddd105-1/ddd/rng.cpp">download</a>
+    
+    | <a href="http://sources.debian.net/sha256/?checksum=40da51c22310d33d6367cc8c790e511a9b3e76e4e0ea9057c1aca93fb4bd2948&amp;page=1">
+	  duplicates (4)</a>
+    
+    </td>
+  </tr>
+</table>
+
+<table id="codetable">
+  <tr>
+    <td>
+      <pre id="sourceslinenumbers"><a id="L1" href="#L1">1</a><br /><a id="L2" href="#L2">2</a><br /><a id="L3" href="#L3">3</a><br /><a id="L4" href="#L4">4</a><br /><a id="L5" href="#L5">5</a><br /><a id="L6" href="#L6">6</a><br /><a id="L7" href="#L7">7</a><br /><a id="L8" href="#L8">8</a><br /><a id="L9" href="#L9">9</a><br /><a id="L10" href="#L10">10</a><br /><a id="L11" href="#L11">11</a><br /><a id="L12" href="#L12">12</a><br /><a id="L13" href="#L13">13</a><br /><a id="L14" href="#L14">14</a><br /><a id="L15" href="#L15">15</a><br /><a id="L16" href="#L16">16</a><br /><a id="L17" href="#L17">17</a><br /><a id="L18" href="#L18">18</a><br /><a id="L19" href="#L19">19</a><br /><a id="L20" href="#L20">20</a><br /><a id="L21" href="#L21">21</a><br /><a id="L22" href="#L22">22</a><br /><a id="L23" href="#L23">23</a><br /><a id="L24" href="#L24">24</a><br /><a id="L25" href="#L25">25</a><br /><a id="L26" href="#L26">26</a><br /><a id="L27" href="#L27">27</a><br /><a id="L28" href="#L28">28</a><br /><a id="L29" href="#L29">29</a><br /><a id="L30" href="#L30">30</a><br /><a id="L31" href="#L31">31</a><br /><a id="L32" href="#L32">32</a><br /><a id="L33" href="#L33">33</a><br /><a id="L34" href="#L34">34</a><br /><a id="L35" href="#L35">35</a><br /><a id="L36" href="#L36">36</a><br /><a id="L37" href="#L37">37</a><br /><a id="L38" href="#L38">38</a><br /><a id="L39" href="#L39">39</a><br /><a id="L40" href="#L40">40</a><br /><a id="L41" href="#L41">41</a><br /><a id="L42" href="#L42">42</a><br /><a id="L43" href="#L43">43</a><br /><a id="L44" href="#L44">44</a><br /><a id="L45" href="#L45">45</a><br /><a id="L46" href="#L46">46</a><br /><a id="L47" href="#L47">47</a><br /><a id="L48" href="#L48">48</a><br /><a id="L49" href="#L49">49</a><br /><a id="L50" href="#L50">50</a><br /><a id="L51" href="#L51">51</a><br /><a id="L52" href="#L52">52</a><br /><a id="L53" href="#L53">53</a><br /><a id="L54" href="#L54">54</a><br /><a id="L55" href="#L55">55</a><br /><a id="L56" href="#L56">56</a><br /><a id="L57" href="#L57">57</a><br /><a id="L58" href="#L58">58</a><br /><a id="L59" href="#L59">59</a><br /><a id="L60" href="#L60">60</a><br /><a id="L61" href="#L61">61</a><br /><a id="L62" href="#L62">62</a><br /><a id="L63" href="#L63">63</a><br /><a id="L64" href="#L64">64</a><br /><a id="L65" href="#L65">65</a><br /><a id="L66" href="#L66">66</a><br /><a id="L67" href="#L67">67</a><br /><a id="L68" href="#L68">68</a><br /><a id="L69" href="#L69">69</a><br /><a id="L70" href="#L70">70</a><br /><a id="L71" href="#L71">71</a><br /><a id="L72" href="#L72">72</a><br /><a id="L73" href="#L73">73</a><br /><a id="L74" href="#L74">74</a><br /><a id="L75" href="#L75">75</a><br /><a id="L76" href="#L76">76</a><br /><a id="L77" href="#L77">77</a><br /><a id="L78" href="#L78">78</a><br /><a id="L79" href="#L79">79</a><br /><a id="L80" href="#L80">80</a><br /><a id="L81" href="#L81">81</a><br /><a id="L82" href="#L82">82</a><br /><a id="L83" href="#L83">83</a><br /><a id="L84" href="#L84">84</a><br /><a id="L85" href="#L85">85</a><br /><a id="L86" href="#L86">86</a><br /><a id="L87" href="#L87">87</a><br /><a id="L88" href="#L88">88</a><br /><a id="L89" href="#L89">89</a><br /><a id="L90" href="#L90">90</a><br /><a id="L91" href="#L91">91</a><br /><a id="L92" href="#L92">92</a><br /><a id="L93" href="#L93">93</a><br /><a id="L94" href="#L94">94</a><br /><a id="L95" href="#L95">95</a><br /><a id="L96" href="#L96">96</a><br /><a id="L97" href="#L97">97</a><br /><a id="L98" href="#L98">98</a><br /><a id="L99" href="#L99">99</a><br /><a id="L100" href="#L100">100</a><br /><a id="L101" href="#L101">101</a><br /><a id="L102" href="#L102">102</a><br /><a id="L103" href="#L103">103</a><br /><a id="L104" href="#L104">104</a><br /><a id="L105" href="#L105">105</a><br /><a id="L106" href="#L106">106</a><br /><a id="L107" href="#L107">107</a><br /><a id="L108" href="#L108">108</a><br /><a id="L109" href="#L109">109</a><br /><a id="L110" href="#L110">110</a><br /><a id="L111" href="#L111">111</a><br /><a id="L112" href="#L112">112</a><br /><a id="L113" href="#L113">113</a><br /><a id="L114" href="#L114">114</a><br /><a id="L115" href="#L115">115</a><br /><a id="L116" href="#L116">116</a><br /><a id="L117" href="#L117">117</a><br /><a id="L118" href="#L118">118</a><br /><a id="L119" href="#L119">119</a><br /><a id="L120" href="#L120">120</a><br /><a id="L121" href="#L121">121</a><br /><a id="L122" href="#L122">122</a><br /><a id="L123" href="#L123">123</a><br /><a id="L124" href="#L124">124</a><br /><a id="L125" href="#L125">125</a><br /><a id="L126" href="#L126">126</a><br /><a id="L127" href="#L127">127</a><br /><a id="L128" href="#L128">128</a><br /><a id="L129" href="#L129">129</a><br /><a id="L130" href="#L130">130</a><br /><a id="L131" href="#L131">131</a><br /><a id="L132" href="#L132">132</a><br /><a id="L133" href="#L133">133</a><br /><a id="L134" href="#L134">134</a><br /><a id="L135" href="#L135">135</a><br /><a id="L136" href="#L136">136</a><br /><a id="L137" href="#L137">137</a><br /><a id="L138" href="#L138">138</a><br /><a id="L139" href="#L139">139</a><br /><a id="L140" href="#L140">140</a><br /><a id="L141" href="#L141">141</a><br /><a id="L142" href="#L142">142</a><br /><a id="L143" href="#L143">143</a><br /><a id="L144" href="#L144">144</a><br /><a id="L145" href="#L145">145</a><br /><a id="L146" href="#L146">146</a><br /><a id="L147" href="#L147">147</a><br /><a id="L148" href="#L148">148</a><br /><a id="L149" href="#L149">149</a><br /><a id="L150" href="#L150">150</a><br /><a id="L151" href="#L151">151</a><br /><a id="L152" href="#L152">152</a><br /><a id="L153" href="#L153">153</a><br /><a id="L154" href="#L154">154</a><br /><a id="L155" href="#L155">155</a><br /><a id="L156" href="#L156">156</a><br /><a id="L157" href="#L157">157</a><br /><a id="L158" href="#L158">158</a><br /><a id="L159" href="#L159">159</a><br /><a id="L160" href="#L160">160</a><br /><a id="L161" href="#L161">161</a><br /><a id="L162" href="#L162">162</a><br /><a id="L163" href="#L163">163</a><br /><a id="L164" href="#L164">164</a><br /><a id="L165" href="#L165">165</a><br /><a id="L166" href="#L166">166</a><br /><a id="L167" href="#L167">167</a><br /><a id="L168" href="#L168">168</a><br /><a id="L169" href="#L169">169</a><br /><a id="L170" href="#L170">170</a><br /><a id="L171" href="#L171">171</a><br /><a id="L172" href="#L172">172</a><br /><a id="L173" href="#L173">173</a><br /><a id="L174" href="#L174">174</a><br /><a id="L175" href="#L175">175</a><br /><a id="L176" href="#L176">176</a><br /><a id="L177" href="#L177">177</a><br /><a id="L178" href="#L178">178</a><br /><a id="L179" href="#L179">179</a><br /><a id="L180" href="#L180">180</a><br /><a id="L181" href="#L181">181</a><br /><a id="L182" href="#L182">182</a><br /><a id="L183" href="#L183">183</a><br /><a id="L184" href="#L184">184</a><br /><a id="L185" href="#L185">185</a><br /><a id="L186" href="#L186">186</a><br /><a id="L187" href="#L187">187</a><br /><a id="L188" href="#L188">188</a><br /><a id="L189" href="#L189">189</a><br /><a id="L190" href="#L190">190</a><br /><a id="L191" href="#L191">191</a><br /><a id="L192" href="#L192">192</a><br /><a id="L193" href="#L193">193</a><br /><a id="L194" href="#L194">194</a><br /><a id="L195" href="#L195">195</a><br /><a id="L196" href="#L196">196</a><br /><a id="L197" href="#L197">197</a><br /><a id="L198" href="#L198">198</a><br /><a id="L199" href="#L199">199</a><br /><a id="L200" href="#L200">200</a><br /><a id="L201" href="#L201">201</a><br /><a id="L202" href="#L202">202</a><br /><a id="L203" href="#L203">203</a><br /><a id="L204" href="#L204">204</a><br /><a id="L205" href="#L205">205</a><br /><a id="L206" href="#L206">206</a><br /><a id="L207" href="#L207">207</a><br /><a id="L208" href="#L208">208</a><br /><a id="L209" href="#L209">209</a><br /><a id="L210" href="#L210">210</a><br /><a id="L211" href="#L211">211</a><br /><a id="L212" href="#L212">212</a><br /><a id="L213" href="#L213">213</a><br /><a id="L214" href="#L214">214</a><br /><a id="L215" href="#L215">215</a><br /><a id="L216" href="#L216">216</a><br /><a id="L217" href="#L217">217</a><br /><a id="L218" href="#L218">218</a><br /><a id="L219" href="#L219">219</a><br /><a id="L220" href="#L220">220</a><br /><a id="L221" href="#L221">221</a><br /><a id="L222" href="#L222">222</a><br /><a id="L223" href="#L223">223</a><br /><a id="L224" href="#L224">224</a><br /><a id="L225" href="#L225">225</a><br /><a id="L226" href="#L226">226</a><br /><a id="L227" href="#L227">227</a><br /><a id="L228" href="#L228">228</a><br /><a id="L229" href="#L229">229</a><br /><a id="L230" href="#L230">230</a><br /><a id="L231" href="#L231">231</a><br /><a id="L232" href="#L232">232</a><br /><a id="L233" href="#L233">233</a><br /><a id="L234" href="#L234">234</a><br /><a id="L235" href="#L235">235</a><br /><a id="L236" href="#L236">236</a><br /><a id="L237" href="#L237">237</a><br /><a id="L238" href="#L238">238</a><br /><a id="L239" href="#L239">239</a><br /><a id="L240" href="#L240">240</a><br /><a id="L241" href="#L241">241</a><br /><a id="L242" href="#L242">242</a><br /><a id="L243" href="#L243">243</a><br /><a id="L244" href="#L244">244</a><br /><a id="L245" href="#L245">245</a><br /><a id="L246" href="#L246">246</a><br /><a id="L247" href="#L247">247</a><br /><a id="L248" href="#L248">248</a><br /><a id="L249" href="#L249">249</a><br /><a id="L250" href="#L250">250</a><br /><a id="L251" href="#L251">251</a><br /><a id="L252" href="#L252">252</a><br /><a id="L253" href="#L253">253</a><br /><a id="L254" href="#L254">254</a><br /><a id="L255" href="#L255">255</a><br /><a id="L256" href="#L256">256</a><br /><a id="L257" href="#L257">257</a><br /><a id="L258" href="#L258">258</a><br /><a id="L259" href="#L259">259</a><br /><a id="L260" href="#L260">260</a><br /><a id="L261" href="#L261">261</a><br /><a id="L262" href="#L262">262</a><br /><a id="L263" href="#L263">263</a><br /><a id="L264" href="#L264">264</a><br /><a id="L265" href="#L265">265</a><br /><a id="L266" href="#L266">266</a><br /><a id="L267" href="#L267">267</a><br /><a id="L268" href="#L268">268</a><br /><a id="L269" href="#L269">269</a><br /><a id="L270" href="#L270">270</a><br /><a id="L271" href="#L271">271</a><br /><a id="L272" href="#L272">272</a><br /><a id="L273" href="#L273">273</a><br /><a id="L274" href="#L274">274</a><br /><a id="L275" href="#L275">275</a><br /><a id="L276" href="#L276">276</a><br /><a id="L277" href="#L277">277</a><br /><a id="L278" href="#L278">278</a><br /><a id="L279" href="#L279">279</a><br /><a id="L280" href="#L280">280</a><br /><a id="L281" href="#L281">281</a><br /><a id="L282" href="#L282">282</a><br /><a id="L283" href="#L283">283</a><br /><a id="L284" href="#L284">284</a><br /><a id="L285" href="#L285">285</a><br /><a id="L286" href="#L286">286</a><br /><a id="L287" href="#L287">287</a><br /><a id="L288" href="#L288">288</a><br /><a id="L289" href="#L289">289</a><br /><a id="L290" href="#L290">290</a><br /><a id="L291" href="#L291">291</a><br /><a id="L292" href="#L292">292</a><br /><a id="L293" href="#L293">293</a><br /><a id="L294" href="#L294">294</a><br /><a id="L295" href="#L295">295</a><br /><a id="L296" href="#L296">296</a><br /><a id="L297" href="#L297">297</a><br /><a id="L298" href="#L298">298</a><br /><a id="L299" href="#L299">299</a><br /><a id="L300" href="#L300">300</a><br /><a id="L301" href="#L301">301</a><br /><a id="L302" href="#L302">302</a><br /><a id="L303" href="#L303">303</a><br /><a id="L304" href="#L304">304</a><br /><a id="L305" href="#L305">305</a><br /><a id="L306" href="#L306">306</a><br /><a id="L307" href="#L307">307</a><br /><a id="L308" href="#L308">308</a><br /><a id="L309" href="#L309">309</a><br /><a id="L310" href="#L310">310</a><br /><a id="L311" href="#L311">311</a><br /><a id="L312" href="#L312">312</a><br /><a id="L313" href="#L313">313</a><br /><a id="L314" href="#L314">314</a><br /><a id="L315" href="#L315">315</a><br /><a id="L316" href="#L316">316</a><br /><a id="L317" href="#L317">317</a><br /><a id="L318" href="#L318">318</a><br /><a id="L319" href="#L319">319</a><br /><a id="L320" href="#L320">320</a><br /><a id="L321" href="#L321">321</a><br /><a id="L322" href="#L322">322</a><br /><a id="L323" href="#L323">323</a><br /><a id="L324" href="#L324">324</a><br /><a id="L325" href="#L325">325</a><br /><a id="L326" href="#L326">326</a><br /><a id="L327" href="#L327">327</a><br /><a id="L328" href="#L328">328</a><br /><a id="L329" href="#L329">329</a><br /><a id="L330" href="#L330">330</a><br /><a id="L331" href="#L331">331</a><br /><a id="L332" href="#L332">332</a><br /><a id="L333" href="#L333">333</a><br /><a id="L334" href="#L334">334</a><br /><a id="L335" href="#L335">335</a><br /><a id="L336" href="#L336">336</a><br /><a id="L337" href="#L337">337</a><br /><a id="L338" href="#L338">338</a><br /><a id="L339" href="#L339">339</a><br /><a id="L340" href="#L340">340</a><br /><a id="L341" href="#L341">341</a><br /><a id="L342" href="#L342">342</a><br /><a id="L343" href="#L343">343</a><br /><a id="L344" href="#L344">344</a><br /><a id="L345" href="#L345">345</a><br /><a id="L346" href="#L346">346</a><br /><a id="L347" href="#L347">347</a><br /><a id="L348" href="#L348">348</a><br /><a id="L349" href="#L349">349</a><br /><a id="L350" href="#L350">350</a><br /><a id="L351" href="#L351">351</a><br /><a id="L352" href="#L352">352</a><br /><a id="L353" href="#L353">353</a><br /><a id="L354" href="#L354">354</a><br /><a id="L355" href="#L355">355</a><br /><a id="L356" href="#L356">356</a><br /><a id="L357" href="#L357">357</a><br /><a id="L358" href="#L358">358</a><br /><a id="L359" href="#L359">359</a><br /><a id="L360" href="#L360">360</a><br /><a id="L361" href="#L361">361</a><br /><a id="L362" href="#L362">362</a><br /><a id="L363" href="#L363">363</a><br /><a id="L364" href="#L364">364</a><br /><a id="L365" href="#L365">365</a><br /><a id="L366" href="#L366">366</a><br /><a id="L367" href="#L367">367</a><br /><a id="L368" href="#L368">368</a><br /><a id="L369" href="#L369">369</a><br /><a id="L370" href="#L370">370</a><br /><a id="L371" href="#L371">371</a><br /><a id="L372" href="#L372">372</a><br /><a id="L373" href="#L373">373</a><br /><a id="L374" href="#L374">374</a><br /><a id="L375" href="#L375">375</a><br /><a id="L376" href="#L376">376</a><br /><a id="L377" href="#L377">377</a><br /><a id="L378" href="#L378">378</a><br /><a id="L379" href="#L379">379</a><br /><a id="L380" href="#L380">380</a><br /><a id="L381" href="#L381">381</a><br /><a id="L382" href="#L382">382</a><br /><a id="L383" href="#L383">383</a><br /><a id="L384" href="#L384">384</a><br /><a id="L385" href="#L385">385</a><br /><a id="L386" href="#L386">386</a><br /><a id="L387" href="#L387">387</a><br /><a id="L388" href="#L388">388</a><br /><a id="L389" href="#L389">389</a><br /><a id="L390" href="#L390">390</a><br /><a id="L391" href="#L391">391</a><br /><a id="L392" href="#L392">392</a><br /><a id="L393" href="#L393">393</a><br /><a id="L394" href="#L394">394</a><br /><a id="L395" href="#L395">395</a><br /><a id="L396" href="#L396">396</a><br /><a id="L397" href="#L397">397</a><br /><a id="L398" href="#L398">398</a><br /><a id="L399" href="#L399">399</a><br /><a id="L400" href="#L400">400</a><br /><a id="L401" href="#L401">401</a><br /><a id="L402" href="#L402">402</a><br /><a id="L403" href="#L403">403</a><br /><a id="L404" href="#L404">404</a><br /><a id="L405" href="#L405">405</a><br /><a id="L406" href="#L406">406</a><br /><a id="L407" href="#L407">407</a><br /><a id="L408" href="#L408">408</a><br /><a id="L409" href="#L409">409</a><br /><a id="L410" href="#L410">410</a><br /><a id="L411" href="#L411">411</a><br /><a id="L412" href="#L412">412</a><br /><a id="L413" href="#L413">413</a><br /><a id="L414" href="#L414">414</a><br /><a id="L415" href="#L415">415</a><br /><a id="L416" href="#L416">416</a><br /><a id="L417" href="#L417">417</a><br /><a id="L418" href="#L418">418</a><br /><a id="L419" href="#L419">419</a><br /><a id="L420" href="#L420">420</a><br /><a id="L421" href="#L421">421</a><br /><a id="L422" href="#L422">422</a><br /><a id="L423" href="#L423">423</a><br /><a id="L424" href="#L424">424</a><br /><a id="L425" href="#L425">425</a><br /><a id="L426" href="#L426">426</a><br /><a id="L427" href="#L427">427</a><br /><a id="L428" href="#L428">428</a><br /><a id="L429" href="#L429">429</a><br /><a id="L430" href="#L430">430</a><br /><a id="L431" href="#L431">431</a><br /><a id="L432" href="#L432">432</a><br /><a id="L433" href="#L433">433</a><br /><a id="L434" href="#L434">434</a><br /><a id="L435" href="#L435">435</a><br /><a id="L436" href="#L436">436</a><br /><a id="L437" href="#L437">437</a><br /><a id="L438" href="#L438">438</a><br /><a id="L439" href="#L439">439</a><br /><a id="L440" href="#L440">440</a><br /><a id="L441" href="#L441">441</a><br /><a id="L442" href="#L442">442</a><br /><a id="L443" href="#L443">443</a><br /><a id="L444" href="#L444">444</a><br /><a id="L445" href="#L445">445</a><br /><a id="L446" href="#L446">446</a><br /><a id="L447" href="#L447">447</a><br /><a id="L448" href="#L448">448</a><br /><a id="L449" href="#L449">449</a><br /><a id="L450" href="#L450">450</a><br /><a id="L451" href="#L451">451</a><br /><a id="L452" href="#L452">452</a><br /><a id="L453" href="#L453">453</a><br /><a id="L454" href="#L454">454</a><br /><a id="L455" href="#L455">455</a><br /><a id="L456" href="#L456">456</a><br /><a id="L457" href="#L457">457</a><br /><a id="L458" href="#L458">458</a><br /><a id="L459" href="#L459">459</a><br /><a id="L460" href="#L460">460</a><br /><a id="L461" href="#L461">461</a><br /><a id="L462" href="#L462">462</a><br /><a id="L463" href="#L463">463</a><br /><a id="L464" href="#L464">464</a><br /><a id="L465" href="#L465">465</a><br /><a id="L466" href="#L466">466</a><br /><a id="L467" href="#L467">467</a><br /><a id="L468" href="#L468">468</a><br /><a id="L469" href="#L469">469</a><br /><a id="L470" href="#L470">470</a><br /><a id="L471" href="#L471">471</a><br /><a id="L472" href="#L472">472</a><br /><a id="L473" href="#L473">473</a><br /><a id="L474" href="#L474">474</a><br /><a id="L475" href="#L475">475</a><br /><a id="L476" href="#L476">476</a><br /><a id="L477" href="#L477">477</a><br /><a id="L478" href="#L478">478</a><br /><a id="L479" href="#L479">479</a><br /><a id="L480" href="#L480">480</a><br /><a id="L481" href="#L481">481</a><br /><a id="L482" href="#L482">482</a><br /><a id="L483" href="#L483">483</a><br /><a id="L484" href="#L484">484</a><br /><a id="L485" href="#L485">485</a><br /><a id="L486" href="#L486">486</a><br /><a id="L487" href="#L487">487</a><br /><a id="L488" href="#L488">488</a><br /><a id="L489" href="#L489">489</a><br /><a id="L490" href="#L490">490</a><br /><a id="L491" href="#L491">491</a><br /><a id="L492" href="#L492">492</a><br /><a id="L493" href="#L493">493</a><br /><a id="L494" href="#L494">494</a><br /><a id="L495" href="#L495">495</a><br /><a id="L496" href="#L496">496</a><br /><a id="L497" href="#L497">497</a><br /><a id="L498" href="#L498">498</a><br /><a id="L499" href="#L499">499</a><br /><a id="L500" href="#L500">500</a><br /><a id="L501" href="#L501">501</a><br /><a id="L502" href="#L502">502</a><br /><a id="L503" href="#L503">503</a><br /><a id="L504" href="#L504">504</a><br /><a id="L505" href="#L505">505</a><br /><a id="L506" href="#L506">506</a><br /><a id="L507" href="#L507">507</a><br /><a id="L508" href="#L508">508</a><br /><a id="L509" href="#L509">509</a><br /><a id="L510" href="#L510">510</a><br /><a id="L511" href="#L511">511</a><br /><a id="L512" href="#L512">512</a><br /><a id="L513" href="#L513">513</a><br /><a id="L514" href="#L514">514</a><br /><a id="L515" href="#L515">515</a><br /><a id="L516" href="#L516">516</a><br /><a id="L517" href="#L517">517</a><br /><a id="L518" href="#L518">518</a><br /><a id="L519" href="#L519">519</a><br /><a id="L520" href="#L520">520</a><br /><a id="L521" href="#L521">521</a><br /><a id="L522" href="#L522">522</a><br /><a id="L523" href="#L523">523</a><br /><a id="L524" href="#L524">524</a><br /><a id="L525" href="#L525">525</a><br /><a id="L526" href="#L526">526</a><br /><a id="L527" href="#L527">527</a><br /><a id="L528" href="#L528">528</a><br /><a id="L529" href="#L529">529</a><br /><a id="L530" href="#L530">530</a><br /><a id="L531" href="#L531">531</a><br /><a id="L532" href="#L532">532</a><br /><a id="L533" href="#L533">533</a><br /><a id="L534" href="#L534">534</a><br /><a id="L535" href="#L535">535</a><br /><a id="L536" href="#L536">536</a><br /><a id="L537" href="#L537">537</a><br /><a id="L538" href="#L538">538</a><br /><a id="L539" href="#L539">539</a><br /><a id="L540" href="#L540">540</a><br /><a id="L541" href="#L541">541</a><br /><a id="L542" href="#L542">542</a><br /><a id="L543" href="#L543">543</a><br /><a id="L544" href="#L544">544</a><br /><a id="L545" href="#L545">545</a><br /><a id="L546" href="#L546">546</a><br /><a id="L547" href="#L547">547</a><br /><a id="L548" href="#L548">548</a><br /><a id="L549" href="#L549">549</a><br /><a id="L550" href="#L550">550</a><br /><a id="L551" href="#L551">551</a><br /><a id="L552" href="#L552">552</a><br /><a id="L553" href="#L553">553</a><br /><a id="L554" href="#L554">554</a><br /><a id="L555" href="#L555">555</a><br /><a id="L556" href="#L556">556</a><br /><a id="L557" href="#L557">557</a><br /><a id="L558" href="#L558">558</a><br /><a id="L559" href="#L559">559</a><br /><a id="L560" href="#L560">560</a><br /><a id="L561" href="#L561">561</a><br /><a id="L562" href="#L562">562</a><br /><a id="L563" href="#L563">563</a><br /><a id="L564" href="#L564">564</a><br /><a id="L565" href="#L565">565</a><br /><a id="L566" href="#L566">566</a><br /><a id="L567" href="#L567">567</a><br /><a id="L568" href="#L568">568</a><br /><a id="L569" href="#L569">569</a><br /><a id="L570" href="#L570">570</a><br /><a id="L571" href="#L571">571</a><br /><a id="L572" href="#L572">572</a><br /><a id="L573" href="#L573">573</a><br /><a id="L574" href="#L574">574</a><br /><a id="L575" href="#L575">575</a><br /><a id="L576" href="#L576">576</a><br /><a id="L577" href="#L577">577</a><br /><a id="L578" href="#L578">578</a><br /><a id="L579" href="#L579">579</a><br /><a id="L580" href="#L580">580</a><br /><a id="L581" href="#L581">581</a><br /><a id="L582" href="#L582">582</a><br /><a id="L583" href="#L583">583</a><br /><a id="L584" href="#L584">584</a><br /><a id="L585" href="#L585">585</a><br /><a id="L586" href="#L586">586</a><br /><a id="L587" href="#L587">587</a><br /><a id="L588" href="#L588">588</a><br /><a id="L589" href="#L589">589</a><br /><a id="L590" href="#L590">590</a><br /><a id="L591" href="#L591">591</a><br /><a id="L592" href="#L592">592</a><br /><a id="L593" href="#L593">593</a><br /><a id="L594" href="#L594">594</a><br /><a id="L595" href="#L595">595</a><br /><a id="L596" href="#L596">596</a><br /><a id="L597" href="#L597">597</a><br /><a id="L598" href="#L598">598</a><br /><a id="L599" href="#L599">599</a><br /><a id="L600" href="#L600">600</a><br /><a id="L601" href="#L601">601</a><br /><a id="L602" href="#L602">602</a><br /><a id="L603" href="#L603">603</a><br /><a id="L604" href="#L604">604</a><br /><a id="L605" href="#L605">605</a><br /><a id="L606" href="#L606">606</a><br /><a id="L607" href="#L607">607</a><br /><a id="L608" href="#L608">608</a><br /><a id="L609" href="#L609">609</a><br /><a id="L610" href="#L610">610</a><br /><a id="L611" href="#L611">611</a><br /><a id="L612" href="#L612">612</a><br /><a id="L613" href="#L613">613</a><br /><a id="L614" href="#L614">614</a><br /><a id="L615" href="#L615">615</a><br /><a id="L616" href="#L616">616</a><br /><a id="L617" href="#L617">617</a><br /><a id="L618" href="#L618">618</a><br /><a id="L619" href="#L619">619</a><br /><a id="L620" href="#L620">620</a><br /><a id="L621" href="#L621">621</a><br /><a id="L622" href="#L622">622</a><br /><a id="L623" href="#L623">623</a><br /><a id="L624" href="#L624">624</a><br /><a id="L625" href="#L625">625</a><br /><a id="L626" href="#L626">626</a><br /><a id="L627" href="#L627">627</a><br /><a id="L628" href="#L628">628</a><br /><a id="L629" href="#L629">629</a><br /><a id="L630" href="#L630">630</a><br /><a id="L631" href="#L631">631</a><br /><a id="L632" href="#L632">632</a><br /><a id="L633" href="#L633">633</a><br /><a id="L634" href="#L634">634</a><br /><a id="L635" href="#L635">635</a><br /><a id="L636" href="#L636">636</a><br /><a id="L637" href="#L637">637</a><br /><a id="L638" href="#L638">638</a><br /><a id="L639" href="#L639">639</a><br /><a id="L640" href="#L640">640</a><br /><a id="L641" href="#L641">641</a><br /><a id="L642" href="#L642">642</a><br /><a id="L643" href="#L643">643</a><br /><a id="L644" href="#L644">644</a><br /><a id="L645" href="#L645">645</a><br /><a id="L646" href="#L646">646</a><br /><a id="L647" href="#L647">647</a><br /><a id="L648" href="#L648">648</a><br /><a id="L649" href="#L649">649</a><br /><a id="L650" href="#L650">650</a><br /><a id="L651" href="#L651">651</a><br /><a id="L652" href="#L652">652</a><br /><a id="L653" href="#L653">653</a><br /><a id="L654" href="#L654">654</a><br /><a id="L655" href="#L655">655</a><br /><a id="L656" href="#L656">656</a><br /><a id="L657" href="#L657">657</a><br /><a id="L658" href="#L658">658</a><br /><a id="L659" href="#L659">659</a><br /><a id="L660" href="#L660">660</a><br /><a id="L661" href="#L661">661</a><br /><a id="L662" href="#L662">662</a><br /><a id="L663" href="#L663">663</a><br /><a id="L664" href="#L664">664</a><br /><a id="L665" href="#L665">665</a><br /><a id="L666" href="#L666">666</a><br /><a id="L667" href="#L667">667</a><br /><a id="L668" href="#L668">668</a><br /><a id="L669" href="#L669">669</a><br /><a id="L670" href="#L670">670</a><br /><a id="L671" href="#L671">671</a><br /><a id="L672" href="#L672">672</a><br /><a id="L673" href="#L673">673</a><br /><a id="L674" href="#L674">674</a><br /><a id="L675" href="#L675">675</a><br /><a id="L676" href="#L676">676</a><br /><a id="L677" href="#L677">677</a><br /><a id="L678" href="#L678">678</a><br /><a id="L679" href="#L679">679</a><br /><a id="L680" href="#L680">680</a><br /><a id="L681" href="#L681">681</a><br /><a id="L682" href="#L682">682</a><br /><a id="L683" href="#L683">683</a><br /><a id="L684" href="#L684">684</a><br /><a id="L685" href="#L685">685</a><br /><a id="L686" href="#L686">686</a><br /><a id="L687" href="#L687">687</a><br /><a id="L688" href="#L688">688</a><br /><a id="L689" href="#L689">689</a><br /><a id="L690" href="#L690">690</a><br /><a id="L691" href="#L691">691</a><br /><a id="L692" href="#L692">692</a><br /><a id="L693" href="#L693">693</a><br /><a id="L694" href="#L694">694</a><br /><a id="L695" href="#L695">695</a><br /><a id="L696" href="#L696">696</a><br /><a id="L697" href="#L697">697</a><br /><a id="L698" href="#L698">698</a><br /><a id="L699" href="#L699">699</a><br /><a id="L700" href="#L700">700</a><br /><a id="L701" href="#L701">701</a><br /><a id="L702" href="#L702">702</a><br /><a id="L703" href="#L703">703</a><br /><a id="L704" href="#L704">704</a><br /><a id="L705" href="#L705">705</a><br /><a id="L706" href="#L706">706</a><br /><a id="L707" href="#L707">707</a><br /><a id="L708" href="#L708">708</a><br /><a id="L709" href="#L709">709</a><br /><a id="L710" href="#L710">710</a><br /><a id="L711" href="#L711">711</a><br /><a id="L712" href="#L712">712</a><br /><a id="L713" href="#L713">713</a><br /><a id="L714" href="#L714">714</a><br /><a id="L715" href="#L715">715</a><br /><a id="L716" href="#L716">716</a><br /><a id="L717" href="#L717">717</a><br /><a id="L718" href="#L718">718</a><br /><a id="L719" href="#L719">719</a><br /><a id="L720" href="#L720">720</a><br /><a id="L721" href="#L721">721</a><br /><a id="L722" href="#L722">722</a><br /><a id="L723" href="#L723">723</a><br /><a id="L724" href="#L724">724</a><br /><a id="L725" href="#L725">725</a><br /><a id="L726" href="#L726">726</a><br /><a id="L727" href="#L727">727</a><br /><a id="L728" href="#L728">728</a><br /><a id="L729" href="#L729">729</a><br /><a id="L730" href="#L730">730</a><br /><a id="L731" href="#L731">731</a><br /><a id="L732" href="#L732">732</a><br /><a id="L733" href="#L733">733</a><br /><a id="L734" href="#L734">734</a><br /><a id="L735" href="#L735">735</a><br /><a id="L736" href="#L736">736</a><br /><a id="L737" href="#L737">737</a><br /><a id="L738" href="#L738">738</a><br /><a id="L739" href="#L739">739</a><br /><a id="L740" href="#L740">740</a><br /><a id="L741" href="#L741">741</a><br /><a id="L742" href="#L742">742</a><br /><a id="L743" href="#L743">743</a><br /><a id="L744" href="#L744">744</a><br /><a id="L745" href="#L745">745</a><br /><a id="L746" href="#L746">746</a><br /><a id="L747" href="#L747">747</a><br /><a id="L748" href="#L748">748</a><br /><a id="L749" href="#L749">749</a><br /><a id="L750" href="#L750">750</a><br /><a id="L751" href="#L751">751</a><br /><a id="L752" href="#L752">752</a><br /><a id="L753" href="#L753">753</a><br /><a id="L754" href="#L754">754</a><br /><a id="L755" href="#L755">755</a><br /><a id="L756" href="#L756">756</a><br /><a id="L757" href="#L757">757</a><br /><a id="L758" href="#L758">758</a><br /><a id="L759" href="#L759">759</a><br /><a id="L760" href="#L760">760</a><br /><a id="L761" href="#L761">761</a><br /><a id="L762" href="#L762">762</a><br /><a id="L763" href="#L763">763</a><br /><a id="L764" href="#L764">764</a><br /><a id="L765" href="#L765">765</a><br /><a id="L766" href="#L766">766</a><br /><a id="L767" href="#L767">767</a><br /><a id="L768" href="#L768">768</a><br /><a id="L769" href="#L769">769</a><br /><a id="L770" href="#L770">770</a><br /><a id="L771" href="#L771">771</a><br /><a id="L772" href="#L772">772</a><br /><a id="L773" href="#L773">773</a><br /><a id="L774" href="#L774">774</a><br /><a id="L775" href="#L775">775</a><br /><a id="L776" href="#L776">776</a><br /><a id="L777" href="#L777">777</a><br /><a id="L778" href="#L778">778</a><br /><a id="L779" href="#L779">779</a><br /><a id="L780" href="#L780">780</a><br /><a id="L781" href="#L781">781</a><br /><a id="L782" href="#L782">782</a><br /><a id="L783" href="#L783">783</a><br /><a id="L784" href="#L784">784</a><br /><a id="L785" href="#L785">785</a><br /><a id="L786" href="#L786">786</a><br /><a id="L787" href="#L787">787</a><br /><a id="L788" href="#L788">788</a><br /><a id="L789" href="#L789">789</a><br /><a id="L790" href="#L790">790</a><br /><a id="L791" href="#L791">791</a><br /><a id="L792" href="#L792">792</a><br /><a id="L793" href="#L793">793</a><br /><a id="L794" href="#L794">794</a><br /><a id="L795" href="#L795">795</a><br /><a id="L796" href="#L796">796</a><br /><a id="L797" href="#L797">797</a><br /><a id="L798" href="#L798">798</a><br /><a id="L799" href="#L799">799</a><br /><a id="L800" href="#L800">800</a><br /><a id="L801" href="#L801">801</a><br /><a id="L802" href="#L802">802</a><br /><a id="L803" href="#L803">803</a><br /></pre>
+    </td>
+    <td>
+      <pre><code id="sourcecode" class="cpp">// =============================================================================
+/* rng.cpp  RNG - random number generators
+
+            PMC 14-jun-2005
+            PMC 06-jul-2005
+            PMC 13-jul-2006
+
+   Copyright 2005-2006 P.M.Cronje
+
+   RNG is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   RNG is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with RNG; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+*/
+// =============================================================================
+
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;sys/types.h&gt;
+#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;math.h&gt;
+
+#include &#34;rng.h&#34;
+
+const char *pszRNGGen[eRNG_COUNT]
+   = {
+       &#34;qd1&#34;,
+       &#34;mt&#34;,
+       &#34;mthr&#34;,
+       &#34;well&#34;
+     };
+
+const char *pszRNGGenList = &#34;qd1/mt/mthr/well&#34;;
+const char *pszRNGGenDefault = &#34;mt&#34;;
+
+double dRAN_SCALE = 1.0 / (1.0+double((unsigned int)(0xFFFFFFFF)));
+
+// *****************************************************************************
+// cRNG
+// *****************************************************************************
+
+unsigned int cRNG::randomUint(unsigned int urange)
+{
+  return (unsigned int)((double)urange * (double)random() * dRAN_SCALE);
+
+} // cRNG::randomUint
+// *****************************************************************************
+
+cRNG *cRNG::createRNG(eRNG erng, unsigned int useed)
+{
+  cRNG *prng;
+  int rng;
+
+  rng = (int)erng;
+  if(rng == eRNG_QD1)
+    prng = new cRNG_QD1(useed);
+  else if(rng == eRNG_MTHR)
+    prng = new cRNG_Mother(useed);
+  else if (rng == eRNG_WELL)
+    prng = new cRNG_WELL(useed);
+  else // if(rng == eRNG_MT)                     // default
+    prng = new cRNG_MT19937(useed);
+
+  return prng;
+
+} // cRNG::createRNG(erng)
+// *****************************************************************************
+
+cRNG *cRNG::createRNG(char *pszrng, unsigned int useed)
+{
+  cRNG *prng;
+
+  if(0 == strcasecmp(pszrng,&#34;qd1&#34;))
+    prng = new cRNG_QD1(useed);
+  else if(0 == strcasecmp(pszrng,&#34;mthr&#34;))
+    prng = new cRNG_Mother(useed);
+  else if (0 == strcasecmp(pszrng,&#34;well&#34;))
+    prng = new cRNG_WELL(useed);
+  else // if(0 == strcasecmp(pszrng,&#34;mt&#34;))       // default
+    prng = new cRNG_MT19937(useed);
+
+  return prng;
+
+
+} // cRNG::createRNG(pszgen)
+// *****************************************************************************
+// ranQD1
+// *****************************************************************************
+
+void cRNG_QD1::set(unsigned int useed)
+{
+  uSeed = useed;
+  RNG = eRNG_QD1;
+  strcpy(szGen,pszRNGGen[RNG]);
+}
+
+unsigned int cRNG_QD1::random()
+{
+  uSeed = ((unsigned int)(1664525L) * uSeed + (unsigned int)(1013904223L));
+  return uSeed;
+
+} // cRNG_QD1::random
+/* ************************************************************************** */
+// equiDistribute1Bits
+/* ************************************************************************** */
+
+unsigned int qd1(unsigned int *puseed)
+{
+  *puseed = ((unsigned int)(1664525L) * (*puseed) + (unsigned int)(1013904223L));
+  return *puseed;
+
+} // qd1
+
+unsigned int qd1Uint(unsigned int *puseed, unsigned int urange)
+{
+  *puseed = ((unsigned int)(1664525L) * (*puseed) + (unsigned int)(1013904223L));
+  return (unsigned int)((double)urange * (double)(*puseed) * dRAN_SCALE);
+
+} // qd1Uint
+
+unsigned int count1Bits(unsigned int useed)
+{
+  unsigned int mask, n1, i;
+
+  // count the number of 1-bits
+  mask = 0x00000001;
+  n1 = 0;
+  for(i=0; i&lt;32; i++)
+  { if(mask &amp; useed)
+      n1++;
+    mask = (mask &lt;&lt; 1);
+  }
+
+  return n1;
+
+} // count1Bits
+
+void reset1Bit(unsigned int u1bit, unsigned int *pu)
+{
+  unsigned int mask, n, i;
+
+  // find and zero the bit
+  mask = 0x00000001;
+  n = 0;
+  for(i=0; i&lt;32; i++)
+  { if(mask &amp; (*pu))
+    { if(n == u1bit)
+      { *pu = ((*pu) &amp; (~mask));
+        return;
+      }
+      n++;
+    }
+    mask = (mask &lt;&lt; 1);
+  }
+
+} // reset1Bit
+
+void set0Bit(unsigned int u0bit, unsigned int *pu)
+{
+  unsigned int mask, n, i;
+
+  // find and set the bit
+  mask = 0x00000001;
+  n = 0;
+  for(i=0; i&lt;32; i++)
+  { if(0 == (mask &amp; (*pu)))
+    { if(n == u0bit)
+      { *pu = ((*pu) | mask);
+        return;
+      }
+      n++;
+    }
+    mask = (mask &lt;&lt; 1);
+  }
+
+} // set0Bit
+
+
+unsigned int equiDistribute1Bits(unsigned int u, unsigned int *puseed)
+{
+  // if number of 1-bits in useed not 16,
+  //   if excess of 1-bits, randomly reset them to 0-bits
+  //   if excess of 0-bits, randomly set them to 1-bits
+
+  unsigned int n1, i,ueq, ubit, n0;
+
+  // count the number of 1-bits
+  n1 = count1Bits(u);
+
+  ueq = u;
+
+  if(n1 &gt; 16)
+  { for(i=n1; i&gt;16; i--)
+    { ubit = qd1Uint(puseed,i);
+      reset1Bit(ubit,&amp;ueq);
+    }
+  }
+  else if(n1 &lt; 16)
+  { n0 = 32 - n1;
+    for(i=n0; i&gt;16; i--)
+    { ubit = qd1Uint(puseed,i);
+      set0Bit(ubit,&amp;ueq);
+    }
+  }
+
+  return ueq;
+
+} // equiDistribute1Bits
+// *****************************************************************************
+// WELL1024u
+// *****************************************************************************
+
+#define MAT0POS(t,v) (v^(v&gt;&gt;t))
+#define MAT0NEG(t,v) (v^(v&lt;&lt;(-(t))))
+#define Identity(v) (v)
+
+#define W 32
+#define R 32
+#define M1 3
+#define M2 24
+#define M3 10
+
+#define V0     STATE[ state_i                  ]
+#define VM1    STATE[(state_i+M1) &amp; 0x0000001fU]
+#define VM2    STATE[(state_i+M2) &amp; 0x0000001fU]
+#define VM3    STATE[(state_i+M3) &amp; 0x0000001fU]
+#define VRm1   STATE[(state_i+31) &amp; 0x0000001fU]
+#define newV0  STATE[(state_i+31) &amp; 0x0000001fU]
+#define newV1  STATE[ state_i                  ]
+
+unsigned int cRNG_WELL::random()
+{
+  z0      = VRm1;
+  z1      = Identity(V0)       ^ MAT0POS(  8, VM1);
+  z2      = MAT0NEG (-19, VM2) ^ MAT0NEG(-14, VM3);
+  newV1   = z1                 ^ z2;
+  newV0   =   MAT0NEG(-11,z0)
+            ^ MAT0NEG( -7,z1)
+            ^ MAT0NEG(-13,z2);
+
+  state_i = (state_i + 31) &amp; 0x0000001fU;
+
+  return STATE[state_i];
+
+} // cRNG_WELL::random
+
+#undef W
+#undef R
+#undef M1
+#undef M2
+#undef M3
+
+#undef V0
+#undef VM1
+#undef VM2
+#undef VM3
+#undef VRm1
+#undef newV0
+#undef newV1
+
+void cRNG_WELL::set(unsigned int useed)
+{
+  int j;
+  unsigned int u, uqd1seed;
+
+  RNG = eRNG_WELL;
+  strcpy(szGen,pszRNGGen[RNG]);
+
+  /* initialize
+     using specified seed, set state mixing 0 and 1 bits
+  */
+  uSeed = useed;
+  state_i = 0;
+  u = uqd1seed = useed;
+  for (j = 0; j &lt; 32; j++)
+  { STATE[j] = equiDistribute1Bits(u,&amp;useed);
+    u = qd1(&amp;useed);
+  }
+
+  /* run the generator for a while to escape from the seeded state */
+  for(j=0; j&lt;50000; j++)
+    random();
+
+} // cRNG_WELL::set
+// *****************************************************************************
+// Mother
+// *****************************************************************************
+
+void cRNG_Mother::set(unsigned int useed)
+{
+  RNG = eRNG_MTHR;
+  strcpy(szGen,pszRNGGen[RNG]);
+  uSeed = useed;
+
+  smthr[0] = 5115;
+  smthr[1] = 1776;
+  smthr[2] = 1492;
+  smthr[3] = 2111111111;
+
+  xm1    = (uint64)smthr[0];
+  xm2    = (uint64)smthr[1];
+  xm3    = (uint64)smthr[2];
+  xm4    = (uint64)smthr[3];
+
+  unsigned int sum = xm1 + xm2 + xm3 + xm4;
+  cRNG_WELL rng(uSeed);
+  mcarry = (uint64)rng.randomUint(sum);
+
+} // cRNG_Mother::set
+
+unsigned int cRNG_Mother::random()
+{
+  static uint64 am1 = (uint64)2111111111;
+  static uint64 am2 = (uint64)1492;
+  static uint64 am3 = (uint64)1776;
+  static uint64 am4 = (uint64)5115;
+
+  uint64 x = am1 * xm1
+           + am2 * xm2
+           + am3 * xm3
+           + am4 * xm4
+           + mcarry;
+
+  xm1    = xm2;
+  xm2    = xm3;
+  xm3    = xm4;
+  xm4    = (x &amp; 0x00000000ffffffffULL);
+  mcarry = (x &gt;&gt; 32);
+
+  return (unsigned int)xm4;
+
+} // cRNG_Mother::random
+// *****************************************************************************
+// mt19937ar
+// *****************************************************************************
+
+// PMC20050619 - updated MT to mt19937ar
+
+/* Period parameters */
+#define N 624
+#define M 397
+#define MATRIX_A 0x9908b0dfUL   /* constant vector a */
+#define UPPER_MASK 0x80000000UL /* most significant w-r bits */
+#define LOWER_MASK 0x7fffffffUL /* least significant r bits */
+
+// static unsigned long mt[N]; /* the array for the state vector  */
+// static int mti=N+1; /* mti==N+1 means mt[N] is not initialized */
+
+/* initializes mt[N] with a seed */
+
+void cRNG_MT19937::initBySeed(unsigned int useed)
+{
+  U[0]= useed &amp; 0xffffffffUL;
+  for (mti=1; mti&lt;N; mti++)
+  {
+    U[mti] = (1812433253UL * (U[mti-1] ^ (U[mti-1] &gt;&gt; 30)) + mti);
+    /* See Knuth TAOCP Vol2. 3rd Ed. P.106 for multiplier. */
+    /* In the previous versions, MSBs of the seed affect   */
+    /* only MSBs of the array p-&gt;U[].                        */
+    /* 2002/01/09 modified by Makoto Matsumoto             */
+    U[mti] &amp;= 0xffffffffUL;
+    /* for &gt;32 bit machines */
+  }
+
+} // cRNG_MT19937::initBySeed
+
+
+/* initialize by an array with array-length */
+/* p-&gt;Key is the array for initializing keys */
+/* p-&gt;LenKey is its length */
+/* slight change for C++, 2004/2/26 */
+
+void cRNG_MT19937::initByArray(unsigned int lenkey, unsigned int key[])
+{
+  int i, j, k;
+
+  initBySeed(19650218UL);
+
+  i=1; j=0;
+  k = (N&gt;lenkey ? N : lenkey);
+  for (; k; k--)
+  {
+    U[i] = (U[i] ^ ((U[i-1] ^ (U[i-1] &gt;&gt; 30)) * 1664525UL))
+      + key[j] + j; /* non linear */
+    U[i] &amp;= 0xffffffffUL; /* for WORDSIZE &gt; 32 machines */
+    i++; j++;
+    if (i&gt;=N) { U[0] = U[N-1]; i=1; }
+    if (j&gt;=(int)lenkey) j=0;
+  }
+  for (k=N-1; k; k--)
+  {
+    U[i] = (U[i] ^ ((U[i-1] ^ (U[i-1] &gt;&gt; 30)) * 1566083941UL))
+      - i; /* non linear */
+    U[i] &amp;= 0xffffffffUL; /* for WORDSIZE &gt; 32 machines */
+    i++;
+    if (i&gt;=N) { U[0] = U[N-1]; i=1; }
+  }
+
+  U[0] = 0x80000000UL; /* MSB is 1; assuring non-zero initial array */
+
+} // initByArray
+
+void cRNG_MT19937::set(unsigned int useed)
+{
+  unsigned int key[624];
+  int i;
+
+  uSeed = useed;
+  RNG = eRNG_MT;
+  strcpy(szGen,pszRNGGen[RNG]);
+  cRNG_WELL rng(useed);
+
+  mag01[0] = 0x0UL;
+  mag01[1] = MATRIX_A;
+
+  for(i=0; i&lt;624; i++)
+    key[i] = rng.random();
+  initByArray(624,key);
+
+} // cRNG_MT19937::set
+
+/* generates a random number on [0,0xffffffff]-interval */
+
+unsigned int cRNG_MT19937::random()
+{
+  unsigned long y;
+
+  if (mti &gt;= N)
+  { /* generate N words at one time */
+
+    int kk;
+
+    if (mti == N+1)   /* if not initalized, */
+      initBySeed(5489UL);      /* a default initial seed is used */
+
+    for (kk=0;kk&lt;N-M;kk++)
+    { y = (U[kk]&amp;UPPER_MASK)|(U[kk+1]&amp;LOWER_MASK);
+      U[kk] = U[kk+M] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1UL];
+    }
+    for (;kk&lt;N-1;kk++)
+    { y = (U[kk]&amp;UPPER_MASK)|(U[kk+1]&amp;LOWER_MASK);
+      U[kk] = U[kk+(M-N)] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1UL];
+    }
+    y = (U[N-1]&amp;UPPER_MASK)|(U[0]&amp;LOWER_MASK);
+    U[N-1] = U[M-1] ^ (y &gt;&gt; 1) ^ mag01[y &amp; 0x1UL];
+
+    mti = 0;
+  }
+
+  y = U[mti++];
+
+  /* Tempering */
+  y ^= (y &gt;&gt; 11);
+  y ^= (y &lt;&lt; 7) &amp; 0x9d2c5680UL;
+  y ^= (y &lt;&lt; 15) &amp; 0xefc60000UL;
+  y ^= (y &gt;&gt; 18);
+
+  return y;
+
+} // cRNG_MT19937::random
+
+#undef N
+#undef M
+#undef MATRIX_A
+#undef UPPER_MASK
+#undef LOWER_MASK
+// *****************************************************************************
+// Entropy test
+// *****************************************************************************
+
+double gammq(double a, double x);
+
+#define PI 3.14159265358979323846
+#define log2of10 3.32192809488736234787
+
+/* Treat input as a bitstream */
+static bool binary = false;
+
+/* Bins to count occurrences of values */
+static long ccount[256];
+
+/* Total bytes counted */
+static long totalc = 0;
+
+/* Probabilities per bin for entropy */
+static double prob[256];
+
+/*  LOG2  --  Calculate log to the base 2  */
+//static double log2(double x)
+//{
+//    return log2of10 * log10(x);
+//}
+
+/* Bytes used as Monte Carlo
+   co-ordinates.  This should be no more
+   bits than the mantissa of your
+   &#34;double&#34; floating point type.
+*/
+#define MONTEN  6
+
+static int mp;
+static bool sccfirst;
+static unsigned int monte[MONTEN];
+static long inmont, mcount;
+static double a, cexp, incirc, montex, montey, montepi,
+        scc, sccun, sccu0, scclast, scct1, scct2, scct3,
+        ent, chisq, datasum;
+
+void initEnt(bool binmode)
+{
+  int i;
+
+  /* Set binary/byte mode */
+  binary = binmode;
+
+  /* Initialise for calculations */
+
+  ent = 0.0;             /* Clear entropy accumulator */
+  chisq = 0.0;           /* Clear Chi-Square */
+  datasum = 0.0;         /* Clear sum of bytes for arithmetic mean */
+
+  mp = 0;                     /* Reset Monte Carlo accumulator pointer */
+  mcount = 0;                 /* Clear Monte Carlo tries */
+  inmont = 0;                 /* Clear Monte Carlo inside count */
+  incirc = 65535.0 * 65535.0; /* In-circle distance for Monte Carlo */
+
+  sccfirst = true;             /* Mark first time for serial correlation */
+  scct1 = scct2 = scct3 = 0.0; /* Clear serial correlation terms */
+
+  incirc = pow(pow(256.0, (double) (MONTEN / 2)) - 1, 2.0);
+
+  for (i = 0; i &lt; 256; i++)
+    ccount[i] = 0;
+  totalc = 0;
+
+} // initEnt
+
+void addEnt(unsigned char *buf, int buflen)
+{
+  unsigned char *bp = buf;
+  int oc, c, bean;
+
+  while (bean = 0, (buflen-- &gt; 0))
+  {
+    oc = *bp++;
+
+    do
+    {
+      if (binary)
+        c = !!(oc &amp; 0x80);
+      else
+        c = oc;
+      ccount[c]++;      /* Update counter for this bin */
+      totalc++;
+
+      /* Update inside/outside circle counts for Monte Carlo computation of PI */
+
+      if (bean == 0)
+      {
+        monte[mp++] = oc;       /* Save character for Monte Carlo */
+        if (mp &gt;= MONTEN)
+        {  /* Calculate every MONTEN character */
+          int mj;
+
+          mp = 0;
+          mcount++;
+          montex = montey = 0;
+          for (mj = 0; mj &lt; MONTEN / 2; mj++)
+          { montex = (montex * 256.0) + monte[mj];
+            montey = (montey * 256.0) + monte[(MONTEN / 2) + mj];
+          }
+          if ((montex * montex + montey *  montey) &lt;= incirc)
+            inmont++;
+        }
+      }
+
+      /* Update calculation of serial correlation coefficient */
+
+      sccun = c;
+      if (sccfirst)
+      { sccfirst = false;
+        scclast = 0;
+        sccu0 = sccun;
+      }
+      else
+        scct1 = scct1 + scclast * sccun;
+      scct2 = scct2 + sccun;
+      scct3 = scct3 + (sccun * sccun);
+      scclast = sccun;
+      oc &lt;&lt;= 1;
+    } while (binary &amp;&amp; (++bean &lt; 8));
+  }
+
+} // addEnt
+
+void endEnt(double *r_ent, double *r_chisq, double *r_mean,
+            double *r_montepicalc, double *r_scc)
+{
+  int i;
+
+  /* Complete calculation of serial correlation coefficient */
+
+  scct1 = scct1 + scclast * sccu0;
+  scct2 = scct2 * scct2;
+  scc = totalc * scct3 - scct2;
+  if (scc == 0.0)
+    scc = -100000;
+  else
+    scc = (totalc * scct1 - scct2) / scc;
+
+  /* Scan bins and calculate probability for each bin and
+     Chi-Square distribution */
+
+  cexp = totalc / (binary ? 2.0 : 256.0);  /* Expected count per bin */
+  for (i = 0; i &lt; (binary ? 2 : 256); i++)
+  { prob[i] = (double) ccount[i] / totalc;
+    a = ccount[i] - cexp;
+    chisq = chisq + (a * a) / cexp;
+    datasum += ((double) i) * ccount[i];
+  }
+
+  /* Calculate entropy */
+
+  for (i = 0; i &lt; (binary ? 2 : 256); i++)
+  { if (prob[i] &gt; 0.0)
+      ent += prob[i] * log2(1 / prob[i]);
+  }
+
+  /* Calculate Monte Carlo value for PI from percentage of hits
+     within the circle
+  */
+
+  montepi = 4.0 * (((double) inmont) / mcount);
+
+  /* Return results through arguments */
+
+  *r_ent = ent;
+  *r_chisq = chisq;
+  *r_mean = datasum / totalc;
+  *r_montepicalc = montepi;
+  *r_scc = scc;
+
+} // endEnt
+
+void prtEnt(double r_chisq, double r_mean,
+            double r_montepicalc, double r_scc)
+{
+  // probability that observed chi^2 will exceed the value chi^2
+  // by chance EVEN for a correct model:
+  //     Q(chi^2,nu) = gammaq(nu/2,chi^2/2);
+  //
+  double probq = 100.0 * gammq(127.5,0.5*r_chisq);
+
+  printf(&#34;  %ss,Entropy,Chi-square,Mean,Monte-Carlo-Pi,Serial-Correlation\n&#34;,
+         binary ? &#34;bit&#34; : &#34;byte&#34;);
+  printf(&#34;  %ld,%f,%.1f(%.2f%%),%f,%f(%.2f%%),%f\n&#34;,
+           //totalc,ent,r_chisq,100.0*chip,r_mean,
+           totalc,ent,r_chisq,probq,r_mean,
+           r_montepicalc,100.0*(r_montepicalc-PI),r_scc);
+
+} // prtEnt
+// *****************************************************************************
+
+double gammln(float xx)
+{
+  double x, y, tmp, ser;
+  static double cof[6]
+    = {  76.18009172947146,
+        -86.50532032941677,
+         24.01409824083091,
+         -1.231739572450155,
+          0.1208650973866179e-2,
+         -0.5395239384953e-5
+      };
+  int j;
+
+  y=x=xx;
+  tmp=x+5.5;
+  tmp -= (x+0.5)*log(tmp);
+  ser=1.000000000190015;
+  for (j=0;j&lt;=5;j++)
+    ser += cof[j]/++y;
+  return -tmp+log(2.5066282746310005*ser/x);
+
+} // gammln
+// *****************************************************************************
+#define ITMAX 100
+#define EPS 3.0e-7
+#define FPMIN 1.0e-30
+
+void gcf(double *gammcf, double a, double x, double *gln)
+{
+  int i;
+  double an, b, c, d, del, h;
+
+  *gln=gammln(a);
+  b=x+1.0-a;
+  c=1.0/FPMIN;
+  d=1.0/b;
+  h=d;
+  for (i=1;i&lt;=ITMAX;i++)
+  { an = -i*(i-a);
+    b += 2.0;
+    d=an*d+b;
+    if (fabs(d) &lt; FPMIN)
+      d=FPMIN;
+    c=b+an/c;
+    if (fabs(c) &lt; FPMIN)
+      c=FPMIN;
+    d=1.0/d;
+    del=d*c;
+    h *= del;
+    if (fabs(del-1.0) &lt; EPS)
+      break;
+  }
+  if (i &gt; ITMAX)
+  { printf(&#34;*** error %s: a too large, ITMAX too small\n&#34;,__func__);
+    exit(1);
+  }
+  *gammcf=exp(-x+a*log(x)-(*gln))*h;
+
+} // gcf
+
+#undef ITMAX
+#undef EPS
+#undef FPMIN
+// *****************************************************************************
+#define ITMAX 100
+#define EPS 3.0e-7
+
+void gser(double *gamser, double a, double x, double *gln)
+{
+  int n;
+  double sum,del,ap;
+
+  *gln=gammln(a);
+  if (x &lt;= 0.0)
+  {
+    if (x &lt; 0.0)
+    { printf(&#34;*** error %s: x less than 0\n&#34;,__func__);
+      exit(1);
+    }
+    *gamser=0.0;
+    return;
+  }
+  else
+  {
+    ap=a;
+    del=sum=1.0/a;
+    for (n=1;n&lt;=ITMAX;n++)
+    { ++ap;
+      del *= x/ap;
+      sum += del;
+      if (fabs(del) &lt; fabs(sum)*EPS)
+      { *gamser=sum*exp(-x+a*log(x)-(*gln));
+        return;
+      }
+    }
+    printf(&#34;*** error %s: a too large, ITMAX too small\n&#34;,__func__);
+    exit(1);
+  }
+
+} // gser
+
+#undef ITMAX
+#undef EPS
+// *****************************************************************************
+
+double gammq(double a, double x)
+{
+  double gamser, gammcf, gln;
+
+  if (x &lt; 0.0 || a &lt;= 0.0)
+  { printf(&#34;*** error %s: invalid arguments\n&#34;,__func__);
+    exit(1);
+  }
+  if (x &lt; (a+1.0))
+  { gser(&amp;gamser,a,x,&amp;gln);
+    return 1.0-gamser;
+  }
+  else
+  {
+    gcf(&amp;gammcf,a,x,&amp;gln);
+    return gammcf;
+  }
+
+} // gammq
+// *****************************************************************************
+
+</code></pre>
+    </td>
+    
+  </tr>
+</table>
+
+<script type="text/javascript">
+  hljs.highlightBlock(document.getElementById('sourcecode'))
+</script>
+
+
+
+
+    </div>
+    <footer id="footer">
+      
+
+<p style="margin: 0 0 0 0; line-height: 1em;">
+  Browse by prefix: &ensp;
+  
+    <a href="http://sources.debian.net/prefix/0/">0</a>
+    <a href="http://sources.debian.net/prefix/2/">2</a>
+    <a href="http://sources.debian.net/prefix/3/">3</a>
+    <a href="http://sources.debian.net/prefix/4/">4</a>
+    <a href="http://sources.debian.net/prefix/6/">6</a>
+    <a href="http://sources.debian.net/prefix/7/">7</a>
+    <a href="http://sources.debian.net/prefix/8/">8</a>
+    <a href="http://sources.debian.net/prefix/9/">9</a>
+    <a href="http://sources.debian.net/prefix/W/">W</a>
+    <a href="http://sources.debian.net/prefix/a/">a</a>
+    <a href="http://sources.debian.net/prefix/b/">b</a>
+    <a href="http://sources.debian.net/prefix/c/">c</a>
+    <a href="http://sources.debian.net/prefix/d/">d</a>
+    <a href="http://sources.debian.net/prefix/e/">e</a>
+    <a href="http://sources.debian.net/prefix/f/">f</a>
+    <a href="http://sources.debian.net/prefix/g/">g</a>
+    <a href="http://sources.debian.net/prefix/h/">h</a>
+    <a href="http://sources.debian.net/prefix/i/">i</a>
+    <a href="http://sources.debian.net/prefix/j/">j</a>
+    <a href="http://sources.debian.net/prefix/k/">k</a>
+    <a href="http://sources.debian.net/prefix/l/">l</a>
+    <a href="http://sources.debian.net/prefix/lib-/">lib-</a>
+    <a href="http://sources.debian.net/prefix/lib3/">lib3</a>
+    <a href="http://sources.debian.net/prefix/liba/">liba</a>
+    <a href="http://sources.debian.net/prefix/libb/">libb</a>
+    <a href="http://sources.debian.net/prefix/libc/">libc</a>
+    <a href="http://sources.debian.net/prefix/libd/">libd</a>
+    <a href="http://sources.debian.net/prefix/libe/">libe</a>
+    <a href="http://sources.debian.net/prefix/libf/">libf</a>
+    <a href="http://sources.debian.net/prefix/libg/">libg</a>
+    <a href="http://sources.debian.net/prefix/libh/">libh</a>
+    <a href="http://sources.debian.net/prefix/libi/">libi</a>
+    <a href="http://sources.debian.net/prefix/libj/">libj</a>
+    <a href="http://sources.debian.net/prefix/libk/">libk</a>
+    <a href="http://sources.debian.net/prefix/libl/">libl</a>
+    <a href="http://sources.debian.net/prefix/libm/">libm</a>
+    <a href="http://sources.debian.net/prefix/libn/">libn</a>
+    <a href="http://sources.debian.net/prefix/libo/">libo</a>
+    <a href="http://sources.debian.net/prefix/libp/">libp</a>
+    <a href="http://sources.debian.net/prefix/libq/">libq</a>
+    <a href="http://sources.debian.net/prefix/libr/">libr</a>
+    <a href="http://sources.debian.net/prefix/libs/">libs</a>
+    <a href="http://sources.debian.net/prefix/libt/">libt</a>
+    <a href="http://sources.debian.net/prefix/libu/">libu</a>
+    <a href="http://sources.debian.net/prefix/libv/">libv</a>
+    <a href="http://sources.debian.net/prefix/libw/">libw</a>
+    <a href="http://sources.debian.net/prefix/libx/">libx</a>
+    <a href="http://sources.debian.net/prefix/liby/">liby</a>
+    <a href="http://sources.debian.net/prefix/libz/">libz</a>
+    <a href="http://sources.debian.net/prefix/m/">m</a>
+    <a href="http://sources.debian.net/prefix/n/">n</a>
+    <a href="http://sources.debian.net/prefix/o/">o</a>
+    <a href="http://sources.debian.net/prefix/p/">p</a>
+    <a href="http://sources.debian.net/prefix/q/">q</a>
+    <a href="http://sources.debian.net/prefix/r/">r</a>
+    <a href="http://sources.debian.net/prefix/s/">s</a>
+    <a href="http://sources.debian.net/prefix/t/">t</a>
+    <a href="http://sources.debian.net/prefix/u/">u</a>
+    <a href="http://sources.debian.net/prefix/v/">v</a>
+    <a href="http://sources.debian.net/prefix/w/">w</a>
+    <a href="http://sources.debian.net/prefix/x/">x</a>
+    <a href="http://sources.debian.net/prefix/y/">y</a>
+    <a href="http://sources.debian.net/prefix/z/">z</a>
+
+  &ensp; | &ensp;
+  Browse <a href="http://sources.debian.net/list/1/">by page</a>
+</p>
+<hr />
+<div style="position: relative">
+<div style="position: absolute; right: 0">
+hosted by<br />
+<a href="http://www.irill.org/">
+  <img width="100px"
+       style="vertical-align: middle;"
+       src="../../../../static/img/irill.png" alt="IRILL" />
+</a>
+</div>
+
+<p>
+  Debsources &mdash; Copyright (C) 2011&ndash;2014 Matthieu Caneill, Stefano
+  Zacchiroli, and
+  <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git;a=blob;f=AUTHORS;hb=HEAD">contributors</a>.
+  License:
+  <a href="http://www.gnu.org/licenses/agpl.html">GNU AGPLv3</a>.
+  <br />
+  Hosted source files are available under their own
+  <a href="http://www.debian.org/doc/debian-policy/ch-source.html#s-dpkgcopyright">copyright
+  and licenses</a>.
+  <br />
+  Source code: <a href="http://anonscm.debian.org/gitweb/?p=qa/debsources.git">Git</a>.
+  Contact: <a href="mailto:info@sources.debian.net">info@sources.debian.net</a>.
+  Last update: Thu, 24 Jul 2014 04:15:25 -0000.
+</p>
+</div>
+    </footer>
+    
+  </body>
+
+<!-- Mirrored from sources.debian.net/src/dds/2.5.2+ddd105-1/ddd/rng.cpp by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 24 Jul 2014 06:08:00 GMT -->
+</html>

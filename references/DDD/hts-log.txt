@@ -1,0 +1,16 @@
+HTTrack3.48-18+htsswf+htsjava launched on Thu, 24 Jul 2014 09:07:36 at http://sources.debian.net/src/dds/2.5.2+ddd105-1 +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" http://sources.debian.net/src/dds/2.5.2%2Bddd105-1 -O1 "E:\MyWork\mobile\android\DoubleDummySolver\references\DDD" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+09:07:59	Error: 	"Not Found" (404) at link sources.debian.net/static/css/Pics/emblem-downloads.png (from sources.debian.net/static/css/debian.css)
+09:07:59	Error: 	"Not Found" (404) at link sources.debian.net/static/css/Pics/admon-tip.png (from sources.debian.net/static/css/debian.css)
+09:07:59	Error: 	"Not Found" (404) at link sources.debian.net/static/css/Pics/admon-important.png (from sources.debian.net/static/css/debian.css)
+09:07:59	Error: 	"Not Found" (404) at link sources.debian.net/static/css/Pics/admon-warning.png (from sources.debian.net/static/css/debian.css)
+09:07:59	Error: 	"Not Found" (404) at link sources.debian.net/static/css/Pics/admon-note.png (from sources.debian.net/static/css/debian.css)
+
+HTTrack Website Copier/3.48-18 mirror complete in 27 seconds : 83 links scanned, 77 files written (2461461 bytes overall) [625135 bytes received at 23153 bytes/sec], 2443009 bytes transferred using HTTP compression in 78 files, ratio 23%, 41.5 requests per connection
+(5 errors, 0 warnings, 0 messages)
