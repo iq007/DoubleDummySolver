@@ -32,7 +32,7 @@ android {
 
            // commandLine 'ndk-build.cmd', '-C', file('src/main').absolutePath
 
-          commandLine '/Users/stefan/ndk/ndk-build', '-C', file('src/main').absolutePath
+          commandLine '/Users/stefan/Tools/android-ndk-r10c/ndk-build', '-C', file('src/main').absolutePath
 
     }
 
