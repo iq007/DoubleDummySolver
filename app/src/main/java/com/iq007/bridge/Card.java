@@ -9,6 +9,10 @@ public class Card {
     String suitSymbol;
     Suit suit;
 
+    public Card(){
+
+    }
+
     public Card(int value, Suit suit) {
         this.value = value;
         this.suit = suit;

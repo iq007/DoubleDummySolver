@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -11,11 +13,9 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.ClipData;
-import android.content.ClipDescription;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v13.app.FragmentPagerAdapter;
@@ -35,6 +35,7 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.iq007.bridge.*;
 
@@ -76,7 +77,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
         actionBar.setDisplayUseLogoEnabled(false);
         actionBar.setDisplayShowTitleEnabled(false);
 
-        // Create the adapter that will return a fragment for each of the three
+        // Create the adapter that will return a fragment for each of the four
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
 
@@ -169,7 +170,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 4 total pages.
             return 4;
         }
 
@@ -195,8 +196,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
     /**
      * A placeholder fragment containing a simple view.
      */
-    public static class PlaceholderFragment extends Fragment implements AdapterView.OnItemSelectedListener,
-            AdapterView.OnDragListener, AdapterView.OnLongClickListener, AdapterView.OnClickListener {
+    public static class PlaceholderFragment extends Fragment implements AdapterView.OnItemSelectedListener{
 
         static {
             System.loadLibrary("ddsLib");
@@ -243,6 +243,58 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 Bundle savedInstanceState) {
             View rootView = null;
             DoubleDummySolver activity = (DoubleDummySolver) getActivity();
+            deal = new Deal();
+            deal = new Deal();
+
+           /* //init random deal
+            try {
+                if(deck == null){
+                    deck = new Deck();
+                }
+                deck.shuffle();
+            }
+            catch(BridgeException e){
+                Log.e(TAG, e.toString());
+                return rootView;
+            }*/
+
+
+            deal.setCurrentTrick(null);
+            deal.setFirst(null);
+            deal.setTrump(null);
+
+            Hand northHand = new Hand(null, TablePosition.N);
+            Hand eastHand = new Hand(null, TablePosition.E);
+            Hand southHand = new Hand(null, TablePosition.S);
+            Hand westHand = new Hand(null, TablePosition.W);
+
+           /* int i = 0;
+            for(Card card : deck.getCards()) {
+                switch(i%4){
+                    case 0:
+                        northHand.dealCard(card);
+                        break;
+                    case 1:
+                        eastHand.dealCard(card);
+                        break;
+                    case 2:
+                        southHand.dealCard(card);
+                        break;
+                    case 3:
+                        westHand.dealCard(card);
+                        break;
+
+                }
+                //deck.removeCard(card);
+                i++;
+
+            }*/
+            List<Hand> hands = new ArrayList<Hand>();
+            hands.add(northHand);
+            hands.add(eastHand);
+            hands.add(southHand);
+            hands.add(westHand);
+            deal.setRemainingCards(hands);
 
 
             //Deal tab
@@ -251,8 +303,18 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
                 Log.d(TAG, Integer.toString(SolveBoard(null)));
 
-                LinearLayout deal_grid_north = (LinearLayout) rootView.findViewById(R.id.deal_north_layout);
-                deal_grid_north.setOnClickListener(this);
+
+                BridgeHandLayoutEventListener handLayoutListener = new BridgeHandLayoutEventListener(deal, buttonBids);
+                LinearLayout[] layouts = new LinearLayout[4];
+                layouts[0] = (LinearLayout) rootView.findViewById(R.id.deal_north_layout);
+                layouts[1] = (LinearLayout) rootView.findViewById(R.id.deal_east_layout);
+                layouts[2] = (LinearLayout) rootView.findViewById(R.id.deal_south_layout);
+                layouts[3] = (LinearLayout) rootView.findViewById(R.id.deal_west_layout);
+
+                for(LinearLayout layout :  layouts) {
+                    layout.setOnClickListener(handLayoutListener);
+                    layout.setOnDragListener(handLayoutListener);
+                }
 
                 deck = new Deck();
 
@@ -276,15 +338,16 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 Suit currentSuit = Suit.C;
                 for (Card card : deck.getCards()) {
                     CardButton buttonBid = new CardButton(getActivity(),card);
+                    buttonBid.setBackgroundColor(Color.CYAN);
                     buttonBid.setText(card.toString());
                     buttonBid.setTextSize(25);
                     buttonBid.setPadding(0, 0, 0, 0);
                     buttonBid.setMaxHeight(5);
                     buttonBid.setMaxWidth(5);
                     buttonBid.setVisibility(Button.INVISIBLE);
-                    buttonBid.setOnLongClickListener(this);
-                    buttonBid.setOnDragListener(this);
-                    buttonBid.setOnClickListener(this);
+                    buttonBid.setOnLongClickListener(handLayoutListener);
+                    //buttonBid.setOnDragListener(handLayoutListener);
+                    buttonBid.setOnClickListener(handLayoutListener);
                     buttonBids.add(buttonBid);
                     if(card.getSuit() != currentSuit){
                         row = 0; column = 0;
@@ -332,57 +395,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
             //Par tab
             if(this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER)==4) {
-                deal = new Deal();
 
-                //init random deal
-                try {
-                    if(deck == null){
-                        deck = new Deck();
-                    }
-                    deck.shuffle();
-                }
-                catch(BridgeException e){
-                    Log.e(TAG, e.toString());
-                    return rootView;
-                }
-
-
-                deal.setCurrentTrick(null);
-                deal.setFirst(TablePosition.N);
-                deal.setTrump(ContractSuit.S);
-
-                Hand northHand = new Hand(null, TablePosition.N);
-                Hand eastHand = new Hand(null, TablePosition.E);
-                Hand southHand = new Hand(null, TablePosition.S);
-                Hand westHand = new Hand(null, TablePosition.W);
-
-                int i = 0;
-                for(Card card : deck.getCards()) {
-                    switch(i%4){
-                        case 0:
-                            northHand.dealCard(card);
-                            break;
-                        case 1:
-                            eastHand.dealCard(card);
-                            break;
-                        case 2:
-                            southHand.dealCard(card);
-                            break;
-                        case 3:
-                            westHand.dealCard(card);
-                            break;
-
-                    }
-                    //deck.removeCard(card);
-                    i++;
-
-                }
-                List<Hand> hands = new ArrayList<Hand>();
-                hands.add(northHand);
-                hands.add(eastHand);
-                hands.add(southHand);
-                hands.add(westHand);
-                deal.setRemainingCards(hands);
 
                 //call native function
 
@@ -425,55 +438,9 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
 
         }
 
-        @Override
-        public boolean onDrag(View v, DragEvent event) {
-            //Log.v(TAG + " onDrag ", v.toString());
-            return false;
-        }
-
-        @Override
-        public boolean onLongClick(View v) {
-            Log.v(TAG + " onLongClick ", v.toString());
-
-            if(!(v instanceof CardButton)){
-                return false;
-            }
-
-            CardButton bidButton = (CardButton) v;
-            Log.v(TAG, bidButton.getText().toString());
 
 
-            Card card = new Card(bidButton.getCard());
 
-            ClipData clipData = ClipData.newPlainText(card.toString(), card.toString());
-
-            // Instantiates the drag shadow builder.
-            View.DragShadowBuilder myShadow = new MyDragShadowBuilder(bidButton);
-
-            // Starts the drag
-
-            v.startDrag(clipData,  // the data to be dragged
-                    myShadow,  // the drag shadow builder
-                    null,      // no need to use local data
-                    0          // flags (not currently used, set to 0)
-            );
-
-
-            return false;
-        }
-
-        @Override
-        public void onClick(View v) {
-            Log.v(TAG + " onClick ", v.toString());
-
-            if(v.getId() == R.id.deal_north_layout){
-                v.setBackground(getResources().getDrawable(R.drawable.hand_border));
-            }
-
-            if(!(v instanceof CardButton)){
-                return;
-            }
-        }
     }
 
 
@@ -529,4 +496,178 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
         }
     }
 
+    private static class BridgeHandLayoutEventListener implements View.OnDragListener, View.OnClickListener, View.OnLongClickListener{
+
+
+        @Override
+        public boolean onLongClick(View view) {
+            Log.v(TAG + " onLongClick ", view.toString());
+
+            if(!(view instanceof CardButton)){
+                return false;
+            }
+
+            CardButton bidButton = (CardButton) view;
+            Log.v(TAG, bidButton.getText().toString());
+
+
+            Card card = new Card(bidButton.getCard());
+
+            ClipData clipData = ClipData.newPlainText(card.toString(), card.getSuit().name() + card.getvalue());
+
+            // Instantiates the drag shadow builder.
+            View.DragShadowBuilder myShadow = new MyDragShadowBuilder(bidButton);
+
+            // Starts the drag
+
+            view.startDrag(clipData,  // the data to be dragged
+                    myShadow,  // the drag shadow builder
+                    null,      // no need to use local data
+                    0          // flags (not currently used, set to 0)
+            );
+
+
+            return false;
+        }
+
+        String TAG = "BridgeHandLayoutEventListener";
+        Deal deal = null;
+        protected ArrayList<CardButton> buttonBids = null;
+
+        private BridgeHandLayoutEventListener(Deal d,  ArrayList<CardButton> buttonBids) {
+            this.deal = d;
+            this.buttonBids = buttonBids;
+        }
+
+        @Override
+        public void onClick(View view) {
+
+            switch (view.getId()){
+                case R.id.deal_north_layout:
+                    view.setBackground(view.getResources().getDrawable(R.drawable.hand_border));
+                    return;
+
+
+
+            }
+
+            //TODO: check if view is CardButton and if yes and is greyed implement "get back to deck" function
+            int buttonIndex = buttonBids.indexOf(view);
+            if(buttonIndex >= 0){
+                CardButton currentCardButton = buttonBids.get(buttonIndex);
+                if(((ColorDrawable)currentCardButton.getBackground()).getColor() == Color.GRAY) {
+                    buttonBids.get(buttonIndex).setBackgroundColor(Color.CYAN);
+                    //TODO: remove this card from dealt cards and from layout view
+
+                    currentCardButton.setOnLongClickListener(this);
+
+                }
+
+            }
+        }
+
+        @Override
+        public boolean onDrag(View view, DragEvent dragEvent) {
+            switch (dragEvent.getAction()) {
+                case DragEvent.ACTION_DRAG_STARTED:
+                    view.setBackgroundColor(Color.BLUE);
+                    return true;
+                case DragEvent.ACTION_DRAG_ENDED:
+                    view.setBackgroundColor(Color.WHITE);
+                    return true;
+                case DragEvent.ACTION_DRAG_ENTERED:
+                    view.setBackgroundColor(Color.RED);
+                    return true;
+                case DragEvent.ACTION_DRAG_EXITED:
+                    view.setBackgroundColor(Color.BLUE);
+                    return true;
+                case DragEvent.ACTION_DROP:
+                    // Gets the item containing the dragged data
+                    ClipData.Item item = dragEvent.getClipData().getItemAt(0);
+
+                    // Gets the text data from the item.
+                    CharSequence dragData = item.getText();
+
+                    Suit currentSuit = Suit.C;
+                    switch(dragData.charAt(0)){
+                        case 'C':
+                            currentSuit = Suit.C;
+                            break;
+                        case 'D':
+                            currentSuit = Suit.D;
+                            break;
+                        case 'H':
+                            currentSuit = Suit.H;
+                            break;
+                        case 'S':
+                            currentSuit = Suit.S;
+                            break;
+                    }
+
+                    String sCardValue = Character.toString(dragData.charAt(1));
+                    if(dragData.length() == 3){
+                        sCardValue = sCardValue.concat(Character.toString(dragData.charAt(2)));
+                    }
+                    Card card = new Card(Integer.parseInt(sCardValue), currentSuit);
+                    List<Hand> remainingCards = deal.getRemainingCards();
+
+                    int index = 0;
+                    switch(view.getId()){
+                        case R.id.deal_north_layout:
+                            remainingCards.get(0).dealCard(card);
+                            //TODO: make the card visible in the grid
+                            TextView textView = null;
+                            if(currentSuit == Suit.C){
+                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_club);
+
+                            }
+                            else if(currentSuit == Suit.D){
+                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_diamond);
+
+                            }
+                            else if(currentSuit == Suit.H){
+                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_heart);
+
+                            }
+                            else if(currentSuit == Suit.S){
+                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_spade);
+
+                            }
+
+                            if(textView != null){
+                                textView.setText(textView.getText() + " " + card.getSymbol());
+                                //TODO: add BridgeRules.sortDesc() and call it;
+                            }
+
+                            //TODO: grey out card in the deck and
+                            Logger.getLogger(TAG).log(Level.INFO, view.getId() + " " + card.toString());
+                            break;
+                        case R.id.deal_east_layout:
+                            remainingCards.get(1).dealCard(card);
+                            Logger.getLogger(TAG).log(Level.INFO, view.getId() + " " + card.toString());
+                            break;
+                        case R.id.deal_south_layout:
+                            remainingCards.get(2).dealCard(card);
+                            break;
+                        case R.id.deal_west_layout:
+                            remainingCards.get(3).dealCard(card);
+                            break;
+
+                    }
+
+                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setBackgroundColor(Color.GRAY);
+                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setOnLongClickListener(null);
+
+
+                    // Invalidates the view to force a redraw
+                    view.invalidate();
+
+                    // Returns true. DragEvent.getResult() will return true.
+                    return true;
+            }
+            return false;
+        }
+    }
+
 }
+
