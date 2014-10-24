@@ -2,6 +2,7 @@ package com.iq007.bridge.doubledummysolver;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
@@ -13,6 +14,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.ClipData;
+import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -338,7 +340,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 Suit currentSuit = Suit.C;
                 for (Card card : deck.getCards()) {
                     CardButton buttonBid = new CardButton(getActivity(),card);
-                    buttonBid.setBackgroundColor(Color.CYAN);
+                    buttonBid.setBackgroundColor(getResources().getColor(R.color.unassigned_deck_card));
                     buttonBid.setText(card.toString());
                     buttonBid.setTextSize(25);
                     buttonBid.setPadding(0, 0, 0, 0);
@@ -457,7 +459,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             super(v);
 
             // Creates a draggable image that will fill the Canvas provided by the system.
-            shadow = new ColorDrawable(Color.LTGRAY);
+            shadow = new ColorDrawable(v.getResources().getColor(R.color.card_drag_shadow));
         }
 
         // Defines a callback that sends the drag shadow dimensions and touch point back to the
@@ -546,21 +548,27 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                 case R.id.deal_north_layout:
                     view.setBackground(view.getResources().getDrawable(R.drawable.hand_border));
                     return;
-
-
-
             }
 
-            //TODO: check if view is CardButton and if yes and is greyed implement "get back to deck" function
             int buttonIndex = buttonBids.indexOf(view);
             if(buttonIndex >= 0){
                 CardButton currentCardButton = buttonBids.get(buttonIndex);
-                if(((ColorDrawable)currentCardButton.getBackground()).getColor() == Color.GRAY) {
-                    buttonBids.get(buttonIndex).setBackgroundColor(Color.CYAN);
-                    //TODO: remove this card from dealt cards and from layout view
-
+                int assignedCardColour = view.getResources().getColor(R.color.assigned_deck_card);
+                int unassignedCardColour = view.getResources().getColor(R.color.unassigned_deck_card);
+                if(((ColorDrawable)currentCardButton.getBackground()).getColor() == assignedCardColour) {
+                    buttonBids.get(buttonIndex).setBackgroundColor(unassignedCardColour);
                     currentCardButton.setOnLongClickListener(this);
 
+                    List<Hand> hands = deal.getRemainingCards();
+                    out: for(Hand h : hands){
+                        for(Card c : h.getRemainingCards()){
+                            if(c.compareTo(currentCardButton.card)==0){
+                                h.playCard(c); //removing the card from this hand
+                                redraw(h,c.getSuit(),view);
+                                break out;
+                            }
+                        }
+                    }
                 }
 
             }
@@ -604,6 +612,8 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                             break;
                     }
 
+
+
                     String sCardValue = Character.toString(dragData.charAt(1));
                     if(dragData.length() == 3){
                         sCardValue = sCardValue.concat(Character.toString(dragData.charAt(2)));
@@ -611,53 +621,37 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                     Card card = new Card(Integer.parseInt(sCardValue), currentSuit);
                     List<Hand> remainingCards = deal.getRemainingCards();
 
-                    int index = 0;
+                    Hand currentHand = null;
+
+                    int handIndex = 0; //init with 0 - North
+                    int viewId = 0;
                     switch(view.getId()){
                         case R.id.deal_north_layout:
-                            remainingCards.get(0).dealCard(card);
-                            //TODO: make the card visible in the grid
-                            TextView textView = null;
-                            if(currentSuit == Suit.C){
-                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_club);
-
-                            }
-                            else if(currentSuit == Suit.D){
-                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_diamond);
-
-                            }
-                            else if(currentSuit == Suit.H){
-                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_heart);
-
-                            }
-                            else if(currentSuit == Suit.S){
-                                textView = (TextView)view.getRootView().findViewById(R.id.deal_north_spade);
-
-                            }
-
-                            if(textView != null){
-                                textView.setText(textView.getText() + " " + card.getSymbol());
-                                //TODO: add BridgeRules.sortDesc() and call it;
-                            }
-
-                            //TODO: grey out card in the deck and
-                            Logger.getLogger(TAG).log(Level.INFO, view.getId() + " " + card.toString());
+                            handIndex = 0;
                             break;
                         case R.id.deal_east_layout:
-                            remainingCards.get(1).dealCard(card);
-                            Logger.getLogger(TAG).log(Level.INFO, view.getId() + " " + card.toString());
+                            handIndex = 1;
                             break;
                         case R.id.deal_south_layout:
-                            remainingCards.get(2).dealCard(card);
+                            handIndex = 2;
                             break;
                         case R.id.deal_west_layout:
-                            remainingCards.get(3).dealCard(card);
+                            handIndex = 3;
                             break;
 
                     }
 
-                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setBackgroundColor(Color.GRAY);
-                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setOnLongClickListener(null);
+                    remainingCards.get(handIndex).dealCard(card);
+                    currentHand = (Hand)remainingCards.get(handIndex);
 
+                    Collections.sort(currentHand.getRemainingCards(), Card.CardReverseComparator);
+
+                    redraw(currentHand, currentSuit, view);
+                    //Logger.getLogger(TAG).log(Level.INFO, view.getId() + " " + card.toString());
+
+                    int assignedCardcolor = view.getResources().getColor(R.color.assigned_deck_card);
+                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setBackgroundColor(assignedCardcolor);
+                    buttonBids.get(currentSuit.ordinal()*13+card.getvalue()-2).setOnLongClickListener(null);
 
                     // Invalidates the view to force a redraw
                     view.invalidate();
@@ -666,6 +660,89 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
                     return true;
             }
             return false;
+        }
+
+        private void redraw(Hand h, Suit currentSuit, View view){
+            TextView textView = null;
+            int handIndex = h.getPosition().ordinal();
+            if(currentSuit == Suit.C){
+                switch(handIndex){
+                    case 0:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_north_club);
+                        break;
+                    case 1:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_east_club);
+                        break;
+                    case 2:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_south_club);
+                        break;
+                    case 3:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_west_club);
+                        break;
+
+                }
+
+            }
+            else if(currentSuit == Suit.D){
+                switch(handIndex){
+                    case 0:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_north_diamond);
+                        break;
+                    case 1:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_east_diamond);
+                        break;
+                    case 2:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_south_diamond);
+                        break;
+                    case 3:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_west_diamond);
+                        break;
+
+                }
+            }
+            else if(currentSuit == Suit.H){
+                switch(handIndex){
+                    case 0:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_north_heart);
+                        break;
+                    case 1:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_east_heart);
+                        break;
+                    case 2:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_south_heart);
+                        break;
+                    case 3:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_west_heart);
+                        break;
+
+                }
+            }
+            else if(currentSuit == Suit.S){
+                switch(handIndex){
+                    case 0:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_north_spade);
+                        break;
+                    case 1:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_east_spade);
+                        break;
+                    case 2:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_south_spade);
+                        break;
+                    case 3:
+                        textView = (TextView)view.getRootView().findViewById(R.id.deal_west_spade);
+                        break;
+
+                }
+            }
+
+            if(textView != null){
+                textView.setText(BridgeRules.getSymbol(currentSuit));
+                for(Card c: h.getRemainingCards(currentSuit)){
+                    textView.setText(textView.getText() + " " + c.getSymbol());
+                }
+
+            }
+
         }
     }
 
