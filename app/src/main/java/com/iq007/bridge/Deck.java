@@ -1,5 +1,6 @@
 package com.iq007.bridge;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +9,7 @@ import java.util.Random;
 /**
  * Created by stefan on 20/07/14.
  */
-public class Deck {
+public class Deck implements Serializable{
 
 
     List<Card> cards;

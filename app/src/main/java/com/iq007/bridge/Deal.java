@@ -1,11 +1,12 @@
 package com.iq007.bridge;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by stefan on 22/07/14.
  */
-public class Deal {
+public class Deal implements Serializable{
     List<Hand> remainingCards;
     ContractSuit trump;
     TablePosition first;

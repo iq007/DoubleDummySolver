@@ -1,12 +1,13 @@
 package com.iq007.bridge;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by stefan on 22/07/14.
  */
-public class Hand {
+public class Hand implements Serializable{
 
     TablePosition position;
     List<Card> remainingCards;

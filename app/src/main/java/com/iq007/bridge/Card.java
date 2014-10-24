@@ -1,11 +1,12 @@
 package com.iq007.bridge;
 
+import java.io.Serializable;
 import java.util.Comparator;
 
 /**
  * Created by stefan on 20/07/14.
  */
-public class Card implements Comparable<Card>{
+public class Card implements Comparable<Card>, Serializable{
     int value;
     String symbol;
     String suitSymbol;
