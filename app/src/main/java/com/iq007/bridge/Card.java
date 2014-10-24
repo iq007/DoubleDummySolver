@@ -1,9 +1,11 @@
 package com.iq007.bridge;
 
+import java.util.Comparator;
+
 /**
  * Created by stefan on 20/07/14.
  */
-public class Card {
+public class Card implements Comparable<Card>{
     int value;
     String symbol;
     String suitSymbol;
@@ -36,28 +38,8 @@ public class Card {
             symbol = "K";
         }
 
-        switch(suit){
-            case C:
-            {
-                suitSymbol = "♣";
-                break;
-            }
-            case D:
-            {
-                suitSymbol = "♦";
-                break;
-            }
-            case H:
-            {
-                suitSymbol = "♥";
-                break;
-            }
-            case S:
-            {
-                suitSymbol = "♠";
-                break;
-            }
-        }
+        suitSymbol = BridgeRules.getSymbol(suit);
+
     }
 
     public Card(Card card) {
@@ -115,4 +97,26 @@ public class Card {
         result = 31 * result + suit.hashCode();
         return result;
     }
+
+    @Override
+    public int compareTo(Card card) {
+        if(this.suit.ordinal() > card.suit.ordinal()){
+            return 1;
+        }
+        else if(this.suit.ordinal() < card.suit.ordinal()){
+            return -1;
+        }
+        else
+            return this.value - card.value;
+    }
+
+    public static Comparator<Card> CardReverseComparator
+            = new Comparator<Card>() {
+        public int compare(Card card1, Card card2) {
+            //descending order
+            return card2.compareTo(card1);
+
+        }
+
+    };
 }

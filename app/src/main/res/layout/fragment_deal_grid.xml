@@ -149,28 +149,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
-                android:id="@+id/textView"
+                android:id="@+id/deal_west_spade"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
-                android:id="@+id/textView2"
+                android:id="@+id/deal_west_heart"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
-                android:id="@+id/textView3"
+                android:id="@+id/deal_west_diamond"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
-                android:id="@+id/textView4"
+                android:id="@+id/deal_west_club"
                 android:layout_gravity="left" />
         </LinearLayout>
 
@@ -195,28 +195,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
-                android:id="@+id/textView5"
+                android:id="@+id/deal_east_spade"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
-                android:id="@+id/textView6"
+                android:id="@+id/deal_east_heart"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
-                android:id="@+id/textView7"
+                android:id="@+id/deal_east_diamond"
                 android:layout_gravity="left" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
-                android:id="@+id/textView8"
+                android:id="@+id/deal_east_club"
                 android:layout_gravity="left" />
         </LinearLayout>
 

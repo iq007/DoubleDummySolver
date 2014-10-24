@@ -36,4 +36,31 @@ public class  BridgeRules {
         Bid firstBid = new Bid((Bid)mBiddingBox.getBids().get(0));
         return firstBid;
     }
+
+    public static String getSymbol(Suit s){
+        String suitSymbol = null;
+        switch(s){
+            case C:
+            {
+                suitSymbol = "♣";
+                break;
+            }
+            case D:
+            {
+                suitSymbol = "♦";
+                break;
+            }
+            case H:
+            {
+                suitSymbol = "♥";
+                break;
+            }
+            case S:
+            {
+                suitSymbol = "♠";
+                break;
+            }
+        }
+        return suitSymbol;
+    }
 }
