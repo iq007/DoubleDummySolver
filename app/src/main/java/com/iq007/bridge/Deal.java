@@ -31,9 +31,39 @@ public class Deal implements Serializable{
     }
 
     public String getRemainingCardsPBN(){
-        String remainingCardsPBN = "";
-        //TODO: convert remaining cards to PBN
-        return remainingCardsPBN;
+        StringBuffer remainingCardsPBN = new StringBuffer();
+        String firstPBN;
+        switch(first) {
+            case N:
+                firstPBN = "N:";
+                break;
+            case E:
+                firstPBN = "E:";
+                break;
+            case S:
+                firstPBN = "S:";
+                break;
+            case W:
+                firstPBN = "W:";
+                break;
+            default:
+                firstPBN = "N:";
+        }
+        remainingCardsPBN.append(firstPBN);
+
+        for(Hand h: remainingCards){
+            for(Suit s: Suit.values()) {
+                for (Card c : h.getRemainingCards(s)) {
+                    remainingCardsPBN.append(c.getSymbol());
+                }
+                remainingCardsPBN.append(".");
+            }
+            remainingCardsPBN.append(" ");
+        }
+
+
+        return remainingCardsPBN.toString();
+
     }
 
     public void setRemainingCards(List<Hand> remainingCards) {

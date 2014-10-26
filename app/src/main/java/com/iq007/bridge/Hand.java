@@ -49,4 +49,8 @@ public class Hand implements Serializable{
         return remainingCardsInSuit;
     }
 
+    public boolean canAcceptCard(){
+        return remainingCards.size() < 13;
+    }
+
 }
