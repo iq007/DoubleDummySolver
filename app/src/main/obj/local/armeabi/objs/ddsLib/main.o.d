@@ -19,8 +19,19 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_epilog.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_config_compat_post.h \
  jni/dll.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/unistd.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/iostream \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ioserr.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/char_traits.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstddef.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stddef.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstring.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/string.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/string.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/malloc.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/using/cstring \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/types.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/stdint.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/_types.h \
@@ -33,54 +44,6 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/types.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/kernel.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/sysmacros.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/select.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/time.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/time.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/signal.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/signal.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/limits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/limits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/limits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/limits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/internal_types.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/limits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/syslimits.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/page.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/string.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/string.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/malloc.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/signal.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/signal.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/siginfo.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/siginfo.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/ucontext.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/user.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/sigcontext.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/sysconf.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/capability.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/pathconf.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdio.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdio.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdlib.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdlib.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/alloca.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/strings.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/memory.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/time.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/time.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/assert.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/assert.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/math.h \
- /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/math.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/iostream \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_prolog.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ioserr.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/char_traits.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstddef.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstring.h \
- /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/using/cstring \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_construct.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_new.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/../../gabi++/include/new \
@@ -90,6 +53,8 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/../../gabi++/include/exception \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/../../gabi++/include/gabixx_config.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstdio.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdio.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdio.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iterator_base.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ptrs_specialize.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/type_traits.h \
@@ -97,6 +62,12 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_move_construct_fwk.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cwchar.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/wchar.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/time.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/time.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/time.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/time.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/siginfo.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/siginfo.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/_wchar_limits.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_mbstate_t.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_istream.h \
@@ -107,10 +78,32 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_pair.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_locale.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdlib.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdlib.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/alloca.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/strings.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/memory.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cmath.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/math.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/math.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/limits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/limits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/limits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/limits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/internal_types.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/limits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/syslimits.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/page.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_threads.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/pthread.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/pthread.h \
+ /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/signal.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/signal.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/signal.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/signal.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/ucontext.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/user.h \
+ /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/sigcontext.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sched.h \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_threads.c \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ctime.h \
@@ -195,9 +188,31 @@ jni/com_iq007_bridge_doubledummysolver_DoubleDummySolver_PlaceholderFragment.h:
 
 jni/dll.h:
 
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/unistd.h:
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/iostream:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_prolog.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ioserr.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/char_traits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstddef.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stddef.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstring.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/string.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/string.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/malloc.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/using/cstring:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/types.h:
 
@@ -223,102 +238,6 @@ jni/dll.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/sysmacros.h:
 
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/select.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/time.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/time.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/signal.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/signal.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/limits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/limits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/limits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/limits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/internal_types.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/limits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/syslimits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/page.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/string.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/string.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/malloc.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/signal.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/signal.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/siginfo.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/siginfo.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/ucontext.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/user.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/sigcontext.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/sysconf.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/capability.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/pathconf.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdio.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdio.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdlib.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdlib.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/alloca.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/strings.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/memory.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/time.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/time.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/assert.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/assert.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/math.h:
-
-/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/math.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/iostream:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_prolog.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/debug/_debug.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ioserr.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iosfwd.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/char_traits.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstddef.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstring.h:
-
-/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/using/cstring:
-
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_construct.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_new.h:
@@ -337,6 +256,10 @@ jni/dll.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstdio.h:
 
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdio.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdio.h:
+
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_iterator_base.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_ptrs_specialize.h:
@@ -350,6 +273,18 @@ jni/dll.h:
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cwchar.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/wchar.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/time.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/time.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/time.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/time.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/siginfo.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/siginfo.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/_wchar_limits.h:
 
@@ -371,13 +306,57 @@ jni/dll.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cstdlib.h:
 
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stdlib.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/stdlib.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/alloca.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/strings.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/memory.h:
+
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_cmath.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/math.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/math.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/limits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/limits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/limits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/linux/limits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/internal_types.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/machine/limits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/syslimits.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/page.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/stl/_threads.h:
 
 /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/pthread.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/pthread.h:
+
+/Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/signal.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/../include/signal.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/signal.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm-generic/signal.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/ucontext.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/user.h:
+
+/Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/asm/sigcontext.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sched.h:
 

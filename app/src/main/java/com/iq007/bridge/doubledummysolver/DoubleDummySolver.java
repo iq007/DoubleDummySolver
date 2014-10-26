@@ -283,7 +283,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             if (this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER) == 1) {
                 rootView = inflater.inflate(R.layout.fragment_deal_grid, container, false);
 
-                //Log.d(TAG, Integer.toString(SolveBoard(null)));
+                Log.d(TAG, Integer.toString(SolveBoard(null)));
 
 
                 BridgeHandLayoutEventListener handLayoutListener = new BridgeHandLayoutEventListener(deal, deck, buttonBids);

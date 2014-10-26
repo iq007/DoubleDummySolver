@@ -51,8 +51,7 @@ JNIEXPORT jint JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver
         tableDeal.cards[3][2] = toInt("0000000011110000",16);
         tableDeal.cards[3][3] = toInt("0000000011110000",16);
 
-        InitStart(1,1);
-
+        //InitStart(1,1);
 
         int returnResult = CalcDDtable(tableDeal, &tableResults);
 
