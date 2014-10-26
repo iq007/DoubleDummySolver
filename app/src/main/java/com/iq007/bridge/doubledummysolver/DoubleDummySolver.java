@@ -209,6 +209,7 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
         }
 
         public native int SolveBoard(Deal d);
+        public native int[][] CalcDDtablePBN(String dealPBN);
 
         private static final String TAG = "DoubleDummySolver_PlaceholderFragment";
 
@@ -282,9 +283,6 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             //Deal tab
             if (this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER) == 1) {
                 rootView = inflater.inflate(R.layout.fragment_deal_grid, container, false);
-
-                Log.d(TAG, Integer.toString(SolveBoard(null)));
-
 
                 BridgeHandLayoutEventListener handLayoutListener = new BridgeHandLayoutEventListener(deal, deck, buttonBids);
                 LinearLayout[] layouts = new LinearLayout[4];
@@ -394,7 +392,14 @@ public class DoubleDummySolver extends Activity implements ActionBar.TabListener
             if (this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER) == 4) {
 
 
-                //call native function
+                int[][] results = CalcDDtablePBN("W:T5.K4.652.A98542 K6.QJT976.QT7.Q6 432.A.AKJ93.JT73 AQJ987.8532.84.K");
+
+                for(int i=0;i<results.length;i++){
+                    for(int j=0;j<results[i].length;j++) {
+                        Logger.getLogger(TAG).log(Level.INFO, "[" + i + ":" + j + "] =" + results[i][j]);
+                    }
+                }
+
 
             }
             return rootView;

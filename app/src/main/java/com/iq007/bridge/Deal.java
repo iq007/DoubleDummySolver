@@ -30,6 +30,12 @@ public class Deal implements Serializable{
         return remainingCards;
     }
 
+    public String getRemainingCardsPBN(){
+        String remainingCardsPBN = "";
+        //TODO: convert remaining cards to PBN
+        return remainingCardsPBN;
+    }
+
     public void setRemainingCards(List<Hand> remainingCards) {
         this.remainingCards = remainingCards;
     }

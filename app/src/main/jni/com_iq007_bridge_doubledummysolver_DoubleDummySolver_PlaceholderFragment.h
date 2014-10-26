@@ -15,6 +15,14 @@ extern "C" {
 JNIEXPORT jint JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024PlaceholderFragment_SolveBoard
   (JNIEnv *, jobject, jobject);
 
+/*
+ * Class:     com_iq007_bridge_doubledummysolver_DoubleDummySolver_PlaceholderFragment
+ * Method:    CalcDDtablePBN
+ * Signature: (Ljava/lang/String;)[[I
+ */
+JNIEXPORT jobjectArray JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024PlaceholderFragment_CalcDDtablePBN
+  (JNIEnv *, jobject, jstring);
+
 #ifdef __cplusplus
 }
 #endif
