@@ -5,6 +5,19 @@
     <string name="main_tab1">Deal</string>
     <string name="main_tab2">Contract</string>
     <string name="main_tab3">Solver</string>
+
+    <string name="par_header_col_1">Declarer</string>
+    <string name="par_header_col_2">@string/str_club</string>
+    <string name="par_header_col_3">@string/str_diamond</string>
+    <string name="par_header_col_4">@string/str_heart</string>
+    <string name="par_header_col_5">@string/str_spade</string>
+    <string name="par_header_col_6">@string/str_nt</string>
+
+    <string name="par_header_row_N">@string/str_N</string>
+    <string name="par_header_row_E">@string/str_E</string>
+    <string name="par_header_row_S">@string/str_S</string>
+    <string name="par_header_row_W">@string/str_W</string>
+
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="str_contract_level">Level</string>
@@ -14,5 +27,10 @@
     <string name="str_heart" translatable="false">♥</string>
     <string name="str_diamond" translatable="false">♦</string>
     <string name="str_club" translatable="false">♣</string>
-    <string name="str_nt" translatable="false">NT</string>
+    <string name="str_nt">NT</string>
+
+    <string name="str_N">N</string>
+    <string name="str_E">E</string>
+    <string name="str_S">S</string>
+    <string name="str_W">W</string>
 </resources>

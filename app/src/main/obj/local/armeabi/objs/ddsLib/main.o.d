@@ -1,5 +1,5 @@
 obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
- jni/com_iq007_bridge_doubledummysolver_DoubleDummySolver_PlaceholderFragment.h \
+ jni/com_iq007_bridge_doubledummysolver_DoubleDummySolver_BridgeWorker.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/jni.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/cdefs.h \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -156,7 +156,7 @@ obj/local/armeabi/objs/ddsLib/main.o: jni/main.cpp \
  /Users/stefan/Tools/android-ndk-r10c/sources/cxx-stl/stlport/stlport/cstring \
  /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/android/log.h
 
-jni/com_iq007_bridge_doubledummysolver_DoubleDummySolver_PlaceholderFragment.h:
+jni/com_iq007_bridge_doubledummysolver_DoubleDummySolver_BridgeWorker.h:
 
 /Users/stefan/Tools/android-ndk-r10c/platforms/android-3/arch-arm/usr/include/jni.h:
 

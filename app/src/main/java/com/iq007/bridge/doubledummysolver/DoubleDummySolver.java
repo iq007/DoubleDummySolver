@@ -14,6 +14,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.ClipData;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -21,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -40,6 +42,8 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.iq007.bridge.*;
@@ -262,12 +266,6 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
         protected ArrayList<CardButton> buttonBids = new ArrayList<CardButton>();
 
 
-        static {
-            System.loadLibrary("ddsLib");
-        }
-
-        public native int SolveBoard(Deal d);
-        public native int[][] CalcDDtablePBN(String dealPBN);
 
         private static final String TAG = "DoubleDummySolver_PlaceholderFragment";
 
@@ -436,16 +434,12 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
             //Par tab
             if (this.getArguments().getInt(PlaceholderFragment.ARG_SECTION_NUMBER) == 4) {
 
-                Logger.getLogger(TAG).log(Level.INFO, activity.deal.getRemainingCardsPBN());
+                rootView = inflater.inflate(R.layout.fragment_par, container, false);
 
-                //TODO: consider to put in background thread
-                int[][] results = CalcDDtablePBN(activity.deal.getRemainingCardsPBN());
+                //Logger.getLogger(TAG).log(Level.INFO, activity.deal.getRemainingCardsPBN());
 
-                for(int i=0;i<results.length;i++){
-                    for(int j=0;j<results[i].length;j++) {
-                        Logger.getLogger(TAG).log(Level.INFO, "[" + i + ":" + j + "] =" + results[i][j]);
-                    }
-                }
+                new BridgeWorker(rootView).execute(activity.deal);
+
 
             }
             return rootView;
@@ -925,6 +919,81 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
             return false;
         }
     }
+
+
+    private static class BridgeWorker extends AsyncTask<Deal, Integer, Object[]> {
+
+        private View rootView;
+
+        private BridgeWorker(View rootView) {
+            this.rootView = rootView;
+        }
+
+        static {
+            System.loadLibrary("ddsLib");
+        }
+
+        public native int SolveBoard(Deal d);
+        public native int[][] CalcDDtablePBN(String dealPBN);
+
+
+        protected void onProgressUpdate(Integer... progress) {
+
+        }
+
+        protected void onPostExecute(Object[] res) {
+
+            int[][] results = new int[5][4];
+
+            int k=0;
+            for (Object obj: res){
+                results[k++] = (int[]) obj;
+            }
+
+            TableLayout parTableLayout = (TableLayout) rootView.findViewById(R.id.par_table_layout);
+
+            TableRow[] parRows = new TableRow[4];
+
+            parRows[0] = (TableRow) parTableLayout.getChildAt(1);
+            parRows[1] = (TableRow) parTableLayout.getChildAt(2);
+            parRows[2] = (TableRow) parTableLayout.getChildAt(3);
+            parRows[3] = (TableRow) parTableLayout.getChildAt(4);
+
+
+            for(int i=0;i<results.length;i++){ //denomination
+                for(int j=0;j<results[i].length;j++) { //declarer
+                    //Logger.getLogger(TAG).log(Level.INFO, "[" + i + ":" + j + "] =" + results[i][j]);
+                    TextView par = new TextView(rootView.getContext());
+                    par.setText(Integer.toString(results[i][j]));
+                    switch(j) { //because results are in order: NESW and table is NSEW
+                        case 0:
+                        case 3:
+                            parRows[j].addView(par);
+                            break;
+                        case 1:
+                            parRows[j+1].addView(par);
+                            break;
+                        case 2:
+                            parRows[j-1].addView(par);
+                            break;
+                    }
+                    par.invalidate();
+
+                }
+            }
+
+            parTableLayout.invalidate();
+
+        }
+
+        @Override
+        protected int[][] doInBackground(Deal... objects) {
+            Deal d = objects[0];
+            int[][] results = CalcDDtablePBN(d.getRemainingCardsPBN());
+            return results;
+        }
+    }
+
 }
 
 

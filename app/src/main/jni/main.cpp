@@ -1,4 +1,5 @@
-#include "com_iq007_bridge_doubledummysolver_DoubleDummySolver_PlaceholderFragment.h"
+#include "com_iq007_bridge_doubledummysolver_DoubleDummySolver_BridgeWorker.h"
+
 #include "dll.h"
 #include <iostream>
 #include <string>
@@ -9,13 +10,13 @@
 #define  LOGI(...)  __android_log_print(ANDROID_LOG_INFO,LOG_TAG,__VA_ARGS__)
 
 
-JNIEXPORT jint JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024PlaceholderFragment_SolveBoard
-  (JNIEnv * env, jobject obj, jobject ibj2)
+JNIEXPORT jint JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024BridgeWorker_SolveBoard
+  (JNIEnv * env, jobject obj1, jobject obj2)
   {
         return 0;
   }
 
-JNIEXPORT jobjectArray JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024PlaceholderFragment_CalcDDtablePBN
+JNIEXPORT jobjectArray JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024BridgeWorker_CalcDDtablePBN
   (JNIEnv * env, jobject obj1, jstring jDealPBNString){
 
     jobjectArray result;
