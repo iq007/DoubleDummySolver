@@ -935,6 +935,7 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
 
         public native int SolveBoard(Deal d);
         public native int[][] CalcDDtablePBN(String dealPBN);
+        public native char[][] CalcParPBN(String dealPBN, int vulnerability);
 
 
         protected void onProgressUpdate(Integer... progress) {
@@ -990,6 +991,7 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
         protected int[][] doInBackground(Deal... objects) {
             Deal d = objects[0];
             int[][] results = CalcDDtablePBN(d.getRemainingCardsPBN());
+            //CalcParPBN(d.getRemainingCardsPBN(),0);
             return results;
         }
     }

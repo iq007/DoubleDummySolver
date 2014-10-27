@@ -256,7 +256,7 @@ struct ddTableResults {
 struct parResults {
   char parScore[2][16];	/* index = 0 is NS view and index = 1 is EW view. */
   char parContractsString[2][128]; /* index = 0 is NS view and index = 1 
-				      is EW view. By “view” is here meant 
+				      is EW view. By ï¿½viewï¿½ is here meant 
 				      which side that starts the bidding. */
 };
 
@@ -347,7 +347,11 @@ EXTERN_C DLLEXPORT int STDCALL CalcDDtablePBN(struct ddTableDealPBN tableDealPBN
   struct ddTableResults * tablep);
 EXTERN_C DLLEXPORT int STDCALL CalcPar(struct ddTableDeal tableDeal, int vulnerable, 
     struct ddTableResults * tablep, struct parResults *presp);
-EXTERN_C DLLEXPORT int STDCALL CalcParPBN(struct ddTableDealPBN tableDealPBN, 
+
+EXTERN_C DLLEXPORT int STDCALL Par(struct ddTableResults * tablep,
+struct parResults *presp, int vulnerable);
+
+EXTERN_C DLLEXPORT int STDCALL CalcParPBN(struct ddTableDealPBN tableDealPBN,
   struct ddTableResults * tablep, int vulnerable, struct parResults *presp);
 #else 
   EXTERN_C DLLEXPORT int STDCALL SolveBoard(struct deal dl, 

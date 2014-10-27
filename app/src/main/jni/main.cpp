@@ -52,3 +52,67 @@ JNIEXPORT jobjectArray JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDum
     return result;
 
 }
+
+JNIEXPORT jobjectArray JNICALL Java_com_iq007_bridge_doubledummysolver_DoubleDummySolver_00024BridgeWorker_CalcParPBN
+  (JNIEnv * env, jobject obj1, jstring jDealPBNString, jint jVulnerability)
+  {
+        jobjectArray result;
+        jclass objectClass = env->FindClass("java/lang/Object");
+        result = env->NewObjectArray(4, objectClass, 0);
+
+        int vulnerability = (int) jVulnerability;
+
+        const char *dealPBNString = env->GetStringUTFChars(jDealPBNString, JNI_FALSE);
+        ddTableDealPBN tableDealPBN;
+        strlcpy(tableDealPBN.cards, dealPBNString, sizeof(tableDealPBN.cards));
+
+        LOGI("tableDealPBN: %s", tableDealPBN.cards);
+
+        ddTableResults  tableResults;
+        parResults      tableParResults;
+
+        InitStart(0,0);
+
+        int returnResultCalcDDtable = CalcDDtablePBN(tableDealPBN, &tableResults);
+        LOGI("CalcDDtablePBN returned: %d", returnResultCalcDDtable);
+
+        int returnResultCalcPar = Par(&tableResults, &tableParResults, vulnerability);
+        LOGI("Par returned: %d", returnResultCalcPar);
+
+        jchar jcharBuffer1[2][16];// = new jcharArray[2][16];
+        for(int i=0;i<2;i++){
+            for (int j = 0; j<16; j++) {
+                jcharBuffer1[i][j] = (jchar)tableParResults.parScore[i][j];
+            }
+        }
+
+        jchar jcharBuffer2[2][128];// = new jcharArray[128];
+        for(int i=0;i<2;i++){
+            for (int j = 0; j<128; j++) {
+                jcharBuffer2[i][j] = (jchar)tableParResults.parContractsString[i][j];
+            }
+        }
+
+        for(int i=0;i<2;i++){
+            jcharArray strainsArray1;
+            strainsArray1 = env->NewCharArray(16);
+            env->SetCharArrayRegion(strainsArray1, 0, 16, jcharBuffer1[i]);
+            env->SetObjectArrayElement(result, i, strainsArray1);
+            for (int j=0;j<16;j++){
+              LOGI("Result[%d][%d]: %d", i,j, tableParResults.parScore[i]);
+          }
+        }
+        for(int i=2;i<4;i++){
+            jcharArray strainsArray2;
+            strainsArray2 = env->NewCharArray(128);
+            env->SetCharArrayRegion(strainsArray2, 0, 128, jcharBuffer2[i-2]);
+            env->SetObjectArrayElement(result, i, strainsArray2);
+            for (int j=0;j<128;j++){
+              LOGI("ResultPar[%d][%d]: %d", i-2,j, tableParResults.parContractsString[i-2][j]);
+          }
+        }
+
+        env->ReleaseStringUTFChars(jDealPBNString, dealPBNString);
+
+        return result;
+  }
