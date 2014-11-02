@@ -21,24 +21,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true">
 
-        <GridLayout
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:id="@+id/deal_grid"
-            style="@style/AppTheme"
-            android:visibility="visible"
-            android:layout_column="1"
-            android:layout_row="1"
-            android:layout_gravity="fill"
-            android:minHeight="50dp"
-            android:minWidth="50dp"
-            android:alignmentMode="alignBounds"
-            android:columnCount="2"
-            android:rowCount="7">
-
-
-        </GridLayout>
-
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
@@ -86,7 +68,7 @@
 
         <LinearLayout
             android:orientation="vertical"
-            android:layout_width="wrap_content"
+            android:layout_width="157dp"
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="1"
@@ -220,16 +202,6 @@
                 android:layout_gravity="left" />
         </LinearLayout>
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/suit_spinner"
-            android:spinnerMode="dropdown"
-            android:focusable="false"
-            android:layout_column="0"
-            android:layout_row="0"
-            android:layout_gravity="center" />
-
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
@@ -241,6 +213,20 @@
 
         </LinearLayout>
 
+        <HorizontalScrollView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView"
+            android:minHeight="340dp"
+            android:layout_gravity="center">
+
+            <GridLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:rowCount="7"
+                android:columnCount="8"
+                android:id="@+id/deal_card_buttons_grid"></GridLayout>
+        </HorizontalScrollView>
 
 
     </GridLayout>

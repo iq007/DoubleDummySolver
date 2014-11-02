@@ -20,11 +20,12 @@ public class Deck implements Serializable{
 
     public Deck() {
         cards = new ArrayList<Card>(52);
+
         for(Suit s: Suit.values()){
-            for(int i=1; i<13; i++){
-                cards.add(i-1+(s.ordinal()*13), new Card(i+1, s));
+            for(int i=13; i>0; i--){
+                cards.add(13-i+(s.ordinal()*13), new Card(i+1, s));
             }
-            cards.add(12+s.ordinal()*13, new Card(14,s));
+            //cards.add(12+s.ordinal()*13, new Card(14,s));
         }
     }
 
@@ -38,9 +39,9 @@ public class Deck implements Serializable{
 
     public List<Card> orderDeck(){
         cards = new ArrayList<Card>(52);
-        for(Suit s: Suit.values()){
-            for(int i=0; i<13; i++){
-                cards.add(i + (s.ordinal() * 13), new Card(i + 1, s));
+        for(int revsuit=Suit.values().length - 1; revsuit >= 0; revsuit--){
+            for(int i=13; i>0; i--){
+                cards.add(13-i + ((Suit.values().length-1-revsuit) * 13), new Card(i + 1, Suit.values()[revsuit]));
             }
         }
         return cards;

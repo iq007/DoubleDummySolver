@@ -344,9 +344,9 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
 
                 Deck intactDeck = new Deck();
 
-                GridLayout dealGridView = (GridLayout) rootView.findViewById(R.id.deal_grid);
+                GridLayout dealGridView = (GridLayout) rootView.findViewById(R.id.deal_card_buttons_grid);
 
-                Spinner dealSuitSpinner = (Spinner) rootView.findViewById(R.id.suit_spinner);
+                /*Spinner dealSuitSpinner = (Spinner) rootView.findViewById(R.id.suit_spinner);
                 // Create an ArrayAdapter using the string array and a default spinner layout
                 mDealSuitAdapter = new ArrayAdapter(getActivity(), R.layout.contract_list_item,
                         R.id.listItemContract, mSuitLabels);
@@ -354,15 +354,13 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                 // mDealSuitAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 // Apply the adapter to the spinner
                 dealSuitSpinner.setAdapter(mDealSuitAdapter);
-                dealSuitSpinner.setOnItemSelectedListener(this);
+                dealSuitSpinner.setOnItemSelectedListener(this);*/
 
                 int gridRowCount = dealGridView.getRowCount();
-                int gridColCount = dealGridView.getColumnCount();
-
                 int row = 0;
                 int column = 0;
-                Suit currentSuit = Suit.C;
-                for (Card card : intactDeck.getCards()) {
+
+                for (Card card : intactDeck.orderDeck()) {
                     CardButton buttonBid = new CardButton(getActivity(), card);
 
                     if(activity.deck.getCards().contains(card)){
@@ -375,27 +373,31 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                     }
 
                     buttonBid.setText(card.toString());
-                    buttonBid.setTextSize(25);
-                    buttonBid.setPadding(0, 0, 0, 0);
+                    buttonBid.setTextSize(20);
+                    buttonBid.setPadding(5, 5, 5, 5);
                     buttonBid.setMaxHeight(5);
                     buttonBid.setMaxWidth(5);
-                    buttonBid.setVisibility(Button.INVISIBLE);
+                    //buttonBid.setVisibility(Button.INVISIBLE);
                     //buttonBid.setOnDragListener(handLayoutListener);
                     buttonBid.setOnClickListener(handLayoutListener);
                     buttonBids.add(buttonBid);
-                    if (card.getSuit() != currentSuit) {
-                        row = 0;
-                        column = 0;
-                        currentSuit = card.getSuit();
-                    }
-                    if (column >= gridColCount) {
-                        column = 0;
-                        row++;
-                    }
-                    GridLayout.LayoutParams lp = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(column++));
+
+
+
+                    GridLayout.LayoutParams lp = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(column));
                     dealGridView.addView(buttonBid, lp);
+
+                    if (++row < gridRowCount) {
+
+                    }
+                    else {
+                        row = 0;
+                        column++;
+                    }
+
+
                 }
-                makeSuitVisible(Suit.C);
+
                 if(activity.deal != null){
                     redrawDealTab(activity.deal, rootView);
                 }
@@ -777,8 +779,8 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                         deck.removeCard(currentCardButton.card);
                         deal.setRemainingCards(hands);
                         int assignedCardcolor = view.getResources().getColor(R.color.assigned_deck_card);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setBackgroundColor(assignedCardcolor);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setOnLongClickListener(null);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setBackgroundColor(assignedCardcolor);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setOnLongClickListener(null);
 
                         PlaceholderFragment.redrawDealTab(hands.get(0), currentCardButton.card.getSuit(), northView);
 
@@ -791,8 +793,8 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                         deck.removeCard(currentCardButton.card);
                         deal.setRemainingCards(hands);
                         int assignedCardcolor = view.getResources().getColor(R.color.assigned_deck_card);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setBackgroundColor(assignedCardcolor);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setOnLongClickListener(null);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setBackgroundColor(assignedCardcolor);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setOnLongClickListener(null);
                         PlaceholderFragment.redrawDealTab(hands.get(1), currentCardButton.card.getSuit(), eastView);
                     }
                     else if(((ColorDrawable) southView.getBackground()).getColor() == res.getColor(R.color.table_position_sel)
@@ -803,8 +805,8 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                         deck.removeCard(currentCardButton.card);
                         deal.setRemainingCards(hands);
                         int assignedCardcolor = view.getResources().getColor(R.color.assigned_deck_card);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setBackgroundColor(assignedCardcolor);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setOnLongClickListener(null);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setBackgroundColor(assignedCardcolor);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setOnLongClickListener(null);
                         PlaceholderFragment.redrawDealTab(hands.get(2), currentCardButton.card.getSuit(), southView);
                     }
                     else if(((ColorDrawable) westView.getBackground()).getColor() == res.getColor(R.color.table_position_sel)
@@ -815,8 +817,8 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                         deck.removeCard(currentCardButton.card);
                         deal.setRemainingCards(hands);
                         int assignedCardcolor = view.getResources().getColor(R.color.assigned_deck_card);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setBackgroundColor(assignedCardcolor);
-                        buttonBids.get(currentCardButton.card.getSuit().ordinal() * 13 + currentCardButton.card.getvalue() - 2).setOnLongClickListener(null);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setBackgroundColor(assignedCardcolor);
+                        buttonBids.get((Suit.values().length - currentCardButton.card.getSuit().ordinal() - 1) * 13 + (14-currentCardButton.card.getvalue())).setOnLongClickListener(null);
                         PlaceholderFragment.redrawDealTab(hands.get(3), currentCardButton.card.getSuit(), westView);
                     }
                 }
