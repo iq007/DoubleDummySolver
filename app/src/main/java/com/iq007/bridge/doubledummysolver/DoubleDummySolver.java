@@ -359,6 +359,7 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                 int gridRowCount = dealGridView.getRowCount();
                 int row = 0;
                 int column = 0;
+                int index = 0;
 
                 for (Card card : intactDeck.orderDeck()) {
                     CardButton buttonBid = new CardButton(getActivity(), card);
@@ -373,7 +374,7 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                     }
 
                     buttonBid.setText(card.toString());
-                    buttonBid.setTextSize(20);
+                    buttonBid.setTextSize(25);
                     buttonBid.setPadding(5, 5, 5, 5);
                     buttonBid.setMaxHeight(5);
                     buttonBid.setMaxWidth(5);
@@ -387,7 +388,7 @@ public class DoubleDummySolver extends FragmentActivity implements ActionBar.Tab
                     GridLayout.LayoutParams lp = new GridLayout.LayoutParams(GridLayout.spec(row), GridLayout.spec(column));
                     dealGridView.addView(buttonBid, lp);
 
-                    if (++row < gridRowCount) {
+                    if (++row < gridRowCount/* && (++index)%9 > 0*/) {
 
                     }
                     else {

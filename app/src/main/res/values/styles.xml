@@ -15,7 +15,7 @@
 
     <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
         <item name="android:displayOptions"></item>
-        <item name="android:height">20dp</item>
+        <item name="android:height">40dp</item>
     </style>
 
 
