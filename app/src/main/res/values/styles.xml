@@ -3,8 +3,21 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:actionBarTabStyle">@style/MyActionBarTab</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+    </style>
+
+    <!-- ActionBar styles -->
+    <style name="MyActionBarTab" parent="@android:style/Widget.Holo.Light.ActionBar.TabView">
+        <item name="android:background">@drawable/action_bar</item>
 
     </style>
+
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar">
+        <item name="android:displayOptions"></item>
+        <item name="android:height">20dp</item>
+    </style>
+
 
     <style name="ContractList" parent="android:Widget.DeviceDefault.ListView">
         <item name="android:layout_weight">0.33</item>
@@ -14,5 +27,16 @@
 
 
     </style>
+
+    <style name="SuitsStyle" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">18dp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="SuitsStyleLandscape" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">14dp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
 
 </resources>

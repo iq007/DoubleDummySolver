@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="table_position_bk">#ffe0e0e0</color>
-    <color name="table_position_sel">#ccc0c0c0</color>
-    <color name="unassigned_deck_card">#ff8caeff</color>
-    <color name="assigned_deck_card">#ffa1b1c3</color>
+    <color name="table_position_bk">#ff669999</color>
+    <color name="table_position_sel">#99CCCC</color>
+    <color name="unassigned_deck_card">#99CCCC</color>
+    <color name="assigned_deck_card">#669999</color>
     <color name="card_drag_shadow">#cccccc</color>
 </resources>

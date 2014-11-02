@@ -12,223 +12,249 @@
     android:clickable="true">
 
 
-    <GridLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_gravity="center"
-        android:rowCount="3"
-        android:columnCount="3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true">
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:id="@+id/deal_south_layout"
-            android:layout_gravity="fill_horizontal|center_horizontal|bottom"
-            android:background="@color/table_position_bk"
-            android:baselineAligned="true"
-            android:gravity="center_horizontal|bottom"
-            android:clickable="true"
-            android:focusableInTouchMode="false"
-            android:minWidth="100dp"
-            android:minHeight="50dp" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_spade"
-                android:id="@+id/deal_south_spade"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_heart"
-                android:id="@+id/deal_south_heart"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_diamond"
-                android:id="@+id/deal_south_diamond"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_club"
-                android:id="@+id/deal_south_club"
-                android:layout_gravity="left" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:id="@+id/deal_north_layout"
-            android:layout_gravity="fill_horizontal|center_horizontal|top"
-            android:background="@color/table_position_bk"
-            android:baselineAligned="true"
-            android:gravity="center_horizontal|top"
-            android:clickable="true"
-            android:minWidth="100dp"
-            android:minHeight="50dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_spade"
-                android:id="@+id/deal_north_spade"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_heart"
-                android:id="@+id/deal_north_heart"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_diamond"
-                android:id="@+id/deal_north_diamond"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_club"
-                android:id="@+id/deal_north_club"
-                android:layout_gravity="left" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="0"
-            android:id="@+id/deal_west_layout"
-            android:layout_gravity="center|left"
-            android:background="@color/table_position_bk"
-            android:baselineAligned="false"
-            android:clickable="true"
-            android:focusableInTouchMode="false"
-            android:minHeight="50dp"
-            android:minWidth="100dp"
-            android:gravity="left"
-            android:measureWithLargestChild="false" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_spade"
-                android:id="@+id/deal_west_spade"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_heart"
-                android:id="@+id/deal_west_heart"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_diamond"
-                android:id="@+id/deal_west_diamond"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_club"
-                android:id="@+id/deal_west_club"
-                android:layout_gravity="left" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:id="@+id/deal_east_layout"
-            android:layout_gravity="center|right"
-            android:background="@color/table_position_bk"
-            android:baselineAligned="true"
-            android:gravity="center_horizontal|top"
-            android:clickable="true"
-            android:focusableInTouchMode="false"
-            android:minHeight="50dp"
-            android:minWidth="100dp"
-             >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_spade"
-                android:id="@+id/deal_east_spade"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_heart"
-                android:id="@+id/deal_east_heart"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_diamond"
-                android:id="@+id/deal_east_diamond"
-                android:layout_gravity="left" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/str_club"
-                android:id="@+id/deal_east_club"
-                android:layout_gravity="left" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/deal_northeast_layout"
-            android:layout_gravity="right|top"
-            android:layout_column="2"
-            android:layout_row="0" >
-
-        </LinearLayout>
+        android:layout_height="fill_parent">
 
         <HorizontalScrollView
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/horizontalScrollView"
-            android:minHeight="340dp"
-            android:layout_gravity="center">
+            android:layout_gravity="center_horizontal|top"
+            android:measureAllChildren="false"
+            android:minHeight="100dp"
+            android:minWidth="200dp"
+            android:paddingBottom="5dp">
 
             <GridLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:rowCount="7"
-                android:columnCount="8"
+                android:rowCount="3"
+                android:columnCount="18"
                 android:id="@+id/deal_card_buttons_grid"></GridLayout>
         </HorizontalScrollView>
 
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:rowCount="3"
+            android:columnCount="3"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true">
 
-    </GridLayout>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:id="@+id/deal_south_layout"
+                android:layout_gravity="fill_horizontal|center_horizontal"
+                android:background="@color/table_position_bk"
+                android:baselineAligned="true"
+                android:gravity="center_horizontal|bottom"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:minWidth="125dp"
+                android:minHeight="75dp"
+                android:measureWithLargestChild="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_spade"
+                    android:id="@+id/deal_south_spade"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_heart"
+                    android:id="@+id/deal_south_heart"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_diamond"
+                    android:id="@+id/deal_south_diamond"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_club"
+                    android:id="@+id/deal_south_club"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:id="@+id/deal_north_layout"
+                android:layout_gravity="fill_horizontal|center_horizontal"
+                android:background="@color/table_position_bk"
+                android:baselineAligned="false"
+                android:gravity="center_horizontal|top"
+                android:clickable="true"
+                android:minWidth="125dp"
+                android:minHeight="75dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_spade"
+                    android:id="@+id/deal_north_spade"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_heart"
+                    android:id="@+id/deal_north_heart"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_diamond"
+                    android:id="@+id/deal_north_diamond"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_club"
+                    android:id="@+id/deal_north_club"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:id="@+id/deal_west_layout"
+                android:layout_gravity="center_vertical"
+                android:background="@color/table_position_bk"
+                android:baselineAligned="false"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:minHeight="75dp"
+                android:minWidth="100dp"
+                android:gravity="left"
+                android:measureWithLargestChild="false" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_spade"
+                    android:id="@+id/deal_west_spade"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_heart"
+                    android:id="@+id/deal_west_heart"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_diamond"
+                    android:id="@+id/deal_west_diamond"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_club"
+                    android:id="@+id/deal_west_club"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:id="@+id/deal_east_layout"
+                android:layout_gravity="center_vertical"
+                android:background="@color/table_position_bk"
+                android:baselineAligned="true"
+                android:gravity="center_horizontal|top"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:minHeight="75dp"
+                android:minWidth="100dp"
+                android:measureWithLargestChild="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_spade"
+                    android:id="@+id/deal_east_spade"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_heart"
+                    android:id="@+id/deal_east_heart"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_diamond"
+                    android:id="@+id/deal_east_diamond"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_club"
+                    android:id="@+id/deal_east_club"
+                    android:layout_gravity="left"
+                    style="@style/SuitsStyleLandscape" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deal_northeast_layout"
+                android:layout_gravity="right|top"
+                android:layout_column="2"
+                android:layout_row="0" >
+
+            </LinearLayout>
+
+
+        </GridLayout>
+    </LinearLayout>
 
 </RelativeLayout>

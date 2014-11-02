@@ -35,35 +35,39 @@
             android:clickable="true"
             android:focusableInTouchMode="false"
             android:minWidth="100dp"
-            android:minHeight="50dp" >
+            android:minHeight="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
                 android:id="@+id/deal_south_spade"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
                 android:id="@+id/deal_south_heart"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
                 android:id="@+id/deal_south_diamond"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
                 android:id="@+id/deal_south_club"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
         </LinearLayout>
 
         <LinearLayout
@@ -75,39 +79,41 @@
             android:id="@+id/deal_north_layout"
             android:layout_gravity="center_horizontal|top"
             android:background="@color/table_position_bk"
-            android:baselineAligned="true"
-            android:gravity="center_horizontal|top"
+            android:baselineAligned="false"
             android:clickable="true"
-            android:minWidth="100dp"
-            android:minHeight="50dp">
+            android:minWidth="100dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
                 android:id="@+id/deal_north_spade"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
                 android:id="@+id/deal_north_heart"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
                 android:id="@+id/deal_north_diamond"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
                 android:id="@+id/deal_north_club"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyleLandscape" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,7 +123,7 @@
             android:layout_row="1"
             android:layout_column="0"
             android:id="@+id/deal_west_layout"
-            android:layout_gravity="center_horizontal|left|fill_vertical"
+            android:layout_gravity="center_vertical|left"
             android:background="@color/table_position_bk"
             android:baselineAligned="false"
             android:clickable="true"
@@ -125,35 +131,39 @@
             android:minHeight="50dp"
             android:minWidth="100dp"
             android:gravity="left"
-            android:measureWithLargestChild="false" >
+            android:measureWithLargestChild="false">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
                 android:id="@+id/deal_west_spade"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
                 android:id="@+id/deal_west_heart"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
                 android:id="@+id/deal_west_diamond"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
                 android:id="@+id/deal_west_club"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -163,43 +173,45 @@
             android:layout_row="1"
             android:layout_column="2"
             android:id="@+id/deal_east_layout"
-            android:layout_gravity="center_horizontal|right|fill_vertical"
+            android:layout_gravity="center_vertical|right"
             android:background="@color/table_position_bk"
             android:baselineAligned="true"
-            android:gravity="center_horizontal|top"
             android:clickable="true"
             android:focusableInTouchMode="false"
             android:minHeight="50dp"
-            android:minWidth="100dp"
-             >
+            android:minWidth="100dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_spade"
                 android:id="@+id/deal_east_spade"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_heart"
                 android:id="@+id/deal_east_heart"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_diamond"
                 android:id="@+id/deal_east_diamond"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/str_club"
                 android:id="@+id/deal_east_club"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                style="@style/SuitsStyle" />
         </LinearLayout>
 
         <LinearLayout
@@ -217,12 +229,15 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:id="@+id/horizontalScrollView"
-            android:layout_gravity="center">
+            android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_column="1"
+            android:layout_row="1">
 
             <GridLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:columnCount="26"
+                android:columnCount="28"
                 android:rowCount="2"
                 android:id="@+id/deal_card_buttons_grid"></GridLayout>
         </HorizontalScrollView>
